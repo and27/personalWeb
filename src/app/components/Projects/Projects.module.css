@@ -1,0 +1,40 @@
+
+.project__cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    padding-block-start: 20px;
+  }
+  
+  .project__card{
+    flex: 0 1 50%;
+    padding: 40px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: start;
+    text-align: start;
+  }
+  
+  .project__card:nth-of-type(n+2){
+    border-inline-start: 1px solid var(--secondary-white);
+  }
+
+  .project__description{
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  
+  .link{
+    text-decoration: none;
+    color: var(--primary-white);
+    font-weight: 300;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+  }
