@@ -2,14 +2,20 @@
     height: 100px;
     display:flex;
     align-items: center;
-    justify-content: end;
 }
 
-.menu{
+.navigation {
+    display:flex;
     width: 100%;
+    align-items: center;
+    padding-inline-start: 30px;
+}
+
+.navigation__menu{
     display:flex; 
     gap: 48px;
     padding: 40px;
+    margin-left: auto;
 }
 
 .menu__item{

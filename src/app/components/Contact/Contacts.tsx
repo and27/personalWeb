@@ -3,7 +3,7 @@ import globalStyles from '../../page.module.css'
 
 function Contact() {
   return (
-    <section className={globalStyles.contact}>
+    <section className={globalStyles.contact} id="contact">
       <div className={globalStyles.container}>
         <h2 className={globalStyles.section__title}>Let's talk</h2>
         <p className={globalStyles.section__text}>Some of the most creative projects start with a conversation</p>

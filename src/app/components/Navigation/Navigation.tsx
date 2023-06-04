@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import styles from './Navigation.module.css'
 
@@ -14,14 +15,6 @@ const links:ILinks = [
         label: 'Home'
     },
     {
-        to: '#experience',
-        label: 'What I do'
-    },
-    {
-        to: '#projects',
-        label: 'Projects'
-    },
-    {
         to: '/blog',
         label: 'Blog'
     },
@@ -34,8 +27,17 @@ const links:ILinks = [
 export default function Navigation(){
     return (
         <header className={styles.header}>
-            <nav>
-                <ul className={styles.menu}>
+            <nav className={styles.navigation}>
+            <Image
+                src="/firma.png"
+                alt="Picture of the author"
+                width={200}
+                height={48}
+                sizes="(max-width: 768px) 100vw,
+                        (max-width: 1200px) 50vw,
+                        33vw"
+                />
+                <ul className={styles.navigation__menu}>
                     {links.map(({to, label}) => (
                     <li className={styles.menu__item}>
                         <Link href={to} className={styles.menu__link}>{label}</Link>
