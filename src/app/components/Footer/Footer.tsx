@@ -38,7 +38,7 @@ export default function Footer(){
                 <ul className={styles.menu}>
                     {links.map(({to, label}) => (
                     <li className={styles.menu__item}>
-                        <Link href={to} className={styles.menu__link}>{label}</Link>
+                        <Link href={to} className={styles.menu__link} id={label}>{label}</Link>
                     </li>
                     ))}
                 </ul>
