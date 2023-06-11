@@ -1,4 +1,4 @@
-.section, .projects, .contact, .masthead{
+.section, .projects, .contact, .masthead, .scurve{
   padding-block: 100px;
   font-family: var(--font-poppins);
 }
@@ -95,66 +95,4 @@
   font-weight: 300;
   line-height: 1.6;
 }
-
-
-.cards{
-  display: flex;
-  flex-direction: column;
-  gap: 90px;
-}
-
-.card__title{
-  font-weight: 400;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-.card__description{
-  font-weight: 300;
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-
- .card__right::after{
-  content: "";
-  position: absolute;
-  inset-block-end: 0; 
-  inset-inline-end: 0;
-  inline-size: 20%;
-  block-size: 20%;
-  border-block-end: 1px solid white;
-  border-inline-end: 1px solid white;
-}
-
-.card__left::after{
-  content: "";
-  position: absolute;
-  inset-block-start: 0; 
-  inset-inline-end: 0;
-  inline-size: 10%;
-  block-size: 20%;
-  border-block-start: 1px solid white;
-  border-inline-end: 1px solid white;
-  border-radius:
-} 
-
-
-  
-.card__right{
-  align-self: flex-end;
-  flex-grow: 0;
-  position: relative;
-  padding-block: 40px;
-  padding-inline-end: 40px;
-
-
-}
-.card__left{
-  align-self: flex-start;
-  flex-grow: 0;
-  max-inline-size: 50%;
-  position: relative;
-  padding-block: 40px;
-}
-
 

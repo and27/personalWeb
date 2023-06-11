@@ -1,7 +1,6 @@
 
 .masthead__inner{
     display: flex;
-    flex-direction: row;
     justify-content: start;
     align-items: center;
     block-size: calc(100vh - 100px);
@@ -10,8 +9,9 @@
   .masthead__content{
     display:flex; 
     flex-direction: column;
-    flex: 0 1 60%;
-    gap: 10px;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
   }
   
   .masthead__title{
@@ -27,6 +27,7 @@
     font-size: 0.875rem;
     line-height:1.6;
     font-weight: 300;
+    max-width: 500px;
     color: var(--secondary-white)
   }
   
@@ -43,6 +44,7 @@
     color: var(--primary-white);
     position: relative;
     transition: background-color 0.3s ease-in-out;
+    line-height: 1.2;
   }
   
   .masthead__btn:hover{

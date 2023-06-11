@@ -30,7 +30,8 @@ export default function Navigation(){
             <nav className={styles.navigation}>
             <Image
                 src="/firma.png"
-                alt="Picture of the author"
+                alt="Home link personal logo"
+                quality={100}
                 width={200}
                 height={48}
                 sizes="(max-width: 768px) 100vw,
@@ -39,7 +40,7 @@ export default function Navigation(){
                 />
                 <ul className={styles.navigation__menu}>
                     {links.map(({to, label}) => (
-                    <li className={styles.menu__item}>
+                    <li id={label} className={styles.menu__item}>
                         <Link href={to} className={styles.menu__link}>{label}</Link>
                     </li>
                     ))}
