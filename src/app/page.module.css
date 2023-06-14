@@ -1,39 +1,41 @@
-.section, .projects, .contact, .masthead, .scurve{
+.section,
+.projects,
+.contact,
+.masthead,
+.scurve {
   padding-block: 100px;
   font-family: var(--font-poppins);
 }
 
-.masthead{
+.masthead {
   padding-block-start: 0;
 }
 
-.projects{
+.projects {
   text-align: center;
 }
 
-.contact{
-  display:flex; 
-  flex-direction: column; 
+.contact {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.container{
+.container {
   max-inline-size: 1280px;
   width: 100%;
   padding-inline: 160px;
   margin: 0 auto;
-
 }
 
-
-.btn{
-  letter-spacing: 3px; 
+.btn {
+  letter-spacing: 3px;
   font-weight: 300;
-  text-transform: uppercase; 
-  padding-block: 0.875rem; 
+  text-transform: uppercase;
+  padding-block: 0.875rem;
   padding-inline: 2.5rem;
-  border: 1px solid var(--primary-white); 
+  border: 1px solid var(--primary-white);
   background-color: transparent;
   inline-size: fit-content;
   margin-block-start: 20px;
@@ -42,57 +44,55 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.btn:hover{
+.btn:hover {
   cursor: pointer;
   border-block: 1px solid transparent;
   background-color: black;
-
 }
 
 @keyframes cta {
   0% {
-    inline-size: 0; 
+    inline-size: 0;
   }
   100% {
     inline-size: 100%;
   }
 }
 
-.btn:hover::after, .btn:hover::before{
+.btn:hover::after,
+.btn:hover::before {
   animation: cta 0.5s ease-in-out both;
 }
 
-
-.btn::after, .btn::before{
-  position: absolute; 
-  inline-size: 100%; 
+.btn::after,
+.btn::before {
+  position: absolute;
+  inline-size: 100%;
   content: "";
-  height: 1px; 
+  height: 1px;
   background-color: var(--primary-white);
   transition: width 0.3s ease-in-out;
 }
 
-.btn::after{
+.btn::after {
   inset-inline-start: 0;
   inset-block-end: -1px;
-
 }
-.btn::before{
+.btn::before {
   inset-inline-end: 0;
   inset-block-start: -1px;
 }
 
-.section__title{
+.section__title {
   margin-block-end: 40px;
-  font-size: 2rem; 
+  font-size: 2rem;
   letter-spacing: 1px;
   position: relative;
   margin-inline: auto;
 }
 
-.section__text{
+.section__text {
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.6;
 }
-

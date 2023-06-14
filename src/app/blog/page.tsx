@@ -1,10 +1,10 @@
-import RowCards, { Posts } from '../components/RowCards/RowCards';
-import styles from './blogHome.module.css'
+import BlogCards from '../modules/BlogCards';
+import styles from './blogHome.module.css';
 
 function Blog() {
-    return (
+  return (
     <section className={styles.blog}>
-      <RowCards {...Posts}/>
+      <BlogCards />
     </section>
   );
 }

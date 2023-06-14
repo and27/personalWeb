@@ -1,40 +1,80 @@
+.project__title {
+  text-align: left;
+}
 
-.project__cards{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: start;
-    padding-block-start: 20px;
-  }
-  
-  .project__card{
-    flex: 0 1 50%;
-    padding: 40px;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: start;
-    text-align: start;
-  }
-  
-  .project__card:nth-of-type(n+2){
-    border-inline-start: 1px solid var(--secondary-white);
-  }
+.project__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  padding-block-start: 20px;
+  gap: 80px;
+}
 
-  .project__description{
-    font-size: 0.875rem;
-    font-weight: 300;
-    line-height: 1.6;
-  }
-  
-  .link{
-    text-decoration: none;
-    color: var(--primary-white);
-    font-weight: 300;
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    
-  }
+.project__card {
+  flex: 0 1 50%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  position: relative;
+  gap: 40px;
+}
+
+.project__cardvertical {
+  flex-direction: row;
+}
+
+.project__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project__card:nth-of-type(n + 2)::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, #333, #fff);
+  top: 0;
+  left: -40px;
+}
+
+.project__subtitle {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--secondary-white);
+}
+
+.project__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: var(--primary-white);
+  margin-top: -15px;
+}
+
+.project__description {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.6;
+  line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--primary-white);
+  font-weight: 300;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
