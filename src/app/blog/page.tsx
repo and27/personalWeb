@@ -4,7 +4,7 @@ import styles from './blogHome.module.css';
 function Blog() {
   return (
     <section className={styles.blog}>
-      <BlogCards />
+      <BlogCards maxCards={100} isFeatured={true} cta="Load more" />
     </section>
   );
 }

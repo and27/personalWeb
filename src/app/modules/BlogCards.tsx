@@ -1,29 +1,17 @@
-import client from '@/lib/contentful';
 import { use } from 'react';
+import getContentfulData from '@/lib/getDataEntries';
 import RowCards, { IRowCard, IRowCards } from '../components/RowCards/RowCards';
 import getImageDataFromBlogPost from '../utils/getImageSrc';
 
-interface IPost {
-  title: string;
-  author: string;
-  date: string;
-  body: any;
-  tags: any[];
-  slug: string;
-  image: any;
+interface BlogCardsProps {
+  isFeatured?: boolean;
+  cta?: string;
+  maxCards: number;
 }
 
-const BlogCards = () => {
-  async function getData() {
-    const entries = await client.getEntries({
-      content_type: 'blogPost'
-    });
-    return entries.items;
-  }
-
-  const posts = use(getData()) as any;
-
-  const postCards = posts.map((postRaw: any): IPost => {
+const BlogCards: React.FC<BlogCardsProps> = ({ isFeatured, cta, maxCards }) => {
+  const posts = use(getContentfulData('blogPost', 1, maxCards)); //contentType, page, itemsPerPage
+  const postCards = posts.map((postRaw: any): IRowCard => {
     const post = postRaw.fields;
     const date = new Date(post.date).toLocaleString('default', {
       month: 'long',
@@ -31,35 +19,24 @@ const BlogCards = () => {
       year: 'numeric'
     });
     const { src, alt } = getImageDataFromBlogPost(postRaw);
-    const image = { src, alt };
+    const imageData = { src, alt };
 
     return {
       title: post.title,
-      author: post.author,
-      date: date,
-      body: post.body,
-      tags: post.tags,
-      slug: post.slug,
-      image: image
-    };
-  });
-
-  const finalPostCards = postCards.map((post: IPost): IRowCard => {
-    return {
-      title: post.title,
+      subtitle: date,
       description: post.body.content[0].content[0].value,
       link: `/blog/${post.slug}`,
-      subtitle: post.date,
-      image: post.image
+      image: imageData
     };
   });
 
   const Posts: IRowCards = {
     title: 'Latest posts',
-    cards: finalPostCards,
     linkLabel: 'Read post',
-    orientation: 'horizontal',
-    isClickable: true
+    orientation: 'vertical',
+    isFeatured: isFeatured,
+    cards: postCards,
+    cta: cta
   };
 
   return <RowCards {...Posts} />;
