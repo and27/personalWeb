@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Contact from './components/Contact/Contacts';
+import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
 import './globals.css';
 
@@ -26,6 +28,8 @@ export default function RootLayout({
       <body>
         <Navigation />
         {children}
+        <Contact />
+        <Footer />
       </body>
     </html>
   );

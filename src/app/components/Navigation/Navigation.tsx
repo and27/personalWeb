@@ -28,16 +28,18 @@ export default function Navigation() {
   return (
     <header className={styles.header}>
       <nav className={styles.navigation}>
-        <Image
-          src="/firma.png"
-          alt="Home link personal logo"
-          quality={100}
-          width={200}
-          height={48}
-          sizes="(max-width: 768px) 100vw,
+        <Link href="/">
+          <Image
+            src="/firma.png"
+            alt="Home link personal logo"
+            quality={100}
+            width={200}
+            height={48}
+            sizes="(max-width: 768px) 100vw,
                         (max-width: 1200px) 50vw,
                         33vw"
-        />
+          />
+        </Link>
         <ul className={styles.navigation__menu}>
           {links.map(({ to, label }) => (
             <li id={label} className={styles.menu__item}>

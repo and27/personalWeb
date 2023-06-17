@@ -1,8 +1,6 @@
 import { Inter } from 'next/font/google';
 import RowCards, { IRowCards } from './components/RowCards/RowCards';
-import Contact from './components/Contact/Contacts';
 import Masthead from './components/Masthead/Masthead';
-import Footer from './components/Footer/Footer';
 import Scurve from './components/Scurve/Scurve';
 import FeatureCards from './components/FeatureCards/FeatureCards';
 import BlogCards from './modules/BlogCards';
@@ -36,16 +34,20 @@ const Projects: IRowCards = {
   orientation: 'vertical'
 };
 
+const sCurveTitle = 'About';
+const sCurveDescription = [
+  'In a world driven by technology, we have been granted boundless opportunities to create innovative digital applications that have the power to revolutionize our lives. Yet, amidst this digital revolution, a daunting challenge looms large before us: safeguarding our invaluable digital assets from the ever-growing threats of cyberattacks, data breaches, and malicious exploitation.',
+  'My vision transcends the creation of ordinary websites and apps. I am committed to crafting extraordinary digital solutions through immersive dynamic content, robust security measures. and personalized interactions. With my guidance, you will not only protect your digital assets'
+];
+
 export default function Home() {
   return (
     <>
       <Masthead />
-      <Scurve />
+      <Scurve title={sCurveTitle} description={sCurveDescription} />
       <FeatureCards />
       <RowCards {...Projects} />
       <BlogCards maxCards={3} />
-      <Contact />
-      <Footer />
     </>
   );
 }

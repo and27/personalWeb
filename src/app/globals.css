@@ -121,3 +121,10 @@ a,
 button {
   font-family: var(--font-poppins) !important;
 }
+
+a:focus,
+input:focus,
+button:focus,
+select:focus {
+  outline-offset: 5px;
+}

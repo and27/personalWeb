@@ -77,7 +77,7 @@ export const Card: React.FC<IRowCard & CardProps> = ({
       )}
 
       <div className={styles.project__content}>
-        {subtitle && <h4 className={styles.project__subtitle}>{subtitle}</h4>}
+        {subtitle && <p className={styles.project__subtitle}>{subtitle}</p>}
         <h3 className={styles.project__title}>{title}</h3>
         <p className={styles.project__description}>{description}</p>
       </div>

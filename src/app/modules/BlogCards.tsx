@@ -1,7 +1,8 @@
 import { use } from 'react';
 import getContentfulData from '@/lib/getDataEntries';
-import RowCards, { IRowCard, IRowCards } from '../components/RowCards/RowCards';
+import RowCards, { IRowCards } from '../components/RowCards/RowCards';
 import getImageDataFromBlogPost from '../utils/getImageSrc';
+import { IRowCard } from '../components/RowCards/Card';
 
 interface BlogCardsProps {
   isFeatured?: boolean;

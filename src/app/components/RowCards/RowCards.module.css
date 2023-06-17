@@ -16,11 +16,8 @@
   text-align: left;
   position: relative;
   gap: 40px;
-  transition: all 2s ease-in-out;
+  transition: opacity 2s ease-in-out, transform 1s ease-in-out;
   animation: slideIn 1s ease-in-out forwards;
-}
-
-.project__card {
 }
 
 @keyframes slideIn {

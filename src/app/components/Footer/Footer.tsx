@@ -14,14 +14,6 @@ const links: ILinks = [
     label: 'Home'
   },
   {
-    to: '#experience',
-    label: 'What I do'
-  },
-  {
-    to: '#projects',
-    label: 'Projects'
-  },
-  {
     to: '/blog',
     label: 'Blog'
   },
