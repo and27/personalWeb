@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
   experimental: {
-    appDir: true,
+    appDir: true
   },
-  images:{
+  images: {
     domains: ['images.ctfassets.net']
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')]
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,13 +1,22 @@
+@import "~sass-mq/mq";
+
 .project__title {
   text-align: left;
 }
 
 .project__cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   padding-block-start: 20px;
   column-gap: 80px;
   row-gap: 120px;
+
+  @include mq(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .project__card {
@@ -42,7 +51,12 @@
 }
 
 .project__cardfeatured {
-  grid-column: 1 / span 3;
+  @include mq(tablet) {
+    grid-column: 1 / span 2;
+  }
+  @include mq(desktop) {
+    grid-column: 1 / span 3;
+  }
 }
 
 .project__cardfeatured.project__card {

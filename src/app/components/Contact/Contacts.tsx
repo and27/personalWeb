@@ -1,5 +1,4 @@
-import styles from './Contact.module.css';
-import globalStyles from '../../page.module.css';
+import globalStyles from '../../page.module.scss';
 
 function Contact() {
   return (

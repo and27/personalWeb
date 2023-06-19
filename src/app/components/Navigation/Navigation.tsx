@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './Navigation.module.css';
+import styles from './Navigation.module.scss';
 
 interface navLink {
   to: string;
@@ -49,6 +49,7 @@ export default function Navigation() {
             </li>
           ))}
         </ul>
+        <button className={styles.navigation__mobile_menu}>☰</button>
       </nav>
     </header>
   );

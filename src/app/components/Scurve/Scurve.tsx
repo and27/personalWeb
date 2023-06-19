@@ -1,5 +1,5 @@
-import styles from './Scurve.module.css';
-import globalStyles from '../../page.module.css';
+import styles from './Scurve.module.scss';
+import globalStyles from '../../page.module.scss';
 import Image from 'next/image';
 
 interface IScurve {

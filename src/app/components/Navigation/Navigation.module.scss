@@ -1,3 +1,5 @@
+@import "~sass-mq/mq";
+
 .header {
   height: 100px;
   display: flex;
@@ -12,10 +14,28 @@
 }
 
 .navigation__menu {
-  display: flex;
-  gap: 48px;
-  padding: 40px;
+  display: none;
+
+  @include mq(tablet) {
+    display: flex;
+    gap: 48px;
+    padding: 40px;
+    margin-left: auto;
+  }
+}
+
+.navigation__mobile_menu {
+  display: block;
   margin-left: auto;
+  font-size: 32px;
+  background: none;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+
+  @include mq(tablet) {
+    display: none;
+  }
 }
 
 .menu__item {

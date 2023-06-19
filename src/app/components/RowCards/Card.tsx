@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './RowCards.module.css';
+import styles from './RowCards.module.scss';
 
 type imageData = {
   src: string;

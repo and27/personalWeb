@@ -1,7 +1,7 @@
 'use client';
 
-import styles from './RowCards.module.css';
-import globalStyles from '../../page.module.css';
+import styles from './RowCards.module.scss';
+import globalStyles from '../../page.module.scss';
 import React, { useState } from 'react';
 import { Card, IRowCard } from './Card';
 

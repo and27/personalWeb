@@ -1,5 +1,5 @@
-import styles from './Masthead.module.css';
-import globalStyles from '../../page.module.css';
+import styles from './Masthead.module.scss';
+import globalStyles from '../../page.module.scss';
 
 function Masthead() {
   return (

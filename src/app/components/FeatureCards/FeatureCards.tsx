@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './FeatureCards.module.css';
-import globalStyles from '../../page.module.css';
+import globalStyles from '../../page.module.scss';
 
 const FeatureCards = () => (
   <section className={globalStyles.section}>

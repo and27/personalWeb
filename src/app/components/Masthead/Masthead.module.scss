@@ -1,35 +1,44 @@
-.section,
-.projects,
-.contact,
-.masthead,
-.scurve {
-  padding-block: 100px;
-  font-family: var(--font-paytone);
+@import "~sass-mq/mq";
+
+.masthead__inner {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  block-size: calc(100vh - 100px);
 }
 
-.masthead {
-  padding-block-start: 0;
-}
-
-.projects {
-  text-align: center;
-}
-
-.contact {
+.masthead__content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   text-align: center;
 }
 
-.container {
-  max-inline-size: 1280px;
-  width: 100%;
-  padding-inline: 160px;
-  margin: 0 auto;
+.masthead__title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--primary-white);
+
+  @include mq(tablet) {
+    font-size: 3rem;
+  }
+  @include mq(desktop) {
+    font-size: 4rem;
+  }
 }
 
-.btn {
+.masthead__description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 500px;
+  color: var(--secondary-white);
+}
+
+.masthead__btn {
   letter-spacing: 3px;
   font-weight: 300;
   text-transform: uppercase;
@@ -42,9 +51,10 @@
   color: var(--primary-white);
   position: relative;
   transition: background-color 0.3s ease-in-out;
+  line-height: 1.2;
 }
 
-.btn:hover {
+.masthead__btn:hover {
   cursor: pointer;
   border-block: 1px solid transparent;
   background-color: black;
@@ -59,40 +69,26 @@
   }
 }
 
-.btn:hover::after,
-.btn:hover::before {
+.masthead__btn:hover::after,
+.masthead__btn:hover::before {
   animation: cta 0.5s ease-in-out both;
 }
 
-.btn::after,
-.btn::before {
+.masthead__btn::after,
+.masthead__btn::before {
   position: absolute;
-  inline-size: 100%;
+  inline-size: 0;
   content: "";
   height: 1px;
   background-color: var(--primary-white);
   transition: width 0.3s ease-in-out;
 }
 
-.btn::after {
+.masthead__btn::after {
   inset-inline-start: 0;
   inset-block-end: -1px;
 }
-.btn::before {
+.masthead__btn::before {
   inset-inline-end: 0;
   inset-block-start: -1px;
-}
-
-.section__title {
-  margin-block-end: 40px;
-  font-size: 2rem;
-  letter-spacing: 1px;
-  position: relative;
-  margin-inline: auto;
-}
-
-.section__text {
-  font-size: 0.875rem;
-  font-weight: 300;
-  line-height: 1.6;
 }
