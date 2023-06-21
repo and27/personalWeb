@@ -1,7 +1,7 @@
 import { use } from 'react';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import styles from './blog.module.css';
+import styles from './blog.module.scss';
 import globalStyles from '../../page.module.scss';
 import client from '../../../lib/contentful';
 import getImageDataFromBlogPost from '@/app/utils/getImageSrc';

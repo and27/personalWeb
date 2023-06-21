@@ -1,8 +1,14 @@
+@import "~sass-mq/mq";
+
 .blog {
-  margin-block: 100px;
+  margin-block: 60px;
   max-inline-size: 1024px;
   margin-inline: auto;
   font-family: var(--font-paytone);
+
+  @include mq(tablet) {
+    margin-block: 100px;
+  }
 }
 
 .blog h2 {
@@ -11,12 +17,20 @@
 
 .blog__title {
   color: var(--primary-white);
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-block-end: 80px;
+  margin-block-end: 40px;
   margin-block-start: 20px;
   line-height: 1.2;
-  /* letter-spacing: 1.2px; */
+
+  @include mq(tablet) {
+    font-size: 3rem;
+    margin-block-end: 80px;
+  }
+
+  @include mq(desktop) {
+    font-size: 3.5rem;
+  }
 }
 
 .blog__tags {
@@ -38,18 +52,26 @@
 .blog__image {
   background-color: var(--primary-white);
   width: 100%;
-  margin-block-end: 80px;
+  margin-block-end: 40px;
   object-fit: cover;
   object-position: center right;
+
+  @include mq(tablet) {
+    margin-block-end: 80px;
+  }
 }
 
 .blog p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
   margin-block-end: 1rem;
   font-weight: 400;
   color: var(--secondary-white);
   margin-block-end: 1.5rem;
+
+  @include mq(desktop) {
+    font-size: 1.1rem;
+  }
 }
 
 .blog h2 {

@@ -1,5 +1,7 @@
+'use client';
 import styles from './Masthead.module.scss';
 import globalStyles from '../../page.module.scss';
+import { motion } from 'framer-motion';
 
 function Masthead() {
   return (

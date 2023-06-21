@@ -4,7 +4,11 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  block-size: calc(100vh - 100px);
+  block-size: calc(90vh - 100px);
+
+  @include mq(tablet) {
+    block-size: calc(100vh - 100px);
+  }
 }
 
 .masthead__content {

@@ -1,6 +1,9 @@
+'use client';
 import styles from './Scurve.module.scss';
 import globalStyles from '../../page.module.scss';
 import Image from 'next/image';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 interface IScurve {
   title: string;
@@ -8,8 +11,20 @@ interface IScurve {
 }
 
 const Scurve: React.FC<IScurve> = ({ title, description }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['-500px', '-100px']
+  });
+  const x = useSpring(useTransform(scrollYProgress, [0, 1], [300, 0]), {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+  const opacity = scrollYProgress;
+
   return (
-    <section className={globalStyles.scurve}>
+    <section className={globalStyles.scurve} ref={ref}>
       <div className={globalStyles.container}>
         <div className={styles.scurve__inner}>
           <div className={styles.scurve__content}>
@@ -18,9 +33,9 @@ const Scurve: React.FC<IScurve> = ({ title, description }) => {
               <p className={globalStyles.section__text}>{description}</p>
             ))}
           </div>
-          <div className={styles.scurve__media}>
+          <motion.div style={{ x, opacity }} className={styles.scurve__media}>
             <Image src="/website.png" width={300} height={300} alt="" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
