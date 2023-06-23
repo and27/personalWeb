@@ -19,39 +19,44 @@
   text-align: center;
 }
 
+.masthead__title_dark {
+  // background-color: black;
+  // padding-inline: 15px;
+}
+
 .masthead__title {
   font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
   line-height: 1.2;
+  letter-spacing: -1.5px;
   color: var(--primary-white);
 
   @include mq(tablet) {
     font-size: 3rem;
   }
   @include mq(desktop) {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 
 .masthead__description {
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 300;
   max-width: 500px;
   color: var(--secondary-white);
 }
 
 .masthead__btn {
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-weight: 300;
-  text-transform: uppercase;
   padding-block: 0.875rem;
   padding-inline: 2.5rem;
   border: 1px solid var(--primary-white);
   background-color: transparent;
   inline-size: fit-content;
-  margin-block-start: 20px;
+  margin-block-start: 2rem;
   color: var(--primary-white);
   position: relative;
   transition: background-color 0.3s ease-in-out;

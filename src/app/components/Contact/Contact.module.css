@@ -1,7 +1,6 @@
 .contact__btn {
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-weight: 300;
-  text-transform: uppercase;
   padding-block: 0.875rem;
   padding-inline: 2.5rem;
   border: 1px solid var(--primary-white);

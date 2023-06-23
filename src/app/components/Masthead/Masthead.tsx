@@ -10,8 +10,12 @@ function Masthead() {
         <div className={styles.masthead__inner}>
           <header className={styles.masthead__content}>
             <h1 className={styles.masthead__title}>
-              Hi, I'm Andrés,
-              <br /> Security & Web Developer.
+              <span>Hi, I'm Andrés,</span>
+              <br />
+              <span className={styles.masthead__title_dark}>
+                Security
+              </span> & <span className={styles.masthead__title_dark}>Web</span>{' '}
+              Developer.
             </h1>
             <p className={styles.masthead__description}>
               Taking your online presence to the next level with security-driven

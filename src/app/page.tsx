@@ -36,8 +36,8 @@ const Projects: IRowCards = {
 
 const sCurveTitle = 'About';
 const sCurveDescription = [
-  'In a world driven by technology, we have been granted boundless opportunities to create innovative digital applications that have the power to revolutionize our lives. Yet, amidst this digital revolution, a daunting challenge looms large before us: safeguarding our invaluable digital assets from the ever-growing threats of cyberattacks, data breaches, and malicious exploitation.',
-  'My vision transcends the creation of ordinary websites and apps. I am committed to crafting extraordinary digital solutions through immersive dynamic content, robust security measures. and personalized interactions. With my guidance, you will not only protect your digital assets'
+  'In our tech-driven world, we can innovate digital apps that transform lives. But we face a daunting task: securing our precious digital assets from cyber threats and data breaches.',
+  'My vision goes beyond ordinary websites. I want to create a digital experience that is secure, personalized, and dynamic. I want to help you build a digital presence that is unique and memorable.'
 ];
 
 export default function Home() {

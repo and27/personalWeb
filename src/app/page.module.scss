@@ -6,7 +6,7 @@
 .masthead,
 .scurve {
   padding-block: 40px;
-  font-family: var(--font-paytone);
+  font-family: var(--font-montserrat);
 
   @include mq(tablet) {
     padding-block: 80px;
@@ -47,15 +47,15 @@
 }
 
 .btn {
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-weight: 300;
-  text-transform: uppercase;
+  font-size: 1rem;
   padding-block: 0.875rem;
   padding-inline: 2.5rem;
   border: 1px solid var(--primary-white);
   background-color: transparent;
   inline-size: fit-content;
-  margin-block-start: 20px;
+  margin-block-start: 32px;
   color: var(--primary-white);
   position: relative;
   transition: background-color 0.3s ease-in-out;
@@ -109,7 +109,10 @@
 }
 
 .section__text {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.5;
+  max-inline-size: 500px;
+  margin-inline: auto;
+  color: var(--secondary-white);
 }

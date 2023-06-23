@@ -46,6 +46,7 @@ function BlogPost({ params }: any) {
           className={styles.blog__image}
           width={image.width}
           height={imgHeight}
+          loading="eager"
           sizes="(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
                   33vw"

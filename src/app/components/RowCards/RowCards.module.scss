@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: 1fr;
   padding-block-start: 20px;
-  column-gap: 80px;
+  column-gap: 64px;
   row-gap: 120px;
 
   @include mq(tablet) {
@@ -24,9 +24,27 @@
   flex-direction: column;
   text-align: left;
   position: relative;
-  gap: 40px;
-  transition: opacity 2s ease-in-out, transform 1s ease-in-out;
+  gap: 36px;
+  transition: opacity 2s ease-in-out;
   animation: slideIn 1s ease-in-out forwards;
+
+  h3 {
+    transition: text-decoration-color 0.3s ease-in-out;
+    text-underline-offset: 3px;
+    text-decoration: underline;
+    text-decoration-thickness: 0.8px;
+    text-decoration-color: transparent !important;
+  }
+
+  &:hover {
+    .project__image {
+      transform: scale(1.2);
+    }
+    .project__title {
+      text-decoration-color: var(--secondary-white) !important;
+      text-decoration-thickness: 0.8px;
+    }
+  }
 }
 
 @keyframes slideIn {
@@ -42,12 +60,14 @@
 
 .project__image_container {
   inline-size: 100%;
-  block-size: 180px;
+  block-size: 240px;
   position: relative;
+  overflow: hidden;
 }
 
 .project__image {
   object-fit: cover;
+  transition: transform 0.8s ease-in-out;
 }
 
 .project__cardfeatured {
@@ -71,7 +91,7 @@
 .project__content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   text-align: left;
 }
 
@@ -85,7 +105,7 @@
   height: 100%;
   background: linear-gradient(to bottom, transparent, #444, #fff);
   top: 0;
-  left: -40px;
+  left: -32px;
 }
 
 .project__cardfeatured ~ .project__card:nth-of-type(3n + 3)::after {
@@ -100,26 +120,23 @@
 }
 
 .project__subtitle {
-  font-size: 0.875rem;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--secondary-white);
+  font-size: 1rem;
+  font-weight: 400;
+  color: #999;
 }
 
 .project__title {
-  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 1px;
+  font-size: 1.2rem;
   color: var(--primary-white);
-  margin-top: -15px;
 }
 
 .project__description {
-  font-size: 0.875rem;
+  color: var(--secondary-white);
+  font-size: 1rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.5;
   line-clamp: 3;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -133,5 +150,4 @@
   font-weight: 300;
   font-size: 0.875rem;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
