@@ -5,6 +5,7 @@ import styles from './RowCards.module.scss';
 type imageData = {
   src: string;
   alt: string;
+  title: string;
 };
 
 export interface IRowCard {
@@ -72,6 +73,7 @@ export const Card: React.FC<IRowCard & CardProps> = ({
             alt={image?.alt}
             className={styles.project__image}
             fill
+            title={image?.title}
           />
         </div>
       )}

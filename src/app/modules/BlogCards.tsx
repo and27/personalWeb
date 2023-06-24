@@ -19,8 +19,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({ isFeatured, cta, maxCards }) => {
       day: 'numeric',
       year: 'numeric'
     });
-    const { src, alt } = getImageDataFromBlogPost(postRaw);
-    const imageData = { src, alt };
+    const imageData = getImageDataFromBlogPost(postRaw);
 
     return {
       title: post.title,

@@ -4,12 +4,14 @@ const getImageDataFromBlogPost = (blogPost: any) => {
   const imgHeight = img.file.details.image.width;
   const imgSrc = `https:${img.file.url}`;
   const imgDescription = img.description;
+  const imgTitle = img.title;
 
   return {
     width: imgWidth,
     height: imgHeight,
     src: imgSrc,
-    alt: imgDescription
+    alt: imgDescription,
+    title: imgTitle
   };
 };
 export default getImageDataFromBlogPost;

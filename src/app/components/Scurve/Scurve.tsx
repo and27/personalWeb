@@ -34,7 +34,13 @@ const Scurve: React.FC<IScurve> = ({ title, description }) => {
             ))}
           </div>
           <motion.div style={{ x, opacity }} className={styles.scurve__media}>
-            <Image src="/website.png" width={300} height={300} alt="" />
+            <Image
+              src="/website.png"
+              width={300}
+              height={300}
+              alt="Web application"
+              title="Web application"
+            />
           </motion.div>
         </div>
       </div>
