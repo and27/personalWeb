@@ -1,0 +1,24 @@
+{
+  "mastheadInfo": {
+    "title": "Salut, je suis Andrés, Développeur en sécurité et web.",
+    "description": "Faire passer votre présence en ligne au niveau supérieur avec des applications web axées sur la sécurité.",
+    "cta": "Contactez-moi"
+  },
+  "menu": [
+    {
+      "title": "Accueil",
+      "to": "/fr",
+      "label": "Accueil"
+    },
+    {
+      "title": "Blog",
+      "to": "/fr/blog",
+      "label": "Blog"
+    },
+    {
+      "title": "Contact",
+      "to": "/fr/contact",
+      "label": "Contact"
+    }
+  ]
+}

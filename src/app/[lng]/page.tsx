@@ -1,11 +1,10 @@
-import { Inter } from 'next/font/google';
 import RowCards, { IRowCards } from './components/RowCards/RowCards';
 import Masthead from './components/Masthead/Masthead';
 import Scurve from './components/Scurve/Scurve';
 import FeatureCards from './components/FeatureCards/FeatureCards';
 import BlogCards from './modules/BlogCards';
-
-const inter = Inter({ subsets: ['latin'] });
+import { getDictionary } from './dictionaries';
+import Navigation from './components/Navigation/Navigation';
 
 const ProjectCards = [
   {
@@ -40,10 +39,13 @@ const sCurveDescription = [
   'My vision goes beyond ordinary websites. I want to create a digital experience that is secure, personalized, and dynamic. I want to help you build a digital presence that is unique and memorable.'
 ];
 
-export default function Home() {
+export default async function Home({ params }: any) {
+  const dict = await getDictionary(params?.lng);
+  const mastheadInfo = dict.mastheadInfo;
+
   return (
     <>
-      <Masthead />
+      <Masthead {...mastheadInfo} />
       <Scurve title={sCurveTitle} description={sCurveDescription} />
       <FeatureCards />
       <RowCards {...Projects} />

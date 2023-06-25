@@ -1,7 +1,7 @@
-import Head from 'next/head';
 import Contact from './components/Contact/Contacts';
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
+import { getDictionary } from './dictionaries';
 import './globals.css';
 
 export const metadata = {
@@ -12,11 +12,15 @@ export const metadata = {
   keywords: ['personal web', 'online presence', 'web applications', 'security']
 };
 
-export default function RootLayout({
-  children
+export default async function RootLayout({
+  children,
+  params
 }: {
   children: React.ReactNode;
+  params: any;
 }) {
+  const dict = await getDictionary(params?.lng || 'en');
+
   return (
     <html lang="en" style={{ scrollBehavior: 'smooth' }}>
       <head>
@@ -29,7 +33,7 @@ export default function RootLayout({
       </head>
 
       <body>
-        <Navigation />
+        <Navigation dict={dict} />
         {children}
         <Contact />
         <Footer />

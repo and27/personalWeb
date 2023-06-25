@@ -1,0 +1,24 @@
+{
+  "mastheadInfo": {
+    "title": "Hi, I'm Andres, Security and Web developer.",
+    "description": " Taking your online presence to the next level with security-driven web applications.",
+    "cta": "Let's talk"
+  },
+  "menu": [
+    {
+      "title": "Home Page",
+      "to": "/",
+      "label": "Home"
+    },
+    {
+      "title": "Blog",
+      "to": "/blog",
+      "label": "Blog"
+    },
+    {
+      "title": "Contact",
+      "to": "/contact",
+      "label": "Contact"
+    }
+  ]
+}

@@ -22,12 +22,11 @@ const RowCards: React.FC<IRowCards> = ({
   isFeatured,
   cta
 }) => {
-  const cards2 = [...(cards as []), ...(cards as [])];
   const [page, setPage] = useState(0);
   const extraCards = isFeatured ? 1 : 0;
   const cardsPerPage = 3;
-  const cardsToShow = cards2?.slice(0, cardsPerPage * (page + 1) + extraCards);
-  const cardsLeft = (cards2?.length || 0) - (cardsToShow?.length || 0);
+  const cardsToShow = cards?.slice(0, cardsPerPage * (page + 1) + extraCards);
+  const cardsLeft = (cards?.length || 0) - (cardsToShow?.length || 0);
 
   const handleLoadMore = () => {
     setPage(page + 1);

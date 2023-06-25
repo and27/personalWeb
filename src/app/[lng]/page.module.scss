@@ -103,16 +103,14 @@
 .section__title {
   margin-block-end: 40px;
   font-size: 2rem;
-  letter-spacing: 1px;
+  letter-spacing: -0.5px;
   position: relative;
-  margin-inline: auto;
+  color: var(--primary-white);
 }
 
 .section__text {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
-  max-inline-size: 500px;
-  margin-inline: auto;
   color: var(--secondary-white);
 }

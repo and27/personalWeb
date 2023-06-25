@@ -28,9 +28,11 @@ const Scurve: React.FC<IScurve> = ({ title, description }) => {
       <div className={globalStyles.container}>
         <div className={styles.scurve__inner}>
           <div className={styles.scurve__content}>
-            <h2 className={styles.scurve__title}>About</h2>
-            {description.map(description => (
-              <p className={globalStyles.section__text}>{description}</p>
+            <h2 className={`${globalStyles.section__title}`}>About</h2>
+            {description.map((description, idx) => (
+              <p className={globalStyles.section__text} key={idx}>
+                {description}
+              </p>
             ))}
           </div>
           <motion.div style={{ x, opacity }} className={styles.scurve__media}>

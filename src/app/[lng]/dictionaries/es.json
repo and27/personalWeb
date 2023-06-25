@@ -1,0 +1,24 @@
+{
+  "mastheadInfo": {
+    "title": "Hola, Soy Andres, desarrollador web y ciberseguridad",
+    "description": "Llevando tu presencia en línea al siguiente nivel con aplicaciones web centradas en la seguridad",
+    "cta": "Hablemos"
+  },
+  "menu": [
+    {
+      "title": "Inicio",
+      "to": "/es",
+      "label": "Inicio"
+    },
+    {
+      "title": "Blog",
+      "to": "/es/blog",
+      "label": "Blog"
+    },
+    {
+      "title": "Contacto",
+      "to": "/es/contact",
+      "label": "Contacto"
+    }
+  ]
+}

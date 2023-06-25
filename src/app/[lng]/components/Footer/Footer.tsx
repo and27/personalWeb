@@ -29,7 +29,7 @@ export default function Footer() {
       <nav>
         <ul className={styles.menu}>
           {links.map(({ to, label }) => (
-            <li className={styles.menu__item}>
+            <li className={styles.menu__item} key={label}>
               <Link href={to} className={styles.menu__link} id={label}>
                 {label}
               </Link>

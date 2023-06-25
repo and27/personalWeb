@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from './blog.module.scss';
 import globalStyles from '../../page.module.scss';
-import client from '../../../lib/contentful';
-import getImageDataFromBlogPost from '@/app/utils/getImageSrc';
+import client from '../../../../lib/contentful';
+import getImageDataFromBlogPost from '../../utils/getImageSrc';
 
 function renderRichText(richTextField: any) {
   return documentToReactComponents(richTextField);
@@ -52,8 +52,8 @@ function BlogPost({ params }: any) {
                   33vw"
         />
         <ul className={styles.blog__tags}>
-          {blogPost?.fields.tags.map((tag: any) => (
-            <li>{tag.fields.name}</li>
+          {blogPost?.fields.tags.map((tag: any, idx: number) => (
+            <li key={idx}>{tag.fields.name}</li>
           ))}
         </ul>
         {renderRichText(richTextField)}
