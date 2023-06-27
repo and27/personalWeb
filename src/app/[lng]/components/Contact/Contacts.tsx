@@ -1,7 +1,15 @@
+'use client';
 import globalStyles from '../../page.module.scss';
 import styles from './contact.module.scss';
 
 function Contact() {
+  const handleOnContact = () => {
+    window.Calendly.initPopupWidget({
+      url: 'https://calendly.com/andres-banda/15min'
+    });
+    console.log(window.Calendly);
+  };
+
   return (
     <section className={globalStyles.contact} id="contact">
       <div className={globalStyles.container}>
@@ -13,7 +21,9 @@ function Contact() {
           Set up a call to discover how we can create an innovative digital
           experience together
         </p>
-        <button className={globalStyles.btn}>Schedule a 15 min meeting</button>
+        <button className={globalStyles.btn} onClick={handleOnContact}>
+          Schedule a 15 min meeting
+        </button>
       </div>
     </section>
   );
