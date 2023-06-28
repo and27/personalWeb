@@ -1,0 +1,22 @@
+.contactSection__inner {
+  display: flex;
+  justify-content: space-between;
+  min-height: 70vh;
+}
+
+.contactSection__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 48px;
+    margin-top: 100px;
+  }
+}
+
+.contactSection__container__form {
+  width: 500px;
+  height: 500px;
+  border: 1px solid white;
+}

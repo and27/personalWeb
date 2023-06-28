@@ -31,7 +31,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({ isFeatured, cta, maxCards }) => {
   });
 
   const Posts: IRowCards = {
-    title: 'Latest posts',
+    title: 'Writing',
     linkLabel: 'Read post',
     orientation: 'vertical',
     isFeatured: isFeatured,
