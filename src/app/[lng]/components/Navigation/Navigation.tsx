@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { getDictionary } from '../../dictionaries';
 import styles from './Navigation.module.scss';
+import Logo from "../../../../../public/firma.png"
 
 interface navLink {
   to: string;
@@ -27,7 +27,7 @@ export default function Navigation({ dict }: any) {
       <nav className={styles.navigation}>
         <Link href="/">
           <Image
-            src="/firma.png"
+            src={Logo}
             alt="Home link personal logo"
             quality={100}
             width={200}

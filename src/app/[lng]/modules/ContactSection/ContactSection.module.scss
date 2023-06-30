@@ -1,0 +1,41 @@
+.contactSection__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 64px; 
+  text-align: left;
+}
+
+.contactSection__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 48px;
+    font-family: var(--font-montserrat);
+    line-height: 1.2;
+    letter-spacing: -0.5%;
+  }
+}
+
+.contactSection__content__inline {
+  gap: 48px;
+  justify-content: flex-start;
+  h2 {
+    font-size: 32px;
+    font-family: var(--font-montserrat);
+    line-height: 1.2;
+    letter-spacing: -0.5%;
+  }
+}
+
+.contactSection__social {
+  padding-block-end: 16px;
+  display:flex; 
+  gap: 16px;
+}
+
+.btn {
+  align-self: center;
+  flex-shrink: 0;
+}

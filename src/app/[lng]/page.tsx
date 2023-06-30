@@ -4,7 +4,7 @@ import Scurve from './components/Scurve/Scurve';
 import FeatureCards from './components/FeatureCards/FeatureCards';
 import BlogCards from './modules/BlogCards';
 import { getDictionary } from './dictionaries';
-import Navigation from './components/Navigation/Navigation';
+import Contact from './contact/page';
 
 const ProjectCards = [
   {
@@ -35,13 +35,17 @@ const Projects: IRowCards = {
 
 const sCurveTitle = 'About';
 const sCurveDescription = [
-  'In our tech-driven world, we can innovate digital apps that transform lives. But we face a daunting task: securing our precious digital assets from cyber threats and data breaches.',
-  'My vision goes beyond ordinary websites. I want to create a digital experience that is secure, personalized, and dynamic. I want to help you build a digital presence that is unique and memorable.'
+  'Welcome to my personal website. I am a passionate web developer working on making the internet a safer and more accessible place for everyone.',
+  "Explore my portfolio, learn more about my work, and le'ts create a digital experience that brings joy to your customers and drives remarkable returns."
 ];
 
 export default async function Home({ params }: any) {
   const dict = await getDictionary(params?.lng);
-  const mastheadInfo = dict.mastheadInfo;
+  const mastheadInfo = dict?.mastheadInfo || {
+    title: '',
+    description: '',
+    cta: ''
+  };
 
   return (
     <>
@@ -50,6 +54,7 @@ export default async function Home({ params }: any) {
       <FeatureCards />
       <RowCards {...Projects} />
       <BlogCards maxCards={3} />
+      <Contact layout={'inline'} />
     </>
   );
 }
