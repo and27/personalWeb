@@ -1,4 +1,3 @@
-import Contact from './components/Contact/Contacts';
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
 import { getDictionary } from './dictionaries';
@@ -34,17 +33,11 @@ export default async function RootLayout({
           href="https://assets.calendly.com/assets/external/widget.css"
           rel="stylesheet"
         />
-        <script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          type="text/javascript"
-          async
-        ></script>
       </head>
 
       <body>
         <Navigation dict={dict} />
         {children}
-        <Contact />
         <Footer />
       </body>
     </html>

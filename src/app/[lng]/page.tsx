@@ -4,7 +4,7 @@ import Scurve from './components/Scurve/Scurve';
 import FeatureCards from './components/FeatureCards/FeatureCards';
 import BlogCards from './modules/BlogCards';
 import { getDictionary } from './dictionaries';
-import Navigation from './components/Navigation/Navigation';
+import Contact from './contact/page';
 
 const ProjectCards = [
   {
@@ -41,7 +41,11 @@ const sCurveDescription = [
 
 export default async function Home({ params }: any) {
   const dict = await getDictionary(params?.lng);
-  const mastheadInfo = dict.mastheadInfo;
+  const mastheadInfo = dict?.mastheadInfo || {
+    title: '',
+    description: '',
+    cta: ''
+  };
 
   return (
     <>
@@ -50,6 +54,7 @@ export default async function Home({ params }: any) {
       <FeatureCards />
       <RowCards {...Projects} />
       <BlogCards maxCards={3} />
+      <Contact layout={'inline'} />
     </>
   );
 }

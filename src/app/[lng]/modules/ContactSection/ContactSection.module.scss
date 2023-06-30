@@ -1,7 +1,8 @@
 .contactSection__inner {
   display: flex;
   justify-content: space-between;
-  min-height: 70vh;
+  gap: 64px; 
+  text-align: left;
 }
 
 .contactSection__content {
@@ -11,12 +12,30 @@
 
   h1 {
     font-size: 48px;
-    margin-top: 100px;
+    font-family: var(--font-montserrat);
+    line-height: 1.2;
+    letter-spacing: -0.5%;
   }
 }
 
-.contactSection__container__form {
-  width: 500px;
-  height: 500px;
-  border: 1px solid white;
+.contactSection__content__inline {
+  gap: 48px;
+  justify-content: flex-start;
+  h2 {
+    font-size: 32px;
+    font-family: var(--font-montserrat);
+    line-height: 1.2;
+    letter-spacing: -0.5%;
+  }
+}
+
+.contactSection__social {
+  padding-block-end: 16px;
+  display:flex; 
+  gap: 16px;
+}
+
+.btn {
+  align-self: center;
+  flex-shrink: 0;
 }

@@ -1,8 +1,8 @@
 import ContactSection from '../modules/ContactSection/ContactSection';
 
-const Contact = () => {
+const Contact = ({layout}:{layout:string}) => {
   {
-    return <ContactSection />;
+    return <ContactSection layout={layout}/>;
   }
 };
 

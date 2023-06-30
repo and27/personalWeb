@@ -1,17 +1,13 @@
 'use client';
+import { useEffect, useRef } from 'react';
 import globalStyles from '../../page.module.scss';
 import styles from './contact.module.scss';
+import { InlineWidget } from 'react-calendly';
 
 function Contact() {
-  const handleOnContact = () => {
-    window.Calendly.initPopupWidget({
-      url: 'https://calendly.com/andres-banda/15min'
-    });
-    console.log(window.Calendly);
-  };
 
   return (
-    <section className={globalStyles.contact} id="contact">
+    <section  className={`${globalStyles.contact} calendly-inline-widget`} id="contact" data-url="https://calendly.com/andres-banda/15min">
       <div className={globalStyles.container}>
         <h2 className={globalStyles.section__title}>Let's talk</h2>
         <p className={`${globalStyles.section__text} ${styles.contact__text}`}>
@@ -21,7 +17,7 @@ function Contact() {
           Set up a call to discover how we can create an innovative digital
           experience together
         </p>
-        <button className={globalStyles.btn} onClick={handleOnContact}>
+        <button className={globalStyles.btn} >
           Schedule a 15 min meeting
         </button>
       </div>
