@@ -99,10 +99,14 @@
 
 .menu__link {
   text-decoration: none;
-  color: var(--primary-white);
+  color: #aaa;
   font-weight: 300;
   font-size: 1rem;
   position: relative;
+}
+
+.menu__active{
+  color: var(--primary-white);
 }
 
 .menu__item:hover .menu__link::after {
@@ -116,7 +120,19 @@
   inset-inline-start: 0;
   inset-block-end: 0;
   content: "";
-  height: 1px;
+  height: 0.5px;
   background-color: var(--primary-white);
+  transition: width 0.3s ease-in-out;
+}
+
+.menu__link::before {
+  position: absolute;
+  inline-size: 10px;
+  block-size: 100%;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  content: "";
+  height: 0.5px;
+  background-color: var(--secondary-white);
   transition: width 0.3s ease-in-out;
 }

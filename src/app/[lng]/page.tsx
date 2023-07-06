@@ -5,19 +5,35 @@ import FeatureCards from './components/FeatureCards/FeatureCards';
 import BlogCards from './modules/BlogCards';
 import { getDictionary } from './dictionaries';
 import Contact from './contact/page';
+import CiodesiaImg from '../../../public/ciodesia.svg';
+import Codercat from '../../../public/codercat.png';
 
 const ProjectCards = [
   {
     title: 'Ciodesia',
     description:
       'Ciodesia is an education platform to provide training and services related to geography.',
-    link: ''
+    link: '',
+    image: {
+      src: CiodesiaImg,
+      width: 100,
+      heigth: 100,
+      alt: '',
+      title: ''
+    }
   },
   {
-    title: 'Secure Lab',
+    title: 'Codercat',
     description:
-      'Secure Lab (Hacker Club) is a cybersecurity training platform for IT professionals.',
-    link: ''
+      'Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.',
+    link: '',
+    image: {
+      src: Codercat,
+      width: 150,
+      heigth: 100,
+      alt: '',
+      title: ''
+    }
   },
   {
     title: 'Snacks',

@@ -6,6 +6,7 @@ import globalStyles from '../../page.module.scss';
 import client from '../../../../lib/contentful';
 import getImageDataFromBlogPost from '../../utils/getImageSrc';
 
+
 function renderRichText(richTextField: any) {
   return documentToReactComponents(richTextField);
 }

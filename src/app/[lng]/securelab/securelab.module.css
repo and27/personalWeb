@@ -1,0 +1,28 @@
+.containerInner {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  margin-inline: auto;
+  width: 100%;
+  gap: 100px;
+  padding-block: 40px;
+  font-family: var(--font-montserrat);
+  color: var(--secondary-white);
+}
+
+@media (width >= 1024px) {
+  .containerInner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (width >= 1440px) {
+  .containerInner {
+    padding-inline: 120px;
+  }
+}
+
+.content p {
+  margin-block-start: 20px;
+}

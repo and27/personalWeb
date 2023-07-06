@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Linkedin from '../../../../../public/linkedin.svg';
 import Github from '../../../../../public/github.svg';
 import Twitter from '../../../../../public/twitter.svg';
+import Link from 'next/link';
 
 interface IContactSectionProps {
   layout: string;
@@ -28,11 +29,21 @@ const ContactSection: React.FC<IContactSectionProps> = ({
           {layout === 'inline' && <h2>Let's create something extraordinary</h2>}
           <div className={styles.contactSection__contact_data}>
             <div className={styles.contactSection__social}>
-              <Image width={20} height={20} alt="" src={Linkedin} />
-
-              <Image width={20} height={20} alt="" src={Twitter} />
-
-              <Image width={20} height={20} alt="" src={Github} />
+              <Link
+                href={'https://www.linkedin.com/in/andres-banda'}
+                target="_blank"
+              >
+                <Image width={20} height={20} alt="" src={Linkedin} />
+              </Link>
+              {/* <Link
+                href={'https://www.twitter.com'}
+                target="_blank"
+              >
+                <Image width={20} height={20} alt="" src={Twitter} />
+              </Link> */}
+              <Link href={'https://github.com/and27'} target="_blank">
+                <Image width={20} height={20} alt="" src={Github} />
+              </Link>
             </div>
             <p>andres.banda.sm@gmail.com</p>
           </div>

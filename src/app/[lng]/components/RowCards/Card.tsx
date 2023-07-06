@@ -6,14 +6,16 @@ type imageData = {
   src: string;
   alt: string;
   title: string;
+  width?: number;
+  height?: number;
 };
 
 export interface IRowCard {
   title: string;
+  subtitle?: string;
   description: string;
   link: string;
   linkLabel?: string;
-  subtitle?: string;
   image?: imageData;
   isFeatured?: boolean;
 }
@@ -52,19 +54,18 @@ type CardProps = {
 
 export const Card: React.FC<IRowCard & CardProps> = ({
   title,
+  subtitle,
   description,
   link,
-  subtitle,
   image,
-  orientation,
   isFeatured
 }) => {
   return (
     <Wrapper
       href={link}
       className={`${styles.project__card} ${
-        orientation === 'horizontal' && styles.project__cardvertical
-      } ${isFeatured ? styles.project__cardfeatured : ''}`}
+        isFeatured && styles.project__cardfeatured
+      }`}
     >
       {image && (
         <div className={styles.project__image_container}>
@@ -72,12 +73,13 @@ export const Card: React.FC<IRowCard & CardProps> = ({
             src={image?.src}
             alt={image?.alt}
             className={styles.project__image}
-            fill
+            height={image.height}
+            width={image.width || 500}
             title={image?.title}
+            style={{ width: image.width || '100%' }}
           />
         </div>
       )}
-
       <div className={styles.project__content}>
         {subtitle && <p className={styles.project__subtitle}>{subtitle}</p>}
         <h3 className={styles.project__title}>{title}</h3>

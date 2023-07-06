@@ -18,7 +18,6 @@ const RowCards: React.FC<IRowCards> = ({
   title,
   cards,
   linkLabel,
-  orientation,
   isFeatured,
   cta
 }) => {
@@ -51,9 +50,6 @@ const RowCards: React.FC<IRowCards> = ({
               subtitle={card.subtitle}
               image={card.image}
               isFeatured={isFeatured && index === 0}
-              orientation={
-                isFeatured && index === 0 ? 'horizontal' : orientation
-              }
             />
           ))}
         </div>

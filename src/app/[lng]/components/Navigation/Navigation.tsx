@@ -2,8 +2,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './Navigation.module.scss';
-import Logo from "../../../../../public/firma.png"
+import Logo from '../../../../../public/firma.png';
 
 interface navLink {
   to: string;
@@ -15,6 +16,7 @@ type ILinks = Array<navLink>;
 
 export default function Navigation({ dict }: any) {
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
+  const pathname = usePathname();
 
   const handleMobileToggle = () => {
     setIsMobileMenuActive(!isMobileMenuActive);
@@ -40,7 +42,13 @@ export default function Navigation({ dict }: any) {
         <ul className={styles.navigation__menu}>
           {links?.map(({ to, label, title }) => (
             <li id={label} className={styles.menu__item} key={label}>
-              <Link href={to} className={styles.menu__link} title={title}>
+              <Link
+                href={to}
+                className={`${styles.menu__link} ${
+                  to === pathname && styles.menu__active
+                }`}
+                title={title}
+              >
                 {label}
               </Link>
             </li>

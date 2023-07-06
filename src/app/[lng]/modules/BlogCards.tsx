@@ -11,7 +11,7 @@ interface BlogCardsProps {
 }
 
 const BlogCards: React.FC<BlogCardsProps> = ({ isFeatured, cta, maxCards }) => {
-  const posts = use(getContentfulData('blogPost', 1, maxCards)); //contentType, page, itemsPerPage
+  const posts = use(getContentfulData('blogPost', 1, maxCards)) || []; //contentType, page, itemsPerPage
   const postCards = posts.map((postRaw: any): IRowCard => {
     const post = postRaw.fields;
     const date = new Date(post.date).toLocaleString('default', {
@@ -26,7 +26,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({ isFeatured, cta, maxCards }) => {
       subtitle: date,
       description: post.body.content[0].content[0].value,
       link: `/blog/${post.slug}`,
-      image: imageData
+      image: { ...imageData, height: 240 }
     };
   });
 

@@ -7,7 +7,7 @@
     "arrowParens": "avoid",
     "overrides": [
       {
-        "files": ["**/*.css", "**/*.scss", "**/*.hbs"],
+        "files": ["**/*.css", "**/*.scss"],
         "options": {
           "singleQuote": false
         }
