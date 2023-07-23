@@ -18,7 +18,7 @@ const links: ILinks = [
     label: 'Blog'
   },
   {
-    to: '#contact',
+    to: '/contact',
     label: 'Contact'
   }
 ];
@@ -38,7 +38,7 @@ export default function Footer() {
         </ul>
       </nav>
       <div className={styles.footer__copy}>
-        <p>© 2021. All rights reserved.</p>
+        <p>© 2021-2023. All rights reserved.</p>
       </div>
     </footer>
   );

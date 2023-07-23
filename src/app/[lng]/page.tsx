@@ -7,17 +7,18 @@ import { getDictionary } from './dictionaries';
 import Contact from './contact/page';
 import CiodesiaImg from '../../../public/ciodesia.svg';
 import Codercat from '../../../public/codercat.png';
+import SecureLab from '../../../public/securelab_logo.svg';
 
 const ProjectCards = [
   {
     title: 'Ciodesia',
     description:
       'Ciodesia is an education platform to provide training and services related to geography.',
-    link: '',
+    link: 'https://ciodesia.com',
     image: {
       src: CiodesiaImg,
-      width: 100,
-      heigth: 100,
+      width: 75,
+      heigth: 75,
       alt: '',
       title: ''
     }
@@ -26,20 +27,27 @@ const ProjectCards = [
     title: 'Codercat',
     description:
       'Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.',
-    link: '',
+    link: 'https://codercat.vercel.app',
     image: {
       src: Codercat,
-      width: 150,
-      heigth: 100,
+      width: 100,
+      heigth: 70,
       alt: '',
       title: ''
     }
   },
   {
-    title: 'Snacks',
+    title: 'Secure Lab',
     description:
-      'Snacks website provides actionable tips and pieces of advice about digital marketing.',
-    link: ''
+      'Secure Lab is a mobile app designed to teach cibersecurity  with short tutorials.',
+    link: '/securelab',
+    image: {
+      src: SecureLab,
+      width: 70,
+      heigth: 70,
+      alt: '',
+      title: ''
+    }
   }
 ];
 

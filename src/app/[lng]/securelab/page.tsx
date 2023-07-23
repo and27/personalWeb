@@ -12,12 +12,12 @@ const Securelab = () => {
             <Image src={SecurelabImg} width={282} height={300} alt="" />
           </div>
           <div className={styles.content}>
-            <h1>Secure Lab App</h1>
+            <h1>Secure Lab Cibersecurity App</h1>
             <p>
-              Explore our app that stood out among competitors and reached the
-              finals in the TUapp Mexico 2019 contest{' '}
+              Secure Lab gives short tutorials on cibersecurity concepts about
+              networking, app security and forensics.
             </p>
-            <p>The app was designed to...</p>
+            <p>The app was finalist in the Mexico 2019 TuApp contest.</p>
           </div>
         </div>
       </div>
