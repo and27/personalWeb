@@ -22,6 +22,10 @@ export default function Navigation({ dict }: any) {
     setIsMobileMenuActive(!isMobileMenuActive);
   };
 
+  const handleMobileMenuSelected = () => {
+    isMobileMenuActive && setTimeout(() => setIsMobileMenuActive(false), 300);
+  };
+
   const links: ILinks = dict?.menu;
 
   return (
@@ -47,7 +51,6 @@ export default function Navigation({ dict }: any) {
                 className={`${styles.menu__link} ${
                   to === pathname && styles.menu__active
                 }`}
-                title={title}
               >
                 {label}
               </Link>
@@ -79,7 +82,11 @@ export default function Navigation({ dict }: any) {
           >
             {links.map(({ to, label }) => (
               <li id={label} className={styles.menu__item} key={label}>
-                <Link href={to} className={styles.menu__link}>
+                <Link
+                  href={to}
+                  className={styles.menu__link}
+                  onClick={handleMobileMenuSelected}
+                >
                   {label}
                 </Link>
               </li>

@@ -94,7 +94,11 @@
 }
 
 .menu__item {
+  padding-block: 4px;
   list-style: none;
+  &:hover .menu__link {
+    color: var(--primary-white);
+  }
 }
 
 .menu__link {
@@ -105,7 +109,7 @@
   position: relative;
 }
 
-.menu__active{
+.menu__active {
   color: var(--primary-white);
 }
 
