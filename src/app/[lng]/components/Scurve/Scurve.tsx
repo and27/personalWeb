@@ -1,9 +1,9 @@
 'use client';
 import styles from './Scurve.module.scss';
 import globalStyles from '../../page.module.scss';
-import Image from 'next/image';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import LayoutSVG from './LayoutSVG';
 
 interface IScurve {
   title: string;
@@ -14,35 +14,28 @@ const Scurve: React.FC<IScurve> = ({ title, description }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['-500px', '-100px']
+    offset: ['0.4 1', '0.1 0.4']
   });
-  const x = useSpring(useTransform(scrollYProgress, [0, 1], [300, 0]), {
+  const x = useSpring(useTransform(scrollYProgress, [0, 1], [700, 0]), {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
-  const opacity = scrollYProgress;
 
   return (
     <section className={globalStyles.scurve} ref={ref}>
       <div className={globalStyles.container}>
+        <h2 className={`${globalStyles.section__title}`}>About</h2>
         <div className={styles.scurve__inner}>
           <div className={styles.scurve__content}>
-            <h2 className={`${globalStyles.section__title}`}>About</h2>
             {description.map((description, idx) => (
               <p className={globalStyles.section__text} key={idx}>
                 {description}
               </p>
             ))}
           </div>
-          <motion.div style={{ x, opacity }} className={styles.scurve__media}>
-            <Image
-              src="/website.png"
-              width={300}
-              height={300}
-              alt="Web application"
-              title="Web application"
-            />
+          <motion.div style={{ x }} className={styles.scurve__media}>
+            <LayoutSVG />
           </motion.div>
         </div>
       </div>
