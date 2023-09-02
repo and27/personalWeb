@@ -1,8 +1,16 @@
+@import "~sass-mq/mq";
+
 .contactSection__inner {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 64px; 
-  text-align: left;
+  gap: 64px;
+  text-align: center;
+
+  @include mq(tablet) {
+    flex-direction: row;
+    text-align: left;
+  }
 }
 
 .contactSection__content {
@@ -15,6 +23,11 @@
     font-family: var(--font-montserrat);
     line-height: 1.2;
     letter-spacing: -0.5%;
+    margin-block-end: 16px;
+  }
+
+  p {
+    margin-block-end: 16px;
   }
 }
 
@@ -31,11 +44,26 @@
 
 .contactSection__social {
   padding-block-end: 16px;
-  display:flex; 
+  display: flex;
+  justify-content: center;
   gap: 16px;
+
+  @include mq(tablet) {
+    justify-content: flex-start;
+  }
 }
 
 .btn {
   align-self: center;
   flex-shrink: 0;
+}
+
+.svg {
+  fill: #ddd;
+  transition: all 0.3s ease-in-out;
+}
+
+.svg:hover {
+  fill: white;
+  transform: scale(1.1);
 }

@@ -1,12 +1,12 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './ContactSection.module.scss';
 import globalStyles from '../../page.module.scss';
 import { InlineWidget } from 'react-calendly';
+import { PopupButton } from 'react-calendly';
 import Image from 'next/image';
 import Linkedin from '../../../../../public/linkedin.svg';
 import Github from '../../../../../public/github.svg';
-import Twitter from '../../../../../public/twitter.svg';
 import Link from 'next/link';
 
 interface IContactSectionProps {
@@ -15,8 +15,10 @@ interface IContactSectionProps {
 const ContactSection: React.FC<IContactSectionProps> = ({
   layout = 'block'
 }) => {
+  const ref = useRef(null);
+
   return (
-    <section className={globalStyles.contact}>
+    <section className={globalStyles.contact} ref={ref} id="test">
       <div
         className={`${globalStyles.container} ${styles.contactSection__inner}`}
       >
@@ -25,27 +27,42 @@ const ContactSection: React.FC<IContactSectionProps> = ({
             layout === 'inline' && styles.contactSection__content__inline
           }`}
         >
-          {layout === 'block' && <h1>Get in touch</h1>}
+          {layout === 'block' && (
+            <div>
+              <h1>Get in touch</h1>
+              <p>
+                Simply select the date that works for you, and let's dive into
+                your project or answer your inquiries.
+              </p>
+            </div>
+          )}
           {layout === 'inline' && <h2>Let's create something extraordinary</h2>}
           <div className={styles.contactSection__contact_data}>
             <div className={styles.contactSection__social}>
               <Link
                 href={'https://www.linkedin.com/in/andres-banda'}
                 target="_blank"
+                title="LinkedIn profile"
               >
-                <Image width={20} height={20} alt="" src={Linkedin} />
+                <Linkedin className={styles.svg} />
+                <span className={globalStyles.visually_hidden}>
+                  Linkedin profile
+                </span>
               </Link>
-              {/* <Link
-                href={'https://www.twitter.com'}
+              <Link
+                href={'https://github.com/and27'}
                 target="_blank"
+                title="Github profile"
               >
-                <Image width={20} height={20} alt="" src={Twitter} />
-              </Link> */}
-              <Link href={'https://github.com/and27'} target="_blank">
-                <Image width={20} height={20} alt="" src={Github} />
+                <Github className={styles.svg} />
+                <span className={globalStyles.visually_hidden}>
+                  Github profile
+                </span>
               </Link>
             </div>
-            <p>andres.banda.sm@gmail.com</p>
+            <a href="mailto:andres.banda.sm@gmail.com">
+              andres.banda.sm@gmail.com
+            </a>
           </div>
         </div>
         {layout === 'block' && (
@@ -55,9 +72,12 @@ const ContactSection: React.FC<IContactSectionProps> = ({
           />
         )}
         {layout === 'inline' && (
-          <button className={`${globalStyles.btn} ${styles.btn}`}>
-            Schedule a 15 min meeting
-          </button>
+          <PopupButton
+            url="https://calendly.com/andres-banda/15min?"
+            className={`${globalStyles.btn} ${styles.btn}`}
+            rootElement={document.body}
+            text="Schedule a 15 min meeting"
+          />
         )}
       </div>
     </section>
