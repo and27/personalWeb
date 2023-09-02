@@ -9,6 +9,7 @@
   margin-bottom: 20px;
   line-height: 1.2;
 }
+
 .card__description {
   font-weight: 300;
   font-size: 0.875rem;
@@ -24,26 +25,6 @@
   block-size: 100%;
   background: linear-gradient(to bottom, black, white, black);
 }
-
-/* .card__right::before {
-  content: "";
-  position: absolute;
-  inset-block-end: 0;
-  inset-inline-end: 0;
-  inline-size: 20%;
-  block-size: 2px;
-  background: linear-gradient(to left, white, black); 
-}*/
-
-/* .card__left::after {
-  content: "";
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-end: 0;
-  inline-size: 20%;
-  block-size: 2px;
-  background: linear-gradient(to left, white, black); 
-}*/
 
 .card__left::before {
   content: "";
@@ -61,6 +42,7 @@
   position: relative;
   padding-block: 40px;
   padding-inline-end: 40px;
+  margin-left: 50%;
 }
 .card__left {
   align-self: flex-start;

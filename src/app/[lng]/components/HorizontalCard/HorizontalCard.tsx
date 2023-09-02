@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import styles from './RowCards.module.scss';
-import CardWrapper from './CardWrapper';
+import styles from './HorizontalCard.module.scss';
+import CardWrapper from '../RowCards/CardWrapper';
 
 type imageData = {
   src: string;
@@ -26,20 +26,19 @@ type CardProps = {
   isFeatured?: boolean;
 };
 
-export const Card: React.FC<IRowCard & CardProps> = ({
+export const HorizontalCard: React.FC<IRowCard & CardProps> = ({
   id,
   title,
   subtitle,
   description,
   link,
-  image,
-  isFeatured
+  image
 }) => {
   return (
     <CardWrapper
       aria-labeledby={id}
       href={link}
-      className={`${styles.card} ${isFeatured && styles.cardfeatured}`}
+      className={`${styles.card} ${styles.cardfeatured}`}
     >
       {image && (
         <div className={styles.project__image_container}>
