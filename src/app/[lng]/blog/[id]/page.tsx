@@ -5,7 +5,7 @@ import styles from './blog.module.scss';
 import globalStyles from '../../page.module.scss';
 import client from '../../../../lib/contentful';
 import getImageDataFromBlogPost from '../../utils/getImageSrc';
-
+import BlogCards from '../../modules/BlogCards';
 
 function renderRichText(richTextField: any) {
   return documentToReactComponents(richTextField);
@@ -58,6 +58,13 @@ function BlogPost({ params }: any) {
           ))}
         </ul>
         {renderRichText(richTextField)}
+        <div className={styles.blogCardsContainer}>
+          <BlogCards
+            maxCards={3}
+            sectionTitle={'Related Posts'}
+            orientation="horizontal"
+          />
+        </div>
       </div>
     </div>
   );

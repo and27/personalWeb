@@ -8,11 +8,19 @@ interface BlogCardsProps {
   isFeatured?: boolean;
   cta?: string;
   maxCards: number;
+  sectionTitle?: string;
+  orientation?: 'horizontal' | 'vertical';
 }
 
-const BlogCards: React.FC<BlogCardsProps> = ({ isFeatured, cta, maxCards }) => {
+const BlogCards: React.FC<BlogCardsProps> = ({
+  isFeatured = false,
+  cta,
+  maxCards,
+  sectionTitle,
+  orientation = 'vertical'
+}) => {
   const posts = use(getContentfulData('blogPost', 1, maxCards)) || []; //contentType, page, itemsPerPage
-  const postCards = posts.map((postRaw: any): IRowCard => {
+  const postCards = posts.map((postRaw: any, idx): IRowCard => {
     const post = postRaw.fields;
     const date = new Date(post.date).toLocaleString('default', {
       month: 'long',
@@ -22,6 +30,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({ isFeatured, cta, maxCards }) => {
     const imageData = getImageDataFromBlogPost(postRaw);
 
     return {
+      id: idx.toString(),
       title: post.title,
       subtitle: date,
       description: post.body.content[0].content[0].value,
@@ -31,15 +40,17 @@ const BlogCards: React.FC<BlogCardsProps> = ({ isFeatured, cta, maxCards }) => {
   });
 
   const Posts: IRowCards = {
-    title: 'Writing',
+    title: sectionTitle,
     linkLabel: 'Read post',
-    orientation: 'vertical',
+    orientation: orientation,
     isFeatured: isFeatured,
     cards: postCards,
     cta: cta
   };
 
-  return <RowCards {...Posts} />;
+  return (
+    <RowCards {...Posts} imageOverflow={'hidden'} isFeatured={isFeatured} />
+  );
 };
 
 export default BlogCards;

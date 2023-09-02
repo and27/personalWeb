@@ -5,46 +5,41 @@ import FeatureCards from './components/FeatureCards/FeatureCards';
 import BlogCards from './modules/BlogCards';
 import { getDictionary } from './dictionaries';
 import Contact from './contact/page';
-import CiodesiaImg from '../../../public/ciodesia.svg';
 import Codercat from '../../../public/codercat.png';
-import SecureLab from '../../../public/securelab_logo.svg';
-
-const ProjectCards = [
+import { IRowCard } from './components/RowCards/Card';
+const ProjectCards: IRowCard[] = [
   {
+    id: '1',
     title: 'Ciodesia',
     description:
       'Ciodesia is an education platform to provide training and services related to geography.',
     link: 'https://ciodesia.com',
     image: {
-      src: CiodesiaImg,
-      width: 75,
-      heigth: 75,
+      src: '',
       alt: '',
       title: ''
     }
   },
   {
+    id: '2',
     title: 'Codercat',
     description:
       'Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.',
     link: 'https://codercat.vercel.app',
     image: {
-      src: Codercat,
-      width: 100,
-      heigth: 70,
+      src: '',
       alt: '',
       title: ''
     }
   },
   {
+    id: '3',
     title: 'Secure Lab',
     description:
       'Secure Lab is a mobile app designed to teach cibersecurity  with short tutorials.',
     link: '/securelab',
     image: {
-      src: SecureLab,
-      width: 70,
-      heigth: 70,
+      src: '',
       alt: '',
       title: ''
     }
@@ -59,8 +54,9 @@ const Projects: IRowCards = {
 
 const sCurveTitle = 'About';
 const sCurveDescription = [
-  'Welcome to my personal website. I am a passionate web developer working on making the internet a safer and more accessible place for everyone.',
-  "Explore my portfolio, learn more about my work, and le'ts create a digital experience that brings joy to your customers and drives remarkable returns."
+  'Welcome to my personal website. I am a passionate software developer working on making the internet a safer and more accessible place for everyone.',
+  "For the past four years, I've dedicated my efforts to crafting web and mobile apps spanning diverse domains, including games, the manufacturing industry, and agency projects.",
+  ' Explore my portfolio, learn more about my work, and feel free to contact me.'
 ];
 
 export default async function Home({ params }: any) {
@@ -77,7 +73,7 @@ export default async function Home({ params }: any) {
       <Scurve title={sCurveTitle} description={sCurveDescription} />
       <FeatureCards />
       <RowCards {...Projects} />
-      <BlogCards maxCards={3} />
+      <BlogCards maxCards={3} sectionTitle="Writing" />
       <Contact layout={'inline'} />
     </>
   );
