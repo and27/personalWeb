@@ -1,13 +1,31 @@
 import client from './contentful';
 
-export async function getContentfulData(
-  contentType: string,
-  page: number,
-  itemsPerPage: number
-) {
+interface IGetRelatedPosts {
+  maxItems: number;
+  currentPost: string;
+}
+
+interface IGetPosts {
+  page: number;
+  itemsPerPage: number;
+}
+
+export async function getRelatedPosts({ maxItems, currentPost }: IGetRelatedPosts) {
+  const entries = await client.getEntries({
+    'fields.slug[ne]': currentPost,
+    'fields.date[lte]': new Date(),
+    content_type: 'blogPost',
+    limit: maxItems
+  });
+
+  return entries.items;
+}
+
+async function getPosts({ page, itemsPerPage }: IGetPosts) {
   const alreadyFetched = (page - 1) * itemsPerPage; //pages start at 1
   const entries = await client.getEntries({
-    content_type: contentType,
+    'fields.date[lte]': new Date(),
+    content_type: 'blogPost',
     skip: alreadyFetched,
     limit: itemsPerPage
   });
@@ -15,4 +33,12 @@ export async function getContentfulData(
   return entries.items;
 }
 
-export default getContentfulData;
+export async function getBlogPostBySlug(slug: string) {
+  const response = await client.getEntries({
+    content_type: 'blogPost',
+    'fields.slug': slug
+  });
+  return response.items[0];
+}
+
+export default getPosts;

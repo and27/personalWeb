@@ -16,15 +16,7 @@ export interface IRowCards {
   imageOverflow?: 'hidden' | 'visible';
 }
 
-const RowCards: React.FC<IRowCards> = ({
-  title,
-  cards,
-  linkLabel,
-  isFeatured,
-  cta,
-  imageOverflow,
-  orientation
-}) => {
+const RowCards: React.FC<IRowCards> = ({ title, cards, linkLabel, isFeatured, cta, imageOverflow, orientation }) => {
   const [page, setPage] = useState(0);
   const extraCards = isFeatured ? 1 : 0;
   const cardsPerPage = 3;
@@ -36,15 +28,9 @@ const RowCards: React.FC<IRowCards> = ({
   };
 
   return (
-    <section className={globalStyles.projects}>
+    <section className={`${globalStyles.projects} ${styles.rowCards}`}>
       <div className={globalStyles.container}>
-        {title && (
-          <h2
-            className={`${globalStyles.section__title} ${styles.project__title}`}
-          >
-            {title}
-          </h2>
-        )}
+        {title && <h2 className={`${globalStyles.section__title} ${styles.project__title}`}>{title}</h2>}
         <div
           className={`${styles.project__cards} 
             ${orientation === 'horizontal' && styles.project__cards_horizontal}

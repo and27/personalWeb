@@ -1,10 +1,10 @@
 import { use } from 'react';
-import getContentfulData from '@/lib/getDataEntries';
+import getPosts from '@/lib/getDataEntries';
 import RowCards, { IRowCards } from '../components/RowCards/RowCards';
 import getImageDataFromBlogPost from '../utils/getImageSrc';
 import { IRowCard } from '../components/RowCards/Card';
 
-interface BlogCardsProps {
+export interface BlogCardsProps {
   isFeatured?: boolean;
   cta?: string;
   maxCards: number;
@@ -19,7 +19,14 @@ const BlogCards: React.FC<BlogCardsProps> = ({
   sectionTitle,
   orientation = 'vertical'
 }) => {
-  const posts = use(getContentfulData('blogPost', 1, maxCards)) || []; //contentType, page, itemsPerPage
+  const page = 1;
+  const postParams = {
+    itemsPerPage: maxCards,
+    page
+  };
+
+  const posts = use(getPosts(postParams)) || [];
+
   const postCards = posts.map((postRaw: any, idx): IRowCard => {
     const post = postRaw.fields;
     const date = new Date(post.date).toLocaleString('default', {
@@ -35,7 +42,10 @@ const BlogCards: React.FC<BlogCardsProps> = ({
       subtitle: date,
       description: post.body.content[0].content[0].value,
       link: `/blog/${post.slug}`,
-      image: { ...imageData, height: 240 }
+      image: {
+        ...imageData,
+        height: 240
+      }
     };
   });
 
@@ -48,9 +58,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
     cta: cta
   };
 
-  return (
-    <RowCards {...Posts} imageOverflow={'hidden'} isFeatured={isFeatured} />
-  );
+  return <RowCards {...Posts} imageOverflow={'hidden'} isFeatured={isFeatured} />;
 };
 
 export default BlogCards;

@@ -3,26 +3,18 @@ import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from './blog.module.scss';
 import globalStyles from '../../page.module.scss';
-import client from '../../../../lib/contentful';
 import getImageDataFromBlogPost from '../../utils/getImageSrc';
-import BlogCards from '../../modules/BlogCards';
+import RelatedPostCards from '../../modules/RelatedPostCards';
+import { getBlogPostBySlug } from '@/lib/getDataEntries';
 
 function renderRichText(richTextField: any) {
   return documentToReactComponents(richTextField);
 }
 
-async function getData(id: any) {
-  const response = await client.getEntries({
-    content_type: 'blogPost',
-    'fields.slug': id
-  });
-  return response.items[0];
-}
-
 function BlogPost({ params }: any) {
-  const { id } = params;
+  const { id: slug } = params;
 
-  const blogPost = use(getData(id)) as any;
+  const blogPost = use(getBlogPostBySlug(slug)) as any;
   const richTextField = blogPost?.fields.body;
   const image = getImageDataFromBlogPost(blogPost);
   const imgHeight = 200;
@@ -59,11 +51,7 @@ function BlogPost({ params }: any) {
         </ul>
         {renderRichText(richTextField)}
         <div className={styles.blogCardsContainer}>
-          <BlogCards
-            maxCards={3}
-            sectionTitle={'Related Posts'}
-            orientation="horizontal"
-          />
+          <RelatedPostCards sectionTitle={'Related Posts'} currentPost={slug} />
         </div>
       </div>
     </div>

@@ -72,7 +72,6 @@
 .blog p {
   font-size: 1rem;
   line-height: 1.8;
-  margin-block-end: 1rem;
   font-weight: 400;
   color: var(--secondary-white);
   margin-block-end: 1.5rem;
@@ -80,6 +79,19 @@
   @include mq(desktop) {
     font-size: 1.1rem;
   }
+}
+
+.blog ul {
+  margin-inline-start: 2rem;
+}
+
+.blog li p {
+  margin-inline-start: 0.5rem;
+}
+
+//lists inside articles contain a <p> tag, so we need to remove the margin-bottom
+.blog li:not(:last-child) p {
+  margin-block-end: 0.5rem;
 }
 
 .blog h2 {

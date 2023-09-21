@@ -6,7 +6,6 @@ function Contact() {
   return (
     <section
       className={`${globalStyles.contact} calendly-inline-widget`}
-      id="contact"
       data-url="https://calendly.com/andres-banda/15min"
     >
       <div className={globalStyles.container}>
@@ -15,8 +14,7 @@ function Contact() {
           Some of the most creative projects start with a conversation
         </p>
         <p className={`${globalStyles.section__text} ${styles.contact__text}`}>
-          Set up a call to discover how we can create an innovative digital
-          experience together
+          Set up a call to discover how we can create an innovative digital experience together
         </p>
         <button className={globalStyles.btn}>Schedule a 15 min meeting</button>
       </div>
