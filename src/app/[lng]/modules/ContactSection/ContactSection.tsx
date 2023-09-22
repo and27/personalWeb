@@ -11,9 +11,7 @@ import Link from 'next/link';
 interface IContactSectionProps {
   layout: string;
 }
-const ContactSection: React.FC<IContactSectionProps> = ({
-  layout = 'block'
-}) => {
+const ContactSection: React.FC<IContactSectionProps> = ({ layout = 'block' }) => {
   const ref = useRef(null);
 
   const [matchMobileQuery, setMatchMobileQuery] = useState(false);
@@ -32,10 +30,8 @@ const ContactSection: React.FC<IContactSectionProps> = ({
   }, []);
 
   return (
-    <section className={globalStyles.contact} ref={ref} id="test">
-      <div
-        className={`${globalStyles.container} ${styles.contactSection__inner}`}
-      >
+    <section className={globalStyles.contact} ref={ref} id="contact">
+      <div className={`${globalStyles.container} ${styles.contactSection__inner}`}>
         <div
           className={`${styles.contactSection__content} ${
             layout === 'inline' && styles.contactSection__content__inline
@@ -45,38 +41,23 @@ const ContactSection: React.FC<IContactSectionProps> = ({
             <div>
               <h1>Get in touch</h1>
               <p>
-                Simply select the date that works for you, and let's dive into
-                your project or answer your inquiries.
+                Simply select the date that works for you, and let's dive into your project or answer your inquiries.
               </p>
             </div>
           )}
           {layout === 'inline' && <h2>Let's create something extraordinary</h2>}
           <div className={styles.contactSection__contact_data}>
             <div className={styles.contactSection__social}>
-              <Link
-                href={'https://www.linkedin.com/in/andres-banda'}
-                target="_blank"
-                title="LinkedIn profile"
-              >
+              <Link href={'https://www.linkedin.com/in/andres-banda'} target="_blank" title="LinkedIn profile">
                 <Linkedin className={styles.svg} />
-                <span className={globalStyles.visually_hidden}>
-                  Linkedin profile
-                </span>
+                <span className={globalStyles.visually_hidden}>Linkedin profile</span>
               </Link>
-              <Link
-                href={'https://github.com/and27'}
-                target="_blank"
-                title="Github profile"
-              >
+              <Link href={'https://github.com/and27'} target="_blank" title="Github profile">
                 <Github className={styles.svg} />
-                <span className={globalStyles.visually_hidden}>
-                  Github profile
-                </span>
+                <span className={globalStyles.visually_hidden}>Github profile</span>
               </Link>
             </div>
-            <a href="mailto:andres.banda.sm@gmail.com">
-              andres.banda.sm@gmail.com
-            </a>
+            <a href="mailto:andres.banda.sm@gmail.com">andres.banda.sm@gmail.com</a>
           </div>
         </div>
         {layout === 'block' && (

@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import styles from './RowCards.module.scss';
 import CardWrapper from './CardWrapper';
 
 type imageData = {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   title: string;
   width?: number;
@@ -26,30 +26,12 @@ type CardProps = {
   isFeatured?: boolean;
 };
 
-export const Card: React.FC<IRowCard & CardProps> = ({
-  id,
-  title,
-  subtitle,
-  description,
-  link,
-  image,
-  isFeatured
-}) => {
+export const Card: React.FC<IRowCard & CardProps> = ({ id, title, subtitle, description, link, image, isFeatured }) => {
   return (
-    <CardWrapper
-      aria-labeledby={id}
-      href={link}
-      className={`${styles.card} ${isFeatured && styles.cardfeatured}`}
-    >
+    <CardWrapper aria-labeledby={id} href={link} className={`${styles.card} ${isFeatured && styles.cardfeatured}`}>
       {image && (
         <div className={styles.project__image_container}>
-          <Image
-            src={image?.src}
-            alt={image?.alt}
-            className={styles.project__image}
-            fill
-            title={image?.title}
-          />
+          <Image src={image?.src} alt={image?.alt} className={styles.project__image} fill title={image?.title} />
         </div>
       )}
       <div className={styles.project__content}>

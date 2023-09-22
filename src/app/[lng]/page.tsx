@@ -6,16 +6,17 @@ import BlogCards from './modules/BlogCards';
 import { getDictionary } from './dictionaries';
 import Contact from './contact/page';
 import Codercat from '../../../public/codercat.png';
+import Ciodesia from '../../../public/ciodesia.png';
+import Securelab from '../../../public/securelab.png';
 import { IRowCard } from './components/RowCards/Card';
 const ProjectCards: IRowCard[] = [
   {
     id: '1',
     title: 'Ciodesia',
-    description:
-      'Ciodesia is an education platform to provide training and services related to geography.',
+    description: 'Ciodesia is an education platform to provide training and services related to geography.',
     link: 'https://ciodesia.com',
     image: {
-      src: '',
+      src: Ciodesia,
       alt: '',
       title: ''
     }
@@ -27,7 +28,7 @@ const ProjectCards: IRowCard[] = [
       'Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.',
     link: 'https://codercat.vercel.app',
     image: {
-      src: '',
+      src: Codercat,
       alt: '',
       title: ''
     }
@@ -35,11 +36,10 @@ const ProjectCards: IRowCard[] = [
   {
     id: '3',
     title: 'Secure Lab',
-    description:
-      'Secure Lab is a mobile app designed to teach cibersecurity  with short tutorials.',
+    description: 'Secure Lab is a mobile app designed to teach cibersecurity  with short tutorials.',
     link: '/securelab',
     image: {
-      src: '',
+      src: Securelab,
       alt: '',
       title: ''
     }
