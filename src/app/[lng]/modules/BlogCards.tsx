@@ -29,7 +29,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
 
   const postCards = posts.map((postRaw: any, idx): IRowCard => {
     const post = postRaw.fields;
-    const date = new Date(post.date).toLocaleString('default', {
+    const date = new Date(post.date).toLocaleString('en-US', {
       month: 'long',
       day: 'numeric',
       year: 'numeric'

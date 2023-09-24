@@ -1,10 +1,12 @@
 'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './Navigation.module.scss';
 import Logo from '../../../../../public/firma.png';
+import MobileMenu from './MobileMenu';
 
 interface navLink {
   to: string;
@@ -12,7 +14,7 @@ interface navLink {
   title: string;
 }
 
-type ILinks = Array<navLink>;
+export type ILinks = Array<navLink>;
 
 export default function Navigation({ dict }: any) {
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
@@ -30,7 +32,7 @@ export default function Navigation({ dict }: any) {
 
   return (
     <header className={styles.header}>
-      <nav className={styles.navigation}>
+      <nav className={styles.nav}>
         <Link href="/">
           <Image
             src={Logo}
@@ -43,56 +45,24 @@ export default function Navigation({ dict }: any) {
                         33vw"
           />
         </Link>
-        <ul className={styles.navigation__menu}>
-          {links?.map(({ to, label, title }) => (
-            <li id={label} className={styles.menu__item} key={label}>
+        <ul className={styles.navMenu}>
+          {links?.map(({ to, label }) => (
+            <li id={label} className={styles.navMenuItem} key={label}>
               <Link
                 href={to}
-                className={`${styles.menu__link} ${
-                  to === pathname && styles.menu__active
-                }`}
+                className={`${styles.navMenuLink} ${to === pathname && styles.menu__active}`}
               >
                 {label}
               </Link>
             </li>
           ))}
         </ul>
-        <div
-          className={`${styles.navigation__mobile_menu_container} ${
-            isMobileMenuActive && styles.active
-          }`}
-        >
-          <button
-            className={`${styles.navigation__mobile_menu_trigger} 
-          ${isMobileMenuActive && styles.active}`}
-            onClick={handleMobileToggle}
-            aria-controls="navigation__mobile-menu"
-            aria-expanded={isMobileMenuActive}
-            aria-label="Toggle mobile menu"
-            aria-haspopup="true"
-          >
-            {isMobileMenuActive ? '' : '☰'}
-          </button>
-          <ul
-            id="navigation__mobile-menu"
-            hidden={!isMobileMenuActive}
-            className={`${styles.navigation__mobile_menu} ${
-              isMobileMenuActive && styles.navigation__mobile_menu_active
-            }`}
-          >
-            {links.map(({ to, label }) => (
-              <li id={label} className={styles.menu__item} key={label}>
-                <Link
-                  href={to}
-                  className={styles.menu__link}
-                  onClick={handleMobileMenuSelected}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <MobileMenu
+          isMobileMenuActive={isMobileMenuActive}
+          handleMobileToggle={handleMobileToggle}
+          handleMobileMenuSelected={handleMobileMenuSelected}
+          links={links}
+        />
       </nav>
     </header>
   );

@@ -21,7 +21,7 @@ function BlogPost({ params }: any) {
 
   const getPostDate = () => {
     const dateRaw = new Date(blogPost.fields.date);
-    const month = dateRaw.toLocaleString('default', { month: 'long' });
+    const month = dateRaw.toLocaleString('en-US', { month: 'long' });
     const day = dateRaw.getDate();
     const year = dateRaw.getFullYear();
     const date = `${month} ${day}, ${year}`;
