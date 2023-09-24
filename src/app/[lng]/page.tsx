@@ -1,19 +1,21 @@
-import RowCards, { IRowCards } from './components/RowCards/RowCards';
+import RowCards, { IRowCards } from './components/Cards/RowCards/RowCards';
 import Masthead from './components/Masthead/Masthead';
 import Scurve from './components/Scurve/Scurve';
-import FeatureCards from './components/FeatureCards/FeatureCards';
+import FeaturedProjects from './components/FeaturedProjects/FeaturedProjects';
 import BlogCards from './modules/BlogCards';
 import { getDictionary } from './dictionaries';
 import Contact from './contact/page';
 import Codercat from '../../../public/codercat.png';
 import Ciodesia from '../../../public/ciodesia.png';
 import Securelab from '../../../public/securelab.png';
-import { IRowCard } from './components/RowCards/Card';
+import { IRowCard } from './components/Cards/VerticalCard/Card';
+
 const ProjectCards: IRowCard[] = [
   {
     id: '1',
     title: 'Ciodesia',
-    description: 'Ciodesia is an education platform to provide training and services related to geography.',
+    description:
+      'Ciodesia is an education platform to provide training and services related to geography.',
     link: 'https://ciodesia.com',
     image: {
       src: Ciodesia,
@@ -36,7 +38,8 @@ const ProjectCards: IRowCard[] = [
   {
     id: '3',
     title: 'Secure Lab',
-    description: 'Secure Lab is a mobile app designed to teach cibersecurity  with short tutorials.',
+    description:
+      'Secure Lab is a mobile app designed to teach cibersecurity  with short tutorials.',
     link: '/securelab',
     image: {
       src: Securelab,
@@ -71,7 +74,7 @@ export default async function Home({ params }: any) {
     <>
       <Masthead {...mastheadInfo} />
       <Scurve title={sCurveTitle} description={sCurveDescription} />
-      <FeatureCards />
+      <FeaturedProjects />
       <RowCards {...Projects} />
       <BlogCards maxCards={3} sectionTitle="Writing" />
       <Contact layout={'inline'} />

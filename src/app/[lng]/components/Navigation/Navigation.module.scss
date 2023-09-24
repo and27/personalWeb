@@ -1,7 +1,7 @@
 @import "~sass-mq/mq";
 
 .header {
-  height: 100px;
+  block-size: 100px;
   display: flex;
   align-items: center;
 }
@@ -81,7 +81,7 @@
   padding: 0;
   line-height: 0.8;
   width: 30px;
-  height: 30px;
+  block-size: 30px;
   color: var(--primary-white);
 
   @include mq(tablet) {

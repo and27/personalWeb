@@ -1,0 +1,50 @@
+@import "~sass-mq/mq";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  position: relative;
+  gap: 36px;
+
+  h3 {
+    color: var(--secondary-white);
+    line-height: 1.2;
+  }
+
+  &:hover {
+    .cardImage {
+      transform: scale(1.1);
+    }
+    h3 {
+      color: var(--primary-white);
+    }
+  }
+}
+
+.cardHorizontal {
+  @include mq(tablet) {
+    grid-column: 1 / span 2;
+  }
+  @include mq(desktop) {
+    grid-column: 1 / span 3;
+  }
+}
+
+.cardHorizontal.card {
+  flex-direction: row;
+  align-items: center;
+}
+
+.cardHorizontal .cardImageContainer {
+  flex: 0 0 40%;
+  position: relative;
+  min-block-size: 160px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: fill;
+  transition: transform 0.5s ease-in-out;
+}

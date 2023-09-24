@@ -1,9 +1,9 @@
 'use client';
 
 import styles from './RowCards.module.scss';
-import globalStyles from '../../page.module.scss';
+import globalStyles from '../../../page.module.scss';
 import React, { useState } from 'react';
-import { Card, IRowCard } from './Card';
+import { Card, IRowCard } from '../VerticalCard/Card';
 import { HorizontalCard } from '../HorizontalCard/HorizontalCard';
 
 export interface IRowCards {
@@ -16,7 +16,15 @@ export interface IRowCards {
   imageOverflow?: 'hidden' | 'visible';
 }
 
-const RowCards: React.FC<IRowCards> = ({ title, cards, linkLabel, isFeatured, cta, imageOverflow, orientation }) => {
+const RowCards: React.FC<IRowCards> = ({
+  title,
+  cards,
+  linkLabel,
+  isFeatured,
+  cta,
+  imageOverflow,
+  orientation
+}) => {
   const [page, setPage] = useState(0);
   const extraCards = isFeatured ? 1 : 0;
   const cardsPerPage = 3;
@@ -28,13 +36,15 @@ const RowCards: React.FC<IRowCards> = ({ title, cards, linkLabel, isFeatured, ct
   };
 
   return (
-    <section className={`${globalStyles.projects} ${styles.rowCards}`}>
+    <section className={`${globalStyles.projects}`}>
       <div className={globalStyles.container}>
-        {title && <h2 className={`${globalStyles.section__title} ${styles.project__title}`}>{title}</h2>}
+        {title && (
+          <h2 className={`${globalStyles.section__title} ${styles.rowCardsTitle}`}>{title}</h2>
+        )}
         <div
-          className={`${styles.project__cards} 
-            ${orientation === 'horizontal' && styles.project__cards_horizontal}
-            ${imageOverflow === 'hidden' && styles.project__cards_no_overflow}`}
+          className={`${styles.rowCards} 
+            ${orientation === 'horizontal' && styles.rowCards__horizontal}
+            ${imageOverflow === 'hidden' && styles.rowCards__noOverflow}`}
         >
           {cardsToShow?.map((card: any, index: number) => {
             if (orientation === 'horizontal') {

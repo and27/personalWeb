@@ -1,8 +1,8 @@
 import { use } from 'react';
 import getPosts from '@/lib/getDataEntries';
-import RowCards, { IRowCards } from '../components/RowCards/RowCards';
+import RowCards, { IRowCards } from '../components/Cards/RowCards/RowCards';
 import getImageDataFromBlogPost from '../utils/getImageSrc';
-import { IRowCard } from '../components/RowCards/Card';
+import { IRowCard } from '../components/Cards/VerticalCard/Card';
 
 export interface BlogCardsProps {
   isFeatured?: boolean;

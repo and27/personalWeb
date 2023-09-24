@@ -1,8 +1,8 @@
 import { use } from 'react';
 import { getRelatedPosts } from '@/lib/getDataEntries';
-import RowCards, { IRowCards } from '../components/RowCards/RowCards';
+import RowCards, { IRowCards } from '../components/Cards/RowCards/RowCards';
 import getImageDataFromBlogPost from '../utils/getImageSrc';
-import { IRowCard } from '../components/RowCards/Card';
+import { IRowCard } from '../components/Cards/VerticalCard/Card';
 
 interface RelatedPostsProps {
   maxCards?: number;
@@ -10,7 +10,11 @@ interface RelatedPostsProps {
   currentPost: any;
 }
 
-const RelatedPostCards: React.FC<RelatedPostsProps> = ({ maxCards = 3, sectionTitle, currentPost }) => {
+const RelatedPostCards: React.FC<RelatedPostsProps> = ({
+  maxCards = 3,
+  sectionTitle,
+  currentPost
+}) => {
   const posts = use(getRelatedPosts({ maxItems: maxCards, currentPost: currentPost })) || [];
 
   const postCards = posts.map((postRaw: any, idx): IRowCard => {

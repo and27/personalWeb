@@ -1,0 +1,40 @@
+@import "~sass-mq/mq";
+
+.rowCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-block-start: 20px;
+  column-gap: 64px;
+  row-gap: 120px;
+
+  @include mq(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rowCards__horizontal {
+  row-gap: 24px;
+}
+
+.rowCardsTitle {
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--secondary-white);
+}
+
+.rowCards__noOverflow {
+  a > div:first-of-type {
+    overflow: hidden;
+    min-block-size: 160px;
+    width: 100%;
+  }
+
+  a > div:last-of-type > p:last-of-type {
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+  }
+}

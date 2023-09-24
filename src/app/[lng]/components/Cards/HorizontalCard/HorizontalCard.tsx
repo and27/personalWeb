@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import cardStyles from '../VerticalCard/Card.module.scss';
 import styles from './HorizontalCard.module.scss';
 import CardWrapper from '../RowCards/CardWrapper';
 
@@ -38,25 +39,25 @@ export const HorizontalCard: React.FC<IRowCard & CardProps> = ({
     <CardWrapper
       aria-labeledby={id}
       href={link}
-      className={`${styles.card} ${styles.cardfeatured}`}
+      className={`${styles.card} ${styles.cardHorizontal}`}
     >
       {image && (
-        <div className={styles.project__image_container}>
+        <div className={styles.cardImageContainer}>
           <Image
             src={image?.src}
             alt={image?.alt}
-            className={styles.project__image}
+            className={styles.cardImage}
             fill
             title={image?.title}
           />
         </div>
       )}
-      <div className={styles.project__content}>
-        {subtitle && <p className={styles.project__subtitle}>{subtitle}</p>}
-        <h3 id={id} className={styles.project__title}>
+      <div className={cardStyles.cardContent}>
+        {subtitle && <p className={cardStyles.cardSubtitle}>{subtitle}</p>}
+        <h3 id={id} className={cardStyles.cardTitle}>
           {title}
         </h3>
-        <p className={styles.project__description}>{description}</p>
+        <p className={cardStyles.cardDescription}>{description}</p>
       </div>
     </CardWrapper>
   );
