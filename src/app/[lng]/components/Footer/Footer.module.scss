@@ -6,43 +6,47 @@
   margin-block: 60px;
 }
 
-.menu {
+//<ul>
+.footerMenu {
   width: 100%;
   display: flex;
   gap: 48px;
   padding: 40px;
 }
 
-.menu__item {
+//<li>
+.footerMenuItem {
   list-style: none;
-}
-
-.menu__link {
-  text-decoration: none;
   color: var(--primary-white);
   font-weight: 300;
   font-size: 1rem;
   letter-spacing: 1px;
   position: relative;
+  transition: color 0.5s ease-out;
 }
 
-.menu__item:hover .menu__link::after {
-  inline-size: 100%;
+.footerMenuItem:hover .footerMenuLink::after {
+  inline-size: 120%;
 }
 
-.menu__link::after {
+.footerMenuLink::after {
   position: absolute;
   inline-size: 0;
   block-size: 100%;
-  inset-inline-start: 0;
-  inset-block-end: 0;
+  inset-inline-start: -1px;
+  inset-block-end: -3px;
   content: "";
-  height: 1px;
-  background-color: var(--primary-white);
+  height: 0.8px;
+  background: linear-gradient(to right, var(--primary-white), var(--dark-gray));
   transition: width 0.3s ease-in-out;
 }
 
-.footer__copy {
+.footerMenu__active::after,
+.footerMenuItem:active {
+  inline-size: 120%;
+}
+
+.footerCopy {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.6;

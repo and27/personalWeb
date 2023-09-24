@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import styles from './Footer.module.scss';
+import { usePathname } from 'next/navigation';
 
 interface navLink {
   to: string;
@@ -24,20 +27,26 @@ const links: ILinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+
   return (
     <footer className={styles.footer}>
       <nav>
-        <ul className={styles.menu}>
+        <ul className={styles.footerMenu}>
           {links.map(({ to, label }) => (
-            <li className={styles.menu__item} key={label}>
-              <Link href={to} className={styles.menu__link} id={label}>
+            <li className={styles.footerMenuItem} key={label}>
+              <Link
+                href={to}
+                className={`${styles.footerMenuLink} ${to === pathname && styles.footerMenu__active}`}
+                id={label}
+              >
                 {label}
               </Link>
             </li>
           ))}
         </ul>
       </nav>
-      <div className={styles.footer__copy}>
+      <div className={styles.footerCopy}>
         <p>© 2021-2023. All rights reserved.</p>
       </div>
     </footer>
