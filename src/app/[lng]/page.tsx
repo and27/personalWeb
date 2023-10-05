@@ -59,7 +59,7 @@ const sCurveTitle = 'About';
 const sCurveDescription = [
   'Welcome to my personal website. I am a passionate software developer working on making the internet a safer and more accessible place for everyone.',
   "For the past four years, I've dedicated my efforts to crafting web and mobile apps spanning diverse domains, including games, the manufacturing industry, and agency projects.",
-  ' Explore my portfolio, learn more about my work, and feel free to contact me.'
+  '<a href="#recentprojects" style="color: #eee; text-decoration: underline; text-underline-offset: 2px;">Explore my portfolio</a>, learn more about my work, and feel free to contact me.'
 ];
 
 export default async function Home({ params }: any) {
