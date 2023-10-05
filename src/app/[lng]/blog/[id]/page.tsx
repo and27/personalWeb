@@ -31,25 +31,27 @@ function BlogPost({ params }: any) {
   return (
     <div className={styles.blog}>
       <div className={globalStyles.container}>
-        <p className={styles.blog__subtitle}>{getPostDate()}</p>
-        <h1 className={styles.blog__title}>{blogPost?.fields.title}</h1>
-        <Image
-          src={image.src}
-          alt={image.alt}
-          className={styles.blog__image}
-          width={image.width}
-          height={imgHeight}
-          loading="eager"
-          sizes="(max-width: 768px) 100vw,
+        <div className={styles.blogArticle}>
+          <p className={styles.blogSubtitle}>{getPostDate()}</p>
+          <h1 className={styles.blogTitle}>{blogPost?.fields.title}</h1>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            className={styles.blogImage}
+            width={image.width}
+            height={imgHeight}
+            loading="eager"
+            sizes="(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
                   33vw"
-        />
-        <ul className={styles.blog__tags}>
-          {blogPost?.fields.tags.map((tag: any, idx: number) => (
-            <li key={idx}>{tag.fields.name}</li>
-          ))}
-        </ul>
-        {renderRichText(richTextField)}
+          />
+          <ul className={styles.blogTags}>
+            {blogPost?.fields.tags.map((tag: any, idx: number) => (
+              <li key={idx}>{tag.fields.name}</li>
+            ))}
+          </ul>
+          {renderRichText(richTextField)}
+        </div>
         <div className={styles.blogCardsContainer}>
           <RelatedPostCards sectionTitle={'Related Posts'} currentPost={slug} />
         </div>
