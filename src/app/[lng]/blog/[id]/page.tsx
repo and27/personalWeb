@@ -32,7 +32,6 @@ function BlogPost({ params }: any) {
     <div className={styles.blog}>
       <div className={globalStyles.container}>
         <div className={styles.blogArticle}>
-          <p className={styles.blogSubtitle}>{getPostDate()}</p>
           <h1 className={styles.blogTitle}>{blogPost?.fields.title}</h1>
           <Image
             src={image.src}
@@ -42,9 +41,10 @@ function BlogPost({ params }: any) {
             height={imgHeight}
             loading="eager"
             sizes="(max-width: 768px) 100vw,
-                  (max-width: 1200px) 50vw,
-                  33vw"
+            (max-width: 1200px) 50vw,
+            33vw"
           />
+          <p className={styles.blogDate}>{getPostDate()}</p>
           <ul className={styles.blogTags}>
             {blogPost?.fields.tags.map((tag: any, idx: number) => (
               <li key={idx}>{tag.fields.name}</li>

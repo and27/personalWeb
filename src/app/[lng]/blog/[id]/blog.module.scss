@@ -11,16 +11,25 @@
   }
 }
 
-.blogCardsContainer div {
-  padding: 0;
+.blogArticle {
+  display: flex;
+  flex-direction: column;
 }
 
-.blogCardsContainer section {
-  padding-top: 48px;
+.blogArticle .blogDate {
+  font-size: 1rem;
+  margin-block-end: 32px;
+  color: #aaa;
+  font-weight: 300;
+  align-self: flex-end;
 }
 
 .blog h2 {
   font-family: var(--font-poppins) !important;
+}
+
+.blogArticle h3 {
+  margin-block-end: 1rem;
 }
 
 .blogTitle {
@@ -41,6 +50,18 @@
   }
 }
 
+.blogImage {
+  background-color: var(--primary-white);
+  width: 100%;
+  margin-block-end: 24px;
+  object-fit: cover;
+  object-position: center right;
+
+  @include mq(tablet) {
+    margin-block-end: 36px;
+  }
+}
+
 .blogTags {
   display: flex;
   flex-wrap: wrap;
@@ -50,26 +71,14 @@
 }
 
 .blogTags li {
-  border-radius: 50px;
+  border-radius: 0px 10px 10px 10px;
   border: 1px solid var(--primary-white);
   padding-block: 6px;
   padding-inline: 30px;
   font-weight: 100;
 }
 
-.blogImage {
-  background-color: var(--primary-white);
-  width: 100%;
-  margin-block-end: 40px;
-  object-fit: cover;
-  object-position: center right;
-
-  @include mq(tablet) {
-    margin-block-end: 80px;
-  }
-}
-
-.blog p {
+.blogArticle p {
   font-size: 1rem;
   line-height: 1.8;
   font-weight: 400;
@@ -79,6 +88,12 @@
   @include mq(desktop) {
     font-size: 1.1rem;
   }
+}
+
+.blogArticle a {
+  color: var(--primary-white);
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
 }
 
 .blog ul {
@@ -103,14 +118,11 @@
   margin-block-start: 2.5rem;
 }
 
-p.blogSubtitle {
-  font-size: 1rem;
-  margin-block-end: 0;
-  color: #aaa;
+//related posts
+.blogCardsContainer div {
+  padding: 0;
 }
 
-.blogArticle a {
-  color: var(--primary-white);
-  text-decoration: underline;
-  transition: color 0.3s ease-in-out;
+.blogCardsContainer section {
+  padding-top: 48px;
 }
