@@ -4,7 +4,8 @@
 .projects,
 .contact,
 .masthead,
-.scurve {
+.scurve,
+.blogHome {
   padding-block: 40px;
   font-family: var(--font-montserrat);
 
@@ -43,6 +44,10 @@
   @include mq(desktop) {
     max-inline-size: 1280px;
     padding-inline: 160px;
+  }
+
+  .container {
+    padding-inline: 0;
   }
 }
 
