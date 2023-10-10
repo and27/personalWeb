@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './FeaturedProjects.module.css';
+import styles from './FeaturedProjects.module.scss';
 import globalStyles from '../../page.module.scss';
 
 const FeaturedProjects = () => (
   <section className={globalStyles.section}>
     <div className={globalStyles.container}>
-      <h2 className={globalStyles.section__title}>What I do?</h2>
+      <h2 className={globalStyles.section__title}>What do I do?</h2>
       <div className={styles.cards}>
         <div className={styles.card__left}>
           <h3 className={styles.card__title}>Frontend Development</h3>

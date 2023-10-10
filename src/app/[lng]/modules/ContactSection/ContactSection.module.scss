@@ -24,21 +24,25 @@
     line-height: 1.2;
     letter-spacing: -0.5%;
     margin-block-end: 16px;
+    color: var(--primary-white);
   }
 
   p {
     margin-block-end: 16px;
+    color: var(--primary-white);
   }
 }
 
 .contactSection__content__inline {
   gap: 48px;
   justify-content: flex-start;
+
   h2 {
     font-size: 32px;
     font-family: var(--font-montserrat);
     line-height: 1.2;
     letter-spacing: -0.5%;
+    color: var(--primary-white);
   }
 }
 

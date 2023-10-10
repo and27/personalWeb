@@ -1,3 +1,5 @@
+@import "~sass-mq/mq";
+
 .cards {
   display: flex;
   flex-direction: column;
@@ -40,14 +42,25 @@
   align-self: flex-end;
   flex-grow: 0;
   position: relative;
-  padding-block: 40px;
+  padding-block: 30px;
   padding-inline-end: 40px;
-  margin-left: 50%;
+  margin-left: 10%;
+
+  @include mq(tablet) {
+    margin-left: 50%;
+    padding-block: 40px;
+  }
 }
 .card__left {
   align-self: flex-start;
   flex-grow: 0;
-  max-inline-size: 50%;
   position: relative;
-  padding-block: 40px;
+  padding-block: 30px;
+  margin-left: 10%;
+
+  @include mq(tablet) {
+    max-inline-size: 50%;
+    padding-block: 40px;
+    margin-left: 0;
+  }
 }

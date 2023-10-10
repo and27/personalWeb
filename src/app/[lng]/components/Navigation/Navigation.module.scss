@@ -27,7 +27,7 @@
 //<ul>
 .navMenu {
   display: none;
-
+  list-style-type: none;
   @include mq(tablet) {
     display: flex;
     gap: 48px;
@@ -39,7 +39,6 @@
 //<li>
 .navMenuItem {
   padding-block: 4px;
-  list-style: none;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -72,6 +71,11 @@
 //mobile
 .navigation__mobile_menu {
   margin-top: -24px;
+  list-style: none;
+
+  a {
+    color: var(--primary-white);
+  }
 }
 
 .navigation__mobile_menu_trigger {
