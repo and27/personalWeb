@@ -60,7 +60,7 @@
   border: 1px solid var(--primary-white);
   background-color: transparent;
   inline-size: fit-content;
-  margin-block-start: 32px;
+  margin-block-start: 2rem;
   color: var(--primary-white);
   position: relative;
   transition: background-color 0.3s ease-in-out;
@@ -89,7 +89,7 @@
 .btn::after,
 .btn::before {
   position: absolute;
-  inline-size: 100%;
+  inline-size: 0;
   content: "";
   height: 1px;
   background-color: var(--primary-white);
@@ -102,7 +102,7 @@
 }
 .btn::before {
   inset-inline-end: 0;
-  inset-block-start: -1px;
+  inset-block-start: -0.5px;
 }
 
 .section__title {
