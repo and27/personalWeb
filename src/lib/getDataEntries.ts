@@ -26,6 +26,7 @@ async function getPosts({ page, itemsPerPage }: IGetPosts) {
   const entries = await client.getEntries({
     'fields.date[lte]': new Date(),
     content_type: 'blogPost',
+    order: '-fields.date',
     skip: alreadyFetched,
     limit: itemsPerPage
   });
