@@ -10,12 +10,14 @@
   font-weight: 400;
   margin-bottom: 20px;
   line-height: 1.2;
+  color: var(--primary-white);
 }
 
 .card__description {
   font-weight: 300;
   font-size: 0.875rem;
   line-height: 1.6;
+  color: var(--primary-white);
 }
 
 .card__right::after {

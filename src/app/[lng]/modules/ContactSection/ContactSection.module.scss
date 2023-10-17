@@ -18,6 +18,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  a {
+    color: var(--primary-white);
+  }
+
   h1 {
     font-size: 48px;
     font-family: var(--font-montserrat);
