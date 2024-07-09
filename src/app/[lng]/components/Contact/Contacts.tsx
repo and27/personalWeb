@@ -6,7 +6,7 @@ function Contact() {
   return (
     <section
       className={`${globalStyles.contact} calendly-inline-widget`}
-      data-url="https://calendly.com/andres-banda/15min"
+      data-url="https://calendly.com/andres-banda/30min"
     >
       <div className={globalStyles.container}>
         <h2 className={globalStyles.section__title}>Let's talk</h2>

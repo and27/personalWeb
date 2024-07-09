@@ -41,14 +41,19 @@ const ContactSection: React.FC<IContactSectionProps> = ({ layout = 'block' }) =>
             <div>
               <h1>Get in touch</h1>
               <p>
-                Simply select the date that works for you, and let's dive into your project or answer your inquiries.
+                Simply select the date that works for you, and let's dive into your project or
+                answer your inquiries.
               </p>
             </div>
           )}
           {layout === 'inline' && <h2>Let's create something extraordinary</h2>}
           <div className={styles.contactSection__contact_data}>
             <div className={styles.contactSection__social}>
-              <Link href={'https://www.linkedin.com/in/andres-banda'} target="_blank" title="LinkedIn profile">
+              <Link
+                href={'https://www.linkedin.com/in/andres-banda'}
+                target="_blank"
+                title="LinkedIn profile"
+              >
                 <Linkedin className={styles.svg} />
                 <span className={globalStyles.visually_hidden}>Linkedin profile</span>
               </Link>
@@ -62,7 +67,7 @@ const ContactSection: React.FC<IContactSectionProps> = ({ layout = 'block' }) =>
         </div>
         {layout === 'block' && (
           <InlineWidget
-            url="https://calendly.com/andres-banda/15min?hide_event_type_details=1&hide_gdpr_banner=1"
+            url="https://calendly.com/andres-banda/30min?hide_event_type_details=1&hide_gdpr_banner=1"
             styles={{
               height: '520px',
               minWidth: matchMobileQuery ? '300px' : '400px',
@@ -72,7 +77,7 @@ const ContactSection: React.FC<IContactSectionProps> = ({ layout = 'block' }) =>
         )}
         {layout === 'inline' && (
           <PopupButton
-            url="https://calendly.com/andres-banda/15min?"
+            url="https://calendly.com/andres-banda/30min?"
             className={`${globalStyles.btn} ${styles.btn}`}
             rootElement={document.body}
             text="Schedule a 15 min meeting"
