@@ -90,9 +90,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
-  background-color: #222;
+  background-color: #121212;
 }
 
 a {
@@ -111,7 +109,7 @@ h3,
 li,
 a,
 button {
-  font-family: var(--font-poppins) !important;
+  font-family: var(--font-montserrat);
 }
 
 a:focus,
