@@ -1,0 +1,58 @@
+@import "~sass-mq/mq";
+
+.admission {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 24px;
+  font-family: var(--font-montserrat);
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  @include mq(tablet) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+.admission__inner {
+  padding: 1.5rem;
+  background-color: rgb(25, 25, 25);
+}
+
+.timer {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.admission_title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-white);
+  text-align: center;
+  padding: 2rem 3rem;
+  border: 1px solid var(--primary-white);
+  font-family: var(--font-poppins);
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  @include mq(tablet) {
+    font-size: 3rem;
+  }
+}
+
+.admission span {
+  display: block;
+}
+
+.admission p {
+  color: var(--primary-white);
+}
