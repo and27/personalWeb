@@ -8,32 +8,28 @@
 }
 
 .nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   inline-size: 100%;
   align-items: center;
   padding-inline-start: 30px;
-  justify-content: space-between;
   margin-inline: auto;
   padding-inline: 20px;
 
   @include mq(tablet) {
     padding-inline: 60px;
   }
-  @include mq(desktop) {
-    max-inline-size: 1280px;
-    padding-inline: 160px;
-  }
 }
 
 //<ul>
 .navMenu {
+  justify-self: center;
   display: none;
   list-style-type: none;
   @include mq(tablet) {
     display: flex;
     gap: 48px;
     padding: 10px;
-    margin-left: auto;
   }
 }
 
@@ -135,4 +131,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.navActions {
+  display: none;
+  @include mq(tablet) {
+    display: flex;
+    gap: 20px;
+    justify-self: end;
+  }
 }

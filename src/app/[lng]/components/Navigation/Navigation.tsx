@@ -33,7 +33,7 @@ export default function Navigation({ dict }: any) {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <Link href="/">
+        <Link href="/" style={{ opacity: 0.7 }}>
           <Image
             src={Logo}
             alt="Home link personal logo"
@@ -57,6 +57,10 @@ export default function Navigation({ dict }: any) {
             </li>
           ))}
         </ul>
+        <div className={styles.navActions}>
+          <button onClick={() => alert('Language switcher')}>language switcher</button>
+          <button onClick={() => alert('Theme switcher')}>theme switcher</button>
+        </div>
         <MobileMenu
           isMobileMenuActive={isMobileMenuActive}
           handleMobileToggle={handleMobileToggle}
