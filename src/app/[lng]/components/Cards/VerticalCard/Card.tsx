@@ -1,6 +1,9 @@
 import Image, { StaticImageData } from 'next/image';
 import styles from './Card.module.scss';
 import CardWrapper from '../RowCards/CardWrapper';
+import React from '../../../../../../public/react.png';
+import Js from '../../../../../../public/js.png';
+import Vite from '../../../../../../public/vite.png';
 
 type imageData = {
   src: string | StaticImageData;
@@ -19,6 +22,7 @@ export interface IRowCard {
   linkLabel?: string;
   image?: imageData;
   isFeatured?: boolean;
+  cardIcons?: string[];
 }
 
 type CardProps = {
@@ -33,7 +37,8 @@ export const Card: React.FC<IRowCard & CardProps> = ({
   description,
   link,
   image,
-  isFeatured
+  isFeatured,
+  cardIcons
 }) => {
   return (
     <CardWrapper
@@ -58,6 +63,14 @@ export const Card: React.FC<IRowCard & CardProps> = ({
         <h3 id={id} className={styles.cardTitle}>
           {title}
         </h3>
+        {cardIcons && (
+          <div className={styles.cardIcons}>
+            <Image src={React} alt="React Icon" width={20} height={20} />
+            <Image src={Vite} alt="Vite Icon" width={20} height={20} />
+            <Image src={Js} alt="JS Icon" width={20} height={20} />
+          </div>
+        )}
+
         <p className={styles.cardDescription}>{description}</p>
       </div>
     </CardWrapper>

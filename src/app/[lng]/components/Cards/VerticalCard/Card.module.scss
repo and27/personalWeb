@@ -126,6 +126,17 @@ p.cardDescription {
   letter-spacing: 1px;
 }
 
+.cardIcons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cardIcons * {
+  width: 24px;
+  height: 24px;
+}
+
 @keyframes slideIn {
   0% {
     opacity: 0;

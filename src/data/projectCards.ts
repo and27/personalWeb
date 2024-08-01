@@ -27,7 +27,8 @@ export const ProjectCards: IRowCard[] = [
       src: Launch,
       alt: '',
       title: ''
-    }
+    },
+    cardIcons: ['react', 'js', 'vite']
   },
   {
     id: '2',
@@ -39,7 +40,8 @@ export const ProjectCards: IRowCard[] = [
       src: Codercat,
       alt: '',
       title: ''
-    }
+    },
+    cardIcons: ['react', 'js', 'vite']
   },
   {
     id: '3',
@@ -51,7 +53,8 @@ export const ProjectCards: IRowCard[] = [
       src: Securelab,
       alt: '',
       title: ''
-    }
+    },
+    cardIcons: ['react', 'js', 'vite']
   }
 ];
 

@@ -36,7 +36,10 @@ const RowCards: React.FC<IRowCards> = ({
   };
 
   return (
-    <section className={`${globalStyles.projects}`} id={title?.toLowerCase().replace(' ', '')}>
+    <div
+      className={`${globalStyles.projects} ${styles.rowCards__container}`}
+      id={title?.toLowerCase().replace(' ', '')}
+    >
       <div className={globalStyles.container}>
         {title && (
           <h2 className={`${globalStyles.section__title} ${styles.rowCardsTitle}`}>{title}</h2>
@@ -72,6 +75,7 @@ const RowCards: React.FC<IRowCards> = ({
                   subtitle={card.subtitle}
                   image={card.image}
                   isFeatured={isFeatured && index === 0}
+                  cardIcons={card.cardIcons}
                 />
               );
           })}
@@ -82,7 +86,7 @@ const RowCards: React.FC<IRowCards> = ({
           </button>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 export default RowCards;
