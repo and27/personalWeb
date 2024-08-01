@@ -26,29 +26,46 @@
 .masthead::before {
   content: "";
   position: absolute;
-  inline-size: 100px;
-  block-size: 200px;
+  inline-size: 60px;
+  block-size: 180px;
   inset-inline-end: 0;
   bottom: 0;
   background-image: url("../../../public/pattern.svg");
   background-size: auto;
   background-repeat: no-repeat;
+
+  @include mq(tablet) {
+    inline-size: 110px;
+    block-size: 220px;
+  }
+
+  @include mq(desktop) {
+    inline-size: 120px;
+    block-size: 220px;
+  }
 }
 
 .masthead::after {
   content: "";
   position: absolute;
-  inline-size: 100px;
-  block-size: 200px;
+  inline-size: 60px;
+  block-size: 60px;
   inset-inline-start: 0;
   top: 100px;
-  background-image: url("../../../public/pattern.svg");
+  background-image: url("../../../public/pattern2.svg");
   background-size: auto;
   background-repeat: no-repeat;
-}
+  z-index: -1;
 
-.scurve {
-  background-color: #181818;
+  @include mq(tablet) {
+    inline-size: 110px;
+    block-size: 110px;
+  }
+
+  @include mq(desktop) {
+    inline-size: 120px;
+    block-size: 120px;
+  }
 }
 
 .projects {
@@ -87,6 +104,7 @@
   padding-block: 0.875rem;
   padding-inline: 2.5rem;
   border: 1px solid var(--primary-white);
+  border-radius: 8px;
   background-color: transparent;
   inline-size: fit-content;
   margin-block-start: 2rem;

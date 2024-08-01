@@ -9,7 +9,7 @@ import RecentProjects from './modules/RecentProjects';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
-const sCurveTitle = 'Welcome';
+const sCurveTitle = 'My Journey';
 const sCurveDescription = [
   'Welcome to my personal website. I am a passionate software developer working on making the internet a safer and more accessible place for everyone.',
   "For the past four years, I've dedicated my efforts to crafting web and mobile apps spanning diverse domains, including games, the manufacturing industry, and agency projects."

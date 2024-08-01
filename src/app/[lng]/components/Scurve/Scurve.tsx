@@ -36,7 +36,9 @@ const Scurve: React.FC<IScurve> = ({ title, description }) => {
                 dangerouslySetInnerHTML={{ __html: description }}
               ></p>
             ))}
+            <button className={globalStyles.btn}>Explore my work</button>
           </div>
+
           <motion.div style={{ x }} className={styles.scurve__media}>
             <LayoutSVG />
           </motion.div>

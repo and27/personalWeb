@@ -9,6 +9,27 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: #191818;
+  border-radius: 16px;
+  padding: 50px;
+  position: relative;
+}
+
+.scurve__inner:after {
+  content: "";
+  position: absolute;
+  inline-size: 60px;
+  block-size: 60px;
+  inset-inline-start: -30px;
+  bottom: -20px;
+  background-image: url("../../../../../public/pattern2.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+
+  @include mq(tablet) {
+    inline-size: 80px;
+    block-size: 80px;
+  }
 }
 
 .scurve__content {
