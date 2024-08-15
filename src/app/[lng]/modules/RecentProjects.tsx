@@ -6,7 +6,7 @@ const RecentProjects = () => {
   return (
     <section style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <RowCards {...Projects} />
-      <button className={globalStyles.btn}>See more</button>
+      {/* <button className={globalStyles.btn}>See more</button> */}
     </section>
   );
 };

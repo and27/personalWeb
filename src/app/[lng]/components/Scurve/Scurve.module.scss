@@ -11,8 +11,12 @@
   align-items: center;
   background-color: #191818;
   border-radius: 16px;
-  padding: 50px;
+  padding: 24px;
   position: relative;
+
+  @include mq(tablet) {
+    padding: 48px;
+  }
 }
 
 .scurve__inner:after {

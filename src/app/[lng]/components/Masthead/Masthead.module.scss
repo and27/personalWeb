@@ -70,7 +70,11 @@
   border-block: 1px solid transparent;
   background-color: #4c15bb;
   border-radius: 0;
-  padding-inline: 5rem;
+  padding-inline: 3rem;
+
+  @include mq(tablet) {
+    padding-inline: 5rem;
+  }
 }
 
 @keyframes cta {
