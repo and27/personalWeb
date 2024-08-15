@@ -37,7 +37,9 @@ export default function Footer() {
             <li className={styles.footerMenuItem} key={label}>
               <Link
                 href={to}
-                className={`${styles.footerMenuLink} ${to === pathname && styles.footerMenu__active}`}
+                className={`${styles.footerMenuLink} ${
+                  to === pathname && styles.footerMenu__active
+                }`}
                 id={label}
               >
                 {label}
@@ -47,7 +49,7 @@ export default function Footer() {
         </ul>
       </nav>
       <div className={styles.footerCopy}>
-        <p>© 2021-2023. All rights reserved.</p>
+        <p>© 2021 - 2025. All rights reserved.</p>
       </div>
     </footer>
   );

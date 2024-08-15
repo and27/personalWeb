@@ -9,7 +9,7 @@ function Contact() {
       data-url="https://calendly.com/andres-banda/30min"
     >
       <div className={globalStyles.container}>
-        <h2 className={globalStyles.section__title}>Let's talk</h2>
+        <h2 className={globalStyles.section__title}>Let's Connect!</h2>
         <p className={`${globalStyles.section__text} ${styles.contact__text}`}>
           Some of the most creative projects start with a conversation
         </p>

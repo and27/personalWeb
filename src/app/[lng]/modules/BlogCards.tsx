@@ -39,7 +39,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
     return {
       id: idx.toString(),
       title: post.title,
-      subtitle: date,
+      // subtitle: date,
       description: post.body.content[0].content[0].value,
       link: `/blog/${post.slug}`,
       image: {
