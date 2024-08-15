@@ -1,0 +1,50 @@
+.navActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.navActions button {
+  background: linear-gradient(135deg, #5d26c1, #a17fe0);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.navActions button:hover {
+  background: linear-gradient(135deg, #6e45e2, #88d3ce);
+}
+
+.navActions button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.navActions button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.navActions button span {
+  display: block;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.navActions button:hover span {
+  transform: translateY(-3px);
+}

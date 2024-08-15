@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import styles from './Navigation.module.scss';
 import Logo from '../../../../../public/firma.png';
 import MobileMenu from './MobileMenu';
+import NavActions from '../NavActions/NavActions';
 
 interface navLink {
   to: string;
@@ -57,10 +58,7 @@ export default function Navigation({ dict }: any) {
             </li>
           ))}
         </ul>
-        <div className={styles.navActions}>
-          <button onClick={() => alert('Language switcher')}>language switcher</button>
-          <button onClick={() => alert('Theme switcher')}>theme switcher</button>
-        </div>
+        <NavActions />
         <MobileMenu
           isMobileMenuActive={isMobileMenuActive}
           handleMobileToggle={handleMobileToggle}
