@@ -33,15 +33,31 @@
   background-image: url("../../../public/pattern.svg");
   background-size: auto;
   background-repeat: no-repeat;
+  animation: float 4s ease-in-out infinite;
 
   @include mq(tablet) {
-    inline-size: 110px;
+    inline-size: 100px;
     block-size: 220px;
   }
 
   @include mq(desktop) {
-    inline-size: 120px;
+    inline-size: 110px;
     block-size: 220px;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.8;
   }
 }
 
@@ -56,15 +72,16 @@
   background-size: auto;
   background-repeat: no-repeat;
   z-index: -1;
+  animation: float 6s ease-in-out infinite;
 
   @include mq(tablet) {
-    inline-size: 110px;
-    block-size: 110px;
+    inline-size: 100px;
+    block-size: 100px;
   }
 
   @include mq(desktop) {
-    inline-size: 120px;
-    block-size: 120px;
+    inline-size: 110px;
+    block-size: 110px;
   }
 }
 

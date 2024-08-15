@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation';
 import styles from './Navigation.module.scss';
 import Logo from '../../../../../public/firma.png';
 import MobileMenu from './MobileMenu';
-import NavActions from '../NavActions/NavActions';
 
 interface navLink {
   to: string;
@@ -58,7 +57,6 @@ export default function Navigation({ dict }: any) {
             </li>
           ))}
         </ul>
-        <NavActions />
         <MobileMenu
           isMobileMenuActive={isMobileMenuActive}
           handleMobileToggle={handleMobileToggle}

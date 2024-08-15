@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import styles from './Card.module.scss';
 import CardWrapper from '../RowCards/CardWrapper';
-import React from '../../../../../../public/react.png';
+import React from '../../../../../../public/React.png';
 import Js from '../../../../../../public/js.png';
 import Vite from '../../../../../../public/vite.png';
 

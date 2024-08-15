@@ -1,6 +1,5 @@
 import styles from './Masthead.module.scss';
 import globalStyles from '../../page.module.scss';
-import Image from 'next/image';
 import Underline from '../../../../../public/underline.svg';
 
 interface IMasthead {
