@@ -1,17 +1,14 @@
 @import "~sass-mq/mq";
 
-.section,
 .projects,
 .contact,
 .masthead,
+.blogHome,
 .scurve,
-.blogHome {
-  padding-block: 40px;
+.blog,
+.benefits {
+  padding-block: 60px;
   font-family: var(--font-montserrat);
-
-  @include mq(tablet) {
-    padding-block: 80px;
-  }
 
   @include mq(desktop) {
     padding-block: 120px;

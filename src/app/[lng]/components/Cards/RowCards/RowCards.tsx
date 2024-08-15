@@ -36,10 +36,7 @@ const RowCards: React.FC<IRowCards> = ({
   };
 
   return (
-    <div
-      className={`${globalStyles.projects} ${styles.rowCards__container}`}
-      id={title?.toLowerCase().replace(' ', '')}
-    >
+    <div className={`${styles.rowCards__container}`} id={title?.toLowerCase().replace(' ', '')}>
       <div className={globalStyles.container}>
         {title && (
           <h2 className={`${globalStyles.section__title} ${styles.rowCardsTitle}`}>{title}</h2>

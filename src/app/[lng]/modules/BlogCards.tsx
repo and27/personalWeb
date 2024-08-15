@@ -3,6 +3,7 @@ import getPosts from '@/lib/getDataEntries';
 import RowCards, { IRowCards } from '../components/Cards/RowCards/RowCards';
 import getImageDataFromBlogPost from '../utils/getImageSrc';
 import { IRowCard } from '../components/Cards/VerticalCard/Card';
+import globalStyles from '../page.module.scss';
 
 export interface BlogCardsProps {
   isFeatured?: boolean;
@@ -58,7 +59,11 @@ const BlogCards: React.FC<BlogCardsProps> = ({
     cta: cta
   };
 
-  return <RowCards {...Posts} imageOverflow={'hidden'} isFeatured={isFeatured} />;
+  return (
+    <section className={globalStyles.blog}>
+      <RowCards {...Posts} imageOverflow={'hidden'} isFeatured={isFeatured} />
+    </section>
+  );
 };
 
 export default BlogCards;

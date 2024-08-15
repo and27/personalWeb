@@ -4,7 +4,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  block-size: calc(90vh - 100px);
+  block-size: calc(90vh - 120px);
 
   @include mq(tablet) {
     block-size: calc(100vh - 100px);
@@ -49,7 +49,7 @@
   font-weight: 300;
   line-height: 1.2;
   padding-block: 0.875rem;
-  padding-inline: 1.5rem;
+  padding-inline: 1.4rem;
   border: 1px solid var(--primary-white);
   background-color: #121212;
   inline-size: fit-content;
@@ -70,7 +70,7 @@
   border-block: 1px solid transparent;
   background-color: #4c15bb;
   border-radius: 0;
-  padding-inline: 3rem;
+  padding-inline: 1.6rem;
 
   @include mq(tablet) {
     padding-inline: 5rem;

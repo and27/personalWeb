@@ -3,7 +3,7 @@ import styles from './FeaturedProjects.module.scss';
 import globalStyles from '../../page.module.scss';
 
 const FeaturedProjects = () => (
-  <section className={globalStyles.section}>
+  <section className={globalStyles.benefits}>
     <div className={globalStyles.container}>
       <h2 className={globalStyles.section__title}>What do I do?</h2>
       <div className={styles.cards}>

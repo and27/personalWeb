@@ -4,7 +4,10 @@ import globalStyles from '../page.module.scss';
 
 const RecentProjects = () => {
   return (
-    <section style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <section
+      className={globalStyles.projects}
+      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
       <RowCards {...Projects} />
       {/* <button className={globalStyles.btn}>See more</button> */}
     </section>
