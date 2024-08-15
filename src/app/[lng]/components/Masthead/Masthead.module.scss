@@ -17,6 +17,14 @@
   align-items: center;
   margin: 0 auto;
   text-align: center;
+
+  svg {
+    display: none;
+
+    @include mq(tablet) {
+      display: block;
+    }
+  }
 }
 
 .masthead__title {
