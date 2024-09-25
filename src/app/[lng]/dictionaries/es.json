@@ -1,8 +1,8 @@
 {
   "mastheadInfo": {
-    "title": "Hola, Soy Andres, desarrollador web y ciberseguridad",
-    "description": "Llevando tu presencia en línea al siguiente nivel con aplicaciones web centradas en la seguridad",
-    "cta": "Hablemos"
+    "title": "Impulsa tu negocio con",
+    "description": "Ayudamos a empresas y emprendedores a escalar sus negocios mediante automatización, desarrollo de plataformas y optimización digital  ",
+    "cta": "¡Hablemos y comencemos a crear!"
   },
   "menu": [
     {
@@ -20,5 +20,56 @@
       "to": "/es/contact",
       "label": "Contacto"
     }
-  ]
+  ],
+  "about": {
+    "title": "Acerca de",
+    "description": [
+      "Convertimos tus ideas y desafíos en experiencias digitales. Con más de 5 años de experiencia, hemos creado aplicaciones web y móviles para sectores como gaming, educación, manufactura y agencias.",
+      "Actualmente, lideramos proyectos en la industria EdTech. Nuestro objetivo es facilitar el aprendizaje y la enseñanza de manera más eficiente y accesible."
+    ],
+    "cta": "Explora mi trabajo"
+  },
+  "services": {
+    "title": "¿Qué hacemos?",
+    "services": [
+      {
+        "title": "Desarrollo web",
+        "description": "Creamos sitios web y aplicaciones web responsivas utilizando React, Next.js y TypeScript, enfocados en la seguridad y la experiencia de usuario."
+      },
+      {
+        "title": "Pruebas de Seguridad de Aplicaciones",
+        "description": "Protegemos sus aplicaciones de amenazas cibernéticas mediante pruebas de seguridad y evaluaciones de vulnerabilidades."
+      },
+      {
+        "title": "Soluciones de Tecnología Educativa",
+        "description": "Desarrollamos plataformas seguras y escalables para educadores y entrenadores, aprovechando la IA para mejorar las experiencias de aprendizaje y automatizar procesos."
+      }
+    ]
+  },
+  "contact": {
+    "blockTitle": "Ponte en contacto",
+    "inlineTitle": "Creemos algo extraordinario",
+    "description": "Simplemente selecciona la fecha que te convenga y sumérgete en tu proyecto o responde a tus preguntas.",
+    "cta": "Agenda una reunión de 15 minutos"
+  },
+  "projects": [
+    {
+      "title": "Partners",
+      "description": "Partners es una app que conecta emprendedores en etapas tempranas con socios estratégicos que complementen sus habilidades.",
+      "impact": "Aumento del 30% en la tasa de éxito de los emprendedores en la búsqueda de socios."
+    },
+    {
+      "title": "Launch",
+      "description": "Launch es una plataforma de lanzamiento de productos que ayuda a los emprendedores a validar sus ideas y obtener feedback.",
+      "impact": "Launch ha ayudado a más de 1000 emprendedores a probar sus ideas y obtener retroalimentación de clientes potenciales."
+    },
+    {
+      "title": "Codercat",
+      "description": " Codercat es una plataforma de aprendizaje en línea que ofrece cursos de programación y tecnología para estudiantes de todas las edades.",
+      "impact": "Aumento del 40% en la retención de estudiantes en comparación con otras plataformas."
+    }
+  ],
+  "footer": {
+    "rights": "© 2021 - 2025. Todos los derechos reservados."
+  }
 }

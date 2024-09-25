@@ -20,5 +20,55 @@
       "to": "/fr/contact",
       "label": "Contact"
     }
-  ]
+  ],
+  "about": {
+    "title": "Mon Parcours",
+    "description": "Bienvenue sur mon site personnel. Je suis un développeur de logiciels passionné qui travaille à rendre Internet plus sûr et accessible pour tous. Au cours des quatre dernières années, j'ai consacré mes efforts à la création d'applications web et mobiles couvrant divers domaines, notamment les jeux, l'industrie manufacturière et les projets d'agence.",
+    "cta": "Découvrez mon travail"
+  },
+  "services": {
+    "title": "Que fais-je?",
+    "services": [
+      {
+        "title": "Développement web",
+        "description": "Nous créons des sites web et des applications web réactives en utilisant les dernières technologies comme React, Next.js et TypeScript, avec un fort accent sur la sécurité et la conception centrée sur l'utilisateur. Nos solutions sont conçues pour être évolutives, efficaces et optimisées pour les expériences utilisateur modernes."
+      },
+      {
+        "title": "Tests de sécurité des applications",
+        "description": "Nous nous assurons que vos applications sont protégées contre les menaces cybernétiques grâce à des tests de sécurité approfondis. Des évaluations de vulnérabilités aux tests de pénétration, notre expertise garantit que votre plateforme reste sécurisée et conforme aux normes de l'industrie."
+      },
+      {
+        "title": "Solutions technologiques éducatives",
+        "description": "Nous concevons et développons des plateformes sécurisées et évolutives adaptées aux éducateurs, aux entraîneurs et aux créateurs de contenu. En utilisant l'IA et l'automatisation, nous permettons aux professionnels de l'éducation d'améliorer les expériences d'apprentissage, d'automatiser la gestion des cours et d'améliorer l'engagement des étudiants."
+      }
+    ]
+  },
+  "contact": {
+    "blockTitle": "Contactez-moi",
+    "inlineTitle": "Créons quelque chose d'extraordinaire",
+    "description": "Sélectionnez simplement la date qui vous convient et plongez dans votre projet ou répondez à vos questions.",
+    "cta": "Planifiez une réunion de 15 minutes"
+  },
+
+  "projects": [
+    {
+      "title": "Partners",
+      "description": "Partners est une application qui connecte les entrepreneurs en phase de démarrage avec des partenaires stratégiques qui complètent leurs compétences.",
+      "impact": "Augmentation de 30% du taux de réussite des entrepreneurs dans la recherche de partenaires."
+    },
+    {
+      "title": "EduTech",
+      "description": "EduTech est une plateforme d'apprentissage en ligne qui utilise l'IA pour personnaliser les cours et les exercices en fonction des besoins de chaque élève.",
+      "impact": "Amélioration de 25% des résultats des élèves en mathématiques et en sciences."
+    },
+    {
+      "title": "E-Commerce",
+      "description": "E-Commerce est une application de commerce électronique qui permet aux petites entreprises de vendre leurs produits en ligne.",
+      "impact": "Augmentation de 40% des ventes en ligne pour les petites entreprises."
+    }
+  ],
+
+  "footer": {
+    "rights": "© 2021 - 2025. Tous droits réservés."
+  }
 }
