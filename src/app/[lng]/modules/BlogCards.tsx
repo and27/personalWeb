@@ -11,6 +11,7 @@ export interface BlogCardsProps {
   maxCards: number;
   sectionTitle?: string;
   orientation?: 'horizontal' | 'vertical';
+  locale: string;
 }
 
 const BlogCards: React.FC<BlogCardsProps> = ({
@@ -18,12 +19,14 @@ const BlogCards: React.FC<BlogCardsProps> = ({
   cta,
   maxCards,
   sectionTitle,
-  orientation = 'vertical'
+  orientation = 'vertical',
+  locale
 }) => {
   const page = 1;
   const postParams = {
+    page,
     itemsPerPage: maxCards,
-    page
+    locale: locale === 'en' ? 'en-US' : 'es'
   };
 
   const posts = use(getPosts(postParams)) || [];
@@ -41,7 +44,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
       id: idx.toString(),
       title: post.title,
       // subtitle: date,
-      description: post.body.content[0].content[0].value,
+      description: post.body?.content[0].content[0].value,
       link: `/blog/${post.slug}`,
       image: {
         ...imageData,

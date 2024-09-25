@@ -12,11 +12,12 @@ function renderRichText(richTextField: any) {
 }
 
 function BlogPost({ params }: any) {
-  const { id: slug } = params;
+  const { id: slug, lng } = params;
+  const lang = lng === 'en' ? 'en-US' : 'es';
 
-  const blogPost = use(getBlogPostBySlug(slug)) as any;
+  const blogPost = use(getBlogPostBySlug(slug, lang)) as any;
   const richTextField = blogPost?.fields.body;
-  const image = getImageDataFromBlogPost(blogPost);
+  // const image = getImageDataFromBlogPost(blogPost);
   const imgHeight = 200;
 
   const getPostDate = () => {
@@ -33,7 +34,7 @@ function BlogPost({ params }: any) {
       <div className={globalStyles.container}>
         <div className={styles.blogArticle}>
           <h1 className={styles.blogTitle}>{blogPost?.fields.title}</h1>
-          <Image
+          {/* <Image
             src={image.src}
             alt={image.alt}
             className={styles.blogImage}
@@ -43,7 +44,7 @@ function BlogPost({ params }: any) {
             sizes="(max-width: 768px) 100vw,
             (max-width: 1200px) 50vw,
             33vw"
-          />
+          /> */}
           <p className={styles.blogDate}>{getPostDate()}</p>
           <ul className={styles.blogTags}>
             {blogPost?.fields.tags.map((tag: any, idx: number) => (
