@@ -8,6 +8,7 @@
   gap: 36px;
   transition: opacity 2s ease-in-out;
   animation: slideIn 1s ease-in-out forwards;
+  cursor: pointer;
 
   h3 {
     transition: color 0.3s ease-in-out;
@@ -128,13 +129,13 @@ p.cardDescription {
 
 .cardIcons {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .cardIcons * {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 @keyframes slideIn {

@@ -43,3 +43,12 @@
 .rowCards__container {
   padding-block-end: 2rem;
 }
+
+.cardfeatured {
+  @include mq(tablet) {
+    grid-column: 1 / span 2;
+  }
+  @include mq(desktop) {
+    grid-column: 1 / span 3;
+  }
+}

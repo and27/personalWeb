@@ -26,6 +26,7 @@ const RowCards: React.FC<IRowCards> = ({
   orientation
 }) => {
   const [page, setPage] = useState(0);
+
   const extraCards = isFeatured ? 1 : 0;
   const cardsPerPage = 3;
   const cardsToShow = cards?.slice(0, cardsPerPage * (page + 1) + extraCards);
@@ -47,34 +48,20 @@ const RowCards: React.FC<IRowCards> = ({
             ${imageOverflow === 'hidden' && styles.rowCards__noOverflow}`}
         >
           {cardsToShow?.map((card: any, index: number) => {
-            if (orientation === 'horizontal') {
-              return (
-                <HorizontalCard
-                  id={`card${index.toString()}`}
-                  key={index}
-                  title={card.title}
-                  description={card.description}
-                  link={card.link}
-                  linkLabel={linkLabel}
-                  subtitle={card.subtitle}
-                  image={card.image}
-                />
-              );
-            } else
-              return (
-                <Card
-                  id={`card${index.toString()}`}
-                  key={index}
-                  title={card.title}
-                  description={card.description}
-                  link={card.link}
-                  linkLabel={linkLabel}
-                  subtitle={card.subtitle}
-                  image={card.image}
-                  isFeatured={isFeatured && index === 0}
-                  cardIcons={card.cardIcons}
-                />
-              );
+            const CardComponent = orientation === 'horizontal' ? HorizontalCard : Card;
+            return (
+              <CardComponent
+                key={index}
+                id={`card${index.toString()}`}
+                title={card.title}
+                description={card.description}
+                link={card.link}
+                linkLabel={linkLabel}
+                subtitle={card.subtitle}
+                image={card.image}
+                isFeatured={isFeatured && index === 0}
+              />
+            );
           })}
         </div>
         {cta && cardsLeft > 0 && (
@@ -86,4 +73,5 @@ const RowCards: React.FC<IRowCards> = ({
     </div>
   );
 };
+
 export default RowCards;

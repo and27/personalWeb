@@ -1,9 +1,13 @@
 import Image, { StaticImageData } from 'next/image';
 import styles from './Card.module.scss';
 import CardWrapper from '../RowCards/CardWrapper';
-import React from '../../../../../../public/React.png';
-import Js from '../../../../../../public/js.png';
-import Vite from '../../../../../../public/vite.png';
+import { SiVite, SiJavascript, SiNextdotjs } from 'react-icons/si';
+
+const iconMap: { [key: string]: JSX.Element } = {
+  vite: <SiVite size={8} />,
+  javascript: <SiJavascript size={8} />,
+  next: <SiNextdotjs size={8} />
+};
 
 type imageData = {
   src: string | StaticImageData;
@@ -18,11 +22,12 @@ export interface IRowCard {
   title: string;
   subtitle?: string;
   description: string;
-  link: string;
+  link?: string;
   linkLabel?: string;
   image?: imageData;
   isFeatured?: boolean;
-  cardIcons?: string[];
+  technologies?: string[];
+  extra?: {};
 }
 
 type CardProps = {
@@ -38,7 +43,7 @@ export const Card: React.FC<IRowCard & CardProps> = ({
   link,
   image,
   isFeatured,
-  cardIcons
+  technologies
 }) => {
   return (
     <CardWrapper
@@ -63,13 +68,11 @@ export const Card: React.FC<IRowCard & CardProps> = ({
         <h3 id={id} className={styles.cardTitle}>
           {title}
         </h3>
-        {cardIcons && (
-          <div className={styles.cardIcons}>
-            <Image src={React} alt="React Icon" width={20} height={20} />
-            <Image src={Vite} alt="Vite Icon" width={20} height={20} />
-            <Image src={Js} alt="JS Icon" width={20} height={20} />
-          </div>
-        )}
+        <div className={styles.cardIcons}>
+          {technologies?.map((tech, index) => {
+            return iconMap[tech] || null;
+          })}
+        </div>
 
         <p className={styles.cardDescription}>{description}</p>
       </div>
