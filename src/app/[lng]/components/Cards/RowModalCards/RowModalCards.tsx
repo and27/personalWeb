@@ -27,7 +27,7 @@ const RowModalCards: React.FC<IRowCards> = ({
   const [selectedCard, setSelectedCard] = useState<IRowCard | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleCardClick = (card: IRowCard, event: React.MouseEvent) => {
+  const handleCardClick = (card: IRowCard) => {
     setSelectedCard(card);
     setIsModalOpen(true);
   };
@@ -53,11 +53,11 @@ const RowModalCards: React.FC<IRowCards> = ({
             return (
               <div
                 key={index}
-                onClick={e => handleCardClick(card, e)}
+                onClick={e => handleCardClick(card)}
                 role="button"
                 tabIndex={0}
                 aria-label={`View details of ${card.title}`}
-                onKeyPress={e => e.key === 'Enter' && handleCardClick(card, e)}
+                onKeyPress={e => e.key === 'Enter' && handleCardClick(card)}
               >
                 <CardComponent
                   id={`card${index.toString()}`}

@@ -1,5 +1,4 @@
 import { ProjectCards } from '@/data/projectCards';
-import RowCards from '../components/Cards/RowCards/RowCards';
 import RowModalCards from '../components/Cards/RowModalCards/RowModalCards';
 import globalStyles from '../page.module.scss';
 

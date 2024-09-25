@@ -27,7 +27,11 @@ export interface IRowCard {
   image?: imageData;
   isFeatured?: boolean;
   technologies?: string[];
-  extra?: {};
+  extra?: {
+    impact?: string;
+    screen?: imageData;
+    link?: string;
+  };
 }
 
 type CardProps = {

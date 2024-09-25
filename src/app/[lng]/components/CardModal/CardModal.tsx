@@ -12,7 +12,6 @@ interface CardModalProps {
 
 const CardModal: React.FC<CardModalProps> = ({ isOpen, onClose, card }) => {
   if (!isOpen || !card) return null;
-  console.log(card.extra);
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>

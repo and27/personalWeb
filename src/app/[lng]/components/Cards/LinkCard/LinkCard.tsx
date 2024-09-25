@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../VerticalCard/Card.module.scss';
 import { IRowCard } from '../VerticalCard/Card';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface LinkCardProps extends IRowCard {}
 
@@ -18,7 +19,7 @@ const LinkCard: React.FC<LinkCardProps> = ({
     <Link href={link || '#'} className={styles.card}>
       {image && (
         <div className={styles.cardImageContainer}>
-          <img src={image.src} alt={image.alt || title} className={styles.cardImage} />
+          <Image src={image.src} alt={image.alt || title} className={styles.cardImage} />
         </div>
       )}
       <div className={styles.cardContent}>
