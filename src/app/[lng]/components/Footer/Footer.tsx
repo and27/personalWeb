@@ -11,23 +11,14 @@ interface navLink {
 
 type ILinks = Array<navLink>;
 
-const links: ILinks = [
-  {
-    to: '/',
-    label: 'Home'
-  },
-  {
-    to: '/blog',
-    label: 'Blog'
-  },
-  {
-    to: '/contact',
-    label: 'Contact'
-  }
-];
+interface IFooterProps {
+  menu: any;
+  rights: string;
+}
 
-export default function Footer() {
+export default function Footer({ menu, rights }: IFooterProps) {
   const pathname = usePathname();
+  const links: ILinks = menu;
 
   return (
     <footer className={styles.footer}>
@@ -49,7 +40,7 @@ export default function Footer() {
         </ul>
       </nav>
       <div className={styles.footerCopy}>
-        <p>© 2021 - 2025. All rights reserved.</p>
+        <p>{rights}</p>
       </div>
     </footer>
   );
