@@ -6,31 +6,43 @@ import BlogCards from './modules/BlogCards';
 import { getDictionary } from './dictionaries';
 import Contact from './contact/page';
 import RecentProjects from './modules/RecentProjects';
+import ContactSection from './modules/ContactSection/ContactSection';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
-const sCurveTitle = 'My Journey';
-const sCurveDescription = [
-  'Welcome to my personal website. I am a passionate software developer working on making the internet a safer and more accessible place for everyone.',
-  "For the past four years, I've dedicated my efforts to crafting web and mobile apps spanning diverse domains, including games, the manufacturing industry, and agency projects."
-];
-
 export default async function Home({ params }: any) {
-  const dict = await getDictionary(params?.lng);
+  const { lng } = params;
+  const dict = await getDictionary(lng);
   const mastheadInfo = dict?.mastheadInfo || {
     title: '',
     description: '',
     cta: ''
   };
+  const sCurveInfo = dict?.about || {
+    title: '',
+    description: '',
+    cta: ''
+  };
+  const services = dict?.services || {
+    title: '',
+    services: []
+  };
+  const contact = dict?.contact || {
+    blockTitle: '',
+    inlineTitle: '',
+    description: '',
+    cta: ''
+  };
 
+  const localizedProjects = dict?.projects || [];
   return (
     <>
-      <Masthead {...mastheadInfo} />
-      <Scurve title={sCurveTitle} description={sCurveDescription} />
-      <FeaturedProjects />
-      <RecentProjects />
-      <BlogCards maxCards={3} sectionTitle="Writing" />
-      <Contact layout={'inline'} />
+      <Masthead {...mastheadInfo} lang={lng} />
+      <FeaturedProjects {...services} />
+      <Scurve {...sCurveInfo} />
+      <RecentProjects localizedProjects={localizedProjects} />
+      <BlogCards maxCards={3} sectionTitle="Writing" locale={lng} />
+      <ContactSection layout={'inline'} {...contact} />
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`} />
       <Script id="google-analytics">
         {`window.dataLayer = window.dataLayer || [];
