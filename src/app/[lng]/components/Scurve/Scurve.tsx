@@ -7,10 +7,11 @@ import LayoutSVG from './LayoutSVG';
 
 interface IScurve {
   title: string;
-  description: Array<string>;
+  description: Array<string> | string;
+  cta: string;
 }
 
-const Scurve: React.FC<IScurve> = ({ title, description }) => {
+const Scurve: React.FC<IScurve> = ({ title, description, cta }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -29,14 +30,21 @@ const Scurve: React.FC<IScurve> = ({ title, description }) => {
           <div className={styles.scurve__content}>
             <h2 className={`${globalStyles.section__title}`}>{title}</h2>
 
-            {description.map((description, idx) => (
+            {typeof description === 'string' ? (
               <p
                 className={globalStyles.section__text}
-                key={idx}
                 dangerouslySetInnerHTML={{ __html: description }}
               ></p>
-            ))}
-            <button className={globalStyles.btn}>Explore my work</button>
+            ) : (
+              description.map((description, idx) => (
+                <p
+                  className={globalStyles.section__text}
+                  key={idx}
+                  dangerouslySetInnerHTML={{ __html: description }}
+                ></p>
+              ))
+            )}
+            {/* <button className={globalStyles.btn}>{cta}</button> */}
           </div>
 
           <motion.div style={{ x }} className={styles.scurve__media}>
