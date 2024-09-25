@@ -2,7 +2,6 @@
 
 .masthead__inner {
   display: flex;
-  justify-content: start;
   align-items: center;
   block-size: calc(90vh - 120px);
 
@@ -14,9 +13,9 @@
 .masthead__content {
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   margin: 0 auto;
-  text-align: center;
 
   svg {
     display: none;
@@ -33,39 +32,38 @@
   margin-bottom: 0;
   line-height: 1.2;
   letter-spacing: -1.5px;
-  max-inline-size: 600px;
+  max-inline-size: 680px;
   color: var(--primary-white);
 
   @include mq(tablet) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   @include mq(desktop) {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
 .masthead__description {
   line-height: 1.5;
   font-weight: 300;
-  max-width: 500px;
+  max-width: 580px;
   color: var(--tertiary-white);
-  margin-block-start: 2rem;
+  margin-block-start: 2.2rem;
 }
 
 .masthead__btn {
-  letter-spacing: 1px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
   padding-block: 0.875rem;
   padding-inline: 1.4rem;
-  border: 1px solid var(--primary-white);
+  border: 1px solid transparent;
   background-color: #121212;
   inline-size: fit-content;
   margin-block-start: 2rem;
   color: var(--primary-white);
+  background-color: #3d0e9a;
   position: relative;
   transition: background-color 0.3s ease-in-out;
-  border-radius: 8px;
   transition: padding-inline 0.5s ease-in-out;
 
   @include mq(tablet) {
@@ -77,6 +75,7 @@
   cursor: pointer;
   border-block: 1px solid transparent;
   background-color: #4c15bb;
+  border-inline: 1px solid var(--primary-white);
   border-radius: 0;
   padding-inline: 1.6rem;
 
