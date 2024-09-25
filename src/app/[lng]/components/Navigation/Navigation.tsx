@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import styles from './Navigation.module.scss';
 import Logo from '../../../../../public/firma.png';
 import MobileMenu from './MobileMenu';
+import NavActions from '../NavActions/NavActions';
 
 interface navLink {
   to: string;
@@ -27,9 +28,7 @@ export default function Navigation({ dict }: any) {
   const handleMobileMenuSelected = () => {
     isMobileMenuActive && setTimeout(() => setIsMobileMenuActive(false), 300);
   };
-
   const links: ILinks = dict?.menu;
-
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -38,8 +37,8 @@ export default function Navigation({ dict }: any) {
             src={Logo}
             alt="Home link personal logo"
             quality={100}
-            width={200}
-            height={48}
+            width={175}
+            height={42}
             sizes="(max-width: 768px) 100vw,
                         (max-width: 1200px) 50vw,
                         33vw"
@@ -57,6 +56,7 @@ export default function Navigation({ dict }: any) {
             </li>
           ))}
         </ul>
+        <NavActions />
         <MobileMenu
           isMobileMenuActive={isMobileMenuActive}
           handleMobileToggle={handleMobileToggle}
