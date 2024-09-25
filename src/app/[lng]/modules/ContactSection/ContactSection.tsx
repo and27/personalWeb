@@ -9,9 +9,19 @@ import Github from '../../../../../public/github.svg';
 import Link from 'next/link';
 
 interface IContactSectionProps {
-  layout: string;
+  layout?: string;
+  inlineTitle?: string;
+  blockTitle?: string;
+  description: string;
+  cta: string;
 }
-const ContactSection: React.FC<IContactSectionProps> = ({ layout = 'block' }) => {
+const ContactSection: React.FC<IContactSectionProps> = ({
+  layout = 'block',
+  inlineTitle,
+  blockTitle,
+  description,
+  cta
+}: IContactSectionProps) => {
   const ref = useRef(null);
 
   const [matchMobileQuery, setMatchMobileQuery] = useState(false);
@@ -39,14 +49,11 @@ const ContactSection: React.FC<IContactSectionProps> = ({ layout = 'block' }) =>
         >
           {layout === 'block' && (
             <div>
-              <h1>Get in touch</h1>
-              <p>
-                Simply select the date that works for you, and let's dive into your project or
-                answer your inquiries.
-              </p>
+              <h1>{blockTitle}</h1>
+              <p>{description}</p>
             </div>
           )}
-          {layout === 'inline' && <h2>Let's create something extraordinary</h2>}
+          {layout === 'inline' && <h2>{inlineTitle}</h2>}
           <div className={styles.contactSection__contact_data}>
             <div className={styles.contactSection__social}>
               <Link
@@ -80,7 +87,7 @@ const ContactSection: React.FC<IContactSectionProps> = ({ layout = 'block' }) =>
             url="https://calendly.com/andres-banda/30min?"
             className={`${globalStyles.btn} ${styles.btn}`}
             rootElement={document.body}
-            text="Schedule a 15 min meeting"
+            text={cta}
           />
         )}
       </div>

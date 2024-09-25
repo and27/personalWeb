@@ -1,8 +1,18 @@
+import { getDictionary } from '../dictionaries';
 import ContactSection from '../modules/ContactSection/ContactSection';
 
-const Contact = ({layout}:{layout:string}) => {
+const Contact = async ({ params }: any) => {
+  const { lng } = params;
+  const dict = await getDictionary(lng);
+  const contactProps = dict?.contact || {
+    blockTitle: '',
+    inlineTitle: '',
+    description: '',
+    cta: ''
+  };
+
   {
-    return <ContactSection layout={layout}/>;
+    return <ContactSection {...contactProps} />;
   }
 };
 
