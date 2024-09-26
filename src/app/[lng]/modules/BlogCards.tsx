@@ -30,7 +30,6 @@ const BlogCards: React.FC<BlogCardsProps> = ({
   };
 
   const posts = use(getPosts(postParams)) || [];
-  console.log(postParams);
 
   const postCards = posts.map((postRaw: any, idx): IRowCard => {
     const post = postRaw.fields;
