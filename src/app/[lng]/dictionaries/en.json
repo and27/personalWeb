@@ -50,24 +50,26 @@
     "cta": "Schedule a 15 min meeting"
   },
 
-  "projects": [
-    {
-      "title": "Partners",
-      "description": "Partners is an app that connects early-stage entrepreneurs with strategic partners who complement their skills.",
-      "impact": "30% increase in entrepreneurs' success rate in finding partners."
-    },
-    {
-      "title": "Launch",
-      "description": " Launch is an AI-powered platform designed to streamline the process of testing and launching your business ideas.",
-      "impact": "50% increase in student engagement and course completion rates."
-    },
-    {
-      "title": "Codercat",
-      "description": "Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.",
-      "impact": "20% reduction in production costs and 15% increase in overall efficiency."
-    }
-  ],
-
+  "recentProjects": {
+    "title": "Recent Projects",
+    "projects": [
+      {
+        "title": "Partners",
+        "description": "Partners is an app that connects early-stage entrepreneurs with strategic partners who complement their skills.",
+        "impact": "30% increase in entrepreneurs' success rate in finding partners."
+      },
+      {
+        "title": "Launch",
+        "description": " Launch is an AI-powered platform designed to streamline the process of testing and launching your business ideas.",
+        "impact": "50% increase in student engagement and course completion rates."
+      },
+      {
+        "title": "Codercat",
+        "description": "Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.",
+        "impact": "20% reduction in production costs and 15% increase in overall efficiency."
+      }
+    ]
+  },
   "footer": {
     "rights": "© 2021 - 2025. All rights reserved."
   }

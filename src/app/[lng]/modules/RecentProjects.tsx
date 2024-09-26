@@ -5,7 +5,9 @@ import globalStyles from '../page.module.scss';
 const RecentProjects = ({ localizedProjects }: { localizedProjects: any }) => {
   const combinedProjects = ProjectCards.map((project, index) => {
     const localizedProject =
-      localizedProjects && localizedProjects[index] ? localizedProjects[index] : {};
+      localizedProjects.projects && localizedProjects.projects[index]
+        ? localizedProjects.projects[index]
+        : {};
     return {
       ...project,
       title: localizedProject.title || project.title,
@@ -18,10 +20,8 @@ const RecentProjects = ({ localizedProjects }: { localizedProjects: any }) => {
   });
 
   return (
-    <section
-      className={globalStyles.projects}
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-    >
+    <section className={globalStyles.projects} style={{ display: 'flex', flexDirection: 'column' }}>
+      <h1 className={globalStyles.section__title}>{localizedProjects.title}</h1>
       <RowModalCards cards={combinedProjects} />
     </section>
   );

@@ -27,11 +27,15 @@ export type languageDataImporter = () => Promise<{
     description: string;
     cta: string;
   };
-  projects: {
+  recentProjects: {
     title: string;
-    description: string;
-    impact: string;
-  }[];
+    projects: {
+      title: string;
+      description: string;
+      impact: string;
+    }[];
+  };
+
   footer: {
     rights: string;
   };

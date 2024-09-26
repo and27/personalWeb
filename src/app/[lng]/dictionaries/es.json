@@ -52,23 +52,27 @@
     "description": "Simplemente selecciona la fecha que te convenga y sumérgete en tu proyecto o responde a tus preguntas.",
     "cta": "Agenda una reunión de 15 minutos"
   },
-  "projects": [
-    {
-      "title": "Partners",
-      "description": "Partners es una app que conecta emprendedores en etapas tempranas con socios estratégicos que complementen sus habilidades.",
-      "impact": "Partners utiliza un sistema de AI Match Inteligente que facilita la conexión entre emprendedores y socios estratégicos, emparejándolos según habilidades complementarias y objetivos empresariales. El algoritmo avanzado analiza en tiempo real los perfiles, fortalezas y necesidades de cada usuario, generando recomendaciones personalizadas para maximizar las oportunidades de colaboración."
-    },
-    {
-      "title": "Launch",
-      "description": "Launch es una plataforma de lanzamiento de productos que ayuda a los emprendedores a validar sus ideas y obtener feedback.",
-      "impact": "Launch utiliza inteligencia artificial para generar un roadmap personalizado, adaptado a las necesidades de cada emprendedor. La plataforma analiza el feedback recibido, así como las métricas de rendimiento, para sugerir ajustes estratégicos y crear un plan de acción optimizado para el lanzamiento del producto."
-    },
-    {
-      "title": "Codercat",
-      "description": " Codercat es una plataforma de aprendizaje en línea que ofrece cursos de programación y tecnología para estudiantes de todas las edades.",
-      "impact": "Aumento del 40% en la retención de estudiantes en comparación con otras plataformas."
-    }
-  ],
+
+  "recentProjects": {
+    "title": "Proyectos recientes",
+    "projects": [
+      {
+        "title": "Partners",
+        "description": "Partners es una app que conecta emprendedores en etapas tempranas con socios estratégicos que complementen sus habilidades.",
+        "impact": "Partners utiliza un sistema de AI Match Inteligente que facilita la conexión entre emprendedores y socios estratégicos, emparejándolos según habilidades complementarias y objetivos empresariales. El algoritmo avanzado analiza en tiempo real los perfiles, fortalezas y necesidades de cada usuario, generando recomendaciones personalizadas para maximizar las oportunidades de colaboración."
+      },
+      {
+        "title": "Launch",
+        "description": "Launch es una plataforma de lanzamiento de productos que ayuda a los emprendedores a validar sus ideas y obtener feedback.",
+        "impact": "Launch utiliza inteligencia artificial para generar un roadmap personalizado, adaptado a las necesidades de cada emprendedor. La plataforma analiza el feedback recibido, así como las métricas de rendimiento, para sugerir ajustes estratégicos y crear un plan de acción optimizado para el lanzamiento del producto."
+      },
+      {
+        "title": "Codercat",
+        "description": " Codercat es una plataforma de aprendizaje en línea que ofrece cursos de programación y tecnología para estudiantes de todas las edades.",
+        "impact": "Aumento del 40% en la retención de estudiantes en comparación con otras plataformas."
+      }
+    ]
+  },
   "footer": {
     "rights": "© 2021 - 2025. Todos los derechos reservados."
   }

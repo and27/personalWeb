@@ -34,7 +34,7 @@ export default async function Home({ params }: any) {
     cta: ''
   };
 
-  const localizedProjects = dict?.projects || [];
+  const localizedProjects = dict?.recentProjects || [];
   return (
     <>
       <Masthead {...mastheadInfo} lang={lng} />

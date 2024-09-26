@@ -50,23 +50,26 @@
     "cta": "Planifiez une réunion de 15 minutes"
   },
 
-  "projects": [
-    {
-      "title": "Partners",
-      "description": "Partners est une application qui connecte les entrepreneurs en phase de démarrage avec des partenaires stratégiques qui complètent leurs compétences.",
-      "impact": "Augmentation de 30% du taux de réussite des entrepreneurs dans la recherche de partenaires."
-    },
-    {
-      "title": "EduTech",
-      "description": "EduTech est une plateforme d'apprentissage en ligne qui utilise l'IA pour personnaliser les cours et les exercices en fonction des besoins de chaque élève.",
-      "impact": "Amélioration de 25% des résultats des élèves en mathématiques et en sciences."
-    },
-    {
-      "title": "E-Commerce",
-      "description": "E-Commerce est une application de commerce électronique qui permet aux petites entreprises de vendre leurs produits en ligne.",
-      "impact": "Augmentation de 40% des ventes en ligne pour les petites entreprises."
-    }
-  ],
+  "recentProjects": {
+    "title": "Projets récents",
+    "projects": [
+      {
+        "title": "Partners",
+        "description": "Partners est une application qui connecte les entrepreneurs en phase de démarrage avec des partenaires stratégiques qui complètent leurs compétences.",
+        "impact": "Augmentation de 30% du taux de réussite des entrepreneurs dans la recherche de partenaires."
+      },
+      {
+        "title": "EduTech",
+        "description": "EduTech est une plateforme d'apprentissage en ligne qui utilise l'IA pour personnaliser les cours et les exercices en fonction des besoins de chaque élève.",
+        "impact": "Amélioration de 25% des résultats des élèves en mathématiques et en sciences."
+      },
+      {
+        "title": "E-Commerce",
+        "description": "E-Commerce est une application de commerce électronique qui permet aux petites entreprises de vendre leurs produits en ligne.",
+        "impact": "Augmentation de 40% des ventes en ligne pour les petites entreprises."
+      }
+    ]
+  },
 
   "footer": {
     "rights": "© 2021 - 2025. Tous droits réservés."
