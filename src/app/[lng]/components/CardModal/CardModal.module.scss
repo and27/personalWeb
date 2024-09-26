@@ -57,8 +57,8 @@
 .modalDescription {
   font-size: 1rem;
   line-height: 1.5;
-  color: #666;
-  margin-bottom: 20px;
+  color: #999;
+  margin-bottom: 32px;
 }
 
 .projectImpact {
@@ -73,34 +73,15 @@
 
   p {
     font-size: 1rem;
-    color: #555;
+    line-height: 1.5;
+    color: #999;
   }
 }
 
 .techStack {
   text-align: left;
-
-  h4 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-
-    li {
-      background-color: #f5f5f5;
-      color: black;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.9rem;
-    }
-  }
+  display: flex;
+  gap: 10px;
 }
 
 .closeButton {

@@ -11,6 +11,7 @@ const RecentProjects = ({ localizedProjects }: { localizedProjects: any }) => {
       title: localizedProject.title || project.title,
       description: localizedProject.description || project.description,
       extra: {
+        impact: localizedProject.impact,
         ...project.extra
       }
     };

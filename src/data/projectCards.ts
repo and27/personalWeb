@@ -19,8 +19,6 @@ export const ProjectCards: IRowCard[] = [
     },
     technologies: ['javascript', 'next'],
     extra: {
-      impact:
-        'Secure Lab has helped over 1000 students to learn cibersecurity and protect their data.',
       screen: {
         src: PartnersScreen,
         alt: '',
@@ -40,8 +38,6 @@ export const ProjectCards: IRowCard[] = [
     },
     technologies: ['javascript', 'vite'],
     extra: {
-      impact:
-        'Launch has helped over 1000 entrepreneurs to test their ideas and get feedback from potential customers.', // Default impact
       link: 'https://launch-black.vercel.app/',
       screen: {
         src: LaunchScreen,

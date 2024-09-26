@@ -26,7 +26,6 @@ const RowModalCards: React.FC<IRowCards> = ({
 }) => {
   const [selectedCard, setSelectedCard] = useState<IRowCard | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const handleCardClick = (card: IRowCard) => {
     setSelectedCard(card);
     setIsModalOpen(true);

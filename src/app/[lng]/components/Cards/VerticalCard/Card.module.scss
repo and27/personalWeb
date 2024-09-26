@@ -106,6 +106,9 @@ p.cardDescription {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 3;
+  -webkit-line-clamp: 4;
 }
 
 .cardImageContainer {

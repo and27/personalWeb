@@ -73,11 +73,10 @@ export const Card: React.FC<IRowCard & CardProps> = ({
           {title}
         </h3>
         <div className={styles.cardIcons}>
-          {technologies?.map((tech, index) => {
+          {technologies?.map(tech => {
             return iconMap[tech] || null;
           })}
         </div>
-
         <p className={styles.cardDescription}>{description}</p>
       </div>
     </CardWrapper>

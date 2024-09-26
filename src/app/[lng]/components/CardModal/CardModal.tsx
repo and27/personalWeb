@@ -3,6 +3,13 @@ import Image from 'next/image';
 import styles from './CardModal.module.scss';
 import globalStyles from '../../page.module.scss';
 import { IRowCard } from '../Cards/VerticalCard/Card';
+import { SiVite, SiJavascript, SiNextdotjs } from 'react-icons/si';
+
+const iconMap: { [key: string]: JSX.Element } = {
+  vite: <SiVite size={20} />,
+  javascript: <SiJavascript size={20} />,
+  next: <SiNextdotjs size={20} />
+};
 
 interface CardModalProps {
   isOpen: boolean;
@@ -42,11 +49,7 @@ const CardModal: React.FC<CardModalProps> = ({ isOpen, onClose, card }) => {
           <div className={styles.modalHeader}>
             <h3 className={styles.modalTitle}>{card.title}</h3>
             <div className={styles.techStack}>
-              <ul>
-                {card.technologies?.map((tech, index) => (
-                  <li key={index}>{tech}</li>
-                ))}
-              </ul>
+              {card.technologies?.map(tech => iconMap[tech] || null)}
             </div>
           </div>
           <p className={styles.modalDescription}>{card.description}</p>
