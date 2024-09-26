@@ -34,7 +34,6 @@ const CardModal: React.FC<CardModalProps> = ({ isOpen, onClose, card }) => {
               className={styles.modalImage}
               width={600}
               height={350}
-              objectFit="cover"
             />
             {card.extra?.link && (
               <button className={globalStyles.btn}>

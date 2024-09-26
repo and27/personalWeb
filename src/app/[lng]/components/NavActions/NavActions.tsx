@@ -52,7 +52,8 @@ const NavActions = () => {
   return (
     <div className={styles.navActions}>
       <button onClick={toggleLanguage}>
-        <span>{language === 'EN' ? '🌐 ES' : '🌐 EN'}</span>
+        <span className={styles.navActionsIcon}>🌐</span>
+        <span>{language === 'EN' ? 'ES' : 'EN'}</span>
       </button>
     </div>
   );

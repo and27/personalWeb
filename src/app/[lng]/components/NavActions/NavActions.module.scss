@@ -1,3 +1,5 @@
+@import "~sass-mq/mq";
+
 .navActions {
   display: flex;
   gap: 1rem;
@@ -16,6 +18,9 @@
   transition: all 0.3s ease;
   overflow: hidden;
   background: #121212;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
 .navActions button:hover {
@@ -30,4 +35,12 @@
 
 .navActions button:hover span {
   transform: translateY(-3px);
+}
+
+.navActionsIcon {
+  display: none;
+
+  @include mq(tablet) {
+    display: block;
+  }
 }
