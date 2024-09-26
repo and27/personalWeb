@@ -3,6 +3,7 @@ import client from './contentful';
 interface IGetRelatedPosts {
   maxItems: number;
   currentPost: string;
+  locale: string;
 }
 
 export interface IGetPosts {
@@ -11,12 +12,13 @@ export interface IGetPosts {
   locale: string;
 }
 
-export async function getRelatedPosts({ maxItems, currentPost }: IGetRelatedPosts) {
+export async function getRelatedPosts({ maxItems, currentPost, locale }: IGetRelatedPosts) {
   const entries = await client.getEntries({
     'fields.slug[ne]': currentPost,
     'fields.date[lte]': new Date(),
     content_type: 'blogPost',
-    limit: maxItems
+    limit: maxItems,
+    locale: locale
   });
 
   return entries.items;

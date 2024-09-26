@@ -8,14 +8,17 @@ interface RelatedPostsProps {
   maxCards?: number;
   sectionTitle?: string;
   currentPost: any;
+  lang: string;
 }
 
 const RelatedPostCards: React.FC<RelatedPostsProps> = ({
   maxCards = 3,
   sectionTitle,
-  currentPost
+  currentPost,
+  lang
 }) => {
-  const posts = use(getRelatedPosts({ maxItems: maxCards, currentPost: currentPost })) || [];
+  const posts =
+    use(getRelatedPosts({ maxItems: maxCards, currentPost: currentPost, locale: lang })) || [];
 
   const postCards = posts.map((postRaw: any, idx): IRowCard => {
     const post = postRaw.fields;
