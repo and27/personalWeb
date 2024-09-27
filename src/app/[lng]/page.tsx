@@ -41,7 +41,7 @@ export default async function Home({ params }: any) {
       <FeaturedProjects {...services} />
       <Scurve {...sCurveInfo} />
       <RecentProjects localizedProjects={localizedProjects} />
-      <BlogCards maxCards={3} sectionTitle="Writing" locale={lng} />
+      <BlogCards maxCards={3} sectionTitle="Blog" locale={lng} />
       <ContactSection layout={'inline'} {...contact} />
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`} />
       <Script id="google-analytics">
