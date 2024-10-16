@@ -21,7 +21,7 @@ const RecentProjects = ({ localizedProjects }: { localizedProjects: any }) => {
 
   return (
     <section className={globalStyles.projects} style={{ display: 'flex', flexDirection: 'column' }}>
-      <h1 className={globalStyles.section__title}>{localizedProjects.title}</h1>
+      <h2 className={globalStyles.section__title}>{localizedProjects.title}</h2>
       <RowModalCards cards={combinedProjects} />
     </section>
   );
