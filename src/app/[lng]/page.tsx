@@ -9,12 +9,6 @@ import ContactSection from './modules/ContactSection/ContactSection';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
-export const metadata = {
-  title: 'Andrés Banda - Desarrollador Frontend | Portafolio',
-  description:
-    'Soy Andrés Banda, desarrollador frontend con experiencia en React JS. Explora mi portafolio con proyectos web innovadores y contáctame para colaborar.'
-};
-
 export default async function Home({ params }: any) {
   const { lng } = params;
   const dict = await getDictionary(lng);

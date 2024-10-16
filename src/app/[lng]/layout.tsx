@@ -4,10 +4,9 @@ import { getDictionary } from './dictionaries';
 import './globals.css';
 
 export const metadata = {
-  title: "Inicio | Andrés' Personal Web.",
+  title: 'Andrés Banda - Desarrollador Frontend | Portafolio',
   description:
-    'Taking your online presence to the next level with security-driven web applications.',
-  keywords: ['personal web', 'online presence', 'web applications', 'security']
+    'Soy Andrés Banda, desarrollador frontend con experiencia en React JS. Explora mi portafolio con proyectos web innovadores y contáctame para colaborar.'
 };
 
 export default async function RootLayout({
