@@ -7,6 +7,7 @@
   --font-poppins: "Poppins", sans-serif;
   --font-paytone: "Paytone One", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
+  --font-museo: "MuseoModerno", sans-serif;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -91,7 +92,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #121212;
+  background-color: rgb(0, 4, 8);
 }
 
 a {
