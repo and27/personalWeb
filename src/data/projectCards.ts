@@ -1,4 +1,4 @@
-import Codercat from '../../public/codercat.png';
+import Tracker from '../../public/recentProjects/tracker.png';
 import Launch from '../../public/launch.png';
 import partersLogo from '../../public/recentProjects/partnersLogo.png';
 import CodercatScreen from '../../public/recentProjects/capturaCodercat.png';
@@ -52,7 +52,7 @@ export const ProjectCards: IRowCard[] = [
     description:
       'Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.', // Default description
     image: {
-      src: Codercat,
+      src: Tracker,
       alt: '',
       title: ''
     },
