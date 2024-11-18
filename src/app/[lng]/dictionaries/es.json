@@ -1,8 +1,8 @@
 {
   "mastheadInfo": {
-    "title": "Impulsa tu negocio con",
-    "description": "Ayudamos a empresas y emprendedores a escalar sus negocios mediante automatización, desarrollo de plataformas y optimización digital  ",
-    "cta": "¡Hablemos y comencemos a crear!"
+    "title": "Transformamos negocios con ",
+    "description": "Te ayudamos a despegar y escalar tu negocio mediante planeación estratégica, desarrollo de plataformas y un toque de magia.",
+    "cta": "¡Comencemos!"
   },
   "menu": [
     {
@@ -30,8 +30,17 @@
     ],
     "cta": "Explora mi trabajo"
   },
+  "aboutStudio": {
+    "title": "Acerca de",
+    "description": [
+      "Somos una agencia de growth con más de 5 años de experiencia impulsando el éxito de emprendedores y negocios.",
+      "Combinamos creatividad, datos y tecnología para generar resultados.",
+      "Diseñamos estrategias digitales a medida, creamos sitios web con propósito y automatizamos procesos para que puedas concentrarte en lo que realmente importa: hacer crecer tu negocio."
+    ],
+    "cta": "Explora nuestro trabajo"
+  },
   "services": {
-    "title": "¿Qué hacemos?",
+    "title": "Lo que hacemos mejor",
     "services": [
       {
         "title": "Desarrollo web",
@@ -44,6 +53,23 @@
       {
         "title": "Soluciones de Tecnología Educativa",
         "description": "Desarrollamos plataformas seguras y escalables para educadores y entrenadores, aprovechando la IA para mejorar las experiencias de aprendizaje y automatizar procesos."
+      }
+    ]
+  },
+  "servicesStudio": {
+    "title": "¿Qué hacemos?",
+    "services": [
+      {
+        "title": "Desarrollo web",
+        "description": "Creamos sitios web que enamoran a primera vista:  atrae,  conecta y  convierte.  Nos enfocamos en crear una experiencia de usuario inolvidable"
+      },
+      {
+        "title": "Estrategias Digitales a Medida",
+        "description": "Alcanza tus metas con una estrategia digital a tu medida. Atrae clientes ideales, aumenta tu visibilidad y haz crecer tu negocio de forma sostenible."
+      },
+      {
+        "title": "Automatización e Inteligencia Artificial",
+        "description": "Ahorra tiempo y esfuerzo con la magia de la automatización e IA. Optimiza tus procesos, personaliza la experiencia de tus clientes y concéntrate en las tareas más importantes."
       }
     ]
   },
@@ -67,8 +93,8 @@
         "impact": "Launch utiliza inteligencia artificial para generar un roadmap personalizado, adaptado a las necesidades de cada emprendedor. La plataforma analiza el feedback recibido, así como las métricas de rendimiento, para sugerir ajustes estratégicos y crear un plan de acción optimizado para el lanzamiento del producto."
       },
       {
-        "title": "Codercat",
-        "description": " Codercat es una plataforma de aprendizaje en línea que ofrece cursos de programación y tecnología para estudiantes de todas las edades.",
+        "title": "Tracker",
+        "description": "Tracker es una aplicación para administrar tus gastos y finanzas personales.",
         "impact": "Aumento del 40% en la retención de estudiantes en comparación con otras plataformas."
       }
     ]

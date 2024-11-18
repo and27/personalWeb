@@ -26,6 +26,11 @@
     "description": "Bienvenue sur mon site personnel. Je suis un développeur de logiciels passionné qui travaille à rendre Internet plus sûr et accessible pour tous. Au cours des quatre dernières années, j'ai consacré mes efforts à la création d'applications web et mobiles couvrant divers domaines, notamment les jeux, l'industrie manufacturière et les projets d'agence.",
     "cta": "Découvrez mon travail"
   },
+  "aboutStudio": {
+    "title": "À propos de AB Studio",
+    "description": "AB Studio est une agence de développement de logiciels spécialisée dans la création d'applications web et mobiles sécurisées et évolutives. Nous exploitons des technologies de pointe pour offrir des expériences utilisateur exceptionnelles et aider les entreprises à croître. Notre équipe d'experts est dédiée à fournir des services de qualité supérieure qui répondent à vos besoins uniques et dépassent vos attentes.",
+    "cta": "En savoir plus"
+  },
   "services": {
     "title": "Que fais-je?",
     "services": [
@@ -43,6 +48,24 @@
       }
     ]
   },
+  "servicesStudio": {
+    "title": "Services",
+    "services": [
+      {
+        "title": "Développement Web",
+        "description": "Nous créons des sites Web sur mesure avec un design élégant et une expérience utilisateur intuitive."
+      },
+      {
+        "title": "Stratégies Digitales Sur Mesure",
+        "description": "Nous concevons des stratégies de marketing digital personnalisées pour attirer des clients et développer votre entreprise."
+      },
+      {
+        "title": "Automatisation et Intelligence Artificielle",
+        "description": "Nous optimisons vos processus et personnalisons l'expérience de vos clients grâce à l'IA et à l'automatisation."
+      }
+    ]
+  },
+
   "contact": {
     "blockTitle": "Contactez-moi",
     "inlineTitle": "Créons quelque chose d'extraordinaire",

@@ -26,6 +26,14 @@
     "description": "Welcome to my personal website. I am a passionate software developer working on making the internet a safer and more accessible place for everyone.For the past four years, I've dedicated my efforts to crafting web and mobile apps spanning diverse domains, including games, the manufacturing industry, and agency projects.",
     "cta": "Explore my work"
   },
+  "aboutStudio": {
+    "title": "About abstudio",
+    "description": [
+      "We are a  software development agency that specializes in building secure, scalable web and mobile apps.",
+      "We leverage cutting-edge technologies to deliver exceptional user experiences and help businesses grow. Our team of experts is dedicated to providing top-notch services that meet your unique needs and exceed your expectations."
+    ],
+    "cta": "Learn more"
+  },
   "services": {
     "title": "What do I do?",
     "services": [
@@ -43,6 +51,21 @@
       }
     ]
   },
+
+  "servicesStudio": [
+    {
+      "title": "Web Development",
+      "description": "We craft bespoke websites with elegant design and intuitive user experience."
+    },
+    {
+      "title": "Tailored Digital Strategies",
+      "description": "We design personalized digital marketing strategies to attract clients and grow your business."
+    },
+    {
+      "title": "Automation and Artificial Intelligence",
+      "description": "We optimize your processes and personalize your customer experience with AI and automation."
+    }
+  ],
   "contact": {
     "blockTitle": "Get in touch",
     "inlineTitle": "Let's create something extraordinary",

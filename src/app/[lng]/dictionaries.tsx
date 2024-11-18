@@ -9,12 +9,24 @@ export type languageDataImporter = () => Promise<{
     description: string | string[];
     cta: string;
   };
+  aboutStudio: {
+    title: string;
+    description: string | string[];
+    cta: string;
+  };
   menu: {
     title: string;
     to: string;
     label: string;
   }[];
   services: {
+    title: string;
+    services: {
+      title: string;
+      description: string;
+    }[];
+  };
+  servicesStudio: {
     title: string;
     services: {
       title: string;
