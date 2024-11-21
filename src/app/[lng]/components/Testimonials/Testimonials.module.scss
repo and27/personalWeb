@@ -1,0 +1,13 @@
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  font-size: medium;
+  text-align: start;
+}
+
+.testimonials__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

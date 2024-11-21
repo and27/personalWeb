@@ -1,0 +1,192 @@
+@import "~sass-mq/mq";
+
+.projects,
+.contact,
+.masthead,
+.blogHome,
+.scurve,
+.blog,
+.benefits {
+  padding-block: 60px;
+  font-family: var(--font-montserrat);
+
+  @include mq(desktop) {
+    padding-block: 120px;
+  }
+}
+
+.masthead {
+  padding-block-start: 0;
+  position: relative;
+}
+
+.masthead::before {
+  content: "";
+  position: absolute;
+  inline-size: 60px;
+  block-size: 180px;
+  inset-inline-end: 0;
+  bottom: 0;
+  background-image: url("../../../public/pattern.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  animation: float 4s ease-in-out infinite;
+
+  @include mq(tablet) {
+    inline-size: 100px;
+    block-size: 220px;
+  }
+
+  @include mq(desktop) {
+    inline-size: 110px;
+    block-size: 220px;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+}
+
+.masthead::after {
+  content: "";
+  position: absolute;
+  inline-size: 60px;
+  block-size: 60px;
+  inset-inline-start: 0;
+  top: 50px;
+  background-image: url("../../../public/pattern2.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+
+  @include mq(tablet) {
+    inline-size: 100px;
+    block-size: 100px;
+    top: 100px;
+  }
+
+  @include mq(desktop) {
+    inline-size: 110px;
+    block-size: 110px;
+  }
+}
+
+.projects {
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 20px;
+
+  @include mq(tablet) {
+    padding-inline: 60px;
+  }
+  @include mq(desktop) {
+    max-inline-size: 1280px;
+    padding-inline: 160px;
+  }
+
+  .container {
+    padding-inline: 0;
+  }
+}
+
+.btn {
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 1rem;
+  padding-block: 0.875rem;
+  padding-inline: 2.5rem;
+  border: 1px solid var(--primary-white);
+  background-color: transparent;
+  inline-size: fit-content;
+  margin-block-start: 2rem;
+  color: var(--primary-white);
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  border-block: 1px solid transparent;
+  background-color: black;
+}
+
+@keyframes cta {
+  0% {
+    inline-size: 0;
+  }
+  100% {
+    inline-size: 100%;
+  }
+}
+
+.btn:hover::after,
+.btn:hover::before {
+  animation: cta 0.5s ease-in-out both;
+}
+
+.btn::after,
+.btn::before {
+  position: absolute;
+  inline-size: 0;
+  content: "";
+  height: 1px;
+  background-color: var(--primary-white);
+  transition: width 0.3s ease-in-out;
+}
+
+.btn::after {
+  inset-inline-start: 0;
+  inset-block-end: -1px;
+}
+.btn::before {
+  inset-inline-end: 0;
+  inset-block-start: -0.5px;
+}
+
+.section__title {
+  margin-block-end: 40px;
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+  position: relative;
+  color: var(--primary-white);
+}
+
+.section__text {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--secondary-white);
+}
+
+.visually_hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

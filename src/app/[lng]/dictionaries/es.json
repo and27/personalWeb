@@ -1,0 +1,105 @@
+{
+  "mastheadInfo": {
+    "title": "Transformamos negocios con ",
+    "description": "Te ayudamos a despegar y escalar tu negocio mediante planeación estratégica, desarrollo de plataformas y un toque de magia.",
+    "cta": "¡Comencemos!"
+  },
+  "menu": [
+    {
+      "title": "Inicio",
+      "to": "/es",
+      "label": "Inicio"
+    },
+    {
+      "title": "Blog",
+      "to": "/es/blog",
+      "label": "Blog"
+    },
+    {
+      "title": "Contacto",
+      "to": "/es/contact",
+      "label": "Contacto"
+    }
+  ],
+  "about": {
+    "title": "Acerca de",
+    "description": [
+      "Soy Andrés, frontend dev con más de 5 años creando aplicaciones web y móviles. He trabajado en diversos sectores, incluyendo gaming, educación y manufactura, ayudando a empresas a alcanzar sus objetivos de negocio a través de soluciones digitales a medida.",
+      "Me apasiona crear interfaces de usuario atractivas y funcionales, utilizando tecnologías como React, Next.js y TypeScript.",
+      "Actualmente, me dedico principalmente al desarrollo de proyectos en la industria EdTech, donde lidero la creación de plataformas educativas que facilitan el aprendizaje y la enseñanza de forma más eficiente y accesible."
+    ],
+    "cta": "Explora mi trabajo"
+  },
+  "aboutStudio": {
+    "title": "Acerca de",
+    "description": [
+      "Somos una agencia de growth con más de 5 años de experiencia impulsando el éxito de emprendedores y negocios.",
+      "Combinamos creatividad, datos y tecnología para generar resultados.",
+      "Diseñamos estrategias digitales a medida, creamos sitios web con propósito y automatizamos procesos para que puedas concentrarte en lo que realmente importa: hacer crecer tu negocio."
+    ],
+    "cta": "Explora nuestro trabajo"
+  },
+  "services": {
+    "title": "Lo que hacemos mejor",
+    "services": [
+      {
+        "title": "Desarrollo web",
+        "description": "Creamos sitios web y aplicaciones web responsivas utilizando React, Next.js y TypeScript, enfocados en la seguridad y la experiencia de usuario."
+      },
+      {
+        "title": "Pruebas de Seguridad de Aplicaciones",
+        "description": "Protegemos sus aplicaciones de amenazas cibernéticas mediante pruebas de seguridad y evaluaciones de vulnerabilidades."
+      },
+      {
+        "title": "Soluciones de Tecnología Educativa",
+        "description": "Desarrollamos plataformas seguras y escalables para educadores y entrenadores, aprovechando la IA para mejorar las experiencias de aprendizaje y automatizar procesos."
+      }
+    ]
+  },
+  "servicesStudio": {
+    "title": "¿Qué hacemos?",
+    "services": [
+      {
+        "title": "Desarrollo web",
+        "description": "Creamos sitios web que enamoran a primera vista:  atrae,  conecta y  convierte.  Nos enfocamos en crear una experiencia de usuario inolvidable"
+      },
+      {
+        "title": "Estrategias Digitales a Medida",
+        "description": "Alcanza tus metas con una estrategia digital a tu medida. Atrae clientes ideales, aumenta tu visibilidad y haz crecer tu negocio de forma sostenible."
+      },
+      {
+        "title": "Automatización e Inteligencia Artificial",
+        "description": "Ahorra tiempo y esfuerzo con la magia de la automatización e IA. Optimiza tus procesos, personaliza la experiencia de tus clientes y concéntrate en las tareas más importantes."
+      }
+    ]
+  },
+  "contact": {
+    "blockTitle": "Ponte en contacto",
+    "inlineTitle": "Creemos algo extraordinario",
+    "description": "Simplemente selecciona la fecha que te convenga y sumérgete en tu proyecto o responde a tus preguntas.",
+    "cta": "Agenda una sesión gratuita"
+  },
+  "recentProjects": {
+    "title": "Proyectos recientes",
+    "projects": [
+      {
+        "title": "Partners",
+        "description": "Partners es una app que conecta emprendedores en etapas tempranas con socios estratégicos que complementen sus habilidades.",
+        "impact": "Partners utiliza un sistema de AI Match Inteligente que facilita la conexión entre emprendedores y socios estratégicos, emparejándolos según habilidades complementarias y objetivos empresariales. El algoritmo avanzado analiza en tiempo real los perfiles, fortalezas y necesidades de cada usuario, generando recomendaciones personalizadas para maximizar las oportunidades de colaboración."
+      },
+      {
+        "title": "Launch",
+        "description": "Launch es una plataforma de lanzamiento de productos que ayuda a los emprendedores a validar sus ideas y obtener feedback.",
+        "impact": "Launch utiliza inteligencia artificial para generar un roadmap personalizado, adaptado a las necesidades de cada emprendedor. La plataforma analiza el feedback recibido, así como las métricas de rendimiento, para sugerir ajustes estratégicos y crear un plan de acción optimizado para el lanzamiento del producto."
+      },
+      {
+        "title": "Tracker",
+        "description": "Tracker es una aplicación para administrar tus gastos y finanzas personales.",
+        "impact": "Aumento del 40% en la retención de estudiantes en comparación con otras plataformas."
+      }
+    ]
+  },
+  "footer": {
+    "rights": "© 2021 - 2025. Todos los derechos reservados."
+  }
+}

@@ -1,0 +1,130 @@
+@import "~sass-mq/mq";
+
+.blog {
+  margin-block: 60px;
+  max-inline-size: 1024px;
+  margin-inline: auto;
+  font-family: var(--font-montserrat);
+
+  @include mq(tablet) {
+    margin-block: 100px;
+  }
+}
+
+.blogArticle {
+  display: flex;
+  flex-direction: column;
+}
+
+.blogArticle .blogDate {
+  font-size: 1rem;
+  margin-block-end: 32px;
+  color: #aaa;
+  font-weight: 300;
+  align-self: flex-end;
+}
+
+.blog h2 {
+  font-family: var(--font-poppins) !important;
+  color: var(--primary-white);
+}
+
+.blogArticle h3 {
+  margin-block-end: 1rem;
+}
+
+.blogTitle {
+  color: var(--primary-white);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-block-end: 40px;
+  margin-block-start: 20px;
+  line-height: 1.2;
+
+  @include mq(tablet) {
+    font-size: 2.5rem;
+    margin-block-end: 80px;
+  }
+
+  @include mq(desktop) {
+    font-size: 3rem;
+  }
+}
+
+.blogImage {
+  background-color: var(--primary-white);
+  width: 100%;
+  margin-block-end: 24px;
+  object-fit: cover;
+  object-position: center right;
+
+  @include mq(tablet) {
+    margin-block-end: 36px;
+  }
+}
+
+.blogTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin-block-end: 80px;
+}
+
+.blogTags li {
+  border-radius: 0px 10px 10px 10px;
+  border: 1px solid var(--primary-white);
+  padding-block: 6px;
+  padding-inline: 30px;
+  font-weight: 100;
+  color: var(--primary-white);
+}
+
+.blogArticle p {
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: var(--secondary-white);
+  margin-block-end: 1.5rem;
+
+  @include mq(desktop) {
+    font-size: 1.1rem;
+  }
+}
+
+.blogArticle a {
+  color: var(--primary-white);
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+}
+
+.blog ul {
+  margin-inline-start: 2rem;
+}
+
+.blog ul.blogTags {
+  margin-inline-start: 0;
+}
+
+.blog li p {
+  margin-inline-start: 0.5rem;
+}
+
+//lists inside articles contain a <p> tag, so we need to remove the margin-bottom
+.blog li:not(:last-child) p {
+  margin-block-end: 0.5rem;
+}
+
+.blog h2 {
+  margin-block-end: 1.5rem;
+  margin-block-start: 2.5rem;
+}
+
+//related posts
+.blogCardsContainer div {
+  padding: 0;
+}
+
+.blogCardsContainer section {
+  padding-top: 48px;
+}

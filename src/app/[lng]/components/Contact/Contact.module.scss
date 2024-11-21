@@ -1,0 +1,16 @@
+.contact__btn {
+  letter-spacing: 1px;
+  font-weight: 300;
+  padding-block: 0.875rem;
+  padding-inline: 2.5rem;
+  border: 1px solid var(--primary-white);
+  background-color: transparent;
+  inline-size: fit-content;
+  margin-block-start: 50px;
+  color: var(--primary-white);
+}
+
+.contact__text {
+  max-width: 500px;
+  margin: 0 auto;
+}

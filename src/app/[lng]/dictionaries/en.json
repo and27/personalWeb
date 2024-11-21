@@ -1,0 +1,99 @@
+{
+  "mastheadInfo": {
+    "title": "Boost your business with",
+    "description": "Turning ideas and challenges into digital experiences.",
+    "cta": "Let's Connect & Create"
+  },
+  "menu": [
+    {
+      "title": "Home Page",
+      "to": "/",
+      "label": "Home"
+    },
+    {
+      "title": "Blog",
+      "to": "/blog",
+      "label": "Blog"
+    },
+    {
+      "title": "Contact",
+      "to": "/contact",
+      "label": "Contact"
+    }
+  ],
+  "about": {
+    "title": "My Journey",
+    "description": "Welcome to my personal website. I am a passionate software developer working on making the internet a safer and more accessible place for everyone.For the past four years, I've dedicated my efforts to crafting web and mobile apps spanning diverse domains, including games, the manufacturing industry, and agency projects.",
+    "cta": "Explore my work"
+  },
+  "aboutStudio": {
+    "title": "About abstudio",
+    "description": [
+      "We are a  software development agency that specializes in building secure, scalable web and mobile apps.",
+      "We leverage cutting-edge technologies to deliver exceptional user experiences and help businesses grow. Our team of experts is dedicated to providing top-notch services that meet your unique needs and exceed your expectations."
+    ],
+    "cta": "Learn more"
+  },
+  "services": {
+    "title": "What do I do?",
+    "services": [
+      {
+        "title": "Web development",
+        "description": "We build responsive websites and web apps using React, Next.js, and TypeScript, with a focus on security and user experience."
+      },
+      {
+        "title": "Application Security Testing",
+        "description": "We protect your apps from cyber threats through expert security testing and vulnerability assessments."
+      },
+      {
+        "title": "Educational Technology Solutions",
+        "description": "We develop secure, scalable platforms for educators and coaches, leveraging AI to enhance learning experiences and automate processes."
+      }
+    ]
+  },
+
+  "servicesStudio": [
+    {
+      "title": "Web Development",
+      "description": "We craft bespoke websites with elegant design and intuitive user experience."
+    },
+    {
+      "title": "Tailored Digital Strategies",
+      "description": "We design personalized digital marketing strategies to attract clients and grow your business."
+    },
+    {
+      "title": "Automation and Artificial Intelligence",
+      "description": "We optimize your processes and personalize your customer experience with AI and automation."
+    }
+  ],
+  "contact": {
+    "blockTitle": "Get in touch",
+    "inlineTitle": "Let's create something extraordinary",
+    "description": " Simply select the date that works for you, and let's dive into your project or answer your inquiries.",
+    "cta": "Schedule a free session"
+  },
+
+  "recentProjects": {
+    "title": "Recent Projects",
+    "projects": [
+      {
+        "title": "Partners",
+        "description": "Partners is an app that connects early-stage entrepreneurs with strategic partners who complement their skills.",
+        "impact": "30% increase in entrepreneurs' success rate in finding partners."
+      },
+      {
+        "title": "Launch",
+        "description": " Launch is an AI-powered platform designed to streamline the process of testing and launching your business ideas.",
+        "impact": "50% increase in student engagement and course completion rates."
+      },
+      {
+        "title": "Codercat",
+        "description": "Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.",
+        "impact": "20% reduction in production costs and 15% increase in overall efficiency."
+      }
+    ]
+  },
+  "footer": {
+    "rights": "© 2021 - 2025. All rights reserved."
+  }
+}
