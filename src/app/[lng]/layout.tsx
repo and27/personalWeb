@@ -28,6 +28,10 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Paytone+One&family=Poppins:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=MuseoModerno:ital,wght@0,500;1,500&display=swap"
+          rel="stylesheet"
+        ></link>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </head>
 
