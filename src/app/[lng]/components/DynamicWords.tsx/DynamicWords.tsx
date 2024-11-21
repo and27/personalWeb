@@ -6,7 +6,13 @@ const DynamicWords = ({ lang }: { lang: string }) => {
   const typedRef = useRef<HTMLSpanElement>(null);
   const words =
     lang === 'es'
-      ? ['tecnología', 'inteligencia artificial', 'innovación']
+      ? [
+          'desarrollo web',
+          'inteligencia artificial',
+          'growth marketing',
+          'analítica web',
+          'automatización'
+        ]
       : ['technology', 'artificial intelligence', 'innovation'];
 
   useEffect(() => {

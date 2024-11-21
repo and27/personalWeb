@@ -5,7 +5,7 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import LayoutSVG from './LayoutSVG';
 import Image from 'next/image';
-import studioImage from '../../../../../public/studioImage5.jpg';
+import studioImage from '../../../../../public/studioImage6.jpg';
 
 interface IScurve {
   title: string;
