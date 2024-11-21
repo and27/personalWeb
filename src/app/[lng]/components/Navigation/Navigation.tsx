@@ -33,7 +33,7 @@ export default function Navigation({ dict }: any) {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <Link href="/" style={{ opacity: 0.7 }}>
-          <Image
+          {/* <Image
             src={Logo}
             alt="Home link personal logo"
             quality={100}
@@ -42,7 +42,8 @@ export default function Navigation({ dict }: any) {
             sizes="(max-width: 768px) 100vw,
                         (max-width: 1200px) 50vw,
                         33vw"
-          />
+          /> */}
+          <p className={styles.logo}>abstudio</p>
         </Link>
         <ul className={styles.navMenu}>
           {links?.map(({ to, label }) => (
