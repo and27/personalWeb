@@ -1,5 +1,14 @@
 @import "~sass-mq/mq";
 
+.masthead {
+  background-image: url("../../../../../public/background2.jpg");
+  background-size: cover;
+  background-position-x: 50%;
+  margin-top: -100px;
+  height: 110vh;
+  font-family: var(--font-montserrat);
+}
+
 .masthead__inner {
   display: flex;
   align-items: center;
@@ -11,11 +20,10 @@
 }
 
 .masthead__content {
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
-  margin: 0 auto;
+  text-align: start;
 
   svg {
     display: none;

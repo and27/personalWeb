@@ -10,13 +10,12 @@ interface IMasthead {
 }
 const Masthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
   return (
-    <main className={globalStyles.masthead}>
+    <main className={styles.masthead}>
       <div className={globalStyles.container}>
         <div className={styles.masthead__inner}>
           <header className={styles.masthead__content}>
             <h1 className={styles.masthead__title}>
               {title}
-              <br />
               <DynamicWords lang={lang} />
             </h1>
             <p className={styles.masthead__description}>{description}</p>
