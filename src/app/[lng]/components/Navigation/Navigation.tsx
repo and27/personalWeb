@@ -32,7 +32,7 @@ export default function Navigation({ dict }: any) {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <Link href="/" style={{ opacity: 0.7 }}>
+        <Link href="/" style={{ opacity: 0.8, display: 'flex', alignItems: 'center' }}>
           {/* <Image
             src={Logo}
             alt="Home link personal logo"
