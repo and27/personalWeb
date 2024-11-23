@@ -8,6 +8,8 @@ interface IMasthead {
   cta: string;
   lang: string;
 }
+const MobileBreak = () => <br className={styles.mobileBreak} />;
+
 const Masthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
   return (
     <main className={styles.masthead}>
@@ -16,6 +18,7 @@ const Masthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
           <header className={styles.masthead__content}>
             <h1 className={styles.masthead__title}>
               {title}
+              <MobileBreak />
               <DynamicWords lang={lang} />
             </h1>
             <p className={styles.masthead__description}>{description}</p>
