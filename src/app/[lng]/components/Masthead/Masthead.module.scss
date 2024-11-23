@@ -124,3 +124,10 @@
   inset-inline-end: 0;
   inset-block-start: -1px;
 }
+
+.mobileBreak {
+  display: block;
+  @include mq(tablet) {
+    display: none;
+  }
+}
