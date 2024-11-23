@@ -50,7 +50,7 @@ const Scurve: React.FC<IScurve> = ({ title, description, cta }) => {
           </div>
 
           <motion.div style={{ x }} className={styles.scurve__media}>
-            <Image src={studioImage} alt="studio image" width={500} height={500} />
+            <Image src={studioImage} width={500} height={500} alt="workspace image of abstudio" />
             {/* <LayoutSVG /> */}
           </motion.div>
         </div>
