@@ -57,7 +57,7 @@ export default function Navigation({ dict }: any) {
             </li>
           ))}
         </ul>
-        <NavActions />
+        {/* <NavActions /> */}
         <MobileMenu
           isMobileMenuActive={isMobileMenuActive}
           handleMobileToggle={handleMobileToggle}
