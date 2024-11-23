@@ -1,9 +1,16 @@
+@import "~sass-mq/mq";
+
 .testimonials {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
   font-size: medium;
   text-align: start;
+
+  @include mq(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 
 .testimonials__item {
