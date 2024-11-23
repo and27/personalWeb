@@ -10,7 +10,8 @@ import ContactSection from './modules/ContactSection/ContactSection';
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
 export default async function Home({ params }: any) {
-  const { lng } = params;
+  // const { lng } = params;
+  const lng = 'es';
   const dict = await getDictionary(lng);
   const mastheadInfo = dict?.mastheadInfo || {
     title: '',

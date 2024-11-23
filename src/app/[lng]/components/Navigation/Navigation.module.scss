@@ -4,7 +4,6 @@
   block-size: 100px;
   display: flex;
   align-items: center;
-  background-color: #121212;
   width: 100%;
   margin: 0 auto;
   padding-inline: 20px;
@@ -137,6 +136,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .navigation__mobile_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .navActions {
