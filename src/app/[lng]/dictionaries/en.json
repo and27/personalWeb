@@ -52,20 +52,24 @@
     ]
   },
 
-  "servicesStudio": [
-    {
-      "title": "Web Development",
-      "description": "We craft bespoke websites with elegant design and intuitive user experience."
-    },
-    {
-      "title": "Tailored Digital Strategies",
-      "description": "We design personalized digital marketing strategies to attract clients and grow your business."
-    },
-    {
-      "title": "Automation and Artificial Intelligence",
-      "description": "We optimize your processes and personalize your customer experience with AI and automation."
-    }
-  ],
+  "servicesStudio": {
+    "title": "What do I do?",
+
+    "services": [
+      {
+        "title": "Web Development",
+        "description": "We craft bespoke websites with elegant design and intuitive user experience."
+      },
+      {
+        "title": "Tailored Digital Strategies",
+        "description": "We design personalized digital marketing strategies to attract clients and grow your business."
+      },
+      {
+        "title": "Automation and Artificial Intelligence",
+        "description": "We optimize your processes and personalize your customer experience with AI and automation."
+      }
+    ]
+  },
   "contact": {
     "blockTitle": "Get in touch",
     "inlineTitle": "Let's create something extraordinary",
