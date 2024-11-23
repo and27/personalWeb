@@ -4,6 +4,7 @@ import styles from './CardModal.module.scss';
 import globalStyles from '../../page.module.scss';
 import { IRowCard } from '../Cards/VerticalCard/Card';
 import { SiVite, SiJavascript, SiNextdotjs } from 'react-icons/si';
+import Link from 'next/link';
 
 const iconMap: { [key: string]: JSX.Element } = {
   vite: <SiVite size={20} />,
@@ -28,13 +29,15 @@ const CardModal: React.FC<CardModalProps> = ({ isOpen, onClose, card }) => {
         </button>
         {card.extra?.screen && (
           <div className={styles.imageContainer}>
-            <Image
-              src={card.extra?.screen.src}
-              alt={card.extra?.screen.alt || card.title}
-              className={styles.modalImage}
-              width={600}
-              height={350}
-            />
+            <Link href={card.extra?.link || '#'} passHref>
+              <Image
+                src={card.extra?.screen.src}
+                alt={card.extra?.screen.alt || card.title}
+                className={styles.modalImage}
+                width={600}
+                height={350}
+              />
+            </Link>
             {card.extra?.link && (
               <button className={globalStyles.btn}>
                 <a href={card.link} target="_blank" rel="noopener noreferrer">
@@ -53,8 +56,18 @@ const CardModal: React.FC<CardModalProps> = ({ isOpen, onClose, card }) => {
           </div>
           <p className={styles.modalDescription}>{card.description}</p>
           <div className={styles.projectImpact}>
-            <h4>Highlights</h4>
-            <p>{card.extra?.impact}</p>
+            <h4>Estrategias clave</h4>
+            {card.extra?.impact ? (
+              typeof card.extra?.impact === 'string' ? (
+                <p>{card.extra?.impact}</p>
+              ) : (
+                <ul>
+                  {(card.extra?.impact as string[]).map((impact, idx) => (
+                    <li key={idx}>{impact}</li>
+                  ))}
+                </ul>
+              )
+            ) : null}
           </div>
         </div>
       </div>

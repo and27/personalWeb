@@ -1,7 +1,7 @@
 import Tracker from '../../public/recentProjects/tracker.png';
 import Launch from '../../public/launch.png';
 import partersLogo from '../../public/recentProjects/partnersLogo.png';
-import CodercatScreen from '../../public/recentProjects/capturaCodercat.png';
+import TrackerScreen from '../../public/recentProjects/capturaTracker.png';
 import PartnersScreen from '../../public/recentProjects/capturaPartners.png';
 import LaunchScreen from '../../public/recentProjects/capturaLaunch.png';
 import { IRowCard } from '../app/[lng]/components/Cards/VerticalCard/Card';
@@ -19,6 +19,7 @@ export const ProjectCards: IRowCard[] = [
     },
     technologies: ['javascript', 'next'],
     extra: {
+      link: 'https://partners-red.vercel.app/',
       screen: {
         src: PartnersScreen,
         alt: '',
@@ -48,7 +49,7 @@ export const ProjectCards: IRowCard[] = [
   },
   {
     id: '3',
-    title: 'Codercat',
+    title: 'Tracker',
     description:
       'Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.', // Default description
     image: {
@@ -58,11 +59,9 @@ export const ProjectCards: IRowCard[] = [
     },
     technologies: ['javascript', 'vite'],
     extra: {
-      impact:
-        'Codercat has helped over 1000 developers to improve their skills and create better software.',
-      link: 'https://codercat.vercel.app',
+      link: 'https://tracker-ulqw.vercel.app',
       screen: {
-        src: CodercatScreen,
+        src: TrackerScreen,
         alt: '',
         title: ''
       }
