@@ -19,6 +19,22 @@ const nextConfig = {
     });
 
     return config;
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/abstudio',
+        permanent: true,
+        has: [
+          {
+            type: 'host',
+            value: 'abstudio.com.co'
+          }
+        ]
+      }
+    ];
   }
 };
 
