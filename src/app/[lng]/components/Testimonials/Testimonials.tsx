@@ -10,23 +10,23 @@ const Testimonials = () => {
           <div className={styles.testimonials__item}>
             <p>
               [...] lo que más me impresionó fue su capacidad para adaptar la solución a partir de
-              nuestro negocio y nuestras necesidades.
+              nuestro negocio y necesidades.
             </p>
-            <p>- María Fernanda Sánchez</p>
+            <p className={styles.testimonials__author}>- María Fernanda Sánchez</p>
           </div>
           <div className={styles.testimonials__item}>
             <p>
               Ha sido una experiencia transformadora para nuestro negocio. Nos han ayudado a crear
-              una presencia online sólida y coherente y a conectar con nuestra audiencia.
+              una presencia en línea sólida y coherente y a conectar con nuestra audiencia.
             </p>
-            <p>- Juan Pablo Rodriguez</p>
+            <p className={styles.testimonials__author}>- Juan Pablo Rodriguez</p>
           </div>
           <div className={styles.testimonials__item}>
             <p>
               ¡Recomendamos sus servicios a cualquier empresa que busque un crecimiento real y
               sostenible!
             </p>
-            <p>- Ana Lucía Gómez</p>
+            <p className={styles.testimonials__author}>- Ana Lucía Gómez</p>
           </div>
         </div>
       </div>
