@@ -4,9 +4,10 @@ import styles from './ContactSection.module.scss';
 import globalStyles from '../../page.module.scss';
 import { InlineWidget } from 'react-calendly';
 import { PopupButton } from 'react-calendly';
+import Link from 'next/link';
 import Linkedin from '../../../../../public/linkedin.svg';
 import Github from '../../../../../public/github.svg';
-import Link from 'next/link';
+import Whatsapp from '../../../../../public/whatsapp.svg';
 
 interface IContactSectionProps {
   layout?: string;
@@ -67,6 +68,16 @@ const ContactSection: React.FC<IContactSectionProps> = ({
               <Link href={'https://github.com/and27'} target="_blank" title="Github profile">
                 <Github className={styles.svg} />
                 <span className={globalStyles.visually_hidden}>Github profile</span>
+              </Link>
+              <Link
+                href={
+                  'https://wa.me/593997019475?text=Hola!%20Quisiera%20más%20información%20sobre%20sus%20servicios.'
+                }
+                target="_blank"
+                title="whatsapp profile"
+              >
+                <Whatsapp className={styles.svg} />
+                <span className={globalStyles.visually_hidden}>Whatsapp profile</span>
               </Link>
             </div>
             <a href="mailto:andres.banda.sm@gmail.com">andres.banda.sm@gmail.com</a>
