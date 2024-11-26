@@ -1,7 +1,7 @@
 {
   "mastheadInfo": {
     "title": "¿Listo para ",
-    "description": "Te ayudamos a lanzar o escalar tu negocio online, con tecnología y un 'toque de magia', desde desarrollo web hasta automatización con inteligencia artificial.",
+    "description": "Te ayudamos a lanzar o escalar tu negocio en línea, con tecnología y un 'toque de magia', desde desarrollo web hasta automatización con inteligencia artificial.",
     "cta": "¡Comencemos!"
   },
   "menu": [
@@ -60,8 +60,8 @@
     "title": "¿Qué hacemos?",
     "services": [
       {
-        "title": "Desarrollo web",
-        "description": "Creamos sitios web que enamoran a primera vista:  atrae,  conecta y  convierte.  Nos enfocamos en crear una experiencia de usuario inolvidable"
+        "title": "Desarrollo Web y Móvil",
+        "description": "Creamos sitios web que atraen,  conectan y  convierten. También apps. Nos enfocamos en crear una experiencia de usuario inolvidable."
       },
       {
         "title": "Estrategias Digitales a Medida",
