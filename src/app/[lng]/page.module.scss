@@ -124,13 +124,11 @@
   margin-block-start: 2rem;
   color: var(--primary-white);
   position: relative;
-  transition: background-color 0.3s ease-in-out;
 }
 
 .btn:hover {
   cursor: pointer;
   border-block: 1px solid transparent;
-  background-color: black;
 }
 
 @keyframes cta {
