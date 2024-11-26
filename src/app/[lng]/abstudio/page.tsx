@@ -1,13 +1,17 @@
 import Script from 'next/script';
+import dynamic from 'next/dynamic';
 import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects';
 import Masthead from '../components/Masthead/Masthead';
 import Scurve from '../components/Scurve/Scurve';
 import Testimonials from '../components/Testimonials/Testimonials';
 import { getDictionary } from '../dictionaries';
-import ContactSection from '../modules/ContactSection/ContactSection';
 import RecentProjects from '../modules/RecentProjects';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
+
+const ContactSection = dynamic(() => import('../modules/ContactSection/ContactSection'), {
+  ssr: false
+});
 
 export default async function Home({ params }: any) {
   const lng = 'es';
@@ -42,8 +46,11 @@ export default async function Home({ params }: any) {
       <RecentProjects localizedProjects={localizedProjects} />
       <Testimonials />
       <ContactSection layout={'inline'} {...contact} />
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`} />
-      <Script id="google-analytics">
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}
+        strategy="worker"
+      />
+      <Script id="google-analytics" strategy="worker">
         {`window.dataLayer = window.dataLayer || [];
         function gtag(){window.dataLayer.push(arguments);}
         gtag('js', new Date());

@@ -1,6 +1,5 @@
 import styles from './Masthead.module.scss';
 import globalStyles from '../../page.module.scss';
-import DynamicWords from '../DynamicWords.tsx/DynamicWords';
 
 interface IMasthead {
   title: string;
@@ -8,7 +7,6 @@ interface IMasthead {
   cta: string;
   lang: string;
 }
-const MobileBreak = () => <br className={styles.mobileBreak} />;
 
 const Masthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
   return (
