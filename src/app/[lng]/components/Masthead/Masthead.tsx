@@ -17,9 +17,13 @@ const Masthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
         <div className={styles.masthead__inner}>
           <header className={styles.masthead__content}>
             <h1 className={styles.masthead__title}>
-              {title}
+              {'Posiciona tu '}
+              <span className={styles.masthead__title__highlight}>negocio, </span>
+              {' atrae clientes'}
+              {' y deja una '}
+              <span className={styles.masthead__title__highlight}>huella.</span>
+              👈
               <MobileBreak />
-              <DynamicWords lang={lang} />
             </h1>
             <p className={styles.masthead__description}>{description}</p>
             <a className={styles.masthead__btn} href="#contact">
