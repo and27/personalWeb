@@ -26,13 +26,7 @@ const nextConfig = {
       {
         source: '/',
         destination: '/abstudio',
-        permanent: true,
-        has: [
-          {
-            type: 'host',
-            value: 'abstudio.com.co'
-          }
-        ]
+        permanent: true
       }
     ];
   }
