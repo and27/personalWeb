@@ -23,7 +23,6 @@ const Masthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
               {' y deja una '}
               <span className={styles.masthead__title__highlight}>huella.</span>
               👈
-              <MobileBreak />
             </h1>
             <p className={styles.masthead__description}>{description}</p>
             <a className={styles.masthead__btn} href="#contact">
