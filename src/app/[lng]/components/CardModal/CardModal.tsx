@@ -29,7 +29,7 @@ const CardModal: React.FC<CardModalProps> = ({ isOpen, onClose, card }) => {
         </button>
         {card.extra?.screen && (
           <div className={styles.imageContainer}>
-            <Link href={card.extra?.link || '#'} passHref>
+            <Link href={card.extra?.link || '#'} passHref target={'_blank'}>
               <Image
                 src={card.extra?.screen.src}
                 alt={card.extra?.screen.alt || card.title}

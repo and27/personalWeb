@@ -1,12 +1,15 @@
 @import "~sass-mq/mq";
 
 .masthead {
-  background-image: url("../../../../../public/background3.png");
   background-size: cover;
   background-position-x: 50%;
   margin-top: -100px;
   height: 110vh;
   font-family: var(--font-montserrat);
+
+  @include mq(tablet) {
+    background-image: url("../../../../../public/background3.png");
+  }
 }
 
 .masthead__inner {
