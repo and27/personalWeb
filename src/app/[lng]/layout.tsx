@@ -16,7 +16,8 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: any;
 }) {
-  const dict = await getDictionary(params?.lng || 'en');
+  // const dict = await getDictionary(params?.lng || 'en');
+  const dict = await getDictionary('es');
   const navInfo = dict?.menu || [];
   const footerInfo = dict?.footer || { rights: '' };
   return (
