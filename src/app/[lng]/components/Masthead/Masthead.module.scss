@@ -3,30 +3,34 @@
 .masthead {
   background-size: cover;
   background-position-x: 50%;
-  margin-top: -100px;
-  height: 110vh;
+  block-size: 625px;
+  display: flex;
+  justify-content: center;
   font-family: var(--font-montserrat), sans-serif;
 
   @include mq(tablet) {
     background-image: url("../../../../../public/background3.png");
+    margin-block-start: -100px;
+    block-size: 725px;
+    max-block-size: 910px;
   }
 }
 
 .masthead__inner {
   display: flex;
   align-items: center;
-  block-size: calc(90vh - 120px);
-
-  @include mq(tablet) {
-    block-size: calc(100vh - 100px);
-  }
+  height: 100%;
 }
 
 .masthead__content {
-  margin-top: 150px;
+  padding-block: 2rem;
   display: flex;
   flex-direction: column;
   text-align: start;
+
+  @include mq(tablet) {
+    margin-block-start: 50px;
+  }
 
   svg {
     display: none;
