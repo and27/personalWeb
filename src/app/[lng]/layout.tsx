@@ -3,10 +3,16 @@ import Navigation from './components/Navigation/Navigation';
 import { getDictionary } from './dictionaries';
 import './globals.css';
 
-export const metadata = {
+const metadataAB = {
   title: 'Andrés Banda - Desarrollador Frontend | Portafolio',
   description:
     'Soy Andrés Banda, desarrollador frontend con experiencia en React JS. Explora mi portafolio con proyectos web innovadores y contáctame para colaborar.'
+};
+
+export const metadata = {
+  title: 'Abstudio: Growth Marketing para Coaches | Atrae Clientes y Escala tu Negocio',
+  description:
+    'Abstudio ayuda a coaches que transforman vidas en Latinoamérica a aumentar su alcance, construir una marca auténtica y escalar sus negocios con estrategias de growth marketing.'
 };
 
 export default async function RootLayout({
@@ -16,12 +22,11 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: any;
 }) {
-  // const dict = await getDictionary(params?.lng || 'en');
-  const dict = await getDictionary('es');
+  const dict = await getDictionary(params?.lng || 'en');
   const navInfo = dict?.menu || [];
   const footerInfo = dict?.footer || { rights: '' };
   return (
-    <html lang="en" style={{ scrollBehavior: 'smooth' }}>
+    <html lang="es" style={{ scrollBehavior: 'smooth' }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />

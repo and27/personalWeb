@@ -14,7 +14,7 @@ export const ProjectCards: IRowCard[] = [
       'Partners es una app que conecta emprendedores en etapas tempranas con socios estratégicos que complementen sus habilidades.', // Default description
     image: {
       src: partersLogo,
-      alt: '',
+      alt: 'Logo de Partners',
       title: ''
     },
     technologies: ['javascript', 'next'],
@@ -22,7 +22,7 @@ export const ProjectCards: IRowCard[] = [
       link: 'https://partners-red.vercel.app/',
       screen: {
         src: PartnersScreen,
-        alt: '',
+        alt: 'Screenshot de Partners',
         title: ''
       }
     }
@@ -34,7 +34,7 @@ export const ProjectCards: IRowCard[] = [
       'Launch is an AI-powered platform designed to streamline the process of testing and launching your business ideas.', // Default description
     image: {
       src: Launch,
-      alt: '',
+      alt: 'Logo de Launch',
       title: ''
     },
     technologies: ['javascript', 'vite'],
@@ -42,7 +42,7 @@ export const ProjectCards: IRowCard[] = [
       link: 'https://launch-black.vercel.app/',
       screen: {
         src: LaunchScreen,
-        alt: '',
+        alt: 'Screenshot de Launch',
         title: ''
       }
     }
@@ -54,7 +54,7 @@ export const ProjectCards: IRowCard[] = [
       'Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.', // Default description
     image: {
       src: Tracker,
-      alt: '',
+      alt: 'Logo de Tracker',
       title: ''
     },
     technologies: ['javascript', 'vite'],
@@ -62,7 +62,7 @@ export const ProjectCards: IRowCard[] = [
       link: 'https://tracker-ulqw.vercel.app',
       screen: {
         src: TrackerScreen,
-        alt: '',
+        alt: 'Screenshot de Tracker',
         title: ''
       }
     }
