@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const defaultLocale = 'en';
+const defaultLocale = 'es';
 let locales = ['en', 'es', 'fr'];
 
 type PathnameLocale = {
@@ -51,9 +51,7 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameIsMissingLocale) {
-    return NextResponse.rewrite(
-      new URL(`/${defaultLocaleParts.lang}${pathname}`, request.url)
-    );
+    return NextResponse.rewrite(new URL(`/${defaultLocaleParts.lang}${pathname}`, request.url));
   }
 }
 
