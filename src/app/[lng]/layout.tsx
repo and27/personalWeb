@@ -10,7 +10,7 @@ const metadataAB = {
 };
 
 export const metadata = {
-  title: 'Abstudio: Growth Marketing para Coaches | Atrae Clientes y Escala tu Negocio',
+  title: 'Abstudio | Growth Marketing para Coaches ',
   description:
     'Abstudio ayuda a coaches que transforman vidas en Latinoamérica a aumentar su alcance, construir una marca auténtica y escalar sus negocios con estrategias de growth marketing.'
 };
@@ -22,7 +22,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: any;
 }) {
-  const dict = await getDictionary(params?.lng || 'en');
+  const dict = await getDictionary(params?.lng || 'es');
   const navInfo = dict?.menu || [];
   const footerInfo = dict?.footer || { rights: '' };
   return (

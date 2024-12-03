@@ -64,11 +64,11 @@ const ContactSection: React.FC<IContactSectionProps> = ({
                 target="_blank"
                 title="LinkedIn profile"
               >
-                <Linkedin className={styles.svg} />
+                <Linkedin className={styles.svg} alt="LinkedIn profile" />
                 <span className={globalStyles.visually_hidden}>Linkedin profile</span>
               </Link>
               <Link href={'https://github.com/and27'} target="_blank" title="Github profile">
-                <Github className={styles.svg} />
+                <Github className={styles.svg} alt="Github profile" />
                 <span className={globalStyles.visually_hidden}>Github profile</span>
               </Link>
               <Link
@@ -78,7 +78,7 @@ const ContactSection: React.FC<IContactSectionProps> = ({
                 target="_blank"
                 title="whatsapp profile"
               >
-                <Whatsapp className={styles.svg} />
+                <Whatsapp className={styles.svg} alt="Whatsapp profile" />
                 <span className={globalStyles.visually_hidden}>Whatsapp profile</span>
               </Link>
             </div>
