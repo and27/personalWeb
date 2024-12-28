@@ -25,6 +25,7 @@ const nextConfig = {
     return [
       {
         source: '/',
+        has: [{ type: 'host', value: 'www.abstudio.com.co' }],
         destination: '/abstudio',
         permanent: true
       }
