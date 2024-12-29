@@ -8,7 +8,6 @@ import styles from './Navigation.module.scss';
 import Logo from '../../../../../public/firma.png';
 import MobileMenu from './MobileMenu';
 import NavActions from '../NavActions/NavActions';
-import { hostname } from 'os';
 
 interface navLink {
   to: string;
@@ -22,7 +21,6 @@ export default function Navigation({ dict }: any) {
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
   const pathname = usePathname();
   const host = typeof window !== 'undefined' ? window.location.hostname : null;
-  console.log(host);
 
   const handleMobileToggle = () => {
     setIsMobileMenuActive(!isMobileMenuActive);
@@ -72,7 +70,8 @@ export default function Navigation({ dict }: any) {
             </li>
           ))}
         </ul>
-        {/* <NavActions /> */}
+        {host !== 'abstudio.com.co' && <NavActions />}
+
         <MobileMenu
           isMobileMenuActive={isMobileMenuActive}
           handleMobileToggle={handleMobileToggle}
