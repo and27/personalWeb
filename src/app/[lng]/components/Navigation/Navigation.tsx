@@ -8,6 +8,7 @@ import styles from './Navigation.module.scss';
 import Logo from '../../../../../public/firma.png';
 import MobileMenu from './MobileMenu';
 import NavActions from '../NavActions/NavActions';
+import { hostname } from 'os';
 
 interface navLink {
   to: string;
@@ -20,6 +21,8 @@ export type ILinks = Array<navLink>;
 export default function Navigation({ dict }: any) {
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
   const pathname = usePathname();
+  const host = typeof window !== 'undefined' ? window.location.hostname : null;
+  console.log(host);
 
   const handleMobileToggle = () => {
     setIsMobileMenuActive(!isMobileMenuActive);
@@ -29,22 +32,34 @@ export default function Navigation({ dict }: any) {
     isMobileMenuActive && setTimeout(() => setIsMobileMenuActive(false), 300);
   };
   const links: ILinks = dict?.menu;
+
+  let navigationLogo;
+  if (host === 'abstudio.com.co' || host === 'www.abstudio.com.co') {
+    navigationLogo = (
+      <Link href="/" style={{ opacity: 0.8, display: 'flex', alignItems: 'center' }}>
+        <p className={styles.logo}>abstudio</p>
+      </Link>
+    );
+  } else {
+    navigationLogo = (
+      <Link href="/" style={{ opacity: 0.8, display: 'flex', alignItems: 'center' }}>
+        <Image
+          src={Logo}
+          alt="Home link personal logo"
+          quality={100}
+          width={175}
+          height={42}
+          sizes="(max-width: 768px) 100vw,
+                      (max-width: 1200px) 50vw,
+                      33vw"
+        />
+      </Link>
+    );
+  }
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <Link href="/" style={{ opacity: 0.8, display: 'flex', alignItems: 'center' }}>
-          {/* <Image
-            src={Logo}
-            alt="Home link personal logo"
-            quality={100}
-            width={175}
-            height={42}
-            sizes="(max-width: 768px) 100vw,
-                        (max-width: 1200px) 50vw,
-                        33vw"
-          /> */}
-          <p className={styles.logo}>abstudio</p>
-        </Link>
+        {navigationLogo}
         <ul className={styles.navMenu}>
           {links?.map(({ to, label }) => (
             <li id={label} className={styles.navMenuItem} key={label}>
