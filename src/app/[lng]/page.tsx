@@ -1,5 +1,5 @@
 import Script from 'next/script';
-import Masthead from './components/Masthead/Masthead';
+import { PersonalMasthead } from './components/Masthead/Masthead';
 import Scurve from './components/Scurve/Scurve';
 import FeaturedProjects from './components/FeaturedProjects/FeaturedProjects';
 import BlogCards from './modules/BlogCards';
@@ -39,7 +39,7 @@ export default async function Home({ params }: any) {
   const localizedProjects = dict?.recentProjects || [];
   return (
     <>
-      <Masthead {...mastheadInfo} lang={lng} />
+      <PersonalMasthead {...mastheadInfo} lang={lng} />
       <FeaturedProjects {...services} />
       <Scurve {...sCurveInfo} />
       <RecentProjects localizedProjects={localizedProjects} />
