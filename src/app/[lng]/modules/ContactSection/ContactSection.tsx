@@ -8,7 +8,6 @@ import Link from 'next/link';
 import Linkedin from '../../../../../public/linkedin.svg';
 import Github from '../../../../../public/github.svg';
 import Whatsapp from '../../../../../public/whatsapp.svg';
-import dynamic from 'next/dynamic';
 
 interface IContactSectionProps {
   layout?: string;

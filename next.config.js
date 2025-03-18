@@ -2,11 +2,8 @@
 const path = require('path');
 
 const nextConfig = {
-  experimental: {
-    appDir: true
-  },
   images: {
-    domains: ['images.ctfassets.net', 'picsum.photos', 'undefined']
+    unoptimized: true
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]

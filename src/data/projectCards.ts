@@ -1,12 +1,9 @@
 import Tracker from '../../public/recentProjects/tracker.png';
 import Launch from '../../public/launch.png';
 import partersLogo from '../../public/recentProjects/partnersLogo.png';
-import TrackerScreen from '../../public/recentProjects/capturaTracker.png';
-import PartnersScreen from '../../public/recentProjects/capturaPartners.png';
-import LaunchScreen from '../../public/recentProjects/capturaLaunch.png';
 import { IRowCard } from '../app/[lng]/components/Cards/VerticalCard/Card';
 
-export const ProjectCards: IRowCard[] = [
+export const ProjectCardsData: IRowCard[] = [
   {
     id: '1',
     title: 'Partners',
@@ -19,12 +16,7 @@ export const ProjectCards: IRowCard[] = [
     },
     technologies: ['javascript', 'next'],
     extra: {
-      link: 'https://partners-red.vercel.app/',
-      screen: {
-        src: PartnersScreen,
-        alt: 'Screenshot de Partners',
-        title: ''
-      }
+      link: 'https://partners-red.vercel.app/'
     }
   },
   {
@@ -39,12 +31,7 @@ export const ProjectCards: IRowCard[] = [
     },
     technologies: ['javascript', 'vite'],
     extra: {
-      link: 'https://launch-black.vercel.app/',
-      screen: {
-        src: LaunchScreen,
-        alt: 'Screenshot de Launch',
-        title: ''
-      }
+      link: 'https://launch-black.vercel.app/'
     }
   },
   {
@@ -59,12 +46,7 @@ export const ProjectCards: IRowCard[] = [
     },
     technologies: ['javascript', 'vite'],
     extra: {
-      link: 'https://tracker-ulqw.vercel.app',
-      screen: {
-        src: TrackerScreen,
-        alt: 'Screenshot de Tracker',
-        title: ''
-      }
+      link: 'https://tracker-ulqw.vercel.app'
     }
   }
 ];

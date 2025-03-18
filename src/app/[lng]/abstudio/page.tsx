@@ -4,7 +4,7 @@ import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects';
 import Masthead from '../components/Masthead/Masthead';
 import Scurve from '../components/Scurve/Scurve';
 import Testimonials from '../components/Testimonials/Testimonials';
-import { getDictionary } from '../dictionaries';
+import { getDictionary } from '../../../dictionaries';
 import RecentProjects from '../modules/RecentProjects';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;

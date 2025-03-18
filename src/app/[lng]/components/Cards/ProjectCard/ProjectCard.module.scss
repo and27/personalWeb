@@ -1,0 +1,142 @@
+@import "~sass-mq/mq";
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--primary-white);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-block-end: 2rem;
+  transition: transform 0.3s ease-in-out;
+
+  @include mq(tablet) {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.left {
+  flex-direction: row;
+  padding-inline-end: 4rem;
+}
+
+.right {
+  flex-direction: row-reverse;
+  padding-inline-start: 4rem;
+}
+
+.projectCard__image {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+  }
+}
+
+.projectCard__content {
+  flex: 1;
+  text-align: start;
+  padding-block: 5rem;
+}
+
+.projectCard__category {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: var(--primary-white);
+}
+
+.projectCard__titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-block-end: 4px;
+}
+
+.projectCard__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-white);
+  margin-block-end: 32px;
+
+  line-height: 1.2;
+
+  @include mq(tablet) {
+    font-size: 2rem;
+  }
+}
+
+.projectCard__description {
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.projectCard__techStack {
+  display: flex;
+  gap: 8px;
+  font-size: 1.2rem;
+}
+
+.projectCard__impact {
+  color: #999;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin-top: 1rem;
+
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.projectCard__contributors {
+  font-size: 0.9rem;
+  color: var(--tertiary-white);
+  margin-top: 1rem;
+}
+
+.projectCard__buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.projectCard__btn {
+  padding: 10px 15px;
+  border: 1px solid var(--primary-white);
+  background-color: var(--primary-black);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: #333;
+  }
+}
+
+.projectCard__github {
+  padding: 10px 15px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    background: #555;
+  }
+}

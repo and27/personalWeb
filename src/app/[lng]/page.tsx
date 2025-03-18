@@ -3,7 +3,7 @@ import { PersonalMasthead } from './components/Masthead/Masthead';
 import Scurve from './components/Scurve/Scurve';
 import FeaturedProjects from './components/FeaturedProjects/FeaturedProjects';
 import BlogCards from './modules/BlogCards';
-import { getDictionary } from './dictionaries';
+import { getDictionary } from '../../dictionaries';
 import RecentProjects from './modules/RecentProjects';
 import ContactSection from './modules/ContactSection/ContactSection';
 

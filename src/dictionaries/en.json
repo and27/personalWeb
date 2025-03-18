@@ -1,7 +1,7 @@
 {
   "mastheadInfo": {
-    "title": "Hi, I'm Andres, Mobile and Web developer",
-    "description": "Turning ideas and challenges into digital experiences.",
+    "title": "Create, Innovate, Repeat.",
+    "description": "We create digital experiences (web, apps, artificial intelligence) that connect, inspire, and elevate your business.",
     "cta": "Let's Connect & Create"
   },
   "menu": [
@@ -99,5 +99,76 @@
   },
   "footer": {
     "rights": "© 2021 - 2025. All rights reserved."
-  }
+  },
+
+  "projects": [
+    {
+      "title": "Partners",
+      "slug": "partners",
+      "category": "Mobile App",
+      "description": "Partners is an app that connects early-stage entrepreneurs with strategic partners who complement their skills.",
+      "impact": [
+        "30% increase in entrepreneurs' success rate in finding partners.",
+        "Improved collaboration through AI-driven matchmaking.",
+        "Seamless onboarding experience for new users."
+      ],
+      "image": "/images/partners.png",
+      "technologies": ["React Native", "Firebase", "TypeScript"],
+      "cta": "Try Demo",
+      "link": "https://partners.example.com",
+      "github": "https://github.com/yourrepo/partners",
+      "contributors": ["Andres", "Sofia", "Carlos"]
+    },
+    {
+      "title": "Launch",
+      "slug": "launch",
+      "category": "AI Tool",
+      "description": "Launch is an AI-powered platform designed to streamline the process of testing and launching your business ideas.",
+      "impact": [
+        "50% increase in student engagement and course completion rates.",
+        "AI-powered analytics to identify key market trends.",
+        "User-friendly UI for rapid prototyping and validation."
+      ],
+      "image": "/images/launch.png",
+      "technologies": ["Next.js", "Vercel", "AI APIs"],
+      "cta": "Visit Website",
+      "link": "https://launch.example.com",
+      "github": "https://github.com/yourrepo/launch",
+      "contributors": ["Andres", "Laura"]
+    },
+    {
+      "title": "Codercat",
+      "slug": "codercat",
+      "category": "Educational Platform",
+      "description": "Codercat is a web and mobile app that provides daily tips on accessibility, security, and user experience.",
+      "impact": [
+        "20% reduction in production costs and 15% increase in overall efficiency.",
+        "Daily curated content for developers and designers.",
+        "Integration with GitHub and real-time notifications."
+      ],
+      "image": "/images/codercat.png",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "cta": "Explore Content",
+      "link": "https://codercat.example.com",
+      "github": "https://github.com/yourrepo/codercat",
+      "contributors": ["Andres", "Maria", "Luis"]
+    },
+    {
+      "title": "Tracker",
+      "slug": "tracker",
+      "category": "Web App",
+      "description": "Tracker is a personal finance app that helps users manage their budgets, track expenses, and set financial goals.",
+      "impact": [
+        "20% increase in user savings through budgeting tools.",
+        "Real-time expense tracking and financial insights.",
+        "Personalized savings goals and automated reports."
+      ],
+      "image": "/images/tracker.png",
+      "technologies": ["JavaScript", "Next.js", "Vercel"],
+      "cta": "Try It Now",
+      "link": "https://tracker.example.com",
+      "github": "https://github.com/yourrepo/tracker",
+      "contributors": ["Andres", "Sofia", "Carlos"]
+    }
+  ]
 }
