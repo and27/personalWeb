@@ -1,9 +1,9 @@
-import { ProjectCards } from '@/data/projectCards';
-import RowModalCards from '../components/Cards/RowModalCards/RowModalCards';
+import { ProjectCardsData } from '@/data/projectCards';
+import ProjectCards from '../components/Cards/ProjectCards/ProjectCards';
 import globalStyles from '../page.module.scss';
 
 const RecentProjects = ({ localizedProjects }: { localizedProjects: any }) => {
-  const combinedProjects = ProjectCards.map((project, index) => {
+  const combinedProjects = ProjectCardsData.map((project, index) => {
     const localizedProject =
       localizedProjects.projects && localizedProjects.projects[index]
         ? localizedProjects.projects[index]
@@ -22,7 +22,7 @@ const RecentProjects = ({ localizedProjects }: { localizedProjects: any }) => {
   return (
     <section className={globalStyles.projects} style={{ display: 'flex', flexDirection: 'column' }}>
       <h2 className={globalStyles.section__title}>{localizedProjects.title}</h2>
-      <RowModalCards cards={combinedProjects} />
+      <ProjectCards cards={combinedProjects} />
     </section>
   );
 };

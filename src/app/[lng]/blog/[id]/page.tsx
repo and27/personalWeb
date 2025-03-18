@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from './blog.module.scss';
 import globalStyles from '../../page.module.scss';
-import getImageDataFromBlogPost from '../../utils/getImageSrc';
+import getImageDataFromBlogPost from '../../../../utils/getImageSrc';
 import RelatedPostCards from '../../modules/RelatedPostCards';
 import { getBlogPostBySlug } from '@/lib/getDataEntries';
 

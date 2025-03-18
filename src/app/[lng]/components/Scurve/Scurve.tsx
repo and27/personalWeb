@@ -3,9 +3,9 @@ import styles from './Scurve.module.scss';
 import globalStyles from '../../page.module.scss';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+// import Image from 'next/image';
+// import studioImage from '../../../../../public/studioImage.png';
 import LayoutSVG from './LayoutSVG';
-import Image from 'next/image';
-import studioImage from '../../../../../public/studioImage.png';
 
 interface IScurve {
   title: string;
@@ -50,8 +50,8 @@ const Scurve: React.FC<IScurve> = ({ title, description, cta }) => {
           </div>
 
           <motion.div style={{ x }} className={styles.scurve__media}>
-            <Image src={studioImage} width={500} height={500} alt="workspace image of abstudio" />
-            {/* <LayoutSVG /> */}
+            {/* <Image src={studioImage} width={500} height={500} alt="workspace image of abstudio" /> */}
+            <LayoutSVG />
           </motion.div>
         </div>
       </div>

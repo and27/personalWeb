@@ -1,7 +1,7 @@
 import { use } from 'react';
 import { getRelatedPosts } from '@/lib/getDataEntries';
 import RowCards, { IRowCards } from '../components/Cards/RowCards/RowCards';
-import getImageDataFromBlogPost from '../utils/getImageSrc';
+import getImageDataFromBlogPost from '../../../utils/getImageSrc';
 import { IRowCard } from '../components/Cards/VerticalCard/Card';
 
 interface RelatedPostsProps {

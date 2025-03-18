@@ -1,4 +1,4 @@
-import { getDictionary } from '../dictionaries';
+import { getDictionary } from '../../../dictionaries';
 import ContactSection from '../modules/ContactSection/ContactSection';
 
 const Contact = async ({ params }: any) => {

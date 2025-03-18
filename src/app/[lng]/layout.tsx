@@ -1,6 +1,6 @@
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
-import { getDictionary } from './dictionaries';
+import { getDictionary } from '../../dictionaries';
 import './globals.css';
 
 const metadataAB = {

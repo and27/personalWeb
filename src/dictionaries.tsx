@@ -47,6 +47,19 @@ export type languageDataImporter = () => Promise<{
       impact: string | string[];
     }[];
   };
+  projects: {
+    title: string;
+    slug: string;
+    category: string;
+    description: string;
+    impact: string[];
+    contributors: string[];
+    link: string;
+    cta: string;
+    github: string;
+    technologies: string[];
+    image: string;
+  }[];
 
   footer: {
     rights: string;
@@ -59,7 +72,7 @@ export interface ILanguageDictionary {
 
 const languageDictionaries: ILanguageDictionary = {
   en: () => import('./dictionaries/en.json').then(module => module.default),
-  fr: () => import('./dictionaries/fr.json').then(module => module.default),
+  // fr: () => import('./dictionaries/fr.json').then(module => module.default),
   es: () => import('./dictionaries/es.json').then(module => module.default)
 };
 

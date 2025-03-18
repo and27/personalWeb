@@ -1,7 +1,7 @@
 {
   "mastheadInfo": {
-    "title": "Hola, Soy Andres, Desarrollador Web y Móvil",
-    "description": "Llevando tu presencia en línea al siguiente nivel con aplicaciones web centradas en el usuario.",
+    "title": "Crea, Innova, Repite.",
+    "description": "Creamos experiencias digitales (webs, apps, inteligencia artificial) que conectan, inspiran y elevan tu negocio.",
     "cta": "¡Comencemos!"
   },
   "menu": [
@@ -113,5 +113,75 @@
   },
   "footer": {
     "rights": "© 2021 - 2025. Todos los derechos reservados."
-  }
+  },
+  "projects": [
+    {
+      "title": "Partners",
+      "slug": "partners",
+      "category": "Aplicación Móvil",
+      "description": "Partners es una aplicación que conecta emprendedores en etapa inicial con socios estratégicos que complementan sus habilidades.",
+      "impact": [
+        "Aumento del 30% en el éxito de los emprendedores al encontrar socios.",
+        "Mejor colaboración gracias a la inteligencia artificial en el matchmaking.",
+        "Experiencia de incorporación de usuarios simplificada."
+      ],
+      "image": "/images/partnersCapture.png",
+      "technologies": ["JavaScript", "React", "Next.js"],
+      "cta": "Visitar Sitio",
+      "link": "https://partners-red.vercel.app/",
+      "github": "https://github.com/and27/partners",
+      "contributors": ["Andrés", "Sofía", "Carlos"]
+    },
+    {
+      "title": "Launch",
+      "slug": "launch",
+      "category": "Plataforma web y móvil",
+      "description": "Launch es una plataforma impulsada por IA diseñada para optimizar el proceso de validación y lanzamiento de ideas de negocio.",
+      "impact": [
+        "Aumento del 50% en la participación de estudiantes y tasas de finalización de cursos.",
+        "Análisis impulsados por IA para identificar tendencias clave del mercado.",
+        "Interfaz intuitiva para prototipado rápido y validación."
+      ],
+      "image": "/images/launchCapture.png",
+      "technologies": ["JavaScript", "React", "Next.js"],
+      "cta": "Visitar Sitio",
+      "link": "https://launch-black.vercel.app/",
+      "github": "https://github.com/and27/launch",
+      "contributors": ["Andrés", "Laura"]
+    },
+    {
+      "title": "Codercat",
+      "slug": "codercat",
+      "category": "SPA",
+      "description": "Codercat es una plataforma web y móvil que ofrece consejos diarios sobre accesibilidad, seguridad y experiencia de usuario.",
+      "impact": [
+        "Reducción del 20% en costos de producción y aumento del 15% en eficiencia general.",
+        "Contenido curado diario para desarrolladores y diseñadores.",
+        "Integración con GitHub y notificaciones en tiempo real."
+      ],
+      "image": "/images/codercatCapture.png",
+      "technologies": ["JavaScript", "React", "Next.js"],
+      "cta": "Visitar Sitio",
+      "link": "https://codercat.vercel.app/",
+      "github": "https://github.com/and27/codercat",
+      "contributors": ["Andrés", "María", "Luis"]
+    },
+    {
+      "title": "Tracker",
+      "slug": "tracker",
+      "category": "Aplicación Web",
+      "description": "Tracker es una aplicación de finanzas personales que ayuda a los usuarios a gestionar su presupuesto, realizar un seguimiento de sus gastos y establecer metas financieras.",
+      "impact": [
+        "Aumento del 20% en el ahorro de los usuarios mediante herramientas de presupuesto.",
+        "Seguimiento de gastos en tiempo real y análisis financiero.",
+        "Metas de ahorro personalizadas e informes automatizados."
+      ],
+      "image": "/images/tracker.png",
+      "technologies": ["JavaScript", "Next.js", "Vercel"],
+      "cta": "Visitar Sitio",
+      "link": "https://tracker.abstudio.com.co",
+      "github": "https://github.com/and27/tracker",
+      "contributors": ["Andrés", "Sofía", "Carlos"]
+    }
+  ]
 }
