@@ -7,26 +7,43 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-block-end: 2rem;
+  padding-inline: 2rem;
   transition: transform 0.3s ease-in-out;
+  opacity: 0;
+
+  &.visible {
+    animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 
   @include mq(tablet) {
-    flex-direction: row;
-    gap: 3rem;
+    gap: 2rem;
+    &.left {
+      flex-direction: row;
+      padding-inline-end: 1rem;
+      padding-inline-start: 0;
+    }
+    &.right {
+      flex-direction: row-reverse;
+      padding-inline-start: 1rem;
+      padding-inline-end: 0;
+    }
   }
 
-  &:hover {
-    transform: translateY(-5px);
+  @include mq(desktop) {
+    &.left {
+      padding-inline-end: 4rem;
+      padding-inline-start: 0;
+    }
+
+    &.right {
+      padding-inline-start: 4rem;
+      padding-inline-end: 0;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
-}
-
-.left {
-  flex-direction: row;
-  padding-inline-end: 4rem;
-}
-
-.right {
-  flex-direction: row-reverse;
-  padding-inline-start: 4rem;
 }
 
 .projectCard__image {
@@ -41,6 +58,9 @@
     width: 100%;
     display: block;
     border-radius: 10px;
+  }
+  @include mq(tablet) {
+    flex: 0 0 45%;
   }
 }
 
@@ -138,5 +158,16 @@
 
   &:hover {
     background: #555;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
   }
 }

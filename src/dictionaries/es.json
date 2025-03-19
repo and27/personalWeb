@@ -6,14 +6,14 @@
   },
   "menu": [
     {
-      "title": "Inicio",
-      "to": "/es",
-      "label": "Inicio"
-    },
-    {
       "title": "Blog",
       "to": "/es/blog",
       "label": "Blog"
+    },
+    {
+      "title": "Proyectos",
+      "to": "/projects",
+      "label": "Proyectos"
     },
     {
       "title": "Contacto",

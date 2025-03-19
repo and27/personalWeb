@@ -6,14 +6,14 @@
   },
   "menu": [
     {
-      "title": "Home Page",
-      "to": "/",
-      "label": "Home"
-    },
-    {
       "title": "Blog",
       "to": "/blog",
       "label": "Blog"
+    },
+    {
+      "title": "Projects",
+      "to": "/projects",
+      "label": "Projects"
     },
     {
       "title": "Contact",
