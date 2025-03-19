@@ -1,3 +1,4 @@
+'use client';
 import styles from './ProjectCard.module.scss';
 import { SiJavascript, SiNextdotjs, SiReact } from 'react-icons/si';
 import Image from 'next/image';
@@ -11,13 +12,37 @@ import launchScreen from '../../../../../../public/projects/images/launchCapture
 import partnersScreen from '../../../../../../public/projects/images/partnersCaptureA.png';
 import codercatScreen from '../../../../../../public/projects/images/codercatCaptureA.png';
 import trackerScreen from '../../../../../../public/projects/images/trackerCaptureA.png';
+import { useEffect, useRef, useState } from 'react';
 
 const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   const isEven = index % 2 === 0;
   const projectImages = [partnersScreen, launchScreen, codercatScreen, trackerScreen];
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (cardRef.current) observer.observe(cardRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className={`${styles.projectCard} ${isEven ? styles.left : styles.right}`}>
+    <div
+      ref={cardRef}
+      className={`${styles.projectCard} ${isEven ? styles.left : styles.right} ${
+        isVisible ? styles.visible : ''
+      }`}
+    >
       <div className={styles.projectCard__image}>
         <Image
           src={projectImages[index] || project.image}
