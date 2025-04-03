@@ -1,22 +1,24 @@
 'use client';
 import styles from './ProjectCard.module.scss';
-import { SiJavascript, SiNextdotjs, SiReact } from 'react-icons/si';
 import Image from 'next/image';
-
-const techIcons: { [key: string]: JSX.Element } = {
-  javascript: <SiJavascript />,
-  'next.js': <SiNextdotjs />,
-  react: <SiReact />
-};
+import paylinkScreen from '../../../../../../public/projects/images/paylinkCapture.png';
 import launchScreen from '../../../../../../public/projects/images/launchCaptureA.png';
 import partnersScreen from '../../../../../../public/projects/images/partnersCaptureA.png';
 import codercatScreen from '../../../../../../public/projects/images/codercatCaptureA.png';
 import trackerScreen from '../../../../../../public/projects/images/trackerCaptureA.png';
 import { useEffect, useRef, useState } from 'react';
+import techIcons from '@/lib/techIcons';
+import TechIcon from '../../TechIcon/TechIcon';
 
 const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   const isEven = index % 2 === 0;
-  const projectImages = [partnersScreen, launchScreen, codercatScreen, trackerScreen];
+  const projectImages = [
+    paylinkScreen,
+    partnersScreen,
+    launchScreen,
+    codercatScreen,
+    trackerScreen
+  ];
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -60,11 +62,14 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
         <div className={styles.projectCard__titleContainer}>
           <span className={styles.projectCard__category}>{project.category}</span>
           <div className={styles.projectCard__techStack}>
-            {project.technologies.map((tech: string, idx: number) => (
-              <span key={idx} className={styles.projectCard__tech}>
-                {techIcons[tech.toLowerCase()] || tech}
-              </span>
-            ))}
+            {project.technologies.map((tech: string, idx: string) => {
+              const t = techIcons[tech.toLowerCase()];
+              return (
+                <div key={idx} className="w-6 h-6">
+                  {t ? <TechIcon icon={t.icon} label={t.label} /> : tech}
+                </div>
+              );
+            })}
           </div>
         </div>
         <h2 className={styles.projectCard__title}>{project.title}</h2>
