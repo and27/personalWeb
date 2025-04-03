@@ -103,6 +103,23 @@
 
   "projects": [
     {
+      "title": "PayLink",
+      "slug": "paylink",
+      "category": "Web3 App",
+      "description": "PayLink reimagines how freelancers and creators get paid—offering instant, secure crypto payments through smart links with no friction.",
+      "impact": [
+        "Redefines the crypto payment experience with smart links and real-time tracking.",
+        "Native support for ERC-20 tokens like ETH, USDT, and USDC on the Ethereum network.",
+        "Built with modern Web3 architecture and a UX that emphasizes clarity, speed, and trust."
+      ],
+      "image": "/images/paylinkCapture.png",
+      "technologies": ["Next.js", "TailwindCSS", "Wagmi", "viem", "Solidity", "Supabase"],
+      "cta": "Visit Site",
+      "link": "https://paylink-orpin.vercel.app/",
+      "github": "https://github.com/and27/paylink",
+      "contributors": ["Andres"]
+    },
+    {
       "title": "Partners",
       "slug": "partners",
       "category": "Mobile App",
@@ -115,8 +132,8 @@
       "image": "/images/partners.png",
       "technologies": ["React Native", "Firebase", "TypeScript"],
       "cta": "Try Demo",
-      "link": "https://partners.example.com",
-      "github": "https://github.com/yourrepo/partners",
+      "link": "https://partners-red.vercel.app/",
+      "github": "https://github.com/and27/partners",
       "contributors": ["Andres", "Sofia", "Carlos"]
     },
     {
@@ -129,11 +146,11 @@
         "AI-powered analytics to identify key market trends.",
         "User-friendly UI for rapid prototyping and validation."
       ],
-      "image": "/images/launch.png",
+      "image": "/images/launchCapture.png",
       "technologies": ["Next.js", "Vercel", "AI APIs"],
       "cta": "Visit Website",
-      "link": "https://launch.example.com",
-      "github": "https://github.com/yourrepo/launch",
+      "link": "https://launch-black.vercel.app/",
+      "github": "https://github.com/and27/launch",
       "contributors": ["Andres", "Laura"]
     },
     {
@@ -146,11 +163,11 @@
         "Daily curated content for developers and designers.",
         "Integration with GitHub and real-time notifications."
       ],
-      "image": "/images/codercat.png",
+      "image": "/images/codercatCapture.png",
       "technologies": ["React", "Node.js", "MongoDB"],
       "cta": "Explore Content",
-      "link": "https://codercat.example.com",
-      "github": "https://github.com/yourrepo/codercat",
+      "link": "https://codercat.vercel.app/",
+      "github": "https://github.com/and27/codercat",
       "contributors": ["Andres", "Maria", "Luis"]
     },
     {
@@ -166,8 +183,8 @@
       "image": "/images/tracker.png",
       "technologies": ["JavaScript", "Next.js", "Vercel"],
       "cta": "Try It Now",
-      "link": "https://tracker.example.com",
-      "github": "https://github.com/yourrepo/tracker",
+      "link": "https://tracker.abstudio.com.co",
+      "github": "https://github.com/and27/tracker",
       "contributors": ["Andres", "Sofia", "Carlos"]
     }
   ]

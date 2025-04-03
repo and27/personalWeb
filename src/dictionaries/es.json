@@ -116,6 +116,23 @@
   },
   "projects": [
     {
+      "title": "PayLink",
+      "slug": "paylink",
+      "category": "Aplicación Web3",
+      "description": "PayLink transforma la forma en que freelancers y creadores reciben pagos, permitiéndoles aceptar criptomonedas de forma instantánea, segura y sin fricción.",
+      "impact": [
+        "Redefine el proceso de pagos en cripto con enlaces inteligentes y trazabilidad en tiempo real.",
+        "Soporte nativo para tokens ERC-20 como ETH, USDT y USDC sobre la red Ethereum.",
+        "Diseñada con una arquitectura Web3 moderna y una interfaz que prioriza velocidad, claridad y confianza."
+      ],
+      "image": "/images/paylinkCapture.png",
+      "technologies": ["Next.js", "TailwindCSS", "Wagmi", "viem", "Solidity", "Supabase"],
+      "cta": "Visitar Sitio",
+      "link": "https://paylink-orpin.vercel.app/",
+      "github": "https://github.com/and27/paylink",
+      "contributors": ["Andrés"]
+    },
+    {
       "title": "Partners",
       "slug": "partners",
       "category": "Aplicación Móvil",
