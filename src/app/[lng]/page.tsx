@@ -1,11 +1,11 @@
 import Script from 'next/script';
-import { PersonalMasthead } from './components/Masthead/Masthead';
 import Scurve from './components/Scurve/Scurve';
 import FeaturedProjects from './components/FeaturedProjects/FeaturedProjects';
 import BlogCards from './modules/BlogCards';
 import { getDictionary } from '../../dictionaries';
 import RecentProjects from './modules/RecentProjects';
 import ContactSection from './modules/ContactSection/ContactSection';
+import PersonalMasthead from './components/PersonalMasthead/Masthead';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 

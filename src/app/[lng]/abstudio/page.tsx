@@ -1,11 +1,10 @@
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
-import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects';
-import Masthead from '../components/Masthead/Masthead';
-import Scurve from '../components/Scurve/Scurve';
 import Testimonials from '../components/Testimonials/Testimonials';
 import { getDictionary } from '../../../dictionaries';
-import RecentProjects from '../modules/RecentProjects';
+import Masthead from '../components/abstudio/Masthead/Masthead';
+import FeaturedProjectsGallery from '../components/abstudio/FeaturedProjects/FeaturedProjectsGallery';
+import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
@@ -36,14 +35,18 @@ export default async function Home({ params }: any) {
     description: '',
     cta: ''
   };
+  const services = dict?.services || {
+    title: '',
+    services: []
+  };
 
-  const localizedProjects = dict?.recentProjects || [];
+  const localizedProjects = dict?.projects || [];
   return (
     <>
       <Masthead {...mastheadInfo} lang={lng} />
-      <FeaturedProjects {...servicesStudio} />
-      <Scurve {...sCurveInfoStudio} />
-      <RecentProjects localizedProjects={localizedProjects} />
+      <FeaturedProjects {...services} />
+      <FeaturedProjectsGallery projects={localizedProjects} title="Proyectos web recientes" />
+      {/* <Scurve {...sCurveInfoStudio} /> */}
       <Testimonials />
       <ContactSection layout={'inline'} {...contact} />
       <Script

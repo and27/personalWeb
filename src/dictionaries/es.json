@@ -43,16 +43,16 @@
     "title": "Lo que hacemos mejor",
     "services": [
       {
-        "title": "Desarrollo web",
-        "description": "Creamos sitios web y aplicaciones web responsivas utilizando React, Next.js y TypeScript, enfocados en la seguridad y la experiencia de usuario."
+        "title": "Asistentes Virtuales y Automatización",
+        "description": "Creamos bots y sistemas inteligentes que responden, agendan y hacen seguimiento automático para liberar tu tiempo y aumentar conversiones."
       },
       {
-        "title": "Pruebas de Seguridad de Aplicaciones",
-        "description": "Protegemos sus aplicaciones de amenazas cibernéticas mediante pruebas de seguridad y evaluaciones de vulnerabilidades."
+        "title": "Diseño Web Estratégico",
+        "description": "Desarrollamos webs modernas que guían al usuario, reflejan tu valor y convierten visitas en clientes. UX, velocidad y estructura de ventas en uno."
       },
       {
-        "title": "Soluciones de Tecnología Educativa",
-        "description": "Desarrollamos plataformas seguras y escalables para educadores y entrenadores, aprovechando la IA para mejorar las experiencias de aprendizaje y automatizar procesos."
+        "title": "Identidad Visual Profesional",
+        "description": "Diseñamos logos, estilos y sistemas visuales que te posicionan como experto y elevan la percepción de tu marca desde el primer vistazo."
       }
     ]
   },
