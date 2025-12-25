@@ -1,106 +1,106 @@
 {
   "mastheadInfo": {
-    "title": "Create, Innovate, Repeat.",
-    "description": "I design and build digital solutions — web applications, systems, and AI integrations — with a focus on clarity, usability, and real-world constraints.",
-    "cta": "View projects"
+    "title": "Crea, Innova, Repite.",
+    "description": "Diseño y desarrollo soluciones digitales — aplicaciones web, sistemas e integraciones con IA — con foco en claridad, usabilidad y restricciones del mundo real.",
+    "cta": "Ver proyectos"
   },
 
   "menu": [
-    { "title": "Blog", "to": "/blog", "label": "Blog" },
-    { "title": "Projects", "to": "/projects", "label": "Projects" },
-    { "title": "Contact", "to": "/contact", "label": "Contact" }
+    { "title": "Blog", "to": "/es/blog", "label": "Blog" },
+    { "title": "Proyectos", "to": "/projects", "label": "Proyectos" },
+    { "title": "Contacto", "to": "/es/contact", "label": "Contacto" }
   ],
 
   "about": {
-    "title": "About",
+    "title": "Acerca de",
     "description": [
-      "I'm Andrés, a software engineer with over 5 years of experience building digital products used in real-world environments.",
-      "I've worked across education, gaming, Web3, and internal platforms, contributing across the product lifecycle — from solution design to implementation and iteration.",
-      "I'm especially interested in the intersection of interfaces, systems, and artificial intelligence, and how technology can reduce complexity and improve user experience."
+      "Soy Andrés, ingeniero de software con más de 5 años de experiencia construyendo productos digitales que se usan en contextos reales.",
+      "He trabajado en educación, gaming, Web3 y plataformas internas, participando en distintas etapas del ciclo del producto: desde el diseño de la solución hasta su implementación e iteración.",
+      "Me interesa especialmente la intersección entre interfaces, sistemas e inteligencia artificial, y cómo la tecnología puede reducir complejidad y mejorar la experiencia de las personas."
     ],
-    "cta": "Explore my work"
+    "cta": "Explora mi trabajo"
   },
 
   "aboutStudio": {
-    "title": "About Abstudio",
+    "title": "Acerca de Abstudio",
     "description": [
-      "Abstudio is a growth-focused software agency with over 5 years of experience helping entrepreneurs and businesses succeed.",
-      "We combine creativity, data, and technology to deliver results through custom digital strategies, purposeful websites, and automated systems."
+      "Abstudio es una agencia de growth con más de 5 años de experiencia ayudando a emprendedores y negocios a crecer.",
+      "Combinamos creatividad, datos y tecnología para entregar resultados mediante estrategias digitales, sitios con propósito y sistemas automatizados."
     ],
-    "cta": "Learn more"
+    "cta": "Explora nuestro trabajo"
   },
 
   "services": {
-    "title": "What I work on",
+    "title": "En qué trabajo",
     "services": [
       {
-        "title": "Digital Product Development",
-        "description": "Design and development of web and mobile applications with a focus on clarity, maintainability, and steady iteration."
+        "title": "Desarrollo de productos digitales",
+        "description": "Diseño y desarrollo de aplicaciones web y móviles con foco en claridad, mantenibilidad e iteración constante."
       },
       {
-        "title": "Interfaces & User Experience",
-        "description": "Building accessible, performant, user-centered interfaces by combining product thinking with solid engineering."
+        "title": "Interfaces y experiencia de usuario",
+        "description": "Construcción de interfaces accesibles, performantes y centradas en el usuario, combinando criterio de producto e ingeniería."
       },
       {
-        "title": "Automation & Artificial Intelligence",
-        "description": "Integrating AI and automation into workflows to reduce friction, save time, and unlock new capabilities."
+        "title": "Automatización e inteligencia artificial",
+        "description": "Integración de IA y automatización en flujos de trabajo para reducir fricción, ahorrar tiempo y generar apalancamiento."
       }
     ]
   },
 
   "servicesStudio": {
-    "title": "What we do at Abstudio",
+    "title": "¿Qué hacemos en Abstudio?",
     "services": [
       {
-        "title": "Web & Mobile Development",
-        "description": "We build websites and applications that connect with real users and support sustainable business growth."
+        "title": "Desarrollo Web y Móvil",
+        "description": "Creamos sitios web y aplicaciones que conectan con usuarios reales y acompañan el crecimiento sostenible del negocio."
       },
       {
-        "title": "Tailored Digital Strategies",
-        "description": "We define and implement digital strategies focused on visibility, acquisition, and conversion."
+        "title": "Estrategias Digitales a Medida",
+        "description": "Definimos e implementamos estrategias digitales enfocadas en visibilidad, adquisición y conversión."
       },
       {
-        "title": "Automation & Artificial Intelligence",
-        "description": "We optimize operations through automation and AI to save time, reduce costs, and scale efficiently."
+        "title": "Automatización e Inteligencia Artificial",
+        "description": "Optimizamos operaciones mediante automatización e IA para ahorrar tiempo, reducir costos y escalar."
       }
     ]
   },
 
   "contact": {
-    "blockTitle": "Get in touch",
-    "inlineTitle": "Let’s collaborate on your next product",
-    "description": "Open to collaborating on digital products, systems, and AI-driven solutions.",
-    "cta": "Get in touch"
+    "blockTitle": "Contacto",
+    "inlineTitle": "Colaboremos en tu próximo producto",
+    "description": "Abierto a colaborar en productos digitales, sistemas e iniciativas con inteligencia artificial.",
+    "cta": "Hablemos"
   },
 
   "recentProjects": {
-    "title": "Recent Projects",
+    "title": "Proyectos recientes",
     "projects": [
       {
         "title": "Partners",
-        "description": "A mobile application that connects early-stage entrepreneurs with strategic partners who complement their skills.",
+        "description": "Aplicación móvil que conecta emprendedores en etapas tempranas con socios estratégicos.",
         "impact": [
-          "Designed onboarding flows focused on clarity and adoption.",
-          "Implemented matching logic with scalability in mind.",
-          "Prepared the product for future iterations."
+          "Diseño de flujos de onboarding claros y orientados a adopción.",
+          "Implementación de lógica de matching con foco en escalabilidad.",
+          "Preparación del producto para futuras iteraciones."
         ]
       },
       {
         "title": "Launch",
-        "description": "A platform designed to validate product ideas and collect early feedback through guided flows.",
+        "description": "Plataforma diseñada para validar ideas de producto y recolectar feedback temprano.",
         "impact": [
-          "Integrated AI for roadmap generation and basic analysis.",
-          "Designed interfaces optimized for rapid iteration.",
-          "Enabled experimentation and learning loops."
+          "Integración de IA para generación de roadmaps y análisis básicos.",
+          "Diseño de interfaces pensadas para iteración rápida.",
+          "Soporte para ciclos de experimentación y aprendizaje."
         ]
       },
       {
         "title": "Tracker",
-        "description": "A personal finance application for managing budgets and tracking expenses.",
+        "description": "Aplicación para gestión de finanzas personales y seguimiento de gastos.",
         "impact": [
-          "Designed a simple and clear experience for financial tracking.",
-          "Implemented core flows for expense registration and review.",
-          "Built a base structure ready for future improvements."
+          "Diseño de una experiencia clara para registro financiero.",
+          "Implementación de flujos básicos de gastos y revisión.",
+          "Base preparada para mejoras futuras."
         ]
       }
     ]
@@ -111,15 +111,15 @@
       "title": "Mundo Interior",
       "slug": "mundo-interior",
       "category": "EdTech / Web Platform",
-      "description": "Mundo Interior is a digital platform exploring emotional education through storytelling and guided experiences for children.",
+      "description": "Mundo Interior es una plataforma digital que explora educación emocional a través de storytelling y experiencias guiadas para niños.",
       "impact": [
-        "Designed content structures oriented toward storytelling and emotional awareness.",
-        "Built a modular layout to support different types of educational content.",
-        "Prepared the codebase for future interactive features."
+        "Diseño de estructuras de contenido orientadas a narrativa y conciencia emocional.",
+        "Construcción de una base modular para distintos tipos de contenido educativo.",
+        "Preparación del código para futuras funcionalidades interactivas."
       ],
       "image": "/projects/images/mundoCapture.png",
       "technologies": ["Next.js", "React", "TailwindCSS"],
-      "cta": "Visit site",
+      "cta": "Visitar sitio",
       "link": "https://mundo.vercel.app/",
       "contributors": ["Andres"],
       "github": "https://github.com/and27/mundo"
@@ -128,15 +128,15 @@
       "title": "Taskr",
       "slug": "taskr",
       "category": "SaaS",
-      "description": "Taskr is a web application for task and workflow management, built to explore how small teams organize, prioritize, and execute work.",
+      "description": "Taskr es una aplicación web para la gestión de tareas y flujos de trabajo, enfocada en cómo equipos pequeños organizan y ejecutan su trabajo.",
       "impact": [
-        "Designed clear flows for creating, assigning, and prioritizing tasks.",
-        "Structured the frontend to support feature growth without constant refactors.",
-        "Focused the UX on reducing cognitive friction in day-to-day usage."
+        "Diseño de flujos claros para crear, asignar y priorizar tareas.",
+        "Estructuración del frontend para permitir crecimiento de funcionalidades.",
+        "UX pensada para reducir fricción cognitiva en el uso diario."
       ],
       "image": "/projects/images/taskrCapture.png",
       "technologies": ["Next.js", "React", "TypeScript"],
-      "cta": "Visit site",
+      "cta": "Ver demo",
       "link": "https://test-app.taskr.tech/",
       "contributors": ["Andres"]
     },
@@ -144,31 +144,30 @@
       "title": "PayLink",
       "slug": "paylink",
       "category": "Web3 App",
-      "description": "PayLink is a web application that allows freelancers and creators to generate crypto payment links and track payment status.",
+      "description": "PayLink es una aplicación web que permite generar enlaces de pago en cripto y hacer seguimiento básico del estado de las transacciones.",
       "impact": [
-        "Implemented a complete flow to create and share payment links.",
-        "Integrated ERC-20 token payments (ETH, USDT, USDC) on Ethereum.",
-        "Built wallet connection and transaction feedback with a focus on clarity."
+        "Implementación de un flujo completo para crear y compartir enlaces de pago.",
+        "Integración de pagos con tokens ERC-20 (ETH, USDT, USDC) en Ethereum.",
+        "Conexión de billeteras y feedback de transacciones con foco en claridad."
       ],
       "image": "/projects/images/paylinkCapture.png",
       "technologies": ["Next.js", "TailwindCSS", "Wagmi", "viem", "Solidity", "Supabase"],
-      "cta": "Visit site",
+      "cta": "Visitar sitio",
       "link": "https://paylink-orpin.vercel.app/",
       "github": "https://github.com/and27/paylink",
       "contributors": ["Andres"]
     },
-
     {
       "title": "Manhattan",
       "slug": "manhattan",
       "category": "Web App",
-      "description": "Manhattan is a website project where I worked as a frontend developer, implementing JavaScript-based UI components within an existing codebase.",
+      "description": "Manhattan es un proyecto web en el que participé como frontend developer, implementando componentes de interfaz en JavaScript dentro de un código existente.",
       "impact": [
-        "Built and integrated reusable JavaScript components with attention to responsiveness and consistency."
+        "Construcción e integración de componentes UI reutilizables con foco en consistencia y responsive."
       ],
       "image": "/projects/images/manhCapture.png",
       "technologies": ["JavaScript", "HTML", "CSS"],
-      "cta": "Visit site",
+      "cta": "Visitar sitio",
       "link": "https://manh.com",
       "contributors": ["Andres"]
     },
@@ -176,15 +175,15 @@
       "title": "Partners",
       "slug": "partners",
       "category": "Mobile App",
-      "description": "Partners connects early-stage entrepreneurs with strategic partners who complement their skills.",
+      "description": "Partners conecta emprendedores en etapas tempranas con socios estratégicos que complementan sus habilidades.",
       "impact": [
-        "Implemented core user flows for onboarding and profile creation.",
-        "Integrated matching logic to suggest compatible partners.",
-        "Focused on a smooth and simple mobile experience."
+        "Implementación de flujos principales de onboarding y perfiles.",
+        "Integración de lógica de matching para sugerir socios compatibles.",
+        "Experiencia móvil simple y fluida."
       ],
       "image": "/projects/images/partnersCaptureA.png",
       "technologies": ["React Native", "Firebase", "TypeScript"],
-      "cta": "Try demo",
+      "cta": "Probar demo",
       "link": "https://partners-red.vercel.app/",
       "github": "https://github.com/and27/partners",
       "contributors": ["Andres", "Sofia", "Carlos"]
@@ -193,15 +192,15 @@
       "title": "Tracker",
       "slug": "tracker",
       "category": "Web App",
-      "description": "Tracker is a personal finance application focused on helping users record expenses and better understand their spending.",
+      "description": "Tracker es una aplicación de finanzas personales enfocada en el registro de gastos y comprensión del consumo.",
       "impact": [
-        "Implemented core flows for adding and reviewing expenses.",
-        "Designed a clear UI for daily financial tracking.",
-        "Laid the groundwork for future analytics and reporting features."
+        "Implementación de flujos básicos para agregar y revisar gastos.",
+        "Diseño de una interfaz clara para seguimiento diario.",
+        "Base preparada para futuras funcionalidades de análisis."
       ],
       "image": "/projects/images/trackerCaptureA.png",
       "technologies": ["JavaScript", "Next.js", "Vercel"],
-      "cta": "Try it now",
+      "cta": "Probar ahora",
       "link": "https://tracker.abstudio.com.co",
       "github": "https://github.com/and27/tracker",
       "contributors": ["Andres", "Sofia", "Carlos"]
@@ -209,6 +208,6 @@
   ],
 
   "footer": {
-    "rights": "© 2021 - 2025. All rights reserved."
+    "rights": "© 2021 - 2025. Todos los derechos reservados."
   }
 }
