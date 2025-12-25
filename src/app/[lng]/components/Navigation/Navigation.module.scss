@@ -7,6 +7,8 @@
   width: 100%;
   margin: 0 auto;
   padding-inline: 20px;
+  position: relative;
+  z-index: 10;
 
   @include mq(tablet) {
     padding-inline: 60px;

@@ -7,40 +7,23 @@
   align-items: center;
 }
 
-.navActions button {
+.languageSelect {
   border: none;
   border-radius: 8px;
   color: white;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   cursor: pointer;
-  position: relative;
   transition: all 0.3s ease;
-  overflow: hidden;
   background: #121212;
-  display: flex;
-  gap: 5px;
-  align-items: center;
+  appearance: none;
 }
 
-.navActions button:hover {
+.languageSelect:hover {
   background: #232323;
 }
 
-.navActions button span {
-  display: block;
-  transform: translateY(0);
-  transition: transform 0.3s ease;
-}
-
-.navActions button:hover span {
-  transform: translateY(-3px);
-}
-
-.navActionsIcon {
-  display: none;
-
-  @include mq(tablet) {
-    display: block;
-  }
+.languageSelect:focus {
+  outline: 2px solid #3a3a3a;
+  outline-offset: 2px;
 }
