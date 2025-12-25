@@ -16,6 +16,11 @@
   --secondary-white: #ccc;
   --tertiary-white: #aaa;
   --dark-gray: #494949;
+  --accent-indigo: #6b5bff;
+  --accent-cyan: #41d6ff;
+  --accent-amber: #ffb84d;
+  --surface-1: #0f0b1f;
+  --surface-2: #141125;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -93,6 +98,10 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #070511;
+  background-image: radial-gradient(circle at 15% 20%, rgba(92, 74, 255, 0.12), transparent 48%),
+    radial-gradient(circle at 85% 10%, rgba(65, 214, 255, 0.08), transparent 44%),
+    radial-gradient(circle at 10% 90%, rgba(255, 184, 77, 0.06), transparent 38%),
+    linear-gradient(180deg, rgba(7, 5, 17, 0.92) 0%, rgba(7, 5, 17, 1) 100%);
 }
 
 a {

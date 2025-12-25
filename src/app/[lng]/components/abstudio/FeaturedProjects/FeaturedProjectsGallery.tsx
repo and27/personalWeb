@@ -15,7 +15,7 @@ type Project = {
   contributors: string[];
   link: string;
   cta: string;
-  github: string;
+  github?: string;
   technologies: string[];
 };
 
