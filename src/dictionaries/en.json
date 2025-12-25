@@ -1,191 +1,213 @@
 {
   "mastheadInfo": {
     "title": "Create, Innovate, Repeat.",
-    "description": "We create digital experiences (web, apps, artificial intelligence) that connect, inspire, and elevate your business.",
-    "cta": "Let's Connect & Create"
+    "description": "I design and build digital solutions — web applications, systems, and AI integrations — with a focus on clarity, usability, and real-world constraints.",
+    "cta": "View projects"
   },
+
   "menu": [
-    {
-      "title": "Blog",
-      "to": "/blog",
-      "label": "Blog"
-    },
-    {
-      "title": "Projects",
-      "to": "/projects",
-      "label": "Projects"
-    },
-    {
-      "title": "Contact",
-      "to": "/contact",
-      "label": "Contact"
-    }
+    { "title": "Blog", "to": "/blog", "label": "Blog" },
+    { "title": "Projects", "to": "/projects", "label": "Projects" },
+    { "title": "Contact", "to": "/contact", "label": "Contact" }
   ],
+
   "about": {
-    "title": "My Journey",
-    "description": "Welcome to my personal website. I am a passionate software developer working on making the internet a safer and more accessible place for everyone.For the past four years, I've dedicated my efforts to crafting web and mobile apps spanning diverse domains, including games, the manufacturing industry, and agency projects.",
+    "title": "About",
+    "description": [
+      "I'm Andrés, a software engineer with over 5 years of experience building digital products used in real-world environments.",
+      "I've worked across education, gaming, Web3, and internal platforms, contributing across the product lifecycle — from solution design to implementation and iteration.",
+      "I'm especially interested in the intersection of interfaces, systems, and artificial intelligence, and how technology can reduce complexity and improve user experience."
+    ],
     "cta": "Explore my work"
   },
+
   "aboutStudio": {
-    "title": "About abstudio",
+    "title": "About Abstudio",
     "description": [
-      "We are a  software development agency that specializes in building secure, scalable web and mobile apps.",
-      "We leverage cutting-edge technologies to deliver exceptional user experiences and help businesses grow. Our team of experts is dedicated to providing top-notch services that meet your unique needs and exceed your expectations."
+      "Abstudio is a growth-focused software agency with over 5 years of experience helping entrepreneurs and businesses succeed.",
+      "We combine creativity, data, and technology to deliver results through custom digital strategies, purposeful websites, and automated systems."
     ],
     "cta": "Learn more"
   },
+
   "services": {
-    "title": "What do I do?",
+    "title": "What I work on",
     "services": [
       {
-        "title": "Web development",
-        "description": "We build responsive websites and web apps using React, Next.js, and TypeScript, with a focus on security and user experience."
+        "title": "Digital Product Development",
+        "description": "Design and development of web and mobile applications with a focus on clarity, maintainability, and steady iteration."
       },
       {
-        "title": "Application Security Testing",
-        "description": "We protect your apps from cyber threats through expert security testing and vulnerability assessments."
+        "title": "Interfaces & User Experience",
+        "description": "Building accessible, performant, user-centered interfaces by combining product thinking with solid engineering."
       },
       {
-        "title": "Educational Technology Solutions",
-        "description": "We develop secure, scalable platforms for educators and coaches, leveraging AI to enhance learning experiences and automate processes."
+        "title": "Automation & Artificial Intelligence",
+        "description": "Integrating AI and automation into workflows to reduce friction, save time, and unlock new capabilities."
       }
     ]
   },
 
   "servicesStudio": {
-    "title": "What do I do?",
-
+    "title": "What we do at Abstudio",
     "services": [
       {
-        "title": "Web Development",
-        "description": "We craft bespoke websites with elegant design and intuitive user experience."
+        "title": "Web & Mobile Development",
+        "description": "We build websites and applications that connect with real users and support sustainable business growth."
       },
       {
         "title": "Tailored Digital Strategies",
-        "description": "We design personalized digital marketing strategies to attract clients and grow your business."
+        "description": "We define and implement digital strategies focused on visibility, acquisition, and conversion."
       },
       {
-        "title": "Automation and Artificial Intelligence",
-        "description": "We optimize your processes and personalize your customer experience with AI and automation."
+        "title": "Automation & Artificial Intelligence",
+        "description": "We optimize operations through automation and AI to save time, reduce costs, and scale efficiently."
       }
     ]
   },
+
   "contact": {
     "blockTitle": "Get in touch",
-    "inlineTitle": "Let's create something extraordinary",
-    "description": " Simply select the date that works for you, and let's dive into your project or answer your inquiries.",
-    "cta": "Schedule a free session"
+    "inlineTitle": "Let’s collaborate on your next product",
+    "description": "Open to collaborating on digital products, systems, and AI-driven solutions.",
+    "cta": "Get in touch"
   },
 
   "recentProjects": {
-    "title": "Recent Web Projects",
+    "title": "Recent Projects",
     "projects": [
       {
         "title": "Partners",
-        "description": "Partners is an app that connects early-stage entrepreneurs with strategic partners who complement their skills.",
-        "impact": "30% increase in entrepreneurs' success rate in finding partners."
+        "description": "A mobile application that connects early-stage entrepreneurs with strategic partners who complement their skills.",
+        "impact": [
+          "Designed onboarding flows focused on clarity and adoption.",
+          "Implemented matching logic with scalability in mind.",
+          "Prepared the product for future iterations."
+        ]
       },
       {
         "title": "Launch",
-        "description": " Launch is an AI-powered platform designed to streamline the process of testing and launching your business ideas.",
-        "impact": "50% increase in student engagement and course completion rates."
+        "description": "A platform designed to validate product ideas and collect early feedback through guided flows.",
+        "impact": [
+          "Integrated AI for roadmap generation and basic analysis.",
+          "Designed interfaces optimized for rapid iteration.",
+          "Enabled experimentation and learning loops."
+        ]
       },
       {
-        "title": "Codercat",
-        "description": "Codercat is a web and mobile app that provides daily tips on accesibility, security and user experience.",
-        "impact": "20% reduction in production costs and 15% increase in overall efficiency."
+        "title": "Tracker",
+        "description": "A personal finance application for managing budgets and tracking expenses.",
+        "impact": [
+          "Designed a simple and clear experience for financial tracking.",
+          "Implemented core flows for expense registration and review.",
+          "Built a base structure ready for future improvements."
+        ]
       }
     ]
-  },
-  "footer": {
-    "rights": "© 2021 - 2025. All rights reserved."
   },
 
   "projects": [
     {
+      "title": "Mundo Interior",
+      "slug": "mundo-interior",
+      "category": "EdTech / Web Platform",
+      "description": "Mundo Interior is a digital platform exploring emotional education through storytelling and guided experiences for children.",
+      "impact": [
+        "Designed content structures oriented toward storytelling and emotional awareness.",
+        "Built a modular layout to support different types of educational content.",
+        "Prepared the codebase for future interactive features."
+      ],
+      "image": "/projects/images/mundoCapture.png",
+      "technologies": ["Next.js", "React", "TailwindCSS"],
+      "cta": "Visit site",
+      "link": "https://mundo.vercel.app/",
+      "contributors": ["Andres"],
+      "github": "https://github.com/and27/mundo"
+    },
+    {
+      "title": "Taskr",
+      "slug": "taskr",
+      "category": "SaaS",
+      "description": "Taskr is a web application for task and workflow management, built to explore how small teams organize, prioritize, and execute work.",
+      "impact": [
+        "Designed clear flows for creating, assigning, and prioritizing tasks.",
+        "Structured the frontend to support feature growth without constant refactors.",
+        "Focused the UX on reducing cognitive friction in day-to-day usage."
+      ],
+      "image": "/projects/images/taskrCapture.png",
+      "technologies": ["Next.js", "React", "TypeScript"],
+      "cta": "Visit site",
+      "link": "https://test-app.taskr.tech/",
+      "contributors": ["Andres"]
+    },
+    {
       "title": "PayLink",
       "slug": "paylink",
       "category": "Web3 App",
-      "description": "PayLink reimagines how freelancers and creators get paid—offering instant, secure crypto payments through smart links with no friction.",
+      "description": "PayLink is a web application that allows freelancers and creators to generate crypto payment links and track payment status.",
       "impact": [
-        "Redefines the crypto payment experience with smart links and real-time tracking.",
-        "Native support for ERC-20 tokens like ETH, USDT, and USDC on the Ethereum network.",
-        "Built with modern Web3 architecture and a UX that emphasizes clarity, speed, and trust."
+        "Implemented a complete flow to create and share payment links.",
+        "Integrated ERC-20 token payments (ETH, USDT, USDC) on Ethereum.",
+        "Built wallet connection and transaction feedback with a focus on clarity."
       ],
-      "image": "/images/paylinkCapture.png",
+      "image": "/projects/images/paylinkCapture.png",
       "technologies": ["Next.js", "TailwindCSS", "Wagmi", "viem", "Solidity", "Supabase"],
-      "cta": "Visit Site",
+      "cta": "Visit site",
       "link": "https://paylink-orpin.vercel.app/",
       "github": "https://github.com/and27/paylink",
+      "contributors": ["Andres"]
+    },
+    {
+      "title": "Manhattan",
+      "slug": "manhattan",
+      "category": "Web App",
+      "description": "Manhattan is a website project where I worked as a frontend developer, implementing JavaScript-based UI components within an existing codebase.",
+      "impact": [
+        "Built and integrated reusable JavaScript components with attention to responsiveness and consistency."
+      ],
+      "image": "/projects/images/manhCapture.png",
+      "technologies": ["JavaScript", "HTML", "CSS"],
+      "cta": "Visit site",
+      "link": "https://manh.com",
       "contributors": ["Andres"]
     },
     {
       "title": "Partners",
       "slug": "partners",
       "category": "Mobile App",
-      "description": "Partners is an app that connects early-stage entrepreneurs with strategic partners who complement their skills.",
+      "description": "Partners connects early-stage entrepreneurs with strategic partners who complement their skills.",
       "impact": [
-        "30% increase in entrepreneurs' success rate in finding partners.",
-        "Improved collaboration through AI-driven matchmaking.",
-        "Seamless onboarding experience for new users."
+        "Implemented core user flows for onboarding and profile creation.",
+        "Integrated matching logic to suggest compatible partners.",
+        "Focused on a smooth and simple mobile experience."
       ],
-      "image": "/images/partners.png",
+      "image": "/projects/images/partnersCaptureA.png",
       "technologies": ["React Native", "Firebase", "TypeScript"],
-      "cta": "Try Demo",
+      "cta": "Try demo",
       "link": "https://partners-red.vercel.app/",
       "github": "https://github.com/and27/partners",
       "contributors": ["Andres", "Sofia", "Carlos"]
     },
     {
-      "title": "Launch",
-      "slug": "launch",
-      "category": "AI Tool",
-      "description": "Launch is an AI-powered platform designed to streamline the process of testing and launching your business ideas.",
-      "impact": [
-        "50% increase in student engagement and course completion rates.",
-        "AI-powered analytics to identify key market trends.",
-        "User-friendly UI for rapid prototyping and validation."
-      ],
-      "image": "/images/launchCapture.png",
-      "technologies": ["Next.js", "Vercel", "AI APIs"],
-      "cta": "Visit Website",
-      "link": "https://launch-black.vercel.app/",
-      "github": "https://github.com/and27/launch",
-      "contributors": ["Andres", "Laura"]
-    },
-    {
-      "title": "Codercat",
-      "slug": "codercat",
-      "category": "Educational Platform",
-      "description": "Codercat is a web and mobile app that provides daily tips on accessibility, security, and user experience.",
-      "impact": [
-        "20% reduction in production costs and 15% increase in overall efficiency.",
-        "Daily curated content for developers and designers.",
-        "Integration with GitHub and real-time notifications."
-      ],
-      "image": "/images/codercatCapture.png",
-      "technologies": ["React", "Node.js", "MongoDB"],
-      "cta": "Explore Content",
-      "link": "https://codercat.vercel.app/",
-      "github": "https://github.com/and27/codercat",
-      "contributors": ["Andres", "Maria", "Luis"]
-    },
-    {
       "title": "Tracker",
       "slug": "tracker",
       "category": "Web App",
-      "description": "Tracker is a personal finance app that helps users manage their budgets, track expenses, and set financial goals.",
+      "description": "Tracker is a personal finance application focused on helping users record expenses and better understand their spending.",
       "impact": [
-        "20% increase in user savings through budgeting tools.",
-        "Real-time expense tracking and financial insights.",
-        "Personalized savings goals and automated reports."
+        "Implemented core flows for adding and reviewing expenses.",
+        "Designed a clear UI for daily financial tracking.",
+        "Laid the groundwork for future analytics and reporting features."
       ],
-      "image": "/images/tracker.png",
+      "image": "/projects/images/trackerCaptureA.png",
       "technologies": ["JavaScript", "Next.js", "Vercel"],
-      "cta": "Try It Now",
+      "cta": "Try it now",
       "link": "https://tracker.abstudio.com.co",
       "github": "https://github.com/and27/tracker",
       "contributors": ["Andres", "Sofia", "Carlos"]
     }
-  ]
+  ],
+
+  "footer": {
+    "rights": "© 2021 - 2025. All rights reserved."
+  }
 }
