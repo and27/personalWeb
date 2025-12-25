@@ -56,7 +56,7 @@ export type languageDataImporter = () => Promise<{
     contributors: string[];
     link: string;
     cta: string;
-    github: string;
+    github?: string;
     technologies: string[];
     image: string;
   }[];

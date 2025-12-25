@@ -18,6 +18,7 @@
 .masthead {
   padding-block-start: 0;
   position: relative;
+  background: linear-gradient(180deg, rgba(20, 17, 37, 0.9) 0%, rgba(7, 5, 17, 0.3) 100%);
 }
 
 .masthead::before {
@@ -85,6 +86,7 @@
 
 .projects {
   text-align: center;
+  background-color: var(--surface-1);
 }
 
 .contact {
@@ -92,6 +94,23 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: var(--surface-2);
+}
+
+.blogHome {
+  background-color: var(--surface-2);
+}
+
+.scurve {
+  background-color: var(--surface-1);
+}
+
+.blog {
+  background-color: var(--surface-1);
+}
+
+.benefits {
+  background-color: var(--surface-2);
 }
 
 .container {
@@ -118,17 +137,19 @@
   font-size: 1rem;
   padding-block: 0.875rem;
   padding-inline: 2.5rem;
-  border: 1px solid var(--primary-white);
-  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(90deg, rgba(107, 91, 255, 0.35), rgba(65, 214, 255, 0.15));
   inline-size: fit-content;
   margin-block-start: 2rem;
   color: var(--primary-white);
   position: relative;
+  box-shadow: 0 10px 30px rgba(12, 8, 34, 0.6);
 }
 
 .btn:hover {
   cursor: pointer;
   border-block: 1px solid transparent;
+  box-shadow: 0 14px 40px rgba(92, 74, 255, 0.35);
 }
 
 @keyframes cta {
@@ -170,6 +191,7 @@
   letter-spacing: -0.5px;
   position: relative;
   color: var(--primary-white);
+  text-shadow: 0 10px 30px rgba(65, 214, 255, 0.08);
 }
 
 .section__text {
