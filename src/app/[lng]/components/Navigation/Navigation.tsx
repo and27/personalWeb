@@ -89,13 +89,18 @@ export default function Navigation({ dict }: any) {
             </li>
           ))}
         </ul>
-        {host !== 'abstudio.com.co' && <NavActions />}
+        {host !== 'abstudio.com.co' && (
+          <div className={styles.navActionsDesktop}>
+            <NavActions />
+          </div>
+        )}
 
         <MobileMenu
           isMobileMenuActive={isMobileMenuActive}
           handleMobileToggle={handleMobileToggle}
           handleMobileMenuSelected={handleMobileMenuSelected}
           links={localizedLinks}
+          actions={host !== 'abstudio.com.co' ? <NavActions /> : null}
         />
       </nav>
     </header>
