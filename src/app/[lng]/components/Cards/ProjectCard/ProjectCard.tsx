@@ -1,26 +1,36 @@
 'use client';
 import styles from './ProjectCard.module.scss';
 import Image from 'next/image';
-import paylinkScreen from '../../../../../../public/projects/images/paylinkCapture.png';
-import launchScreen from '../../../../../../public/projects/images/launchCaptureA.png';
-import partnersScreen from '../../../../../../public/projects/images/partnersCaptureA.png';
-import codercatScreen from '../../../../../../public/projects/images/codercatCaptureA.png';
-import trackerScreen from '../../../../../../public/projects/images/trackerCaptureA.png';
 import { useEffect, useRef, useState } from 'react';
 import techIcons from '@/lib/techIcons';
 import TechIcon from '../../TechIcon/TechIcon';
 
+const normalizeProjectImage = (image?: string) => {
+  if (!image) return '/studioImage.png';
+  if (image.startsWith('/projects/')) return image;
+  if (image.startsWith('/images/')) {
+    const filename = image.replace('/images/', '');
+    const legacyMap: Record<string, string> = {
+      'partners.png': 'partnersCaptureA.png',
+      'paylinkCapture.png': 'paylinkCapture.png',
+      'launchCapture.png': 'launchCaptureA.png',
+      'codercatCapture.png': 'codercatCaptureA.png',
+      'tracker.png': 'trackerCaptureA.png'
+    };
+    const normalized = legacyMap[filename] || filename;
+    return `/projects/images/${normalized}`;
+  }
+  if (image.startsWith('/')) return image;
+  return `/${image}`;
+};
+
 const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   const isEven = index % 2 === 0;
-  const projectImages = [
-    paylinkScreen,
-    partnersScreen,
-    launchScreen,
-    codercatScreen,
-    trackerScreen
-  ];
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const imageSrc = normalizeProjectImage(
+    typeof project.image === 'string' ? project.image : project.image?.src
+  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,7 +57,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
     >
       <div className={styles.projectCard__image}>
         <Image
-          src={projectImages[index] || project.image}
+          src={imageSrc}
           alt={`Vista previa de ${project.title}`}
           className={styles.projectCard__img}
           fill
@@ -102,7 +112,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
               rel="noopener noreferrer"
               className={styles.projectCard__github}
             >
-              GitHub Repo →
+              GitHub Repo  
             </a>
           )}
         </div>
