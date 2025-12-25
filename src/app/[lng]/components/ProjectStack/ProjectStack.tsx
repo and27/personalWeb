@@ -1,8 +1,9 @@
 import ProjectCard from '../Cards/ProjectCard/ProjectCard';
 import globalStyles from '../../page.module.scss';
 import styles from './ProjectStack.module.scss';
+import { ProjectEntry } from '@/types/projects';
 
-const ProjectStack = ({ projects }: { projects: any[] }) => {
+const ProjectStack = ({ projects }: { projects: ProjectEntry[] }) => {
   return (
     <section className={globalStyles.blogHome}>
       <div className={globalStyles.container}>
