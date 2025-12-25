@@ -1,23 +1,14 @@
 'use client';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from './NavActions.module.scss';
 
 const NavActions = () => {
   const [theme, setTheme] = useState('light');
-  const [language, setLanguage] = useState('EN');
+  const [language, setLanguage] = useState<'EN' | 'ES'>('ES');
   const router = useRouter();
   const pathname = usePathname();
-  const previousLanguage = useRef(language);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language') || 'EN';
-      if (storedLanguage !== language) {
-        setLanguage(storedLanguage);
-      }
-    }
-  }, []);
+  const currentLocale = pathname.startsWith('/en') ? 'EN' : 'ES';
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -25,10 +16,16 @@ const NavActions = () => {
     document.body.className = newTheme === 'light' ? 'light-theme' : 'dark-theme';
   };
 
-  const toggleLanguage = () => {
-    const newLanguage = language === 'EN' ? 'ES' : 'EN';
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLanguage = event.target.value as 'EN' | 'ES';
     setLanguage(newLanguage);
     localStorage.setItem('language', newLanguage);
+    const newPathname =
+      pathname.startsWith('/en') || pathname.startsWith('/es') ? pathname.slice(3) : pathname;
+    const nextPath = newLanguage === 'EN' ? `/en${newPathname}` : `/es${newPathname}`;
+    if (nextPath !== pathname) {
+      router.replace(nextPath);
+    }
   };
 
   useEffect(() => {
@@ -36,25 +33,20 @@ const NavActions = () => {
   }, [theme]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const currentLocale = pathname.startsWith('/es') ? 'ES' : 'EN';
-
-      if (previousLanguage.current !== language) {
-        const newPathname =
-          pathname.startsWith('/en') || pathname.startsWith('/es') ? pathname.slice(3) : pathname;
-
-        router.push(language === 'EN' ? `/en${newPathname}` : `/es${newPathname}`);
-        previousLanguage.current = language;
-      }
-    }
-  }, [language, pathname]);
+    setLanguage(currentLocale);
+  }, [currentLocale]);
 
   return (
     <div className={styles.navActions}>
-      <button onClick={toggleLanguage}>
-        <span className={styles.navActionsIcon}>🌐</span>
-        <span>{language === 'EN' ? 'ES' : 'EN'}</span>
-      </button>
+      <select
+        className={styles.languageSelect}
+        value={language}
+        onChange={handleLanguageChange}
+        aria-label="Language selector"
+      >
+        <option value="EN">English</option>
+        <option value="ES">Espanol</option>
+      </select>
     </div>
   );
 };
