@@ -16,7 +16,7 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
           <header className={styles.masthead__content}>
             <h1 className={styles.masthead__title}>{title}</h1>
             <p className={styles.masthead__description}>{description}</p>
-            <a className={styles.masthead__btn} href="#contact">
+            <a className={styles.masthead__btn} href="/projects">
               {cta}
             </a>
           </header>
