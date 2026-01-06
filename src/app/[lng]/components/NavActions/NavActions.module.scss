@@ -10,9 +10,11 @@
 .languageSelect {
   border: none;
   border-radius: 8px;
-  color: white;
+  color: var(--secondary-white);
   padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-family: var(--font-montserrat);
+  font-weight: 300;
   cursor: pointer;
   transition: all 0.3s ease;
   background: #121212;
