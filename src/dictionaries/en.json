@@ -183,9 +183,8 @@
       ],
       "image": "/projects/images/partnersCaptureA.png",
       "technologies": ["React Native", "Firebase", "TypeScript"],
-      "cta": "Try demo",
+      "cta": "Visit site",
       "link": "https://partners-red.vercel.app/",
-      "github": "https://github.com/and27/partners",
       "contributors": ["Andres", "Sofia", "Carlos"]
     },
     {
@@ -200,7 +199,7 @@
       ],
       "image": "/projects/images/trackerCaptureA.png",
       "technologies": ["JavaScript", "Next.js", "Vercel"],
-      "cta": "Try it now",
+      "cta": "Visit site",
       "link": "https://tracker.abstudio.com.co",
       "github": "https://github.com/and27/tracker",
       "contributors": ["Andres", "Sofia", "Carlos"]

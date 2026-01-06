@@ -112,7 +112,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
               rel="noopener noreferrer"
               className={styles.projectCard__github}
             >
-              GitHub Repo  
+              GitHub
             </a>
           )}
         </div>

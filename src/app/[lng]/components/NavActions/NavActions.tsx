@@ -45,7 +45,7 @@ const NavActions = () => {
         aria-label="Language selector"
       >
         <option value="EN">English</option>
-        <option value="ES">Espanol</option>
+        <option value="ES">Español</option>
       </select>
     </div>
   );
