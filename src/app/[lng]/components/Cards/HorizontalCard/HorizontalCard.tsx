@@ -37,7 +37,7 @@ export const HorizontalCard: React.FC<IRowCard & CardProps> = ({
 }) => {
   return (
     <CardWrapper
-      aria-labeledby={id}
+      aria-labelledby={id}
       href={link}
       className={`${styles.card} ${styles.cardHorizontal}`}
     >
