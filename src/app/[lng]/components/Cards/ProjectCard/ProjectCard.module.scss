@@ -51,8 +51,8 @@
   max-width: 400px;
   position: relative;
   border-radius: 10px;
-
   overflow: hidden;
+  aspect-ratio: 16/9;
 
   img {
     width: 100%;
@@ -67,46 +67,64 @@
 .projectCard__content {
   flex: 1;
   text-align: start;
-  padding-block: 5rem;
+  padding-block: 2rem;
+
+  @include mq(tablet) {
+    padding-block: 4rem;
+  }
 }
 
 .projectCard__category {
   background: rgba(255, 255, 255, 0.1);
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 0.9rem;
-  color: var(--primary-white);
+  font-size: 0.8rem;
+  color: var(--secondary-white);
 }
 
 .projectCard__titleContainer {
   display: flex;
+  flex-direction: column;
+  gap: 8px;
   justify-content: space-between;
   align-items: baseline;
   margin-block-end: 4px;
+
+  @include mq(tablet) {
+    flex-direction: row;
+  }
 }
 
 .projectCard__title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-white);
-  margin-block-end: 32px;
-
+  margin-block-end: 16px;
   line-height: 1.2;
 
   @include mq(tablet) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
 .projectCard__description {
   color: #ccc;
   line-height: 1.5;
+  font-size: 0.9rem;
+
+  @include mq(tablet) {
+    font-size: 1rem;
+  }
 }
 
 .projectCard__techStack {
-  display: flex;
+  display: none;
   gap: 8px;
   font-size: 1.2rem;
+
+  @include mq(tablet) {
+    display: flex;
+  }
 }
 
 .projectCard__impact {
@@ -116,9 +134,14 @@
   list-style: disc;
   padding-left: 1.2rem;
   margin-top: 1rem;
+  display: none;
 
   li {
     margin-bottom: 5px;
+  }
+
+  @include mq(tablet) {
+    display: block;
   }
 }
 
