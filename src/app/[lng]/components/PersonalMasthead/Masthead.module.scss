@@ -1,15 +1,30 @@
 @import "~sass-mq/mq";
 
 .masthead {
+  position: relative;
   background-size: cover;
-  background-position-x: 50%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
   block-size: 625px;
   display: flex;
   justify-content: center;
   font-family: var(--font-montserrat), sans-serif;
+  background-image: linear-gradient(
+      90deg,
+      rgba(7, 5, 17, 0.22) 0%,
+      rgba(7, 5, 17, 0.1) 45%,
+      rgba(7, 5, 17, 0.8) 100%
+    ),
+    url("../../../../../public/background34Mobile.png");
 
   @include mq(tablet) {
-    background-image: url("../../../../../public/background3.png");
+    background-image: linear-gradient(
+        180deg,
+        rgba(7, 5, 17, 0.12) 0%,
+        rgba(7, 5, 17, 0.28) 45%,
+        rgba(7, 5, 17, 0.36) 100%
+      ),
+      url("../../../../../public/background34.png");
     margin-block-start: -100px;
     block-size: 725px;
     max-block-size: 910px;
@@ -19,7 +34,11 @@
 .masthead__inner {
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 90%;
+
+  @include mq(tablet) {
+    height: 100%;
+  }
 }
 
 .masthead__content {
@@ -69,7 +88,7 @@
   line-height: 1.5;
   font-weight: 300;
   max-width: 580px;
-  color: var(--tertiary-white);
+  color: var(--secondary-white);
   margin-block-start: 2.2rem;
 }
 

@@ -9,9 +9,11 @@
   padding-inline: 20px;
   position: relative;
   z-index: 10;
+  background: #070310;
 
   @include mq(tablet) {
     padding-inline: 60px;
+    background: transparent;
   }
   @include mq(desktop) {
     max-inline-size: 1280px;
