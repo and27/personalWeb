@@ -43,7 +43,7 @@ export default async function RootLayout({
 
       <body>
         <Navigation dict={dict} />
-        {children}
+        <main>{children}</main>
         <Footer menu={navInfo} rights={footerInfo.rights} />
       </body>
     </html>
