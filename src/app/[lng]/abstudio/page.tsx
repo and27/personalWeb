@@ -40,7 +40,7 @@ export default async function Home({ params }: any) {
     services: []
   };
 
-  const localizedProjects = dict?.projects || [];
+  const localizedProjects = (dict?.projects || []).filter(project => !project.hidden);
   return (
     <>
       <Masthead {...mastheadInfo} lang={lng} />
