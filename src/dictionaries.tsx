@@ -53,6 +53,7 @@ export type languageDataImporter = () => Promise<{
     category: string;
     description: string;
     impact: string[];
+    hidden?: boolean;
     contributors: string[];
     link: string;
     cta: string;

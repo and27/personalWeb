@@ -165,6 +165,7 @@
       "impact": [
         "Construcción e integración de componentes UI reutilizables con foco en consistencia y responsive."
       ],
+      "hidden": true,
       "image": "/projects/images/manhCapture.png",
       "technologies": ["JavaScript", "HTML", "CSS"],
       "cta": "Visitar sitio",
