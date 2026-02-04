@@ -165,6 +165,7 @@
       "impact": [
         "Built and integrated reusable JavaScript components with attention to responsiveness and consistency."
       ],
+      "hidden": true,
       "image": "/projects/images/manhCapture.png",
       "technologies": ["JavaScript", "HTML", "CSS"],
       "cta": "Visit site",
