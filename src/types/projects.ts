@@ -2,6 +2,7 @@ export interface ProjectEntry {
   title: string;
   description: string;
   impact: string[];
+  hidden?: boolean;
   slug?: string;
   category?: string;
   contributors?: string[];
