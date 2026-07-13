@@ -1,8 +1,9 @@
 import { getDictionary } from '../../../dictionaries';
 import ContactSection from '../modules/ContactSection/ContactSection';
 
-export async function generateMetadata({ params }: any) {
-  const isEn = params?.lng === 'en';
+export async function generateMetadata({ params }: { params: Promise<{ lng?: string }> }) {
+  const { lng } = await params;
+  const isEn = lng === 'en';
   return {
     title: isEn ? 'Contact' : 'Contacto',
     description: isEn
@@ -11,8 +12,8 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-const Contact = async ({ params }: any) => {
-  const { lng } = params;
+const Contact = async ({ params }: { params: Promise<{ lng?: string }> }) => {
+  const { lng = 'es' } = await params;
   const dict = await getDictionary(lng);
   const contactProps = dict?.contact || {
     blockTitle: '',

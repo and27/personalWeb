@@ -2,8 +2,9 @@ import BlogCards from '../modules/BlogCards';
 import styles from './blogHome.module.scss';
 import globalStyles from '../page.module.scss';
 
-export async function generateMetadata({ params }: any) {
-  const isEn = params?.lng === 'en';
+export async function generateMetadata({ params }: { params: Promise<{ lng?: string }> }) {
+  const { lng } = await params;
+  const isEn = lng === 'en';
   return {
     title: 'Blog',
     description: isEn
@@ -12,8 +13,8 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-function Blog({ params }: any) {
-  const { lng } = params;
+async function Blog({ params }: { params: Promise<{ lng?: string }> }) {
+  const { lng = 'es' } = await params;
   const isEn = lng === 'en';
   const cta = isEn ? 'Load more' : 'Cargar más';
   const description = isEn

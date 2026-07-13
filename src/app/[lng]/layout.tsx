@@ -34,13 +34,14 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: any;
+  params: Promise<{ lng?: string }>;
 }) {
-  const dict = await getDictionary(params?.lng || 'es');
+  const { lng = 'es' } = await params;
+  const dict = await getDictionary(lng);
   const navInfo = dict?.menu || [];
   const footerInfo = dict?.footer || { rights: '' };
   return (
-    <html lang={params?.lng || 'es'} style={{ scrollBehavior: 'smooth' }}>
+    <html lang={lng} style={{ scrollBehavior: 'smooth' }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />

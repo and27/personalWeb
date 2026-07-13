@@ -26,6 +26,11 @@ const ContactSection: React.FC<IContactSectionProps> = ({
 }: IContactSectionProps) => {
   const ref = useRef(null);
 
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const [matchMobileQuery, setMatchMobileQuery] = useState(false);
   useEffect(() => {
     const handleMediaQueryChange = (event: MediaQueryListEvent) => {
@@ -94,7 +99,7 @@ const ContactSection: React.FC<IContactSectionProps> = ({
             }}
           />
         )}
-        {layout === 'inline' && (
+        {layout === 'inline' && isMounted && (
           <PopupButton
             url="https://calendly.com/andres-banda/30min?"
             className={`${globalStyles.btn} ${styles.btn}`}

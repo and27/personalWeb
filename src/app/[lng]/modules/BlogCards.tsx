@@ -1,4 +1,3 @@
-import { use } from 'react';
 import getPosts from '@/lib/getDataEntries';
 import RowCards, { IRowCards } from '../components/Cards/RowCards/RowCards';
 import getImageDataFromBlogPost from '../../../utils/getImageSrc';
@@ -14,14 +13,14 @@ export interface BlogCardsProps {
   locale: string;
 }
 
-const BlogCards: React.FC<BlogCardsProps> = ({
+const BlogCards = async ({
   isFeatured = false,
   cta,
   maxCards,
   sectionTitle,
   orientation = 'vertical',
   locale
-}) => {
+}: BlogCardsProps) => {
   const page = 1;
   const postParams = {
     page,
@@ -29,7 +28,14 @@ const BlogCards: React.FC<BlogCardsProps> = ({
     locale: locale === 'en' ? 'en-US' : 'es'
   };
 
-  const posts = use(getPosts(postParams)) || [];
+  let posts: any[] = [];
+  try {
+    posts = (await getPosts(postParams)) || [];
+  } catch {
+    // Contentful unavailable — render the page without blog cards.
+  }
+
+  if (posts.length === 0) return null;
 
   const postCards = posts.map((postRaw: any, idx): IRowCard => {
     const post = postRaw.fields;

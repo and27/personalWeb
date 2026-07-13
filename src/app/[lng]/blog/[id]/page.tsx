@@ -1,4 +1,3 @@
-import { use } from 'react';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from './blog.module.scss';
@@ -11,9 +10,14 @@ function renderRichText(richTextField: any) {
   return documentToReactComponents(richTextField);
 }
 
-export async function generateMetadata({ params }: any) {
-  const lang = params.lng === 'en' ? 'en-US' : 'es';
-  const blogPost = (await getBlogPostBySlug(params.id, lang)) as any;
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lng?: string; id: string }>;
+}) {
+  const { lng, id } = await params;
+  const lang = lng === 'en' ? 'en-US' : 'es';
+  const blogPost = (await getBlogPostBySlug(id, lang)) as any;
   if (!blogPost) return { title: 'Blog' };
 
   const title = blogPost.fields.title;
@@ -32,11 +36,11 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-function BlogPost({ params }: any) {
-  const { id: slug, lng } = params;
+async function BlogPost({ params }: { params: Promise<{ lng?: string; id: string }> }) {
+  const { id: slug, lng } = await params;
   const lang = lng === 'en' ? 'en-US' : 'es';
 
-  const blogPost = use(getBlogPostBySlug(slug, lang)) as any;
+  const blogPost = (await getBlogPostBySlug(slug, lang)) as any;
   const richTextField = blogPost?.fields.body;
   const image = getImageDataFromBlogPost(blogPost);
   const imgHeight = 200;
