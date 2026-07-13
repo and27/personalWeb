@@ -58,6 +58,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   // do not localize next.js paths
   matcher: [
-    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico)$).*)'
+    '/((?!api|_next/static|_next/image|assets|favicon.ico|sitemap.xml|robots.txt|sw.js|.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico)$).*)'
   ]
 };

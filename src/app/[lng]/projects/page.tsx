@@ -3,6 +3,16 @@ import ProjectStack from '../components/ProjectStack/ProjectStack';
 import globalStyles from '../page.module.scss';
 import styles from './projects.module.scss';
 
+export async function generateMetadata({ params }: any) {
+  const isEn = params?.lng === 'en';
+  return {
+    title: isEn ? 'Projects' : 'Proyectos',
+    description: isEn
+      ? 'Web and mobile products I have designed and built: EdTech, SaaS, Web3 and AI.'
+      : 'Productos web y móviles que he diseñado y construido: EdTech, SaaS, Web3 e IA.'
+  };
+}
+
 const ProjectsPage = async ({ params }: { params: { lng: string } }) => {
   const lng = params?.lng || 'es';
   const dict = await getDictionary(lng);
