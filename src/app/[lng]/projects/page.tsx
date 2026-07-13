@@ -3,8 +3,9 @@ import ProjectStack from '../components/ProjectStack/ProjectStack';
 import globalStyles from '../page.module.scss';
 import styles from './projects.module.scss';
 
-export async function generateMetadata({ params }: any) {
-  const isEn = params?.lng === 'en';
+export async function generateMetadata({ params }: { params: Promise<{ lng?: string }> }) {
+  const { lng } = await params;
+  const isEn = lng === 'en';
   return {
     title: isEn ? 'Projects' : 'Proyectos',
     description: isEn
@@ -13,8 +14,8 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-const ProjectsPage = async ({ params }: { params: { lng: string } }) => {
-  const lng = params?.lng || 'es';
+const ProjectsPage = async ({ params }: { params: Promise<{ lng?: string }> }) => {
+  const { lng = 'es' } = await params;
   const dict = await getDictionary(lng);
   const localizedProjects = (dict?.projects || []).filter(project => !project.hidden);
   return (

@@ -9,8 +9,8 @@ import PersonalMasthead from './components/PersonalMasthead/Masthead';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
-export default async function Home({ params }: any) {
-  const lng = params.lng || 'es';
+export default async function Home({ params }: { params: Promise<{ lng?: string }> }) {
+  const { lng = 'es' } = await params;
 
   const dict = await getDictionary(lng);
   const mastheadInfo = dict?.mastheadInfo || {

@@ -4,7 +4,7 @@ import { IRowCard } from '../VerticalCard/Card';
 import Link from 'next/link';
 import Image from 'next/image';
 
-interface LinkCardProps extends IRowCard {}
+type LinkCardProps = IRowCard;
 
 const LinkCard: React.FC<LinkCardProps> = ({
   id,
