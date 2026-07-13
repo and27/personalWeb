@@ -10,9 +10,7 @@ import PersonalMasthead from './components/PersonalMasthead/Masthead';
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
 export default async function Home({ params }: any) {
-  const host = typeof window !== 'undefined' ? window.location.hostname : null;
-  const lng =
-    host === 'abstudio.com.co' || host === 'www.abstudio.com.co' ? 'es' : params.lng || 'es';
+  const lng = params.lng || 'es';
 
   const dict = await getDictionary(lng);
   const mastheadInfo = dict?.mastheadInfo || {

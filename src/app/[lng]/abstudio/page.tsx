@@ -8,6 +8,12 @@ import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
+export const metadata = {
+  title: { absolute: 'Abstudio | Estudio de desarrollo web y growth' },
+  description:
+    'Abstudio ayuda a emprendedores y negocios a crecer con sitios web, estrategias digitales y automatización con IA.'
+};
+
 const ContactSection = dynamic(() => import('../modules/ContactSection/ContactSection'), {
   ssr: false
 });

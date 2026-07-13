@@ -11,6 +11,27 @@ function renderRichText(richTextField: any) {
   return documentToReactComponents(richTextField);
 }
 
+export async function generateMetadata({ params }: any) {
+  const lang = params.lng === 'en' ? 'en-US' : 'es';
+  const blogPost = (await getBlogPostBySlug(params.id, lang)) as any;
+  if (!blogPost) return { title: 'Blog' };
+
+  const title = blogPost.fields.title;
+  const description = blogPost.fields.body?.content?.[0]?.content?.[0]?.value?.slice(0, 160);
+  const imageUrl = blogPost.fields.image?.fields?.file?.url;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      images: imageUrl ? [{ url: `https:${imageUrl}` }] : []
+    }
+  };
+}
+
 function BlogPost({ params }: any) {
   const { id: slug, lng } = params;
   const lang = lng === 'en' ? 'en-US' : 'es';

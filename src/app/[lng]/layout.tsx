@@ -3,16 +3,30 @@ import Navigation from './components/Navigation/Navigation';
 import { getDictionary } from '../../dictionaries';
 import './globals.css';
 
-const metadataAB = {
-  title: 'Andrés Banda - Desarrollador Frontend | Portafolio',
-  description:
-    'Soy Andrés Banda, desarrollador frontend con experiencia en React JS. Explora mi portafolio con proyectos web innovadores y contáctame para colaborar.'
-};
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abstudio.com.co';
+const siteTitle = 'Andrés Banda — Ingeniero de Software | Producto, Frontend e IA';
+const siteDescription =
+  'Soy Andrés Banda, ingeniero de software con más de 5 años construyendo productos digitales. Escribo sobre desarrollo de producto, frontend e inteligencia artificial, y colaboro en proyectos como freelance.';
 
 export const metadata = {
-  title: 'Abstudio | Growth Marketing para Coaches ',
-  description:
-    'Abstudio ayuda a coaches que transforman vidas en Latinoamérica a aumentar su alcance, construir una marca auténtica y escalar sus negocios con estrategias de growth marketing.'
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: '%s | Andrés Banda'
+  },
+  description: siteDescription,
+  openGraph: {
+    type: 'website',
+    siteName: 'Andrés Banda',
+    title: siteTitle,
+    description: siteDescription,
+    locale: 'es'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription
+  }
 };
 
 export default async function RootLayout({
@@ -26,7 +40,7 @@ export default async function RootLayout({
   const navInfo = dict?.menu || [];
   const footerInfo = dict?.footer || { rights: '' };
   return (
-    <html lang="es" style={{ scrollBehavior: 'smooth' }}>
+    <html lang={params?.lng || 'es'} style={{ scrollBehavior: 'smooth' }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
