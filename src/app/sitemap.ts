@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import getPosts from '@/lib/getDataEntries';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abstudio.com.co';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://andresbanda.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
