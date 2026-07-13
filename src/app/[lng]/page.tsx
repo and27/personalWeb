@@ -6,6 +6,7 @@ import { getDictionary } from '../../dictionaries';
 import RecentProjects from './modules/RecentProjects';
 import ContactSection from './modules/ContactSection/ContactSection';
 import PersonalMasthead from './components/PersonalMasthead/Masthead';
+import Newsletter from './components/Newsletter/Newsletter';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
@@ -42,6 +43,7 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
       <Scurve {...sCurveInfo} />
       <RecentProjects localizedProjects={localizedProjects} />
       <BlogCards maxCards={3} sectionTitle="Blog" locale={lng} />
+      <Newsletter lng={lng} />
       <ContactSection layout={'inline'} {...contact} />
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`} />
       <Script id="google-analytics">
