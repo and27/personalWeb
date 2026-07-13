@@ -1,0 +1,45 @@
+@import "~sass-mq/mq";
+
+.newsletter {
+  padding-block: 60px;
+  font-family: var(--font-montserrat);
+
+  @include mq(desktop) {
+    padding-block: 80px;
+  }
+}
+
+.newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  padding: 40px 24px;
+  text-align: center;
+  background: var(--surface-2);
+  border: 1px solid rgba(107, 91, 255, 0.25);
+  border-radius: var(--border-radius);
+
+  @include mq(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 48px;
+    text-align: start;
+  }
+}
+
+.newsletter__content {
+  max-width: 480px;
+}
+
+.newsletter__title {
+  margin-block-end: 12px;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  color: var(--primary-white);
+}
+
+.newsletter__embed {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+}

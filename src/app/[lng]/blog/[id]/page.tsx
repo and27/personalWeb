@@ -4,6 +4,7 @@ import styles from './blog.module.scss';
 import globalStyles from '../../page.module.scss';
 import getImageDataFromBlogPost from '../../../../utils/getImageSrc';
 import RelatedPostCards from '../../modules/RelatedPostCards';
+import Newsletter from '../../components/Newsletter/Newsletter';
 import { getBlogPostBySlug } from '@/lib/getDataEntries';
 
 function renderRichText(richTextField: any) {
@@ -78,6 +79,7 @@ async function BlogPost({ params }: { params: Promise<{ lng?: string; id: string
           </ul>
           {renderRichText(richTextField)}
         </div>
+        <Newsletter lng={lng} />
         <div className={styles.blogCardsContainer}>
           <RelatedPostCards sectionTitle={'Related Posts'} currentPost={slug} lang={lang} />
         </div>

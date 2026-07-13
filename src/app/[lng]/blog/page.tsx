@@ -1,4 +1,5 @@
 import BlogCards from '../modules/BlogCards';
+import Newsletter from '../components/Newsletter/Newsletter';
 import styles from './blogHome.module.scss';
 import globalStyles from '../page.module.scss';
 
@@ -30,6 +31,7 @@ async function Blog({ params }: { params: Promise<{ lng?: string }> }) {
         </div>
         <BlogCards maxCards={100} isFeatured={true} cta={cta} locale={lng} />
       </div>
+      <Newsletter lng={lng} />
     </section>
   );
 }
