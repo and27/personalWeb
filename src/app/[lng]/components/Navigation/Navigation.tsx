@@ -1,11 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './Navigation.module.scss';
-import Logo from '../../../../../public/firma.png';
 import MobileMenu from './MobileMenu';
 import NavActions from '../NavActions/NavActions';
 
@@ -59,17 +57,8 @@ export default function Navigation({ dict }: any) {
     );
   } else {
     navigationLogo = (
-      <Link href={homeHref} style={{ opacity: 0.8, display: 'flex', alignItems: 'center' }}>
-        <Image
-          src={Logo}
-          alt="Home link personal logo"
-          quality={100}
-          width={175}
-          height={42}
-          sizes="(max-width: 768px) 100vw,
-                      (max-width: 1200px) 50vw,
-                      33vw"
-        />
+      <Link href={homeHref} className={styles.wordmark} aria-label="Inicio — Andrés Banda">
+        ab<span>.</span>
       </Link>
     );
   }
