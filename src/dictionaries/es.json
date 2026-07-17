@@ -1,7 +1,7 @@
 {
   "mastheadInfo": {
-    "title": "Andrés Banda",
-    "description": "Diseño y construyo productos digitales. Escribo sobre el oficio.",
+    "title": "Convierto buenas ideas en buenos productos.",
+    "description": "Diseño y construyo productos digitales — web, móvil e inteligencia artificial. Más de cinco años llevando software a producción.",
     "cta": "Ver trabajo"
   },
 
@@ -14,9 +14,9 @@
   "about": {
     "title": "Sobre mí",
     "description": [
-      "Ingeniero de software. Más de cinco años construyendo producto en educación, gaming, Web3 y plataformas internas.",
-      "He recorrido el ciclo completo: pensar la solución, escribirla, lanzarla y sostenerla en producción.",
-      "Me interesa el punto donde se cruzan las interfaces, los sistemas y la inteligencia artificial — y escribir sobre lo que aprendo ahí."
+      "Soy Andrés Banda. Llevo más de cinco años construyendo producto digital en educación, gaming, Web3 y plataformas internas.",
+      "Acompaño el ciclo completo: entender el problema, diseñar la solución, construirla y sostenerla en producción.",
+      "Me interesa el cruce entre interfaces, sistemas e inteligencia artificial, y escribo sobre lo que aprendo construyendo."
     ],
     "cta": "Ver trabajo"
   },
@@ -69,7 +69,7 @@
   "contact": {
     "blockTitle": "Contacto",
     "inlineTitle": "Trabajemos juntos",
-    "description": "Si estás construyendo algo, me interesa escucharlo.",
+    "description": "Cuéntame qué estás construyendo.",
     "cta": "Agendar una llamada"
   },
 

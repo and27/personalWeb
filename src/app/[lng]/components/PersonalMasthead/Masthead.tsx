@@ -10,7 +10,9 @@ interface IMasthead {
 
 const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
   const isEn = lang === 'en';
-  const eyebrow = isEn ? 'Software Engineer' : 'Ingeniero de Software';
+  const eyebrow = isEn
+    ? 'Andrés Banda — Software Engineer'
+    : 'Andrés Banda — Ingeniero de Software';
   const secondaryCta = isEn ? 'Contact' : 'Contacto';
   const availability = isEn ? 'Available for projects' : 'Disponible para proyectos';
   const location = isEn ? 'Ecuador · Remote' : 'Ecuador · Remoto';
