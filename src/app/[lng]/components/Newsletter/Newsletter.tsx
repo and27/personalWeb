@@ -6,14 +6,12 @@ const SUBSTACK_URL = process.env.NEXT_PUBLIC_SUBSTACK_URL;
 
 const copy: Record<string, { title: string; description: string }> = {
   es: {
-    title: 'Recibe lo próximo que escriba',
-    description:
-      'Artículos sobre desarrollo de producto, frontend e inteligencia artificial, directo a tu correo. Sin spam.'
+    title: 'Notas sobre el oficio',
+    description: 'Producto, interfaces e inteligencia artificial. Un correo de vez en cuando.'
   },
   en: {
-    title: 'Get my next article in your inbox',
-    description:
-      'Writing on product development, frontend and artificial intelligence, straight to your inbox. No spam.'
+    title: 'Notes on the craft',
+    description: 'Product, interfaces and artificial intelligence. An email every now and then.'
   }
 };
 

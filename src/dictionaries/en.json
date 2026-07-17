@@ -1,8 +1,8 @@
 {
   "mastheadInfo": {
-    "title": "From idea to production. No fluff.",
-    "description": "I'm a software engineer. For 5+ years I've been turning ideas into web and mobile apps people actually use — and I write about what I learn while building them.",
-    "cta": "See my work"
+    "title": "Andrés Banda",
+    "description": "I design and build digital products. I write about the craft.",
+    "cta": "View work"
   },
   "menu": [
     {
@@ -22,13 +22,13 @@
     }
   ],
   "about": {
-    "title": "Who I am",
+    "title": "About",
     "description": [
-      "I'm Andrés. For over 5 years I've built software across education, gaming, Web3 and internal platforms — on teams where code ships to production and someone uses it the next day.",
-      "I've been through every stage: designing the solution, writing it, launching it and keeping it alive when something breaks at 2 a.m. That leaves you with something no tutorial teaches: judgment.",
-      "These days I care about the intersection of interfaces, systems and artificial intelligence. What I learn while building, I share on the blog and the newsletter — so it costs you less than it cost me."
+      "Software engineer. Five-plus years building product across education, gaming, Web3 and internal platforms.",
+      "I've walked the full cycle: thinking through the solution, writing it, shipping it and keeping it alive in production.",
+      "I'm drawn to the point where interfaces, systems and artificial intelligence meet — and to writing about what I learn there."
     ],
-    "cta": "Explore my work"
+    "cta": "View work"
   },
   "aboutStudio": {
     "title": "About Abstudio",
@@ -39,19 +39,19 @@
     "cta": "Learn more"
   },
   "services": {
-    "title": "What I do",
+    "title": "Services",
     "services": [
       {
-        "title": "Web & mobile applications",
-        "description": "From zero to production: architecture, code, deployment and iteration. Products that survive real users, not pretty demos."
+        "title": "Digital product",
+        "description": "Web and mobile applications, from architecture to deployment."
       },
       {
-        "title": "Interfaces people get",
-        "description": "Frontend with product judgment: fast, accessible and so clear nobody needs a manual to use it."
+        "title": "Interfaces",
+        "description": "Fast, accessible, precise frontend with product judgment."
       },
       {
-        "title": "AI that saves hours",
-        "description": "I integrate AI and automation where there's real return — workflows, agents and internal tools. No gimmick chatbots."
+        "title": "Artificial intelligence",
+        "description": "Workflows, agents and tools that bring AI into real work."
       }
     ]
   },
@@ -73,13 +73,13 @@
     ]
   },
   "contact": {
-    "blockTitle": "Let's talk about your product",
-    "inlineTitle": "Shall we build something together?",
-    "description": "Got an idea, a half-built product or a process begging for automation? Tell me what you're working on and I'll tell you, straight, how I'd approach it.",
-    "cta": "Book 30 minutes"
+    "blockTitle": "Contact",
+    "inlineTitle": "Let's work together",
+    "description": "If you're building something, I'd like to hear about it.",
+    "cta": "Book a call"
   },
   "recentProjects": {
-    "title": "Things I've built",
+    "title": "Selected work",
     "projects": [
       {
         "title": "Partners",
