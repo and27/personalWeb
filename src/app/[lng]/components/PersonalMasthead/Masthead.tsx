@@ -10,10 +10,10 @@ interface IMasthead {
 
 const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
   const isEn = lang === 'en';
-  const eyebrow = isEn
-    ? 'Andrés Banda · Software Engineer'
-    : 'Andrés Banda · Ingeniero de Software';
-  const secondaryCta = isEn ? "Let's talk" : 'Hablemos';
+  const eyebrow = isEn ? 'Software Engineer' : 'Ingeniero de Software';
+  const secondaryCta = isEn ? 'Contact' : 'Contacto';
+  const availability = isEn ? 'Available for projects' : 'Disponible para proyectos';
+  const location = isEn ? 'Ecuador · Remote' : 'Ecuador · Remoto';
 
   return (
     <main className={styles.masthead}>
@@ -33,6 +33,13 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
               {secondaryCta}
             </a>
           </div>
+          <p className={styles.masthead__meta}>
+            <span className={styles.masthead__availability}>
+              <span className={styles.masthead__dot} aria-hidden="true" />
+              {availability}
+            </span>
+            <span>{location}</span>
+          </p>
         </header>
       </div>
     </main>

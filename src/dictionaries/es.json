@@ -1,8 +1,8 @@
 {
   "mastheadInfo": {
-    "title": "De la idea a producción. Sin humo.",
-    "description": "Soy ingeniero de software. Llevo más de 5 años convirtiendo ideas en aplicaciones web y móviles que se usan en el mundo real — y escribo sobre lo que aprendo construyéndolas.",
-    "cta": "Ver mi trabajo"
+    "title": "Andrés Banda",
+    "description": "Diseño y construyo productos digitales. Escribo sobre el oficio.",
+    "cta": "Ver trabajo"
   },
 
   "menu": [
@@ -12,13 +12,13 @@
   ],
 
   "about": {
-    "title": "Quién soy",
+    "title": "Sobre mí",
     "description": [
-      "Soy Andrés. Llevo más de 5 años construyendo software en educación, gaming, Web3 y plataformas internas — en equipos donde el código sale a producción y alguien lo usa al día siguiente.",
-      "He pasado por todas las etapas: diseñar la solución, escribirla, lanzarla y mantenerla cuando algo se rompe a las 2 de la mañana. Eso deja algo que ningún tutorial enseña: criterio.",
-      "Hoy me interesa la intersección entre interfaces, sistemas e inteligencia artificial. Lo que aprendo construyendo, lo comparto en el blog y la newsletter — para que a ti te cueste menos que a mí."
+      "Ingeniero de software. Más de cinco años construyendo producto en educación, gaming, Web3 y plataformas internas.",
+      "He recorrido el ciclo completo: pensar la solución, escribirla, lanzarla y sostenerla en producción.",
+      "Me interesa el punto donde se cruzan las interfaces, los sistemas y la inteligencia artificial — y escribir sobre lo que aprendo ahí."
     ],
-    "cta": "Explora mi trabajo"
+    "cta": "Ver trabajo"
   },
 
   "aboutStudio": {
@@ -31,19 +31,19 @@
   },
 
   "services": {
-    "title": "Qué hago",
+    "title": "Servicios",
     "services": [
       {
-        "title": "Aplicaciones web y móviles",
-        "description": "De cero a producción: arquitectura, código, despliegue e iteración. Producto que aguanta usuarios reales, no demos bonitas."
+        "title": "Producto digital",
+        "description": "Aplicaciones web y móviles, de la arquitectura al despliegue."
       },
       {
-        "title": "Interfaces que se entienden",
-        "description": "Frontend con criterio de producto: rápido, accesible y tan claro que nadie necesita un manual para usarlo."
+        "title": "Interfaces",
+        "description": "Frontend rápido, accesible y preciso, con criterio de producto."
       },
       {
-        "title": "IA que ahorra horas",
-        "description": "Integro IA y automatización donde hay retorno real — flujos, agentes y herramientas internas. Nada de chatbots de adorno."
+        "title": "Inteligencia artificial",
+        "description": "Flujos, agentes y herramientas que llevan la IA al trabajo real."
       }
     ]
   },
@@ -67,14 +67,14 @@
   },
 
   "contact": {
-    "blockTitle": "Hablemos de tu producto",
-    "inlineTitle": "¿Construimos algo juntos?",
-    "description": "¿Tienes una idea, un producto a medio camino o un proceso que pide automatización? Cuéntame en qué andas y te digo, sin vueltas, cómo lo abordaría.",
-    "cta": "Agenda 30 minutos"
+    "blockTitle": "Contacto",
+    "inlineTitle": "Trabajemos juntos",
+    "description": "Si estás construyendo algo, me interesa escucharlo.",
+    "cta": "Agendar una llamada"
   },
 
   "recentProjects": {
-    "title": "Cosas que he construido",
+    "title": "Trabajo seleccionado",
     "projects": [
       {
         "title": "Partners",
