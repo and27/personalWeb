@@ -1,7 +1,7 @@
 {
   "mastheadInfo": {
-    "title": "Andrés Banda",
-    "description": "I design and build digital products. I write about the craft.",
+    "title": "I turn good ideas into good products.",
+    "description": "I design and build digital products — web, mobile and AI. Five-plus years shipping software to production.",
     "cta": "View work"
   },
   "menu": [
@@ -24,9 +24,9 @@
   "about": {
     "title": "About",
     "description": [
-      "Software engineer. Five-plus years building product across education, gaming, Web3 and internal platforms.",
-      "I've walked the full cycle: thinking through the solution, writing it, shipping it and keeping it alive in production.",
-      "I'm drawn to the point where interfaces, systems and artificial intelligence meet — and to writing about what I learn there."
+      "I'm Andrés Banda. For over five years I've been building digital products across education, gaming, Web3 and internal platforms.",
+      "I cover the full cycle: understanding the problem, designing the solution, building it and keeping it alive in production.",
+      "I'm drawn to the crossing of interfaces, systems and artificial intelligence, and I write about what I learn while building."
     ],
     "cta": "View work"
   },
@@ -75,7 +75,7 @@
   "contact": {
     "blockTitle": "Contact",
     "inlineTitle": "Let's work together",
-    "description": "If you're building something, I'd like to hear about it.",
+    "description": "Tell me what you're building.",
     "cta": "Book a call"
   },
   "recentProjects": {
