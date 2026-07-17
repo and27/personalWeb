@@ -17,7 +17,7 @@
   inset-inline-start: 0;
   inline-size: 4px;
   block-size: 100%;
-  background: var(--accent-indigo);
+  background: var(--accent);
 
   @include mq(tablet) {
     inset-inline-start: 8px;
@@ -32,7 +32,7 @@
 }
 
 .scurve a {
-  color: var(--primary-white);
+  color: var(--text-1);
   text-decoration: underline;
   transition: color 0.3s ease-in-out;
 }

@@ -48,7 +48,7 @@
   line-height: 1.2;
   letter-spacing: -1.5px;
   max-inline-size: 600px;
-  color: var(--primary-white);
+  color: var(--text-1);
   @include mq(tablet) {
     font-size: 2.5rem;
   }
@@ -69,7 +69,7 @@
   line-height: 1.5;
   font-weight: 300;
   max-width: 580px;
-  color: var(--tertiary-white);
+  color: var(--text-3);
   margin-block-start: 2.2rem;
 }
 
@@ -82,7 +82,7 @@
   background-color: #121212;
   inline-size: fit-content;
   margin-block-start: 2rem;
-  color: var(--primary-white);
+  color: var(--text-1);
   background-color: #3d0e9a;
   position: relative;
   transition: background-color 0.3s ease-in-out;
@@ -97,7 +97,7 @@
   cursor: pointer;
   border-block: 1px solid transparent;
   background-color: #4c15bb;
-  border-inline: 1px solid var(--primary-white);
+  border-inline: 1px solid var(--text-1);
   border-radius: 0;
   padding-inline: 1.6rem;
 
@@ -126,7 +126,7 @@
   inline-size: 0;
   content: "";
   height: 1px;
-  background-color: var(--primary-white);
+  background-color: var(--text-1);
   transition: width 0.3s ease-in-out;
 }
 

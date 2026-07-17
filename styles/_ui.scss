@@ -1,0 +1,111 @@
+// ---------------------------------------------------------------------------
+// Design system mixins — the single source of the visual language.
+// Color values live in globals.css as CSS custom properties (both themes);
+// these mixins define the shapes: surfaces, hard shadows, buttons, titles.
+// Usage: @import "ui";  (styles/ is on sass includePaths)
+// ---------------------------------------------------------------------------
+
+// A raised surface: near-square corners, solid border.
+@mixin surface($padding: 28px) {
+  padding: $padding;
+  background: var(--raised);
+  border: 1.5px solid var(--line);
+  border-radius: var(--border-radius);
+}
+
+// Interactive card: surface + translate/hard-shadow hover.
+@mixin card($padding: 28px) {
+  @include surface($padding);
+  transition: transform 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    transform: translate(-3px, -3px);
+    border-color: var(--text-1);
+    box-shadow: 6px 6px 0 var(--accent);
+  }
+}
+
+// Statement block: bold border + permanent hard shadow (non-interactive).
+@mixin statement($shadow: 8px) {
+  background: var(--raised);
+  border: 2px solid var(--text-1);
+  border-radius: var(--border-radius);
+  box-shadow: $shadow $shadow 0 var(--accent);
+}
+
+@mixin btn-base {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  padding-block: 0.9375rem;
+  padding-inline: 1.75rem;
+  border-radius: var(--border-radius);
+  inline-size: fit-content;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+// Primary action: accent fill, ink border, hard shadow that "presses" on hover.
+@mixin btn-primary {
+  @include btn-base;
+  border: 2px solid var(--text-1);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  box-shadow: 5px 5px 0 var(--text-1);
+
+  &:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--text-1);
+  }
+}
+
+// Secondary action: outlined, fills with ink on hover.
+@mixin btn-ghost {
+  @include btn-base;
+  border: 2px solid var(--text-1);
+  background: transparent;
+  color: var(--text-1);
+
+  &:hover {
+    background: var(--text-1);
+    color: var(--paper);
+  }
+}
+
+// Display heading (Syne).
+@mixin title($min: 2rem, $max: 3rem) {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(#{$min}, 4vw, #{$max});
+  letter-spacing: -1px;
+  line-height: 1.05;
+  color: var(--text-1);
+}
+
+// Small solid accent square used as a marker.
+@mixin accent-mark($size: 12px) {
+  content: "";
+  inline-size: $size;
+  block-size: $size;
+  background: var(--accent);
+  flex: none;
+}
+
+// Uppercase eyebrow label.
+@mixin eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-2);
+
+  &::before {
+    @include accent-mark;
+  }
+}

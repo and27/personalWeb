@@ -19,14 +19,14 @@
 .blogArticle .blogDate {
   font-size: 1rem;
   margin-block-end: 32px;
-  color: var(--tertiary-white);
+  color: var(--text-3);
   font-weight: 300;
   align-self: flex-end;
 }
 
 .blog h2 {
-  font-family: var(--font-poppins) !important;
-  color: var(--primary-white);
+  font-family: var(--font-display);
+  color: var(--text-1);
 }
 
 .blogArticle h3 {
@@ -34,16 +34,19 @@
 }
 
 .blogTitle {
-  color: var(--primary-white);
+  color: var(--text-1);
+  font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 700;
+  letter-spacing: -1px;
   margin-block-end: 40px;
   margin-block-start: 20px;
-  line-height: 1.2;
+  line-height: 1.15;
+  text-wrap: balance;
 
   @include mq(tablet) {
     font-size: 2.5rem;
-    margin-block-end: 80px;
+    margin-block-end: 64px;
   }
 
   @include mq(desktop) {
@@ -52,7 +55,7 @@
 }
 
 .blogImage {
-  background-color: var(--primary-white);
+  background-color: var(--text-1);
   width: 100%;
   margin-block-end: 24px;
   object-fit: cover;
@@ -72,19 +75,23 @@
 }
 
 .blogTags li {
-  border-radius: 0px 10px 10px 10px;
-  border: 1px solid var(--primary-white);
-  padding-block: 6px;
-  padding-inline: 30px;
-  font-weight: 100;
-  color: var(--primary-white);
+  border-radius: var(--border-radius);
+  border: 1.5px solid var(--line-strong);
+  background: var(--surface-1);
+  padding-block: 5px;
+  padding-inline: 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-2);
 }
 
 .blogArticle p {
   font-size: 1rem;
   line-height: 1.8;
   font-weight: 400;
-  color: var(--secondary-white);
+  color: var(--text-2);
   margin-block-end: 1.5rem;
 
   @include mq(desktop) {
@@ -93,7 +100,7 @@
 }
 
 .blogArticle a {
-  color: var(--primary-white);
+  color: var(--text-1);
   text-decoration: underline;
   transition: color 0.3s ease-in-out;
 }

@@ -28,24 +28,25 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
 
+  /* surfaces */
   --paper: #0f0d15;
   --raised: #17141f;
   --surface-1: #13111b;
   --surface-2: #0f0d15;
 
-  --primary-white: #f2eff7;
-  --secondary-white: #c6c0d4;
-  --tertiary-white: #918aa1;
+  /* text */
+  --text-1: #f2eff7;
+  --text-2: #c6c0d4;
+  --text-3: #918aa1;
 
+  /* lines */
   --line: #2c2839;
   --line-strong: #453e58;
-  --dark-gray: #453e58;
 
-  --accent-indigo: #8b7bff;
+  /* accent */
+  --accent: #8b7bff;
   --accent-strong: #a99dff;
   --accent-contrast: #14101f;
-  --accent-cyan: #8b7bff;
-  --accent-amber: #ffb84d;
 
   --foreground-rgb: 242, 239, 247;
 }
@@ -58,21 +59,29 @@
   --surface-1: #f1eff7;
   --surface-2: #faf9fc;
 
-  --primary-white: #1b1626;
-  --secondary-white: #4c4560;
-  --tertiary-white: #7b7490;
+  --text-1: #1b1626;
+  --text-2: #4c4560;
+  --text-3: #7b7490;
 
   --line: #e3dfee;
   --line-strong: #c9c2dc;
-  --dark-gray: #c9c2dc;
 
-  --accent-indigo: #5b48e8;
+  --accent: #5b48e8;
   --accent-strong: #4534c9;
   --accent-contrast: #ffffff;
-  --accent-cyan: #5b48e8;
-  --accent-amber: #b96e00;
 
   --foreground-rgb: 27, 22, 38;
+}
+
+/* legacy aliases — do not use in new code; migrate on touch */
+:root {
+  --primary-white: var(--text-1);
+  --secondary-white: var(--text-2);
+  --tertiary-white: var(--text-3);
+  --dark-gray: var(--line-strong);
+  --accent-indigo: var(--accent);
+  --accent-cyan: var(--accent);
+  --accent-amber: #ffb84d;
 }
 
 * {
@@ -88,7 +97,7 @@ body {
 }
 
 body {
-  color: var(--primary-white);
+  color: var(--text-1);
   background-color: var(--paper);
   font-family: var(--font-body);
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -115,7 +124,7 @@ select {
 }
 
 ::selection {
-  background: var(--accent-indigo);
+  background: var(--accent);
   color: var(--accent-contrast);
 }
 
@@ -123,6 +132,6 @@ a:focus-visible,
 input:focus-visible,
 button:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--accent-indigo);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
