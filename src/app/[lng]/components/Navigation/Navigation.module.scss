@@ -1,7 +1,7 @@
 @import "~sass-mq/mq";
 
 .header {
-  block-size: 100px;
+  block-size: 84px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -9,15 +9,15 @@
   padding-inline: 20px;
   position: relative;
   z-index: 10;
-  background: #070310;
+  background: var(--paper);
+  border-block-end: 1px solid var(--line);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 
   @include mq(tablet) {
     padding-inline: 60px;
-    background: transparent;
   }
   @include mq(desktop) {
-    max-inline-size: 1280px;
-    padding-inline: 160px;
+    padding-inline: 60px;
   }
 }
 
@@ -51,27 +51,30 @@
 .navMenuLink {
   text-decoration: none;
   color: var(--secondary-white);
-  font-weight: 300;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
   position: relative;
-  transition: color 0.5s ease-out;
+  transition: color 0.2s ease-out;
+}
+
+.navMenuLink:hover {
+  color: var(--primary-white);
 }
 
 .navMenuLink::after {
   position: absolute;
   inline-size: 0;
-  block-size: 100%;
-  inset-inline-start: -1px;
-  inset-block-end: -3px;
+  inset-inline-start: 0;
+  inset-block-end: -6px;
   content: "";
-  height: 0.8px;
-  background: linear-gradient(to right, var(--primary-white), var(--dark-gray));
-  transition: width 0.3s ease-in-out;
+  height: 2px;
+  background: var(--accent-indigo);
+  transition: width 0.25s ease-in-out;
 }
 
 .menu__active::after,
 .navMenuItem:hover .navMenuLink::after {
-  inline-size: 120%;
+  inline-size: 100%;
 }
 
 //mobile
@@ -89,18 +92,17 @@
 
 .navigation__mobile_menu_trigger {
   font-size: 0.95rem;
-  background: rgba(15, 12, 28, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--raised);
+  border: 1.5px solid var(--line-strong);
   padding: 8px 10px;
   line-height: 1;
-  border-radius: 999px;
+  border-radius: var(--border-radius);
   width: 44px;
   block-size: 44px;
   color: var(--primary-white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(10, 8, 24, 0.6);
 
   @include mq(tablet) {
     display: none;
@@ -163,7 +165,7 @@
 .navigation__mobile_menu_overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 6, 12, 0.55);
+  background: rgba(15, 13, 21, 0.55);
   backdrop-filter: blur(6px);
   opacity: 0;
   visibility: hidden;
@@ -176,13 +178,11 @@
   inset-inline: 0;
   inset-block-end: 0;
   padding: 24px 24px 36px;
-  background: rgba(14, 12, 26, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px 20px 0 0;
+  background: var(--paper);
+  border-top: 2px solid var(--primary-white);
   transform: translateY(100%);
   opacity: 0;
   transition: transform 0.35s ease, opacity 0.35s ease;
-  box-shadow: 0 -20px 40px rgba(5, 5, 12, 0.6);
 }
 
 .navigation__mobile_menu_header {
@@ -244,6 +244,21 @@
   font-size: 1.5rem;
   color: var(--primary-white);
   font-family: var(--font-museo);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  color: var(--primary-white);
+  display: flex;
+  align-items: center;
+
+  span {
+    color: var(--accent-indigo);
+  }
 }
 .navigation__mobile_menu_actions {
   display: flex;

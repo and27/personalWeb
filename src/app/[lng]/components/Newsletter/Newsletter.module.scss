@@ -16,9 +16,10 @@
   align-items: center;
   padding: 40px 24px;
   text-align: center;
-  background: var(--surface-2);
-  border: 1px solid rgba(107, 91, 255, 0.25);
+  background: var(--raised);
+  border: 2px solid var(--primary-white);
   border-radius: var(--border-radius);
+  box-shadow: 8px 8px 0 var(--accent-indigo);
 
   @include mq(desktop) {
     flex-direction: row;
@@ -34,7 +35,9 @@
 
 .newsletter__title {
   margin-block-end: 12px;
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.625rem;
   letter-spacing: -0.5px;
   color: var(--primary-white);
 }
