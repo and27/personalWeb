@@ -16,7 +16,8 @@ const FeaturedProjects = ({ title, services }: IFeaturedProjectsProps) => (
       <h2 className={globalStyles.section__title}>{title}</h2>
       <div className={styles.cards}>
         {services?.map((service, idx) => (
-          <div key={idx} className={idx % 2 === 0 ? styles.card__left : styles.card__right}>
+          <div key={idx} className={styles.card}>
+            <span className={styles.card__accent} aria-hidden="true" />
             <h3 className={styles.card__title}>{service.title}</h3>
             <p className={styles.card__description}>{service.description}</p>
           </div>

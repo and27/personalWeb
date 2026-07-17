@@ -40,7 +40,7 @@ export default function Footer({ menu, rights }: IFooterProps) {
         </ul>
       </nav>
       <div className={styles.footerCopy}>
-        <p>{rights}</p>
+        <p>{`© 2021 - ${new Date().getFullYear()}. ${rights}`}</p>
       </div>
     </footer>
   );

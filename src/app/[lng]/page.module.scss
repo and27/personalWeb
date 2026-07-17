@@ -132,72 +132,44 @@
 }
 
 .btn {
-  letter-spacing: 1px;
-  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-weight: 500;
   font-size: 1rem;
   padding-block: 0.875rem;
   padding-inline: 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: linear-gradient(90deg, rgba(107, 91, 255, 0.35), rgba(65, 214, 255, 0.15));
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(107, 91, 255, 0.55), rgba(116, 48, 193, 0.45));
   inline-size: fit-content;
   margin-block-start: 2rem;
   color: var(--primary-white);
   position: relative;
   box-shadow: 0 10px 30px rgba(12, 8, 34, 0.6);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .btn:hover {
   cursor: pointer;
-  border-block: 1px solid transparent;
+  transform: translateY(-2px);
   box-shadow: 0 14px 40px rgba(92, 74, 255, 0.35);
 }
 
-@keyframes cta {
-  0% {
-    inline-size: 0;
-  }
-  100% {
-    inline-size: 100%;
-  }
-}
-
-.btn:hover::after,
-.btn:hover::before {
-  animation: cta 0.5s ease-in-out both;
-}
-
-.btn::after,
-.btn::before {
-  position: absolute;
-  inline-size: 0;
-  content: "";
-  height: 1px;
-  background-color: var(--primary-white);
-  transition: width 0.3s ease-in-out;
-}
-
-.btn::after {
-  inset-inline-start: 0;
-  inset-block-end: -1px;
-}
-.btn::before {
-  inset-inline-end: 0;
-  inset-block-start: -0.5px;
-}
 
 .section__title {
-  margin-block-end: 40px;
-  font-size: 2rem;
-  letter-spacing: -0.5px;
+  margin-block-end: 48px;
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  letter-spacing: -1px;
+  line-height: 1.1;
   position: relative;
   color: var(--primary-white);
   text-shadow: 0 10px 30px rgba(65, 214, 255, 0.08);
 }
 
 .section__text {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.7;
+  max-inline-size: 65ch;
   color: var(--secondary-white);
 }
 

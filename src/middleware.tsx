@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const defaultLocale = 'es';
-let locales = ['en', 'es', 'fr'];
+const locales = ['en', 'es', 'fr'];
 
 type PathnameLocale = {
   pathname: string;
@@ -58,6 +58,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   // do not localize next.js paths
   matcher: [
-    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico)$).*)'
+    '/((?!api|_next/static|_next/image|assets|favicon.ico|sitemap.xml|robots.txt|sw.js|.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico)$).*)'
   ]
 };

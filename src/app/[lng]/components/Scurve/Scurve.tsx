@@ -1,11 +1,5 @@
-'use client';
 import styles from './Scurve.module.scss';
 import globalStyles from '../../page.module.scss';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-// import Image from 'next/image';
-// import studioImage from '../../../../../public/studioImage.png';
-import LayoutSVG from './LayoutSVG';
 
 interface IScurve {
   title: string;
@@ -13,20 +7,9 @@ interface IScurve {
   cta: string;
 }
 
-const Scurve: React.FC<IScurve> = ({ title, description, cta }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['0.4 1', '0.1 0.4']
-  });
-  const x = useSpring(useTransform(scrollYProgress, [0, 1], [700, 0]), {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
+const Scurve: React.FC<IScurve> = ({ title, description }) => {
   return (
-    <section className={globalStyles.scurve} ref={ref}>
+    <section className={globalStyles.scurve}>
       <div className={globalStyles.container}>
         <div className={styles.scurve__inner}>
           <div className={styles.scurve__content}>
@@ -46,13 +29,7 @@ const Scurve: React.FC<IScurve> = ({ title, description, cta }) => {
                 ></p>
               ))
             )}
-            {/* <button className={globalStyles.btn}>{cta}</button> */}
           </div>
-
-          <motion.div style={{ x }} className={styles.scurve__media}>
-            {/* <Image src={studioImage} width={500} height={500} alt="workspace image of abstudio" /> */}
-            <LayoutSVG />
-          </motion.div>
         </div>
       </div>
     </section>

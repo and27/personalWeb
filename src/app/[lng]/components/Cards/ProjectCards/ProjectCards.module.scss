@@ -4,63 +4,31 @@
   display: grid;
   grid-template-columns: 1fr;
   padding-block-start: 20px;
-  column-gap: 64px;
-  row-gap: 24px;
+  gap: 20px;
 
   @include mq(tablet) {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 48px;
+    gap: 24px;
   }
   @include mq(desktop) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  & > div {
-    padding: 32px;
-    padding-inline-end: 16px;
-    border: 1px solid transparent;
-    position: relative;
-    transition: border-color 0.2s ease-in-out;
-
-    &::after,
-    &::before {
-      position: absolute;
-      block-size: 0;
-      content: "";
-      width: 1px;
-      background-color: var(--primary-white);
-      transition: width 0.3s ease-in-out;
-      inset-inline-end: 0;
-      inset-block-end: -1px;
-    }
-
-    &::after {
-      inset-inline-start: 0;
-      inset-block-end: -1px;
-    }
-
-    &::before {
-      inset-inline-end: 0;
-      inset-block-start: -1px;
-    }
-
-    &:hover {
-      border-inline: 1px solid transparent;
-      border-block: 1px solid var(--primary-white);
-
-      &::after,
-      &::before {
-        animation: line 0.4s ease-in-out both;
-      }
-    }
-  }
 }
 
-@keyframes line {
-  0% {
-    block-size: 0;
-  }
-  100% {
-    block-size: 20%;
+.cardLink {
+  display: block;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  position: relative;
+  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(107, 91, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
   }
 }
