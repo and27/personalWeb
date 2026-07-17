@@ -68,11 +68,11 @@
 }
 
 .svg {
-  fill: #ddd;
+  fill: var(--secondary-white);
   transition: all 0.3s ease-in-out;
 }
 
 .svg:hover {
-  fill: white;
+  fill: var(--primary-white);
   transform: scale(1.1);
 }

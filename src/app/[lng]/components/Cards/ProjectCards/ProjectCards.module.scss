@@ -19,16 +19,16 @@
 .cardLink {
   display: block;
   padding: 28px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
+  background: var(--raised);
+  border: 1.5px solid var(--line);
+  border-radius: var(--border-radius);
   position: relative;
-  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out,
-    background-color 0.2s ease-in-out;
+  transition: transform 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 
   &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(107, 91, 255, 0.5);
-    background: rgba(255, 255, 255, 0.05);
+    transform: translate(-3px, -3px);
+    border-color: var(--primary-white);
+    box-shadow: 6px 6px 0 var(--accent-indigo);
   }
 }
