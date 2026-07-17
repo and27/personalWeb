@@ -4,9 +4,9 @@ import { getDictionary } from '../../dictionaries';
 import './globals.css';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://andresbanda.com';
-const siteTitle = 'Andrés Banda — Ingeniero de Software | Producto, Frontend e IA';
+const siteTitle = 'Andrés Banda · Diseño y desarrollo de soluciones digitales';
 const siteDescription =
-  'Soy Andrés Banda, ingeniero de software con más de 5 años construyendo productos digitales. Escribo sobre desarrollo de producto, frontend e inteligencia artificial, y colaboro en proyectos como freelance.';
+  'Diseño y desarrollo de soluciones digitales — web, móvil e inteligencia artificial. Portafolio, proyectos y blog de Andrés Banda.';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),

@@ -36,19 +36,14 @@
   text-align: start;
 }
 
-.masthead__eyebrow {
-  @include eyebrow;
-  margin-block-end: 1.5rem;
-}
-
 .masthead__title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  font-size: clamp(3rem, 8.5vw, 6rem);
   font-weight: 800;
   margin-bottom: 0;
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-  max-inline-size: 860px;
+  line-height: 1;
+  letter-spacing: -2px;
+  max-inline-size: 900px;
   color: var(--text-1);
   text-wrap: balance;
 }
