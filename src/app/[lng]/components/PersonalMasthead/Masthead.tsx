@@ -9,16 +9,28 @@ interface IMasthead {
 }
 
 const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
+  const isEn = lang === 'en';
+  const eyebrow = isEn
+    ? 'Andrés Banda · Software Engineer'
+    : 'Andrés Banda · Ingeniero de Software';
+  const secondaryCta = isEn ? "Let's talk" : 'Hablemos';
+
   return (
     <main className={styles.masthead}>
       <div className={globalStyles.container}>
         <div className={styles.masthead__inner}>
           <header className={styles.masthead__content}>
+            <p className={styles.masthead__eyebrow}>{eyebrow}</p>
             <h1 className={styles.masthead__title}>{title}</h1>
             <p className={styles.masthead__description}>{description}</p>
-            <a className={styles.masthead__btn} href="/projects">
-              {cta}
-            </a>
+            <div className={styles.masthead__actions}>
+              <a className={styles.masthead__btn} href="/projects">
+                {cta}
+              </a>
+              <a className={styles.masthead__btnGhost} href="#contact">
+                {secondaryCta}
+              </a>
+            </div>
           </header>
           <div className={styles.photo}></div>
         </div>

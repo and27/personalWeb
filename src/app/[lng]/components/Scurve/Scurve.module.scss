@@ -1,63 +1,35 @@
 @import "~sass-mq/mq";
 
-#rect1005 {
-  x: 700;
-}
-
 .scurve__inner {
-  gap: 48px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 8px;
   position: relative;
+  padding: 8px;
 
   @include mq(tablet) {
-    padding: 48px;
     padding: 24px;
+    padding-inline-start: 48px;
   }
 }
 
 .scurve__inner::before {
   content: "";
   position: absolute;
-  inset-block-end: 60px;
-  inset-inline-start: -30px;
-  inline-size: 1px;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 3px;
   block-size: 100%;
-  background: linear-gradient(to bottom, black 10%, white 50%, black 100%);
-}
-
-.scurve__inner:after {
-  content: "";
-  position: absolute;
-  inline-size: 60px;
-  block-size: 60px;
-  inset-inline-start: -60px;
-  bottom: -20px;
-  background-image: url("../../../../../public/pattern2.svg");
-  background-size: auto;
-  background-repeat: no-repeat;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--accent-indigo), rgba(107, 91, 255, 0.05));
 
   @include mq(tablet) {
-    inline-size: 80px;
-    block-size: 80px;
+    inset-inline-start: 8px;
   }
 }
 
 .scurve__content {
   gap: 20px;
-  flex: 2 0 55%;
   display: flex;
   flex-direction: column;
-}
-
-.scurve__media {
-  display: none;
-  @include mq(tablet) {
-    flex: 1 1 30%;
-    display: block;
-  }
+  max-inline-size: 720px;
 }
 
 .scurve a {
