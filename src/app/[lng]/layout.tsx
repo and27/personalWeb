@@ -41,19 +41,20 @@ export default async function RootLayout({
   const navInfo = dict?.menu || [];
   const footerInfo = dict?.footer || { rights: '' };
   return (
-    <html lang={lng} style={{ scrollBehavior: 'smooth' }}>
+    <html lang={lng} style={{ scrollBehavior: 'smooth' }} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Paytone+One&family=Poppins:wght@300;400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
           rel="stylesheet"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=MuseoModerno:ital,wght@0,500;1,500&display=swap"
-          rel="stylesheet"
-        ></link>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();`
+          }}
+        />
       </head>
 
       <body>
