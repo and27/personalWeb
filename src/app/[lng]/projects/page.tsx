@@ -3,8 +3,19 @@ import ProjectStack from '../components/ProjectStack/ProjectStack';
 import globalStyles from '../page.module.scss';
 import styles from './projects.module.scss';
 
-const ProjectsPage = async ({ params }: { params: { lng: string } }) => {
-  const lng = params?.lng || 'es';
+export async function generateMetadata({ params }: { params: Promise<{ lng?: string }> }) {
+  const { lng } = await params;
+  const isEn = lng === 'en';
+  return {
+    title: isEn ? 'Projects' : 'Proyectos',
+    description: isEn
+      ? 'Web and mobile products I have designed and built: EdTech, SaaS, Web3 and AI.'
+      : 'Productos web y móviles que he diseñado y construido: EdTech, SaaS, Web3 e IA.'
+  };
+}
+
+const ProjectsPage = async ({ params }: { params: Promise<{ lng?: string }> }) => {
+  const { lng = 'es' } = await params;
   const dict = await getDictionary(lng);
   const localizedProjects = (dict?.projects || []).filter(project => !project.hidden);
   return (

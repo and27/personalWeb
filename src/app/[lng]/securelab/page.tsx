@@ -14,8 +14,8 @@ const Securelab = () => {
           <div className={styles.content}>
             <h1>Secure Lab Cibersecurity App</h1>
             <p>
-              Secure Lab gives short tutorials on cibersecurity concepts about
-              networking, app security and forensics.
+              Secure Lab gives short tutorials on cibersecurity concepts about networking, app
+              security and forensics.
             </p>
             <p>The app was finalist in the Mexico 2019 TuApp contest.</p>
           </div>

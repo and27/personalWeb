@@ -13,11 +13,9 @@
     "@contentful/rich-text-react-renderer": "^15.16.3",
     "@contentful/rich-text-types": "^16.0.3",
     "@types/node": "^24.0.0",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
     "contentful": "^9.3.5",
     "framer-motion": "^10.12.16",
-    "next": "^14.2.3",
+    "next": "^15.5.16",
     "react": "^18.3.1",
     "react-calendly": "^4.1.1",
     "react-dom": "^18.3.1",
@@ -25,27 +23,27 @@
     "sass": "^1.63.4",
     "sass-mq": "^6.0.0",
     "sass-rem": "^3.0.0",
-    "typed.js": "^2.1.0",
-    "typescript": "4.9.5"
+    "typed.js": "^2.1.0"
   },
   "engines": {
     "node": ">=20.0.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.0.1",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
-    "eslint": "^8.35.0",
-    "eslint-config-next": "^13.2.3",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.16",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.4",
-    "prettier-stylelint": "^0.4.2",
     "stylelint": "^15.0.0",
     "stylelint-config-recommended-scss": "^9.0.1",
     "stylelint-config-standard": "^30.0.1",
     "stylelint-order": "^6.0.2",
     "stylelint-prettier": "^3.0.0",
-    "stylelint-selector-bem-pattern": "^2.1.1"
+    "typescript": "^5.9.3"
   }
 }

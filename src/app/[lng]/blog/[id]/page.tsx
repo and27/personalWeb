@@ -1,21 +1,47 @@
-import { use } from 'react';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from './blog.module.scss';
 import globalStyles from '../../page.module.scss';
 import getImageDataFromBlogPost from '../../../../utils/getImageSrc';
 import RelatedPostCards from '../../modules/RelatedPostCards';
+import Newsletter from '../../components/Newsletter/Newsletter';
 import { getBlogPostBySlug } from '@/lib/getDataEntries';
 
 function renderRichText(richTextField: any) {
   return documentToReactComponents(richTextField);
 }
 
-function BlogPost({ params }: any) {
-  const { id: slug, lng } = params;
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lng?: string; id: string }>;
+}) {
+  const { lng, id } = await params;
+  const lang = lng === 'en' ? 'en-US' : 'es';
+  const blogPost = (await getBlogPostBySlug(id, lang)) as any;
+  if (!blogPost) return { title: 'Blog' };
+
+  const title = blogPost.fields.title;
+  const description = blogPost.fields.body?.content?.[0]?.content?.[0]?.value?.slice(0, 160);
+  const imageUrl = blogPost.fields.image?.fields?.file?.url;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      images: imageUrl ? [{ url: `https:${imageUrl}` }] : []
+    }
+  };
+}
+
+async function BlogPost({ params }: { params: Promise<{ lng?: string; id: string }> }) {
+  const { id: slug, lng } = await params;
   const lang = lng === 'en' ? 'en-US' : 'es';
 
-  const blogPost = use(getBlogPostBySlug(slug, lang)) as any;
+  const blogPost = (await getBlogPostBySlug(slug, lang)) as any;
   const richTextField = blogPost?.fields.body;
   const image = getImageDataFromBlogPost(blogPost);
   const imgHeight = 200;
@@ -53,6 +79,7 @@ function BlogPost({ params }: any) {
           </ul>
           {renderRichText(richTextField)}
         </div>
+        <Newsletter lng={lng} />
         <div className={styles.blogCardsContainer}>
           <RelatedPostCards sectionTitle={'Related Posts'} currentPost={slug} lang={lang} />
         </div>

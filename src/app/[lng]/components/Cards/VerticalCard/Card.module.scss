@@ -63,27 +63,6 @@
   flex: 0 1 60%;
 }
 
-.card:nth-of-type(n + 2)::after {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 100%;
-  background: linear-gradient(to bottom, transparent, var(--dark-gray), var(--primary-white));
-  top: 0;
-  left: -32px;
-}
-
-//to create the separation line between cards
-.cardfeatured ~ .card:nth-of-type(3n + 3)::after {
-  content: "";
-}
-.cardfeatured ~ .card:nth-of-type(3n + 4)::after {
-  content: "";
-}
-
-:not(.cardfeatured):first-child ~ .card::after {
-  content: "";
-}
-
 .cardContent {
   display: flex;
   flex-direction: column;
@@ -134,11 +113,12 @@ p.cardDescription {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  color: var(--tertiary-white);
 }
 
 .cardIcons * {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 @keyframes slideIn {

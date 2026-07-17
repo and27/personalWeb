@@ -1,5 +1,4 @@
 import Script from 'next/script';
-import dynamic from 'next/dynamic';
 import Testimonials from '../components/Testimonials/Testimonials';
 import { getDictionary } from '../../../dictionaries';
 import Masthead from '../components/abstudio/Masthead/Masthead';
@@ -8,11 +7,15 @@ import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects';
 
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
-const ContactSection = dynamic(() => import('../modules/ContactSection/ContactSection'), {
-  ssr: false
-});
+export const metadata = {
+  title: { absolute: 'Abstudio | Estudio de desarrollo web y growth' },
+  description:
+    'Abstudio ayuda a emprendedores y negocios a crecer con sitios web, estrategias digitales y automatización con IA.'
+};
 
-export default async function Home({ params }: any) {
+import ContactSection from '../modules/ContactSection/ContactSection';
+
+export default async function Home() {
   const lng = 'es';
   const dict = await getDictionary(lng);
   const mastheadInfo = dict?.mastheadInfo || {

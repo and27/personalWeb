@@ -1,34 +1,37 @@
 import BlogCards from '../modules/BlogCards';
+import Newsletter from '../components/Newsletter/Newsletter';
 import styles from './blogHome.module.scss';
 import globalStyles from '../page.module.scss';
 
-function Blog({ params }: any) {
-  const { lng } = params;
-  const cta = lng === 'en' ? 'Load more' : 'Cargar más';
-  const isOnMaintainance = true;
+export async function generateMetadata({ params }: { params: Promise<{ lng?: string }> }) {
+  const { lng } = await params;
+  const isEn = lng === 'en';
+  return {
+    title: 'Blog',
+    description: isEn
+      ? 'Ideas and lessons on product development, frontend and artificial intelligence.'
+      : 'Ideas y aprendizajes sobre desarrollo de producto, frontend e inteligencia artificial.'
+  };
+}
 
-  if (isOnMaintainance) {
-    return (
-      <section className={globalStyles.blogHome}>
-        <div className={globalStyles.container}>
-          <div className={styles.blogHeader}>
-            <h1>Blog</h1>
-            <p>Estamos realizando algunas mejoras en nuestro blog. Vuelve pronto.</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
+async function Blog({ params }: { params: Promise<{ lng?: string }> }) {
+  const { lng = 'es' } = await params;
+  const isEn = lng === 'en';
+  const cta = isEn ? 'Load more' : 'Cargar más';
+  const description = isEn
+    ? 'Ideas and lessons on product development, frontend and artificial intelligence.'
+    : 'Ideas y aprendizajes sobre desarrollo de producto, frontend e inteligencia artificial.';
 
   return (
     <section className={globalStyles.blogHome}>
       <div className={globalStyles.container}>
         <div className={styles.blogHeader}>
           <h1>Blog</h1>
-          <p>Exploring Mobile and Web Application Security.</p>
+          <p>{description}</p>
         </div>
         <BlogCards maxCards={100} isFeatured={true} cta={cta} locale={lng} />
       </div>
+      <Newsletter lng={lng} />
     </section>
   );
 }

@@ -6,12 +6,7 @@ interface IWrapper {
   children: React.ReactNode;
 }
 
-const CardWrapper: React.FC<IWrapper> = ({
-  children,
-  href,
-  className,
-  ...props
-}) => {
+const CardWrapper: React.FC<IWrapper> = ({ children, href, className, ...props }) => {
   if (href) {
     return (
       <Link href={href} className={className} {...props}>
