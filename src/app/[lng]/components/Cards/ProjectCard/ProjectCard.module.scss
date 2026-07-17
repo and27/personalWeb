@@ -1,47 +1,26 @@
 @import "~sass-mq/mq";
+@import "ui";
 
 .projectCard {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--primary-white);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  @include card(1.5rem);
   margin-block-end: 2rem;
-  padding-inline: 2rem;
-  transition: transform 0.3s ease-in-out;
   opacity: 0;
 
   &.visible {
-    animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   @include mq(tablet) {
     gap: 2rem;
+    padding: 2rem;
+
     &.left {
       flex-direction: row;
-      padding-inline-end: 1rem;
-      padding-inline-start: 0;
     }
     &.right {
       flex-direction: row-reverse;
-      padding-inline-start: 1rem;
-      padding-inline-end: 0;
-    }
-  }
-
-  @include mq(desktop) {
-    &.left {
-      padding-inline-end: 4rem;
-      padding-inline-start: 0;
-    }
-
-    &.right {
-      padding-inline-start: 4rem;
-      padding-inline-end: 0;
-    }
-
-    &:hover {
-      transform: translateY(-5px);
     }
   }
 }
@@ -50,14 +29,14 @@
   width: 100%;
   max-width: 400px;
   position: relative;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   aspect-ratio: 16/9;
+  border: 1.5px solid var(--line);
 
   img {
     width: 100%;
     display: block;
-    border-radius: 10px;
   }
   @include mq(tablet) {
     flex: 0 0 45%;
@@ -67,19 +46,24 @@
 .projectCard__content {
   flex: 1;
   text-align: start;
-  padding-block: 2rem;
+  padding-block: 1rem;
 
   @include mq(tablet) {
-    padding-block: 4rem;
+    padding-block: 1.5rem;
   }
 }
 
 .projectCard__category {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  color: var(--secondary-white);
+  display: inline-block;
+  border: 1.5px solid var(--line-strong);
+  background: var(--surface-1);
+  padding: 4px 10px;
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-2);
 }
 
 .projectCard__titleContainer {
@@ -96,21 +80,23 @@
 }
 
 .projectCard__title {
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-white);
+  letter-spacing: -0.5px;
+  color: var(--text-1);
   margin-block-end: 16px;
-  line-height: 1.2;
+  line-height: 1.15;
 
   @include mq(tablet) {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
 }
 
 .projectCard__description {
-  color: #ccc;
-  line-height: 1.5;
-  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  font-size: 0.9375rem;
 
   @include mq(tablet) {
     font-size: 1rem;
@@ -128,16 +114,20 @@
 }
 
 .projectCard__impact {
-  color: #999;
-  line-height: 1.5;
+  color: var(--text-3);
+  line-height: 1.55;
   font-size: 0.9rem;
-  list-style: disc;
+  list-style: square;
   padding-left: 1.2rem;
   margin-top: 1rem;
   display: none;
 
   li {
     margin-bottom: 5px;
+  }
+
+  li::marker {
+    color: var(--accent);
   }
 
   @include mq(tablet) {
@@ -147,67 +137,43 @@
 
 .projectCard__contributors {
   font-size: 0.9rem;
-  color: var(--tertiary-white);
+  color: var(--text-3);
   margin-top: 1rem;
 }
 
 .projectCard__buttons {
   display: flex;
+  align-items: center;
   gap: 1rem;
   margin-top: 2rem;
 }
 
 .projectCard__btn {
-  padding: 10px 15px;
-  border: 1px solid var(--primary-white);
-  background-color: var(--primary-black);
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease-in-out;
+  @include btn-primary;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+  font-size: 0.9375rem;
+  box-shadow: 4px 4px 0 var(--text-1);
 
   &:hover {
-    background: #333;
+    box-shadow: 1px 1px 0 var(--text-1);
   }
 }
 
 .projectCard__github {
-  padding: 10px 15px;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-
-  &:hover {
-    background: #555;
-  }
+  @include btn-ghost;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+  font-size: 0.9375rem;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(50px) scale(0.95) rotateX(10deg);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1) rotateX(0);
-  }
-}
-
-.projectCard__tech {
-  position: relative;
-
-  &:hover::after {
-    content: attr(title);
-    position: absolute;
-    bottom: -1.5rem;
-    background: #111;
-    color: white;
-    padding: 2px 6px;
-    font-size: 10px;
-    border-radius: 4px;
-    white-space: nowrap;
-    z-index: 10;
+    transform: translateY(0);
   }
 }

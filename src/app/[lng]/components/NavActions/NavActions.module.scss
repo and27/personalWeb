@@ -14,7 +14,7 @@
   inline-size: 38px;
   block-size: 38px;
   font-size: 1.05rem;
-  color: var(--primary-white);
+  color: var(--text-1);
   background: transparent;
   border: 1.5px solid var(--line-strong);
   border-radius: var(--border-radius);
@@ -23,14 +23,14 @@
 }
 
 .themeToggle:hover {
-  border-color: var(--primary-white);
+  border-color: var(--text-1);
   background: var(--raised);
 }
 
 .languageSelect {
   border: 1.5px solid var(--line-strong);
   border-radius: var(--border-radius);
-  color: var(--primary-white);
+  color: var(--text-1);
   padding: 0.45rem 0.9rem;
   font-size: 0.9375rem;
   font-family: var(--font-body);
@@ -42,7 +42,7 @@
 }
 
 .languageSelect:hover {
-  border-color: var(--primary-white);
+  border-color: var(--text-1);
   background: var(--raised);
 }
 

@@ -19,7 +19,7 @@
 //<li>
 .footerMenuItem {
   list-style: none;
-  color: var(--primary-white);
+  color: var(--text-1);
   font-weight: 300;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -38,7 +38,7 @@
   inset-block-end: -5px;
   content: "";
   height: 2px;
-  background: var(--accent-indigo);
+  background: var(--accent);
   transition: width 0.25s ease-in-out;
 }
 
@@ -51,5 +51,5 @@
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.6;
-  color: var(--secondary-white);
+  color: var(--text-2);
 }

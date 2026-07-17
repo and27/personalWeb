@@ -13,7 +13,7 @@
   h3 {
     transition: color 0.3s ease-in-out;
     text-underline-offset: 3px;
-    color: var(--secondary-white);
+    color: var(--text-2);
     line-height: 1.2;
   }
 
@@ -22,7 +22,7 @@
       transform: scale(1.1);
     }
     h3 {
-      color: var(--primary-white);
+      color: var(--text-1);
     }
   }
 }
@@ -78,7 +78,7 @@ p.cardSubtitle {
 }
 
 p.cardDescription {
-  color: var(--tertiary-white);
+  color: var(--text-3);
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
@@ -103,7 +103,7 @@ p.cardDescription {
 
 .link {
   text-decoration: none;
-  color: var(--primary-white);
+  color: var(--text-1);
   font-weight: 300;
   font-size: 0.875rem;
   letter-spacing: 1px;
@@ -113,7 +113,7 @@ p.cardDescription {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  color: var(--tertiary-white);
+  color: var(--text-3);
 }
 
 .cardIcons * {
