@@ -1,5 +1,6 @@
 import styles from './Newsletter.module.scss';
 import globalStyles from '../../page.module.scss';
+import Reveal from '../motion/Reveal';
 
 // Set NEXT_PUBLIC_SUBSTACK_URL (e.g. https://andresbanda.substack.com) to enable the section.
 const SUBSTACK_URL = process.env.NEXT_PUBLIC_SUBSTACK_URL;
@@ -26,7 +27,7 @@ const Newsletter: React.FC<INewsletterProps> = ({ lng = 'es' }) => {
   return (
     <section className={styles.newsletter}>
       <div className={globalStyles.container}>
-        <div className={styles.newsletter__inner}>
+        <Reveal className={styles.newsletter__inner}>
           <div className={styles.newsletter__content}>
             <h2 className={styles.newsletter__title}>{title}</h2>
             <p className={globalStyles.section__text}>{description}</p>
@@ -40,7 +41,7 @@ const Newsletter: React.FC<INewsletterProps> = ({ lng = 'es' }) => {
             frameBorder="0"
             scrolling="no"
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

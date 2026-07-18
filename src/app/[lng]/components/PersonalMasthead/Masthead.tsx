@@ -1,5 +1,6 @@
 import styles from './Masthead.module.scss';
 import globalStyles from '../../page.module.scss';
+import Reveal from '../motion/Reveal';
 
 interface IMasthead {
   title: string;
@@ -21,23 +22,31 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
       </span>
       <div className={globalStyles.container}>
         <header className={styles.masthead__content}>
-          <h1 className={styles.masthead__title}>{title}</h1>
-          <p className={styles.masthead__description}>{description}</p>
-          <div className={styles.masthead__actions}>
-            <a className={styles.masthead__btn} href="/projects">
-              {cta}
-            </a>
-            <a className={styles.masthead__btnGhost} href="#contact">
-              {secondaryCta}
-            </a>
-          </div>
-          <p className={styles.masthead__meta}>
-            <span className={styles.masthead__availability}>
-              <span className={styles.masthead__dot} aria-hidden="true" />
-              {availability}
-            </span>
-            <span>{location}</span>
-          </p>
+          <Reveal delay={0}>
+            <h1 className={styles.masthead__title}>{title}</h1>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className={styles.masthead__description}>{description}</p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className={styles.masthead__actions}>
+              <a className={styles.masthead__btn} href="/projects">
+                {cta}
+              </a>
+              <a className={styles.masthead__btnGhost} href="#contact">
+                {secondaryCta}
+              </a>
+            </div>
+          </Reveal>
+          <Reveal delay={0.3}>
+            <p className={styles.masthead__meta}>
+              <span className={styles.masthead__availability}>
+                <span className={styles.masthead__dot} aria-hidden="true" />
+                {availability}
+              </span>
+              <span>{location}</span>
+            </p>
+          </Reveal>
         </header>
       </div>
     </main>
