@@ -1,5 +1,6 @@
 import styles from './Scurve.module.scss';
 import globalStyles from '../../page.module.scss';
+import Reveal from '../motion/Reveal';
 
 interface IScurve {
   title: string;
@@ -12,7 +13,7 @@ const Scurve: React.FC<IScurve> = ({ title, description }) => {
     <section className={globalStyles.scurve}>
       <div className={globalStyles.container}>
         <div className={styles.scurve__inner}>
-          <div className={styles.scurve__content}>
+          <Reveal className={styles.scurve__content}>
             <h2 className={`${globalStyles.section__title}`}>{title}</h2>
 
             {typeof description === 'string' ? (
@@ -29,7 +30,7 @@ const Scurve: React.FC<IScurve> = ({ title, description }) => {
                 ></p>
               ))
             )}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
