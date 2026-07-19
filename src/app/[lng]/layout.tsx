@@ -1,5 +1,7 @@
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
+import SmoothScroll from './components/motion/SmoothScroll';
+import PerfBudget from './components/motion/PerfBudget';
 import { getDictionary } from '../../dictionaries';
 import './globals.css';
 
@@ -58,6 +60,8 @@ export default async function RootLayout({
       </head>
 
       <body>
+        <SmoothScroll />
+        <PerfBudget />
         <Navigation dict={dict} />
         <main>{children}</main>
         <Footer menu={navInfo} rights={footerInfo.rights} />

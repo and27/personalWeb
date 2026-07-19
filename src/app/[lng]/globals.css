@@ -84,6 +84,24 @@
   --accent-amber: #ffb84d;
 }
 
+/* Lenis smooth scroll (only active when the provider mounts; harmless otherwise) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
