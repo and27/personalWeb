@@ -21,6 +21,11 @@
     "cta": "Ver trabajo"
   },
 
+  "statement": {
+    "eyebrow": "Cómo trabajo",
+    "text": "Diseño interfaces claras. Escribo código que escala. Integro inteligencia artificial donde aporta valor real. El resto es ruido."
+  },
+
   "aboutStudio": {
     "title": "Acerca de Abstudio",
     "description": [
