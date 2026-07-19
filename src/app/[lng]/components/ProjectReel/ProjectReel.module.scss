@@ -1,0 +1,90 @@
+.reel {
+  position: relative;
+  background: var(--paper);
+}
+
+.label {
+  padding-block-start: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.slide {
+  position: relative;
+  block-size: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.slideImage {
+  z-index: 0;
+}
+
+/* Fixed dark scrim regardless of site theme — this sits over a photographic
+   screenshot, not a plain surface, so it needs its own always-legible
+   treatment rather than theme tokens. */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(10, 8, 15, 0.15) 0%, rgba(10, 8, 15, 0.85) 100%);
+}
+
+.slideContent {
+  position: relative;
+  z-index: 2;
+  padding-block-end: clamp(3rem, 8vw, 6rem);
+  color: #f5f3fa;
+}
+
+.slideNum {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #b3a8ff;
+  margin-block-end: 0.75rem;
+}
+
+.slideTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  letter-spacing: -1.5px;
+  line-height: 1;
+  margin: 0 0 1rem;
+  color: #ffffff;
+}
+
+.slideDescription {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.55;
+  max-inline-size: 620px;
+  color: #d9d5e6;
+  margin: 0 0 1.75rem;
+}
+
+.slideCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-block: 0.8rem;
+  padding-inline: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background: #ffffff;
+    color: #14101f;
+  }
+}
