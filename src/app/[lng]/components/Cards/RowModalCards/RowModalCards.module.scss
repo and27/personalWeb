@@ -28,7 +28,7 @@
       block-size: 0;
       content: "";
       width: 1px;
-      background-color: var(--primary-white);
+      background-color: var(--text-1);
       transition: width 0.3s ease-in-out;
       inset-inline-end: 0;
       inset-block-end: -1px;
@@ -46,7 +46,7 @@
 
     &:hover {
       border-inline: 1px solid transparent;
-      border-block: 1px solid var(--primary-white);
+      border-block: 1px solid var(--text-1);
 
       &::after,
       &::before {
@@ -73,7 +73,7 @@
   font-weight: 700;
   line-height: 1.2;
   text-align: left;
-  color: var(--secondary-white);
+  color: var(--text-2);
 }
 
 .rowCards__noOverflow {
