@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion, MotionValue } from 'framer-motion';
+import { useRef, useEffect } from 'react';
+import { useReducedMotion } from 'framer-motion';
 import styles from './BuildProcess.module.scss';
 import globalStyles from '../../page.module.scss';
 
@@ -32,8 +32,14 @@ const STAGES: Record<string, { title: string; stages: Stage[] }> = {
   }
 };
 
-// The morphing product frame: the same screen skeleton (hero block, two lines,
-// a button) rendered in four treatments that cross-fade as you scroll.
+// Cross-fade ramp: 0 before `a`, up to 1 across [a,b], hold to `c`, down to 0 by `d`.
+function band(p: number, a: number, b: number, c: number, d: number) {
+  if (p <= a || p >= d) return 0;
+  if (p < b) return (p - a) / (b - a);
+  if (p <= c) return 1;
+  return (d - p) / (d - c);
+}
+
 function Frame({ variant }: { variant: 1 | 2 | 3 | 4 }) {
   return (
     <div className={`${styles.frame} ${styles[`v${variant}`]}`} aria-hidden="true">
@@ -73,27 +79,79 @@ function Frame({ variant }: { variant: 1 | 2 | 3 | 4 }) {
 
 const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
   const { title, stages } = STAGES[lang] || STAGES.es;
-  const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end end']
-  });
+  const sectionRef = useRef<HTMLElement>(null);
+  const layerRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Cross-fade windows for the four frames.
-  const o1 = useTransform(scrollYProgress, [0, 0.02, 0.22, 0.28], [1, 1, 1, 0]);
-  const o2 = useTransform(scrollYProgress, [0.22, 0.28, 0.47, 0.53], [0, 1, 1, 0]);
-  const o3 = useTransform(scrollYProgress, [0.47, 0.53, 0.72, 0.78], [0, 1, 1, 0]);
-  const o4 = useTransform(scrollYProgress, [0.72, 0.78, 1], [0, 1, 1]);
-  const frameOpacities = [o1, o2, o3, o4];
+  useEffect(() => {
+    if (reduce) return;
+    const section = sectionRef.current;
+    if (!section) return;
 
-  // Active step index for the caption/rail (0..3).
-  const activeIndex = useTransform(scrollYProgress, (v): number =>
-    v < 0.25 ? 0 : v < 0.5 ? 1 : v < 0.75 ? 2 : 3
-  );
+    let ticking = false;
+    let inView = true;
 
-  // Reduced motion / no-JS-scroll fallback: a calm static grid of the stages.
+    // Progress is derived from the section's real position, so it works no
+    // matter what drives the scroll (native, Lenis smooth-scroll, keyboard).
+    const apply = () => {
+      ticking = false;
+      const rect = section.getBoundingClientRect();
+      const scrollable = section.offsetHeight - window.innerHeight;
+      const progress = scrollable > 0 ? Math.min(1, Math.max(0, -rect.top / scrollable)) : 0;
+
+      const o = [
+        band(progress, -1, 0, 0.22, 0.28),
+        band(progress, 0.22, 0.28, 0.47, 0.53),
+        band(progress, 0.47, 0.53, 0.72, 0.78),
+        band(progress, 0.72, 0.78, 1, 2)
+      ];
+      layerRefs.current.forEach((el, i) => {
+        if (el) el.style.opacity = String(o[i]);
+      });
+
+      const active = progress < 0.25 ? 0 : progress < 0.5 ? 1 : progress < 0.75 ? 2 : 3;
+      stepRefs.current.forEach((el, i) => {
+        if (el) el.style.opacity = i === active ? '1' : '0.32';
+      });
+    };
+
+    const onScroll = () => {
+      if (!inView || ticking) return;
+      ticking = true;
+      requestAnimationFrame(apply);
+    };
+
+    const io = new IntersectionObserver(
+      entries => {
+        inView = entries[0].isIntersecting;
+        if (inView) apply();
+      },
+      { rootMargin: '0px' }
+    );
+    io.observe(section);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    // Bridge Lenis explicitly in case its scroll events don't reach window.
+    type LenisLike = {
+      on: (event: string, cb: () => void) => void;
+      off: (event: string, cb: () => void) => void;
+    };
+    const lenis = (window as unknown as { __lenis?: LenisLike }).__lenis;
+    lenis?.on('scroll', onScroll);
+    apply();
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      lenis?.off('scroll', onScroll);
+    };
+  }, [reduce]);
+
+  // Reduced motion: a calm static grid of the four stages.
   if (reduce) {
     return (
       <section className={globalStyles.benefits}>
@@ -117,23 +175,43 @@ const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
   }
 
   return (
-    <section ref={ref} className={styles.build}>
+    <section ref={sectionRef} className={styles.build}>
       <div className={styles.sticky}>
         <div className={`${globalStyles.container} ${styles.stage}`}>
           <div className={styles.copy}>
             <h2 className={globalStyles.section__title}>{title}</h2>
             <div className={styles.rail}>
               {stages.map((s, i) => (
-                <StepRow key={s.step} stage={s} index={i} active={activeIndex} />
+                <div
+                  key={s.step}
+                  className={styles.step}
+                  ref={el => {
+                    stepRefs.current[i] = el;
+                  }}
+                  style={{ opacity: i === 0 ? 1 : 0.32 }}
+                >
+                  <span className={styles.stepNum}>{s.step}</span>
+                  <div>
+                    <h3>{s.label}</h3>
+                    <p>{s.caption}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
 
           <div className={styles.viewport}>
             {([1, 2, 3, 4] as const).map((v, i) => (
-              <motion.div key={v} className={styles.layer} style={{ opacity: frameOpacities[i] }}>
+              <div
+                key={v}
+                className={styles.layer}
+                ref={el => {
+                  layerRefs.current[i] = el;
+                }}
+                style={{ opacity: i === 0 ? 1 : 0 }}
+              >
                 <Frame variant={v} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -141,26 +219,5 @@ const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
     </section>
   );
 };
-
-function StepRow({
-  stage,
-  index,
-  active
-}: {
-  stage: Stage;
-  index: number;
-  active: MotionValue<number>;
-}) {
-  const opacity = useTransform(active, v => (Math.round(v) === index ? 1 : 0.32));
-  return (
-    <motion.div className={styles.step} style={{ opacity }}>
-      <span className={styles.stepNum}>{stage.step}</span>
-      <div>
-        <h3>{stage.label}</h3>
-        <p>{stage.caption}</p>
-      </div>
-    </motion.div>
-  );
-}
 
 export default BuildProcess;
