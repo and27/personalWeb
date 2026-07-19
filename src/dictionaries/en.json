@@ -1,26 +1,35 @@
 {
   "mastheadInfo": {
-    "title": "Create, Innovate, Repeat.",
-    "description": "I design and build digital solutions — web applications, systems, and AI integrations — with a focus on clarity, usability, and real-world constraints.",
-    "cta": "View projects"
+    "title": "Create. Innovate. Repeat.",
+    "description": "Design and development of digital solutions — web, mobile and artificial intelligence.",
+    "cta": "View work"
   },
-
   "menu": [
-    { "title": "Blog", "to": "/blog", "label": "Blog" },
-    { "title": "Projects", "to": "/projects", "label": "Projects" },
-    { "title": "Contact", "to": "/contact", "label": "Contact" }
+    {
+      "title": "Blog",
+      "to": "/blog",
+      "label": "Blog"
+    },
+    {
+      "title": "Projects",
+      "to": "/projects",
+      "label": "Projects"
+    },
+    {
+      "title": "Contact",
+      "to": "/contact",
+      "label": "Contact"
+    }
   ],
-
   "about": {
     "title": "About",
     "description": [
-      "I'm Andrés, a software engineer with over 5 years of experience building digital products used in real-world environments.",
-      "I've worked across education, gaming, Web3, and internal platforms, contributing across the product lifecycle — from solution design to implementation and iteration.",
-      "I'm especially interested in the intersection of interfaces, systems, and artificial intelligence, and how technology can reduce complexity and improve user experience."
+      "I'm Andrés Banda. For over five years I've been building digital products across education, gaming, Web3 and internal platforms.",
+      "I cover the full cycle: understanding the problem, designing the solution, building it and keeping it alive in production.",
+      "I'm drawn to the crossing of interfaces, systems and artificial intelligence, and I write about what I learn while building."
     ],
-    "cta": "Explore my work"
+    "cta": "View work"
   },
-
   "aboutStudio": {
     "title": "About Abstudio",
     "description": [
@@ -29,25 +38,23 @@
     ],
     "cta": "Learn more"
   },
-
   "services": {
-    "title": "What I work on",
+    "title": "Services",
     "services": [
       {
-        "title": "Digital Product Development",
-        "description": "Design and development of web and mobile applications with a focus on clarity, maintainability, and steady iteration."
+        "title": "Digital product",
+        "description": "Web and mobile applications, from architecture to deployment."
       },
       {
-        "title": "Interfaces & User Experience",
-        "description": "Building accessible, performant, user-centered interfaces by combining product thinking with solid engineering."
+        "title": "Interfaces",
+        "description": "Fast, accessible, precise frontend with product judgment."
       },
       {
-        "title": "Automation & Artificial Intelligence",
-        "description": "Integrating AI and automation into workflows to reduce friction, save time, and unlock new capabilities."
+        "title": "Artificial intelligence",
+        "description": "Workflows, agents and tools that bring AI into real work."
       }
     ]
   },
-
   "servicesStudio": {
     "title": "What we do at Abstudio",
     "services": [
@@ -65,16 +72,14 @@
       }
     ]
   },
-
   "contact": {
-    "blockTitle": "Get in touch",
-    "inlineTitle": "Let’s collaborate on your next product",
-    "description": "Open to collaborating on digital products, systems, and AI-driven solutions.",
-    "cta": "Get in touch"
+    "blockTitle": "Contact",
+    "inlineTitle": "Let's work together",
+    "description": "Tell me what you're building.",
+    "cta": "Book a call"
   },
-
   "recentProjects": {
-    "title": "Recent Projects",
+    "title": "Selected work",
     "projects": [
       {
         "title": "Partners",
@@ -105,7 +110,6 @@
       }
     ]
   },
-
   "projects": [
     {
       "title": "Mundo Interior",
@@ -118,10 +122,16 @@
         "Prepared the codebase for future interactive features."
       ],
       "image": "/projects/images/mundoCapture.png",
-      "technologies": ["Next.js", "React", "TailwindCSS"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TailwindCSS"
+      ],
       "cta": "Visit site",
       "link": "https://mundo.vercel.app/",
-      "contributors": ["Andres"],
+      "contributors": [
+        "Andres"
+      ],
       "github": "https://github.com/and27/mundo"
     },
     {
@@ -135,10 +145,16 @@
         "Focused the UX on reducing cognitive friction in day-to-day usage."
       ],
       "image": "/projects/images/taskrCapture.png",
-      "technologies": ["Next.js", "React", "TypeScript"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript"
+      ],
       "cta": "Visit site",
       "link": "https://test-app.taskr.tech/",
-      "contributors": ["Andres"]
+      "contributors": [
+        "Andres"
+      ]
     },
     {
       "title": "PayLink",
@@ -151,11 +167,20 @@
         "Built wallet connection and transaction feedback with a focus on clarity."
       ],
       "image": "/projects/images/paylinkCapture.png",
-      "technologies": ["Next.js", "TailwindCSS", "Wagmi", "viem", "Solidity", "Supabase"],
+      "technologies": [
+        "Next.js",
+        "TailwindCSS",
+        "Wagmi",
+        "viem",
+        "Solidity",
+        "Supabase"
+      ],
       "cta": "Visit site",
       "link": "https://paylink-orpin.vercel.app/",
       "github": "https://github.com/and27/paylink",
-      "contributors": ["Andres"]
+      "contributors": [
+        "Andres"
+      ]
     },
     {
       "title": "Manhattan",
@@ -167,10 +192,16 @@
       ],
       "hidden": true,
       "image": "/projects/images/manhCapture.png",
-      "technologies": ["JavaScript", "HTML", "CSS"],
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "cta": "Visit site",
       "link": "https://manh.com",
-      "contributors": ["Andres"]
+      "contributors": [
+        "Andres"
+      ]
     },
     {
       "title": "Partners",
@@ -183,10 +214,18 @@
         "Focused on a smooth and simple mobile experience."
       ],
       "image": "/projects/images/partnersCaptureA.png",
-      "technologies": ["React Native", "Firebase", "TypeScript"],
+      "technologies": [
+        "React Native",
+        "Firebase",
+        "TypeScript"
+      ],
       "cta": "Visit site",
       "link": "https://partners-red.vercel.app/",
-      "contributors": ["Andres", "Sofia", "Carlos"]
+      "contributors": [
+        "Andres",
+        "Sofia",
+        "Carlos"
+      ]
     },
     {
       "title": "Tracker",
@@ -199,14 +238,21 @@
         "Laid the groundwork for future analytics and reporting features."
       ],
       "image": "/projects/images/trackerCaptureA.png",
-      "technologies": ["JavaScript", "Next.js", "Vercel"],
+      "technologies": [
+        "JavaScript",
+        "Next.js",
+        "Vercel"
+      ],
       "cta": "Visit site",
       "link": "https://tracker.abstudio.com.co",
       "github": "https://github.com/and27/tracker",
-      "contributors": ["Andres", "Sofia", "Carlos"]
+      "contributors": [
+        "Andres",
+        "Sofia",
+        "Carlos"
+      ]
     }
   ],
-
   "footer": {
     "rights": "All rights reserved."
   }

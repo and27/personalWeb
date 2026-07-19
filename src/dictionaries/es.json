@@ -1,8 +1,8 @@
 {
   "mastheadInfo": {
-    "title": "Crea, Innova, Repite.",
-    "description": "Diseño y desarrollo soluciones digitales — aplicaciones web, sistemas e integraciones con IA — con foco en claridad, usabilidad y restricciones del mundo real.",
-    "cta": "Ver proyectos"
+    "title": "Crea. Innova. Repite.",
+    "description": "Diseño y desarrollo de soluciones digitales — web, móvil e inteligencia artificial.",
+    "cta": "Ver trabajo"
   },
 
   "menu": [
@@ -12,13 +12,13 @@
   ],
 
   "about": {
-    "title": "Acerca de",
+    "title": "Sobre mí",
     "description": [
-      "Soy Andrés, ingeniero de software con más de 5 años de experiencia construyendo productos digitales que se usan en contextos reales.",
-      "He trabajado en educación, gaming, Web3 y plataformas internas, participando en distintas etapas del ciclo del producto: desde el diseño de la solución hasta su implementación e iteración.",
-      "Me interesa especialmente la intersección entre interfaces, sistemas e inteligencia artificial, y cómo la tecnología puede reducir complejidad y mejorar la experiencia de las personas."
+      "Soy Andrés Banda. Llevo más de cinco años construyendo producto digital en educación, gaming, Web3 y plataformas internas.",
+      "Acompaño el ciclo completo: entender el problema, diseñar la solución, construirla y sostenerla en producción.",
+      "Me interesa el cruce entre interfaces, sistemas e inteligencia artificial, y escribo sobre lo que aprendo construyendo."
     ],
-    "cta": "Explora mi trabajo"
+    "cta": "Ver trabajo"
   },
 
   "aboutStudio": {
@@ -31,19 +31,19 @@
   },
 
   "services": {
-    "title": "En qué trabajo",
+    "title": "Servicios",
     "services": [
       {
-        "title": "Desarrollo de productos digitales",
-        "description": "Diseño y desarrollo de aplicaciones web y móviles con foco en claridad, mantenibilidad e iteración constante."
+        "title": "Producto digital",
+        "description": "Aplicaciones web y móviles, de la arquitectura al despliegue."
       },
       {
-        "title": "Interfaces y experiencia de usuario",
-        "description": "Construcción de interfaces accesibles, performantes y centradas en el usuario, combinando criterio de producto e ingeniería."
+        "title": "Interfaces",
+        "description": "Frontend rápido, accesible y preciso, con criterio de producto."
       },
       {
-        "title": "Automatización e inteligencia artificial",
-        "description": "Integración de IA y automatización en flujos de trabajo para reducir fricción, ahorrar tiempo y generar apalancamiento."
+        "title": "Inteligencia artificial",
+        "description": "Flujos, agentes y herramientas que llevan la IA al trabajo real."
       }
     ]
   },
@@ -68,13 +68,13 @@
 
   "contact": {
     "blockTitle": "Contacto",
-    "inlineTitle": "Colaboremos en tu próximo producto",
-    "description": "Abierto a colaborar en productos digitales, sistemas e iniciativas con inteligencia artificial.",
-    "cta": "Hablemos"
+    "inlineTitle": "Trabajemos juntos",
+    "description": "Cuéntame qué estás construyendo.",
+    "cta": "Agendar una llamada"
   },
 
   "recentProjects": {
-    "title": "Proyectos recientes",
+    "title": "Trabajo seleccionado",
     "projects": [
       {
         "title": "Partners",

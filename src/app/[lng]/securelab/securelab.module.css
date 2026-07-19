@@ -7,7 +7,7 @@
   gap: 100px;
   padding-block: 40px;
   font-family: var(--font-montserrat);
-  color: var(--secondary-white);
+  color: var(--text-2);
 }
 
 @media (width >= 1024px) {

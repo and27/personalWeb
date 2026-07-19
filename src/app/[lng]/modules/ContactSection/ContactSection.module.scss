@@ -19,21 +19,23 @@
   justify-content: space-between;
 
   a {
-    color: var(--primary-white);
+    color: var(--text-1);
   }
 
   h1 {
-    font-size: 48px;
-    font-family: var(--font-montserrat);
-    line-height: 1.2;
-    letter-spacing: -0.5%;
+    font-size: clamp(2.25rem, 4.5vw, 3rem);
+    font-family: var(--font-display);
+    line-height: 1.1;
+    letter-spacing: -1px;
     margin-block-end: 16px;
-    color: var(--primary-white);
+    color: var(--text-1);
   }
 
   p {
     margin-block-end: 16px;
-    color: var(--primary-white);
+    color: var(--text-2);
+    line-height: 1.7;
+    max-inline-size: 55ch;
   }
 }
 
@@ -42,11 +44,11 @@
   justify-content: flex-start;
 
   h2 {
-    font-size: 32px;
-    font-family: var(--font-montserrat);
-    line-height: 1.2;
-    letter-spacing: -0.5%;
-    color: var(--primary-white);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-family: var(--font-display);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--text-1);
   }
 }
 
@@ -68,11 +70,11 @@
 }
 
 .svg {
-  fill: var(--secondary-white);
+  fill: var(--text-2);
   transition: all 0.3s ease-in-out;
 }
 
 .svg:hover {
-  fill: var(--primary-white);
+  fill: var(--text-1);
   transform: scale(1.1);
 }

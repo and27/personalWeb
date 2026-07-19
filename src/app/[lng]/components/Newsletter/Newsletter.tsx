@@ -1,19 +1,18 @@
 import styles from './Newsletter.module.scss';
 import globalStyles from '../../page.module.scss';
+import Reveal from '../motion/Reveal';
 
 // Set NEXT_PUBLIC_SUBSTACK_URL (e.g. https://andresbanda.substack.com) to enable the section.
 const SUBSTACK_URL = process.env.NEXT_PUBLIC_SUBSTACK_URL;
 
 const copy: Record<string, { title: string; description: string }> = {
   es: {
-    title: 'Recibe lo próximo que escriba',
-    description:
-      'Artículos sobre desarrollo de producto, frontend e inteligencia artificial, directo a tu correo. Sin spam.'
+    title: 'Notas sobre el oficio',
+    description: 'Producto, interfaces e inteligencia artificial. Un correo de vez en cuando.'
   },
   en: {
-    title: 'Get my next article in your inbox',
-    description:
-      'Writing on product development, frontend and artificial intelligence, straight to your inbox. No spam.'
+    title: 'Notes on the craft',
+    description: 'Product, interfaces and artificial intelligence. An email every now and then.'
   }
 };
 
@@ -28,7 +27,7 @@ const Newsletter: React.FC<INewsletterProps> = ({ lng = 'es' }) => {
   return (
     <section className={styles.newsletter}>
       <div className={globalStyles.container}>
-        <div className={styles.newsletter__inner}>
+        <Reveal className={styles.newsletter__inner}>
           <div className={styles.newsletter__content}>
             <h2 className={styles.newsletter__title}>{title}</h2>
             <p className={globalStyles.section__text}>{description}</p>
@@ -42,7 +41,7 @@ const Newsletter: React.FC<INewsletterProps> = ({ lng = 'es' }) => {
             frameBorder="0"
             scrolling="no"
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

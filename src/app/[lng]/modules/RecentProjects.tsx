@@ -1,6 +1,7 @@
 import { ProjectCardsData } from '@/data/projectCards';
 import ProjectCards from '../components/Cards/ProjectCards/ProjectCards';
 import globalStyles from '../page.module.scss';
+import Reveal from '../components/motion/Reveal';
 
 const RecentProjects = ({ localizedProjects }: { localizedProjects: any }) => {
   const combinedProjects = ProjectCardsData.map((project, index) => {
@@ -21,7 +22,9 @@ const RecentProjects = ({ localizedProjects }: { localizedProjects: any }) => {
 
   return (
     <section className={globalStyles.projects} style={{ display: 'flex', flexDirection: 'column' }}>
-      <h2 className={globalStyles.section__title}>{localizedProjects.title}</h2>
+      <Reveal>
+        <h2 className={globalStyles.section__title}>{localizedProjects.title}</h2>
+      </Reveal>
       <ProjectCards cards={combinedProjects} />
     </section>
   );

@@ -1,4 +1,5 @@
 @import "~sass-mq/mq";
+@import "ui";
 
 .projects,
 .contact,
@@ -69,37 +70,15 @@
 }
 
 .btn {
-  letter-spacing: 0.3px;
-  font-weight: 600;
-  font-size: 1rem;
-  padding-block: 0.875rem;
-  padding-inline: 2rem;
-  border: 2px solid var(--primary-white);
-  border-radius: var(--border-radius);
-  background: var(--accent-indigo);
-  inline-size: fit-content;
+  @include btn-primary;
   margin-block-start: 2rem;
-  color: var(--accent-contrast);
   position: relative;
-  box-shadow: 5px 5px 0 var(--primary-white);
-  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.btn:hover {
-  cursor: pointer;
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--primary-white);
 }
 
 .section__title {
+  @include title;
   margin-block-end: 48px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -1px;
-  line-height: 1.05;
   position: relative;
-  color: var(--primary-white);
 }
 
 .section__text {
@@ -107,7 +86,7 @@
   font-weight: 300;
   line-height: 1.7;
   max-inline-size: 65ch;
-  color: var(--secondary-white);
+  color: var(--text-2);
 }
 
 .visually_hidden:not(:focus):not(:active) {

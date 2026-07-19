@@ -36,10 +36,10 @@
 .admission_title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-white);
+  color: var(--text-1);
   text-align: center;
   padding: 2rem 3rem;
-  border: 1px solid var(--primary-white);
+  border: 1px solid var(--text-1);
   font-family: var(--font-poppins);
   line-height: 1.2;
   text-transform: uppercase;
@@ -54,5 +54,5 @@
 }
 
 .admission p {
-  color: var(--primary-white);
+  color: var(--text-1);
 }
