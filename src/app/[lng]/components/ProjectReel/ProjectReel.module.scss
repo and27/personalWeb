@@ -21,10 +21,14 @@
   }
 }
 
-/* the odd one out (3 items, 2 columns) spans the full row on desktop */
-.slide:nth-last-child(1):nth-child(odd) {
+/* First slide is a full-width "featured" treatment on desktop; the rest
+   pair up cleanly below it. With an odd project count this is what avoids
+   one leftover half-width card — there's always exactly one featured slide
+   and an even remainder. */
+.slide:first-child {
   @include mq(desktop) {
     grid-column: 1 / -1;
+    aspect-ratio: 21 / 8;
   }
 }
 
@@ -45,17 +49,21 @@
 }
 
 /* Fixed dark scrim regardless of site theme — sits over a photographic
-   screenshot, not a plain surface, so it needs its own always-legible
-   treatment instead of theme tokens. Weighted heavily toward the bottom
-   where the CTA text sits so it never blends with the image underneath. */
+   screenshot, not a plain surface. These are full-page captures of real
+   sites, several of which use large white hero text themselves, so a
+   gradient that only darkens near the bottom isn't enough: bright text
+   from the SOURCE site can still show through higher up. The whole image
+   gets a substantial flat darkening (0.5+ from the very top), ramping to
+   near-opaque at the bottom where our own title/CTA sits. */
 .scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(6, 5, 10, 0.05) 0%,
-    rgba(6, 5, 10, 0.35) 45%,
+    rgba(6, 5, 10, 0.52) 0%,
+    rgba(6, 5, 10, 0.6) 40%,
+    rgba(6, 5, 10, 0.8) 68%,
     rgba(6, 5, 10, 0.97) 100%
   );
 }

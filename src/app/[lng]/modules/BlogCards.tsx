@@ -1,26 +1,16 @@
 import getPosts from '@/lib/getDataEntries';
-import RowCards, { IRowCards } from '../components/Cards/RowCards/RowCards';
+import PostGrid, { PostCardData } from '../components/PostGrid/PostGrid';
 import getImageDataFromBlogPost from '../../../utils/getImageSrc';
-import { IRowCard } from '../components/Cards/VerticalCard/Card';
 import globalStyles from '../page.module.scss';
 
 export interface BlogCardsProps {
-  isFeatured?: boolean;
   cta?: string;
   maxCards: number;
   sectionTitle?: string;
-  orientation?: 'horizontal' | 'vertical';
   locale: string;
 }
 
-const BlogCards = async ({
-  isFeatured = false,
-  cta,
-  maxCards,
-  sectionTitle,
-  orientation = 'vertical',
-  locale
-}: BlogCardsProps) => {
+const BlogCards = async ({ cta, maxCards, sectionTitle, locale }: BlogCardsProps) => {
   const page = 1;
   const postParams = {
     page,
@@ -37,9 +27,9 @@ const BlogCards = async ({
 
   if (posts.length === 0) return null;
 
-  const postCards = posts.map((postRaw: any, idx): IRowCard => {
+  const postCards: PostCardData[] = posts.map((postRaw: any, idx): PostCardData => {
     const post = postRaw.fields;
-    const date = new Date(post.date).toLocaleString('en-US', {
+    const date = new Date(post.date).toLocaleString(locale === 'en' ? 'en-US' : 'es-ES', {
       month: 'long',
       day: 'numeric',
       year: 'numeric'
@@ -49,28 +39,16 @@ const BlogCards = async ({
     return {
       id: idx.toString(),
       title: post.title,
-      // subtitle: date,
       description: post.body?.content[0].content[0].value,
+      date,
       link: `/blog/${post.slug}`,
-      image: {
-        ...imageData,
-        height: 240
-      }
+      image: { src: imageData.src as string, alt: imageData.alt }
     };
   });
 
-  const Posts: IRowCards = {
-    title: sectionTitle,
-    linkLabel: 'Read post',
-    orientation: orientation,
-    isFeatured: isFeatured,
-    cards: postCards,
-    cta: cta
-  };
-
   return (
     <section className={globalStyles.blog}>
-      <RowCards {...Posts} imageOverflow={'hidden'} isFeatured={isFeatured} />
+      <PostGrid title={sectionTitle} posts={postCards} cta={cta} />
     </section>
   );
 };
