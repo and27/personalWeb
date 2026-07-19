@@ -1,5 +1,6 @@
 import Script from 'next/script';
 import Scurve from './components/Scurve/Scurve';
+import Statement from './components/Statement/Statement';
 import BuildProcess from './components/BuildProcess/BuildProcess';
 import BlogCards from './modules/BlogCards';
 import { getDictionary } from '../../dictionaries';
@@ -24,6 +25,10 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
     description: '',
     cta: ''
   };
+  const statementInfo = dict?.statement || {
+    eyebrow: '',
+    text: ''
+  };
   const contact = dict?.contact || {
     blockTitle: '',
     inlineTitle: '',
@@ -37,6 +42,7 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
       <PersonalMasthead {...mastheadInfo} lang={lng} />
       <BuildProcess lang={lng} />
       <Scurve {...sCurveInfo} />
+      <Statement {...statementInfo} />
       <RecentProjects localizedProjects={localizedProjects} />
       <BlogCards maxCards={3} sectionTitle="Blog" locale={lng} />
       <Newsletter lng={lng} />

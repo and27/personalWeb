@@ -30,6 +30,10 @@
     ],
     "cta": "View work"
   },
+  "statement": {
+    "eyebrow": "How I work",
+    "text": "I design interfaces that are clear. I write code that scales. I use artificial intelligence where it adds real value. The rest is noise."
+  },
   "aboutStudio": {
     "title": "About Abstudio",
     "description": [
