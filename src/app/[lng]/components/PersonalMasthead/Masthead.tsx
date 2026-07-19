@@ -11,24 +11,26 @@ interface IMasthead {
 
 const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
   const isEn = lang === 'en';
-  const secondaryCta = isEn ? 'Contact' : 'Contacto';
+  const mantra = isEn ? 'Create · Innovate · Repeat' : 'Crea · Innova · Repite';
+  const secondaryCta = isEn ? "Let's talk" : 'Hablemos';
   const availability = isEn ? 'Available for projects' : 'Disponible para proyectos';
   const location = isEn ? 'Ecuador · Remote' : 'Ecuador · Remoto';
+  const wordmark = 'Andrés Banda';
 
   return (
     <main className={styles.masthead}>
-      <span className={styles.masthead__glyph} aria-hidden="true">
-        *
-      </span>
-      <div className={globalStyles.container}>
+      <div className={`${globalStyles.container} ${styles.masthead__container}`}>
         <header className={styles.masthead__content}>
           <Reveal delay={0}>
+            <p className={styles.masthead__eyebrow}>{mantra}</p>
+          </Reveal>
+          <Reveal delay={0.08}>
             <h1 className={styles.masthead__title}>{title}</h1>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.16}>
             <p className={styles.masthead__description}>{description}</p>
           </Reveal>
-          <Reveal delay={0.2}>
+          <Reveal delay={0.24}>
             <div className={styles.masthead__actions}>
               <a className={styles.masthead__btn} href="/projects">
                 {cta}
@@ -38,7 +40,7 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
               </a>
             </div>
           </Reveal>
-          <Reveal delay={0.3}>
+          <Reveal delay={0.32}>
             <p className={styles.masthead__meta}>
               <span className={styles.masthead__availability}>
                 <span className={styles.masthead__dot} aria-hidden="true" />
@@ -48,6 +50,17 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
             </p>
           </Reveal>
         </header>
+      </div>
+
+      {/* Oversized name as a graphic layer: cropped by the viewport edges and
+          the fold, drifting slowly. Decorative — the real name lives in the
+          nav and metadata, so it's hidden from assistive tech. */}
+      <div className={styles.masthead__nameband} aria-hidden="true">
+        <div className={styles.masthead__nametrack}>
+          <span>{wordmark}</span>
+          <span>{wordmark}</span>
+          <span>{wordmark}</span>
+        </div>
       </div>
     </main>
   );
