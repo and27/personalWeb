@@ -1,0 +1,61 @@
+@import "~sass-mq/mq";
+
+.statement {
+  position: relative;
+  block-size: 220vh; /* scroll runway that drives the word-by-word reveal */
+  background: var(--paper);
+}
+
+.sticky {
+  position: sticky;
+  inset-block-start: 0;
+  block-size: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-block-end: 1.75rem;
+}
+
+.text {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.32em;
+  row-gap: 0.15em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 5.2vw, 3.75rem);
+  line-height: 1.18;
+  letter-spacing: -1px;
+  color: var(--text-1);
+  max-inline-size: 1000px;
+}
+
+.word {
+  display: inline-block;
+  will-change: opacity;
+}
+
+/* -- reduced-motion: plain, fully lit, normal section height -- */
+.statementStatic {
+  block-size: auto;
+  padding-block: clamp(3rem, 8vw, 5rem);
+
+  .sticky {
+    position: static;
+    block-size: auto;
+    overflow: visible;
+  }
+
+  .word {
+    opacity: 1 !important;
+  }
+}

@@ -1,0 +1,529 @@
+@import "~sass-mq/mq";
+@import "ui";
+
+.build {
+  position: relative;
+  block-size: 400vh; /* scroll runway driving the four acts */
+  background: var(--surface-1);
+}
+
+.sticky {
+  position: sticky;
+  inset-block-start: 0;
+  block-size: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.stage {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+
+  @include mq(desktop) {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-1);
+    margin: 0 0 0.15rem;
+  }
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-2);
+    line-height: 1.45;
+  }
+}
+
+.stepNum {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding-top: 0.2rem;
+}
+
+/* -- shared frame shell -------------------------------------------------- */
+.viewport {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  max-inline-size: 620px;
+  justify-self: center;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--raised);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* ======================= Act 1 · paper ================================== */
+.paper {
+  border-style: dashed;
+  box-shadow: none;
+  background:
+    radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 0) 0 0 / 22px 22px,
+    var(--raised);
+  position: relative;
+  justify-content: center;
+}
+
+.sketchSvg {
+  width: 100%;
+  height: 100%;
+  padding: clamp(0.5rem, 2vw, 1.25rem);
+
+  path {
+    stroke: var(--text-2);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0; /* finished by default; animated via inline style */
+  }
+}
+
+.sketchNote {
+  position: absolute;
+  right: 8%;
+  bottom: 30%;
+  font-family: var(--font-mono);
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  color: var(--accent);
+  transform: rotate(-6deg);
+}
+
+/* ======================= Act 2 · design tool ============================ */
+.designBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-block-end: 1.5px solid var(--line);
+}
+
+.designDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  box-shadow: 16px 0 0 var(--line-strong), 32px 0 0 var(--line-strong);
+  margin-inline-end: 32px;
+}
+
+.designTitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-3);
+  letter-spacing: 0.5px;
+}
+
+.designBody {
+  position: relative;
+  flex: 1;
+  padding: clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.designGrid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--line) 1px, transparent 1px) 0 0 / 12.5% 100%,
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px) 0 0 / 100% 16.6%;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.dHero {
+  height: 38%;
+  border-radius: 8px;
+  background: var(--surface-1);
+  border: 1.5px solid var(--line-strong);
+}
+.dLine {
+  height: 12px;
+  width: 80%;
+  border-radius: 6px;
+  background: var(--line-strong);
+}
+.dLineShort {
+  width: 55%;
+}
+.dBtn {
+  margin-top: 0.5rem;
+  height: 40px;
+  width: 140px;
+  border-radius: var(--border-radius);
+  border: 1.5px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.redline {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #e0507a;
+  border-block: 1px solid #e0507a;
+  padding-block: 1px;
+  line-height: 1.6;
+}
+.redlineTop {
+  right: 6%;
+  top: 14%;
+}
+.redlineMid {
+  left: 6%;
+  bottom: 34%;
+}
+
+.chips {
+  position: absolute;
+  top: 12%;
+  left: 6%;
+  display: flex;
+  gap: 8px;
+}
+.chip {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-strong);
+}
+.chipA {
+  background: var(--accent);
+}
+.chipB {
+  background: var(--text-1);
+}
+.chipC {
+  background: var(--paper);
+}
+
+/* ======================= Act 3 · editor ================================= */
+.editor {
+  background: var(--surface-1);
+}
+
+.editorBar {
+  display: flex;
+  gap: 2px;
+  padding: 8px 12px 0;
+  border-block-end: 1.5px solid var(--line);
+}
+
+.editorTab,
+.editorTabIdle {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 6px 12px;
+  border-radius: 6px 6px 0 0;
+  color: var(--text-2);
+  background: var(--raised);
+  border: 1.5px solid var(--line);
+  border-block-end: none;
+}
+.editorTabIdle {
+  background: transparent;
+  color: var(--text-3);
+  border-color: transparent;
+}
+
+.editorBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(0.9rem, 2.5vw, 1.5rem);
+}
+
+.code {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: clamp(0.68rem, 1.35vw, 0.9rem);
+  line-height: 1.75;
+  color: var(--text-2);
+  overflow: hidden;
+}
+
+.codeRow {
+  display: flex;
+  gap: 1em;
+}
+
+.lineNum {
+  color: var(--text-3);
+  opacity: 0.5;
+  min-inline-size: 1.2em;
+  text-align: right;
+  user-select: none;
+}
+
+.codeLine {
+  white-space: pre;
+  clip-path: inset(0 0 0 0); /* finished by default; animated inline */
+}
+
+.code .k {
+  color: var(--accent);
+}
+.code .t {
+  color: #4ec0b5;
+}
+.code .a {
+  color: var(--text-1);
+}
+.code .s {
+  color: #e0a94d;
+}
+.code .f {
+  color: #e07db8;
+}
+
+.terminal {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-2);
+  border-block-start: 1.5px solid var(--line);
+  padding-block-start: 0.7rem;
+}
+.termArrow {
+  color: var(--text-1);
+}
+
+/* ======================= Act 4 · browser ================================ */
+.browser {
+  border-color: var(--accent);
+}
+
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-block-end: 1.5px solid var(--line);
+}
+
+.urlPill {
+  flex: 1;
+  max-inline-size: 280px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-2);
+  background: var(--surface-1);
+  border: 1.5px solid var(--line);
+  border-radius: 100px;
+  padding: 4px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.lock {
+  font-size: 0.65rem;
+}
+
+.browserBody {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  overflow: hidden;
+}
+
+.miniEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+
+  &::before {
+    content: "";
+    inline-size: 8px;
+    block-size: 8px;
+    background: var(--accent);
+  }
+}
+
+.miniHeadline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.15rem, 2.6vw, 1.9rem);
+  letter-spacing: -0.8px;
+  line-height: 1.05;
+  color: var(--text-1);
+  margin: 0;
+  max-inline-size: 360px;
+  text-wrap: balance;
+}
+
+.miniBtn {
+  inline-size: fit-content;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-contrast);
+  background: var(--accent);
+  border: 1.5px solid var(--text-1);
+  border-radius: var(--border-radius);
+  padding: 7px 16px;
+  box-shadow: 3px 3px 0 var(--text-1);
+}
+
+.miniName {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -0.25em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: var(--text-1);
+  opacity: 0.14 !important; /* keeps the watermark level even after reveal */
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.badges {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-1);
+  background: var(--raised);
+  border: 1.5px solid var(--line-strong);
+  border-radius: 100px;
+  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badgeLive {
+  color: #54c08a;
+  border-color: #54c08a;
+}
+
+.liveDotMini {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #54c08a;
+  box-shadow: 0 0 0 0 color-mix(in srgb, #54c08a 60%, transparent);
+  animation: livePulse 1.8s ease-out infinite;
+}
+
+@keyframes livePulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, #54c08a 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+/* -- reduced-motion static grid ------------------------------------------ */
+.staticGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+  @include mq(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.staticCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .frame {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.staticMeta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 0.9rem;
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--text-1);
+  }
+  p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--text-2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liveDotMini {
+    animation: none;
+  }
+}

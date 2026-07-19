@@ -1,0 +1,123 @@
+@import "~sass-mq/mq";
+
+.reel {
+  position: relative;
+  background: var(--paper);
+  padding-block: 60px;
+
+  @include mq(desktop) {
+    padding-block: 100px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+  margin-block-start: 2.5rem;
+
+  @include mq(desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* First slide is a full-width "featured" treatment on desktop; the rest
+   pair up cleanly below it. With an odd project count this is what avoids
+   one leftover half-width card — there's always exactly one featured slide
+   and an even remainder. */
+.slide:first-child {
+  @include mq(desktop) {
+    grid-column: 1 / -1;
+    aspect-ratio: 21 / 8;
+  }
+}
+
+.slide {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+
+  @include mq(desktop) {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.slideImage {
+  z-index: 0;
+}
+
+/* Fixed dark scrim regardless of site theme — sits over a photographic
+   screenshot, not a plain surface. These are full-page captures of real
+   sites, several of which use large white hero text themselves, so a
+   gradient that only darkens near the bottom isn't enough: bright text
+   from the SOURCE site can still show through higher up. The whole image
+   gets a substantial flat darkening (0.5+ from the very top), ramping to
+   near-opaque at the bottom where our own title/CTA sits. */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 5, 10, 0.52) 0%,
+    rgba(6, 5, 10, 0.6) 40%,
+    rgba(6, 5, 10, 0.8) 68%,
+    rgba(6, 5, 10, 0.97) 100%
+  );
+}
+
+.slideContent {
+  position: relative;
+  z-index: 2;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  color: #f5f3fa;
+}
+
+.slideNum {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #b3a8ff;
+  margin-block-end: 0.65rem;
+}
+
+.slideTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: -1px;
+  line-height: 1.05;
+  margin: 0 0 0.6rem;
+  color: #ffffff;
+}
+
+.slideDescription {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.5;
+  max-inline-size: 480px;
+  color: #e5e2ee;
+  margin: 0 0 1.25rem;
+}
+
+.slideCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding-block: 0.7rem;
+  padding-inline: 1.3rem;
+  border-radius: var(--border-radius);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background: #ffffff;
+    color: #14101f;
+  }
+}
