@@ -26,6 +26,10 @@
 }
 
 .text {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.32em;
+  row-gap: 0.15em;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(1.9rem, 5.2vw, 3.75rem);
@@ -33,7 +37,6 @@
   letter-spacing: -1px;
   color: var(--text-1);
   max-inline-size: 1000px;
-  text-wrap: balance;
 }
 
 .word {

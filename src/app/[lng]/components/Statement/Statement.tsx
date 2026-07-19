@@ -92,7 +92,7 @@ const Statement: React.FC<StatementProps> = ({ eyebrow, text }) => {
                 className={styles.word}
                 style={reduce ? undefined : { opacity: i === 0 ? 1 : 0.18 }}
               >
-                {word}{' '}
+                {word}
               </span>
             ))}
           </p>

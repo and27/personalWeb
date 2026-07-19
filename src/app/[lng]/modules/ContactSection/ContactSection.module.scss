@@ -52,6 +52,17 @@
   }
 }
 
+.contactSection__titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  @include mq(tablet) {
+    justify-content: space-between;
+  }
+}
+
 .contactSection__social {
   padding-block-end: 16px;
   display: flex;

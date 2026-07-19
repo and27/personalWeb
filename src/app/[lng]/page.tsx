@@ -1,10 +1,8 @@
 import Script from 'next/script';
-import Scurve from './components/Scurve/Scurve';
 import Statement from './components/Statement/Statement';
 import BuildProcess from './components/BuildProcess/BuildProcess';
 import BlogCards from './modules/BlogCards';
 import { getDictionary } from '../../dictionaries';
-import RecentProjects from './modules/RecentProjects';
 import ProjectReel from './components/ProjectReel/ProjectReel';
 import ContactSection from './modules/ContactSection/ContactSection';
 import PersonalMasthead from './components/PersonalMasthead/Masthead';
@@ -17,11 +15,6 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
 
   const dict = await getDictionary(lng);
   const mastheadInfo = dict?.mastheadInfo || {
-    title: '',
-    description: '',
-    cta: ''
-  };
-  const sCurveInfo = dict?.about || {
     title: '',
     description: '',
     cta: ''
@@ -42,13 +35,11 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
     <>
       <PersonalMasthead {...mastheadInfo} lang={lng} />
       <BuildProcess lang={lng} />
-      <Scurve {...sCurveInfo} />
       <Statement {...statementInfo} />
-      <RecentProjects localizedProjects={localizedProjects} />
       <ProjectReel localizedProjects={localizedProjects} lang={lng} />
       <BlogCards maxCards={3} sectionTitle="Blog" locale={lng} />
       <Newsletter lng={lng} />
-      <ContactSection layout={'inline'} {...contact} />
+      <ContactSection layout={'inline'} lang={lng} {...contact} />
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`} />
       <Script id="google-analytics">
         {`window.dataLayer = window.dataLayer || [];
