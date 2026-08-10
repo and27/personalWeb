@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { useReducedMotion } from 'framer-motion';
 import styles from './BuildProcess.module.scss';
 import globalStyles from '../../page.module.scss';
@@ -11,14 +12,9 @@ interface Stage {
   caption: string;
 }
 
-const STAGES: Record<
-  string,
-  { title: string; stages: Stage[]; headline: string; btn: string; live: string }
-> = {
+const STAGES: Record<string, { title: string; stages: Stage[]; live: string }> = {
   es: {
     title: 'De la idea al producto',
-    headline: 'Productos digitales que destacan.',
-    btn: 'Ver trabajo',
     live: 'EN VIVO',
     stages: [
       { step: '01', label: 'Idea', caption: 'Un boceto. La forma antes que el pixel.' },
@@ -29,8 +25,6 @@ const STAGES: Record<
   },
   en: {
     title: 'From idea to product',
-    headline: 'Digital products that stand out.',
-    btn: 'View work',
     live: 'LIVE',
     stages: [
       { step: '01', label: 'Idea', caption: 'A sketch. Shape before pixel.' },
@@ -209,52 +203,51 @@ function CodeFrame({ animated }: { animated: boolean }) {
   );
 }
 
-/* ---- Act 4 · Browser: the site itself, live ---------------------------- */
-function LiveFrame({
-  animated,
-  headline,
-  btn,
-  live
-}: {
-  animated: boolean;
-  headline: string;
-  btn: string;
-  live: string;
-}) {
-  const hidden = animated ? { opacity: 0, transform: 'translateY(14px)' } : undefined;
+/* ---- Act 4 · Browser: a real shipped product --------------------------- */
+// The finale shows an actual project in a browser chrome. Swap these four
+// values to feature a different one.
+const FINALE = {
+  name: 'Mundo Interior',
+  url: 'mundo.vercel.app',
+  image: '/projects/images/mundoCapture.png',
+  stack: ['Next.js', 'React']
+};
+
+function LiveFrame({ animated, live }: { animated: boolean; live: string }) {
+  const shotHidden = animated ? { opacity: 0, transform: 'scale(1.06)' } : undefined;
   const badgeHidden = animated ? { opacity: 0, transform: 'scale(0.6)' } : undefined;
   return (
     <div className={`${styles.frame} ${styles.browser}`} aria-hidden="true">
       <div className={styles.browserBar}>
         <span className={styles.designDot} />
         <span className={styles.urlPill}>
-          <span className={styles.lock}>🔒</span> andresbanda.com
+          <span className={styles.lock}>🔒</span> {FINALE.url}
         </span>
       </div>
       <div className={styles.browserBody}>
-        <span className={styles.miniEyebrow} data-rise style={hidden}>
-          Crea · Innova · Repite
-        </span>
-        <h4 className={styles.miniHeadline} data-rise style={hidden}>
-          {headline}
-        </h4>
-        <span className={styles.miniBtn} data-rise style={hidden}>
-          {btn}
-        </span>
-        <div className={styles.miniName} data-rise style={hidden}>
-          Andrés Banda
+        <div className={styles.shot} data-shot style={shotHidden}>
+          <Image
+            src={FINALE.image}
+            alt=""
+            fill
+            sizes="(max-width: 900px) 100vw, 620px"
+            loading="lazy"
+            style={{ objectFit: 'cover', objectPosition: 'top' }}
+          />
         </div>
         <div className={styles.badges}>
           <span className={`${styles.badge} ${styles.badgeLive}`} data-badge style={badgeHidden}>
             <i className={styles.liveDotMini} /> {live}
           </span>
-          <span className={styles.badge} data-badge style={badgeHidden}>
-            ⚡ 100
-          </span>
-          <span className={styles.badge} data-badge style={badgeHidden}>
-            LCP 0.9s
-          </span>
+          {FINALE.stack.map(tech => (
+            <span key={tech} className={styles.badge} data-badge style={badgeHidden}>
+              {tech}
+            </span>
+          ))}
         </div>
+        <span className={styles.shotLabel} data-badge style={badgeHidden}>
+          {FINALE.name}
+        </span>
       </div>
     </div>
   );
@@ -263,7 +256,7 @@ function LiveFrame({
 /* ------------------------------------------------------------------------ */
 
 const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
-  const { title, stages, headline, btn, live } = STAGES[lang] || STAGES.es;
+  const { title, stages, live } = STAGES[lang] || STAGES.es;
   const reduce = useReducedMotion();
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -287,7 +280,7 @@ const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
     const chips = q(1, '[data-chip]');
     const codeLines = q(2, '[data-cl]');
     const terms = q(2, '[data-term]');
-    const rises = q(3, '[data-rise]');
+    const shots = q(3, '[data-shot]');
     const badges = q(3, '[data-badge]');
 
     const applyActs = (p: number) => {
@@ -335,15 +328,16 @@ const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
         el.style.opacity = String(clamp01((p3 - 0.86) / 0.14));
       });
 
-      // Act 4 — the site assembles, then the proof badges pop
+      // Act 4 — the shipped product fades in from a slight zoom, then the
+      // live badge and stack chips pop
       const p4 = local(3);
-      rises.forEach((el, i) => {
-        const lp = easeOut(clamp01((p4 - i * 0.1) / 0.35));
+      shots.forEach(el => {
+        const lp = easeOut(clamp01(p4 / 0.45));
         el.style.opacity = String(lp);
-        el.style.transform = `translateY(${(1 - lp) * 14}px)`;
+        el.style.transform = `scale(${1.06 - 0.06 * lp})`;
       });
       badges.forEach((el, i) => {
-        const lp = easeOut(clamp01((p4 - (0.55 + i * 0.13)) / 0.2));
+        const lp = easeOut(clamp01((p4 - (0.5 + i * 0.11)) / 0.2));
         el.style.opacity = String(lp);
         el.style.transform = `scale(${0.6 + 0.4 * lp})`;
       });
@@ -413,7 +407,7 @@ const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
     <SketchFrame key="s1" animated={!reduce} />,
     <DesignFrame key="s2" animated={!reduce} />,
     <CodeFrame key="s3" animated={!reduce} />,
-    <LiveFrame key="s4" animated={!reduce} headline={headline} btn={btn} live={live} />
+    <LiveFrame key="s4" animated={!reduce} live={live} />
   ];
 
   // Reduced motion: a calm static grid, every act in its finished state.

@@ -1,16 +1,26 @@
 {
   "mastheadInfo": {
     "title": "Productos digitales que destacan.",
-    "description": "Diseño, código e inteligencia artificial, con obsesión por el detalle.",
+    "description": "Diseño, software y arquitectura.",
     "cta": "Ver trabajo"
   },
-
   "menu": [
-    { "title": "Blog", "to": "/es/blog", "label": "Blog" },
-    { "title": "Proyectos", "to": "/projects", "label": "Proyectos" },
-    { "title": "Contacto", "to": "/es/contact", "label": "Contacto" }
+    {
+      "title": "Blog",
+      "to": "/es/blog",
+      "label": "Blog"
+    },
+    {
+      "title": "Proyectos",
+      "to": "/projects",
+      "label": "Proyectos"
+    },
+    {
+      "title": "Contacto",
+      "to": "/es/contact",
+      "label": "Contacto"
+    }
   ],
-
   "about": {
     "title": "Sobre mí",
     "description": [
@@ -20,12 +30,10 @@
     ],
     "cta": "Ver trabajo"
   },
-
   "statement": {
     "eyebrow": "Cómo trabajo",
-    "text": "Diseño interfaces claras. Escribo código que escala. Integro inteligencia artificial donde aporta valor real. El resto es ruido."
+    "text": "Diseño interfaces claras. Construyo software mantenible. Experimento con agentes y arquitecturas que están cambiando el oficio."
   },
-
   "aboutStudio": {
     "title": "Acerca de Abstudio",
     "description": [
@@ -34,7 +42,6 @@
     ],
     "cta": "Explora nuestro trabajo"
   },
-
   "services": {
     "title": "Servicios",
     "services": [
@@ -52,7 +59,6 @@
       }
     ]
   },
-
   "servicesStudio": {
     "title": "¿Qué hacemos en Abstudio?",
     "services": [
@@ -70,14 +76,12 @@
       }
     ]
   },
-
   "contact": {
     "blockTitle": "Contacto",
     "inlineTitle": "Trabajemos juntos",
     "description": "Cuéntame qué estás construyendo.",
     "cta": "Agendar una llamada"
   },
-
   "recentProjects": {
     "title": "Trabajo seleccionado",
     "projects": [
@@ -110,7 +114,6 @@
       }
     ]
   },
-
   "projects": [
     {
       "title": "Mundo Interior",
@@ -123,10 +126,16 @@
         "Preparación del código para futuras funcionalidades interactivas."
       ],
       "image": "/projects/images/mundoCapture.png",
-      "technologies": ["Next.js", "React", "TailwindCSS"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TailwindCSS"
+      ],
       "cta": "Visitar sitio",
       "link": "https://mundo.vercel.app/",
-      "contributors": ["Andres"],
+      "contributors": [
+        "Andres"
+      ],
       "github": "https://github.com/and27/mundo"
     },
     {
@@ -140,10 +149,16 @@
         "UX pensada para reducir fricción cognitiva en el uso diario."
       ],
       "image": "/projects/images/taskrCapture.png",
-      "technologies": ["Next.js", "React", "TypeScript"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript"
+      ],
       "cta": "Ver demo",
       "link": "https://test-app.taskr.tech/",
-      "contributors": ["Andres"]
+      "contributors": [
+        "Andres"
+      ]
     },
     {
       "title": "PayLink",
@@ -156,11 +171,20 @@
         "Conexión de billeteras y feedback de transacciones con foco en claridad."
       ],
       "image": "/projects/images/paylinkCapture.png",
-      "technologies": ["Next.js", "TailwindCSS", "Wagmi", "viem", "Solidity", "Supabase"],
+      "technologies": [
+        "Next.js",
+        "TailwindCSS",
+        "Wagmi",
+        "viem",
+        "Solidity",
+        "Supabase"
+      ],
       "cta": "Visitar sitio",
       "link": "https://paylink-orpin.vercel.app/",
       "github": "https://github.com/and27/paylink",
-      "contributors": ["Andres"]
+      "contributors": [
+        "Andres"
+      ]
     },
     {
       "title": "Manhattan",
@@ -172,10 +196,16 @@
       ],
       "hidden": true,
       "image": "/projects/images/manhCapture.png",
-      "technologies": ["JavaScript", "HTML", "CSS"],
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "cta": "Visitar sitio",
       "link": "https://manh.com",
-      "contributors": ["Andres"]
+      "contributors": [
+        "Andres"
+      ]
     },
     {
       "title": "Partners",
@@ -188,11 +218,19 @@
         "Experiencia móvil simple y fluida."
       ],
       "image": "/projects/images/partnersCaptureA.png",
-      "technologies": ["React Native", "Firebase", "TypeScript"],
+      "technologies": [
+        "React Native",
+        "Firebase",
+        "TypeScript"
+      ],
       "cta": "Probar demo",
       "link": "https://partners-red.vercel.app/",
       "github": "https://github.com/and27/partners",
-      "contributors": ["Andres", "Sofia", "Carlos"]
+      "contributors": [
+        "Andres",
+        "Sofia",
+        "Carlos"
+      ]
     },
     {
       "title": "Tracker",
@@ -205,14 +243,21 @@
         "Base preparada para futuras funcionalidades de análisis."
       ],
       "image": "/projects/images/trackerCaptureA.png",
-      "technologies": ["JavaScript", "Next.js", "Vercel"],
+      "technologies": [
+        "JavaScript",
+        "Next.js",
+        "Vercel"
+      ],
       "cta": "Probar ahora",
       "link": "https://tracker.abstudio.com.co",
       "github": "https://github.com/and27/tracker",
-      "contributors": ["Andres", "Sofia", "Carlos"]
+      "contributors": [
+        "Andres",
+        "Sofia",
+        "Carlos"
+      ]
     }
   ],
-
   "footer": {
     "rights": "Todos los derechos reservados."
   }

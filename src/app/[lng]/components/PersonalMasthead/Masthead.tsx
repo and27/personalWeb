@@ -11,9 +11,8 @@ interface IMasthead {
 
 const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }) => {
   const isEn = lang === 'en';
-  const mantra = isEn ? 'Create · Innovate · Repeat' : 'Crea · Innova · Repite';
+  const mantra = isEn ? 'Create · Experiment · Repeat' : 'Crea · Experimenta · Repite';
   const secondaryCta = isEn ? "Let's talk" : 'Hablemos';
-  const availability = isEn ? 'Available for projects' : 'Disponible para proyectos';
   const location = isEn ? 'Ecuador · Remote' : 'Ecuador · Remoto';
   const wordmark = 'Andrés Banda';
 
@@ -42,10 +41,6 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
           </Reveal>
           <Reveal delay={0.32}>
             <p className={styles.masthead__meta}>
-              <span className={styles.masthead__availability}>
-                <span className={styles.masthead__dot} aria-hidden="true" />
-                {availability}
-              </span>
               <span>{location}</span>
             </p>
           </Reveal>
