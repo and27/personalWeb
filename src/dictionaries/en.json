@@ -1,7 +1,7 @@
 {
   "mastheadInfo": {
     "title": "Digital products that stand out.",
-    "description": "Design, code and artificial intelligence, obsessed with the details.",
+    "description": "Design, software and architecture.",
     "cta": "View work"
   },
   "menu": [
@@ -32,7 +32,7 @@
   },
   "statement": {
     "eyebrow": "How I work",
-    "text": "I design interfaces that are clear. I write code that scales. I use artificial intelligence where it adds real value. The rest is noise."
+    "text": "I design clear interfaces. I build maintainable software. I experiment with agents and architectures that are changing the craft."
   },
   "aboutStudio": {
     "title": "About Abstudio",

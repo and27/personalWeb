@@ -92,21 +92,6 @@
   color: var(--text-3);
 }
 
-.masthead__availability {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--text-2);
-}
-
-.masthead__dot {
-  inline-size: 9px;
-  block-size: 9px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2.4s ease-in-out infinite;
-}
-
 /* -- oversized name band (graphic layer) -- */
 .masthead__nameband {
   position: absolute;
@@ -150,21 +135,8 @@
   }
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .masthead__nametrack {
-    animation: none;
-  }
-  .masthead__dot {
     animation: none;
   }
 }

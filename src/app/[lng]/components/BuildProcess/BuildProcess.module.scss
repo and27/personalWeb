@@ -368,70 +368,29 @@
 .browserBody {
   position: relative;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.8rem;
-  padding: clamp(1rem, 3vw, 2rem);
   overflow: hidden;
 }
 
-.miniEyebrow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-
-  &::before {
-    content: "";
-    inline-size: 8px;
-    block-size: 8px;
-    background: var(--accent);
-  }
-}
-
-.miniHeadline {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.15rem, 2.6vw, 1.9rem);
-  letter-spacing: -0.8px;
-  line-height: 1.05;
-  color: var(--text-1);
-  margin: 0;
-  max-inline-size: 360px;
-  text-wrap: balance;
-}
-
-.miniBtn {
-  inline-size: fit-content;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent-contrast);
-  background: var(--accent);
-  border: 1.5px solid var(--text-1);
-  border-radius: var(--border-radius);
-  padding: 7px 16px;
-  box-shadow: 3px 3px 0 var(--text-1);
-}
-
-.miniName {
+/* the real product screenshot filling the browser viewport */
+.shot {
   position: absolute;
-  inset-inline: 0;
-  inset-block-end: -0.25em;
+  inset: 0;
+  will-change: transform, opacity;
+}
+
+.shotLabel {
+  position: absolute;
+  left: 5%;
+  bottom: 6%;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(3rem, 9vw, 5.5rem);
-  line-height: 0.8;
-  letter-spacing: -0.04em;
-  color: var(--text-1);
-  opacity: 0.14 !important; /* keeps the watermark level even after reveal */
-  white-space: nowrap;
-  pointer-events: none;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2vw, 1.25rem);
+  letter-spacing: -0.3px;
+  color: #ffffff;
+  background: rgba(6, 5, 10, 0.72);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--border-radius);
+  padding: 6px 14px;
 }
 
 .badges {

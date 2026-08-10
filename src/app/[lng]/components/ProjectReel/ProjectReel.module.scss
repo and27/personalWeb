@@ -10,6 +10,12 @@
   }
 }
 
+/* Mosaic layout (borrowed from the abstudio gallery, which had the best
+   rhythm of anything in the codebase): a repeating 4-item pattern where one
+   card is wide, one is tall, and two are small. Every project keeps our
+   richer content (number/title/description/CTA) and the strong scrim, unlike
+   the original abstudio cards which were image + title only.
+   Pattern repeats every 4 projects, so any project count lays out cleanly. */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -17,18 +23,8 @@
   margin-block-start: 2.5rem;
 
   @include mq(desktop) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* First slide is a full-width "featured" treatment on desktop; the rest
-   pair up cleanly below it. With an odd project count this is what avoids
-   one leftover half-width card — there's always exactly one featured slide
-   and an even remainder. */
-.slide:first-child {
-  @include mq(desktop) {
-    grid-column: 1 / -1;
-    aspect-ratio: 21 / 8;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
   }
 }
 
@@ -40,7 +36,23 @@
   align-items: flex-end;
 
   @include mq(desktop) {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
+  }
+}
+
+@include mq(desktop) {
+  /* 1st of each group: wide (2 cols) */
+  .slide:nth-child(4n + 1) {
+    grid-column: span 2;
+  }
+  /* 2nd: tall (2 rows, right side) */
+  .slide:nth-child(4n + 2) {
+    grid-row: span 2;
+  }
+  /* 3rd and 4th: small, filling the row under the wide one */
+  .slide:nth-child(4n + 3),
+  .slide:nth-child(4n + 4) {
+    grid-column: span 1;
   }
 }
 
