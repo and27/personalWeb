@@ -47,15 +47,11 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
         </header>
       </div>
 
-      {/* Oversized name as a graphic layer: cropped by the viewport edges and
-          the fold, drifting slowly. Decorative — the real name lives in the
-          nav and metadata, so it's hidden from assistive tech. */}
+      {/* Oversized name as a graphic layer: outline only, cropped by the
+          viewport edges and the fold. Static — decorative, so it's hidden
+          from assistive tech; the real name lives in the nav and metadata. */}
       <div className={styles.masthead__nameband} aria-hidden="true">
-        <div className={styles.masthead__nametrack}>
-          <span>{wordmark}</span>
-          <span>{wordmark}</span>
-          <span>{wordmark}</span>
-        </div>
+        <span className={styles.masthead__wordmark}>{wordmark}</span>
       </div>
     </main>
   );
