@@ -28,46 +28,46 @@ const ProjectReel: React.FC<ProjectReelProps> = ({ projects, title, lang = 'es' 
 
   return (
     <section className={styles.reel}>
-      {title && (
-        <div className={globalStyles.container}>
+      <div className={globalStyles.container}>
+        {title && (
           <Reveal>
             <h2 className={globalStyles.section__title}>{title}</h2>
           </Reveal>
-        </div>
-      )}
+        )}
 
-      <div className={styles.grid}>
-        {projects.map((project, i) => (
-          <article key={project.id} className={styles.slide}>
-            <Image
-              src={project.image}
-              alt=""
-              fill
-              sizes="(max-width: 900px) 100vw, 50vw"
-              loading="lazy"
-              className={styles.slideImage}
-              style={{ objectFit: 'cover', objectPosition: 'top' }}
-            />
-            <div className={styles.scrim} aria-hidden="true" />
-            <div className={styles.slideContent}>
-              <Reveal>
-                <span className={styles.slideNum}>{String(i + 1).padStart(2, '0')}</span>
-                <h3 className={styles.slideTitle}>{project.title}</h3>
-                <p className={styles.slideDescription}>{project.description}</p>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.slideCta}
-                  >
-                    {cta}
-                  </a>
-                )}
-              </Reveal>
-            </div>
-          </article>
-        ))}
+        <div className={styles.grid}>
+          {projects.map((project, i) => (
+            <article key={project.id} className={styles.slide}>
+              <Image
+                src={project.image}
+                alt=""
+                fill
+                sizes="(max-width: 900px) 100vw, 45vw"
+                loading="lazy"
+                className={styles.slideImage}
+                style={{ objectFit: 'cover', objectPosition: 'top' }}
+              />
+              <div className={styles.scrim} aria-hidden="true" />
+              <div className={styles.slideContent}>
+                <Reveal>
+                  <span className={styles.slideNum}>{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className={styles.slideTitle}>{project.title}</h3>
+                  <p className={styles.slideDescription}>{project.description}</p>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.slideCta}
+                    >
+                      {cta}
+                    </a>
+                  )}
+                </Reveal>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

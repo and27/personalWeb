@@ -10,21 +10,21 @@
   }
 }
 
-/* Mosaic layout (borrowed from the abstudio gallery, which had the best
-   rhythm of anything in the codebase): a repeating 4-item pattern where one
-   card is wide, one is tall, and two are small. Every project keeps our
-   richer content (number/title/description/CTA) and the strong scrim, unlike
-   the original abstudio cards which were image + title only.
-   Pattern repeats every 4 projects, so any project count lays out cleanly. */
+/* Mosaic layout matching the abstudio gallery: contained (not full-bleed),
+   generous 20px gutters and rounded cards, so the projects read as distinct
+   cards rather than one seamless wall. A repeating 4-item pattern — one wide,
+   one tall, two small — that lays out cleanly for any project count. Cards
+   keep our richer content (number/title/description/CTA) and strong scrim,
+   unlike the abstudio originals which were image + title only. */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3px;
+  gap: 20px;
   margin-block-start: 2.5rem;
 
   @include mq(desktop) {
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 300px;
+    grid-auto-rows: clamp(200px, 21vw, 265px);
   }
 }
 
@@ -34,9 +34,26 @@
   overflow: hidden;
   display: flex;
   align-items: flex-end;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   @include mq(desktop) {
     aspect-ratio: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
 
