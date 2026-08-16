@@ -45,7 +45,6 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
     return {
       id: project.id,
       title: localizedProject.title || project.title,
-      description: localizedProject.description || project.description,
       image: HOME_REEL_IMAGES[project.id],
       link: project.extra?.link
     };
@@ -56,7 +55,7 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
       <PersonalMasthead {...mastheadInfo} lang={lng} />
       <BuildProcess lang={lng} />
       <Statement {...statementInfo} />
-      <ProjectReel title={localizedProjects.title} projects={reelProjects} lang={lng} />
+      <ProjectReel title={localizedProjects.title} projects={reelProjects} />
       <BlogCards maxCards={3} sectionTitle="Blog" locale={lng} />
       <Newsletter lng={lng} />
       <ContactSection layout={'inline'} lang={lng} {...contact} />

@@ -21,7 +21,6 @@ const ProjectsPage = async ({ params }: { params: Promise<{ lng?: string }> }) =
   const reelProjects = localizedProjects.map((project, index) => ({
     id: project.slug || String(index),
     title: project.title,
-    description: project.description,
     image: project.image,
     link: project.link
   }));
@@ -31,7 +30,7 @@ const ProjectsPage = async ({ params }: { params: Promise<{ lng?: string }> }) =
       <div className={styles.projectsHeader}>
         <h1 className={globalStyles.section__title}>{lng === 'en' ? 'Projects' : 'Proyectos'}</h1>
       </div>
-      <ProjectReel projects={reelProjects} lang={lng} />
+      <ProjectReel projects={reelProjects} />
     </section>
   );
 };

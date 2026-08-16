@@ -6,7 +6,6 @@ import styles from './ProjectReel.module.scss';
 export interface ReelProject {
   id: string;
   title: string;
-  description: string;
   image: string;
   link?: string;
 }
@@ -14,18 +13,13 @@ export interface ReelProject {
 interface ProjectReelProps {
   projects: ReelProject[];
   title?: string;
-  lang?: string;
 }
 
-// Shared full-bleed reel presentation, reused by the home teaser (3
-// projects) and the /projects page (full catalog) — same data shape, same
-// visual grammar, one place to fix. First slide is a full-width "featured"
-// treatment on desktop, the rest pair up — this also resolves any odd
-// project count without an awkward lone half-width leftover.
-const ProjectReel: React.FC<ProjectReelProps> = ({ projects, title, lang = 'es' }) => {
-  const isEn = lang === 'en';
-  const cta = isEn ? 'View project' : 'Ver proyecto';
-
+// Contained mosaic gallery, reused by the home teaser and the /projects page.
+// Deliberately spare, matching the abstudio gallery this is modelled on: the
+// screenshot carries the card and the only text is the project name. The whole
+// card is the link, so nothing is lost by dropping the separate CTA.
+const ProjectReel: React.FC<ProjectReelProps> = ({ projects, title }) => {
   return (
     <section className={styles.reel}>
       <div className={globalStyles.container}>
@@ -36,37 +30,30 @@ const ProjectReel: React.FC<ProjectReelProps> = ({ projects, title, lang = 'es' 
         )}
 
         <div className={styles.grid}>
-          {projects.map((project, i) => (
-            <article key={project.id} className={styles.slide}>
-              <Image
-                src={project.image}
-                alt=""
-                fill
-                sizes="(max-width: 900px) 100vw, 45vw"
-                loading="lazy"
-                className={styles.slideImage}
-                style={{ objectFit: 'cover', objectPosition: 'top' }}
-              />
-              <div className={styles.scrim} aria-hidden="true" />
-              <div className={styles.slideContent}>
-                <Reveal>
-                  <span className={styles.slideNum}>{String(i + 1).padStart(2, '0')}</span>
-                  <h3 className={styles.slideTitle}>{project.title}</h3>
-                  <p className={styles.slideDescription}>{project.description}</p>
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={styles.slideCta}
-                    >
-                      {cta}
-                    </a>
-                  )}
-                </Reveal>
-              </div>
-            </article>
-          ))}
+          {projects.map(project => {
+            const Card = project.link ? 'a' : 'article';
+            return (
+              <Card
+                key={project.id}
+                className={styles.slide}
+                {...(project.link
+                  ? { href: project.link, target: '_blank', rel: 'noreferrer' }
+                  : {})}
+              >
+                <Image
+                  src={project.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 900px) 100vw, 45vw"
+                  loading="lazy"
+                  className={styles.slideImage}
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+                <div className={styles.scrim} aria-hidden="true" />
+                <h3 className={styles.slideTitle}>{project.title}</h3>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
