@@ -33,6 +33,9 @@
   align-items: center;
   text-align: center;
   background-color: var(--surface-2);
+  /* anchors the closing FlowLine, which is absolutely positioned */
+  position: relative;
+  overflow: hidden;
 }
 
 .blogHome {

@@ -1,7 +1,7 @@
 {
   "mastheadInfo": {
     "title": "Digital products that stand out.",
-    "description": "Design, code and artificial intelligence, obsessed with the details.",
+    "description": "Design, software and architecture.",
     "cta": "View work"
   },
   "menu": [
@@ -29,6 +29,10 @@
       "I'm drawn to the crossing of interfaces, systems and artificial intelligence, and I write about what I learn while building."
     ],
     "cta": "View work"
+  },
+  "statement": {
+    "eyebrow": "How I work",
+    "text": "I chase the feeling of things flowing. Nothing that catches, nothing that makes you wait."
   },
   "aboutStudio": {
     "title": "About Abstudio",
@@ -83,6 +87,7 @@
     "projects": [
       {
         "title": "Partners",
+        "category": "Mobile app",
         "description": "A mobile application that connects early-stage entrepreneurs with strategic partners who complement their skills.",
         "impact": [
           "Designed onboarding flows focused on clarity and adoption.",
@@ -92,6 +97,7 @@
       },
       {
         "title": "Launch",
+        "category": "AI platform",
         "description": "A platform designed to validate product ideas and collect early feedback through guided flows.",
         "impact": [
           "Integrated AI for roadmap generation and basic analysis.",
@@ -101,6 +107,7 @@
       },
       {
         "title": "Tracker",
+        "category": "Personal finance",
         "description": "A personal finance application for managing budgets and tracking expenses.",
         "impact": [
           "Designed a simple and clear experience for financial tracking.",

@@ -10,7 +10,11 @@ const ANALYTICS_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 export const metadata = {
   title: { absolute: 'Abstudio | Estudio de desarrollo web y growth' },
   description:
-    'Abstudio ayuda a emprendedores y negocios a crecer con sitios web, estrategias digitales y automatización con IA.'
+    'Abstudio ayuda a emprendedores y negocios a crecer con sitios web, estrategias digitales y automatización con IA.',
+  // Kept reachable, but out of search results: this page still carries the old
+  // agency positioning, which would contradict the personal brand if Google
+  // surfaced it. Not linked from the nav and not in the sitemap either.
+  robots: { index: false, follow: false }
 };
 
 import ContactSection from '../modules/ContactSection/ContactSection';

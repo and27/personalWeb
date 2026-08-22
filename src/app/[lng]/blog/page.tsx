@@ -29,7 +29,7 @@ async function Blog({ params }: { params: Promise<{ lng?: string }> }) {
           <h1>Blog</h1>
           <p>{description}</p>
         </div>
-        <BlogCards maxCards={100} isFeatured={true} cta={cta} locale={lng} />
+        <BlogCards maxCards={100} cta={cta} locale={lng} />
       </div>
       <Newsletter lng={lng} />
     </section>

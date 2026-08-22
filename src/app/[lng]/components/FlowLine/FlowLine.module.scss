@@ -1,0 +1,54 @@
+.flow {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.flowPath {
+  stroke: var(--text-1);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: 0.4;
+  /* no transition here: the unspooling is driven frame by frame from JS so the
+     travelling head stays locked to the drawn length */
+  animation: flowBreathe 7s ease-in-out infinite;
+}
+
+/* the tip of the thread, running ahead of the stroke it lays down */
+.flowHead {
+  fill: var(--accent);
+  transition: opacity 0.2s linear;
+}
+
+.flowClosing .flowPath {
+  opacity: 0.3;
+  animation-duration: 9s;
+}
+
+@keyframes flowBreathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* the hero line sits behind the headline; the closing one behind its copy */
+@media (max-width: 600px) {
+  .flow {
+    display: none; /* no room to run without crossing the text */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flowPath {
+    transition: none;
+    animation: none;
+  }
+}

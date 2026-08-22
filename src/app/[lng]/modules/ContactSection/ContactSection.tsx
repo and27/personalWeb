@@ -8,6 +8,8 @@ import Link from 'next/link';
 import Linkedin from '../../../../../public/linkedin.svg';
 import Github from '../../../../../public/github.svg';
 import Whatsapp from '../../../../../public/whatsapp.svg';
+import RotatingBadge from '../../components/RotatingBadge/RotatingBadge';
+import FlowLine from '../../components/FlowLine/FlowLine';
 
 interface IContactSectionProps {
   layout?: string;
@@ -15,6 +17,7 @@ interface IContactSectionProps {
   blockTitle?: string;
   description: string;
   cta: string;
+  lang?: string;
 }
 
 const ContactSection: React.FC<IContactSectionProps> = ({
@@ -22,8 +25,10 @@ const ContactSection: React.FC<IContactSectionProps> = ({
   inlineTitle,
   blockTitle,
   description,
-  cta
+  cta,
+  lang = 'es'
 }: IContactSectionProps) => {
+  const badgeText = lang === 'en' ? 'lets build together' : 'construyamos juntos';
   const ref = useRef(null);
 
   const [isMounted, setIsMounted] = useState(false);
@@ -48,6 +53,7 @@ const ContactSection: React.FC<IContactSectionProps> = ({
 
   return (
     <section className={globalStyles.contact} ref={ref} id="contact">
+      {layout === 'inline' && <FlowLine variant="closing" />}
       <div className={`${globalStyles.container} ${styles.contactSection__inner}`}>
         <div
           className={`${styles.contactSection__content} ${
@@ -60,7 +66,12 @@ const ContactSection: React.FC<IContactSectionProps> = ({
               <p>{description}</p>
             </div>
           )}
-          {layout === 'inline' && <h2>{inlineTitle}</h2>}
+          {layout === 'inline' && (
+            <div className={styles.contactSection__titleRow}>
+              <h2>{inlineTitle}</h2>
+              <RotatingBadge text={badgeText} />
+            </div>
+          )}
           <div className={styles.contactSection__contact_data}>
             <div className={styles.contactSection__social}>
               <Link

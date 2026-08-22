@@ -9,6 +9,10 @@ export type languageDataImporter = () => Promise<{
     description: string | string[];
     cta: string;
   };
+  statement: {
+    eyebrow: string;
+    text: string;
+  };
   aboutStudio: {
     title: string;
     description: string | string[];
@@ -43,6 +47,7 @@ export type languageDataImporter = () => Promise<{
     title: string;
     projects: {
       title: string;
+      category?: string;
       description: string;
       impact: string | string[];
     }[];
