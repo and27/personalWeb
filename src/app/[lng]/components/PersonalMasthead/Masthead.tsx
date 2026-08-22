@@ -13,7 +13,6 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
   const isEn = lang === 'en';
   const mantra = isEn ? 'Create · Experiment · Repeat' : 'Crea · Experimenta · Repite';
   const secondaryCta = isEn ? "Let's talk" : 'Hablemos';
-  const location = isEn ? 'Ecuador · Remote' : 'Ecuador · Remoto';
   const wordmark = 'Andrés Banda';
 
   return (
@@ -38,11 +37,6 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
                 {secondaryCta}
               </a>
             </div>
-          </Reveal>
-          <Reveal delay={0.32}>
-            <p className={styles.masthead__meta}>
-              <span>{location}</span>
-            </p>
           </Reveal>
         </header>
       </div>
