@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, Fragment } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import styles from './Statement.module.scss';
 import globalStyles from '../../page.module.scss';
@@ -84,16 +84,22 @@ const Statement: React.FC<StatementProps> = ({ eyebrow, text }) => {
           <p className={styles.eyebrow}>{eyebrow}</p>
           <p className={styles.text}>
             {words.map((word, i) => (
-              <span
-                key={i}
-                ref={el => {
-                  wordRefs.current[i] = el;
-                }}
-                className={styles.word}
-                style={reduce ? undefined : { opacity: i === 0 ? 1 : 0.18 }}
-              >
-                {word}
-              </span>
+              // The separator is a real space between the spans, not CSS gap:
+              // a gap looks right but is not a character, so the text copies
+              // and reads out as one run-on word. It sits outside the span
+              // because trailing whitespace inside an inline-block is trimmed.
+              <Fragment key={i}>
+                <span
+                  ref={el => {
+                    wordRefs.current[i] = el;
+                  }}
+                  className={styles.word}
+                  style={reduce ? undefined : { opacity: i === 0 ? 1 : 0.18 }}
+                >
+                  {word}
+                </span>
+                {i < words.length - 1 ? ' ' : ''}
+              </Fragment>
             ))}
           </p>
         </div>
