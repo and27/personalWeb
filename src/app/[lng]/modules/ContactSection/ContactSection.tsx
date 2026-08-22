@@ -9,6 +9,7 @@ import Linkedin from '../../../../../public/linkedin.svg';
 import Github from '../../../../../public/github.svg';
 import Whatsapp from '../../../../../public/whatsapp.svg';
 import RotatingBadge from '../../components/RotatingBadge/RotatingBadge';
+import FlowLine from '../../components/FlowLine/FlowLine';
 
 interface IContactSectionProps {
   layout?: string;
@@ -52,6 +53,7 @@ const ContactSection: React.FC<IContactSectionProps> = ({
 
   return (
     <section className={globalStyles.contact} ref={ref} id="contact">
+      {layout === 'inline' && <FlowLine variant="closing" />}
       <div className={`${globalStyles.container} ${styles.contactSection__inner}`}>
         <div
           className={`${styles.contactSection__content} ${

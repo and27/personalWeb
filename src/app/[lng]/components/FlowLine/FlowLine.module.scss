@@ -1,0 +1,49 @@
+.flow {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.flowPath {
+  stroke: var(--text-1);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: 0.4;
+  /* the draw itself; stroke-dashoffset is set from JS */
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+  /* and a slow drift on top, so the line reads as alive rather than printed */
+  animation: flowBreathe 7s ease-in-out infinite;
+}
+
+.flowClosing .flowPath {
+  opacity: 0.3;
+  animation-duration: 9s;
+}
+
+@keyframes flowBreathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* the hero line sits behind the headline; the closing one behind its copy */
+@media (max-width: 600px) {
+  .flow {
+    display: none; /* no room to run without crossing the text */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flowPath {
+    transition: none;
+    animation: none;
+  }
+}

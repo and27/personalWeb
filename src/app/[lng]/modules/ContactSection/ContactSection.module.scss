@@ -1,6 +1,9 @@
 @import "~sass-mq/mq";
 
 .contactSection__inner {
+  /* above the closing FlowLine */
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

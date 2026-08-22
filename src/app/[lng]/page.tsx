@@ -7,7 +7,6 @@ import ProjectReel from './components/ProjectReel/ProjectReel';
 import ContactSection from './modules/ContactSection/ContactSection';
 import PersonalMasthead from './components/PersonalMasthead/Masthead';
 import Newsletter from './components/Newsletter/Newsletter';
-import PageThread from './components/PageThread/PageThread';
 import { ProjectCardsData } from '@/data/projectCards';
 
 // Bigger hero screenshots for the home teaser (the data file's own images
@@ -54,7 +53,6 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
 
   return (
     <>
-      <PageThread />
       <PersonalMasthead {...mastheadInfo} lang={lng} />
       <BuildProcess lang={lng} />
       <Statement {...statementInfo} />

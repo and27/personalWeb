@@ -1,6 +1,7 @@
 import styles from './Masthead.module.scss';
 import globalStyles from '../../page.module.scss';
 import Reveal from '../motion/Reveal';
+import FlowLine from '../FlowLine/FlowLine';
 
 interface IMasthead {
   title: string;
@@ -19,6 +20,7 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
 
   return (
     <main className={styles.masthead}>
+      <FlowLine variant="hero" />
       <div className={`${globalStyles.container} ${styles.masthead__container}`}>
         <header className={styles.masthead__content}>
           <Reveal delay={0}>
