@@ -41,27 +41,31 @@ const FlowLine: React.FC<FlowLineProps> = ({ variant = 'hero' }) => {
         let sy = h * 0.42;
         if (dot) {
           const r = dot.getBoundingClientRect();
+          // the glyph sits on the baseline, ~0.23 of the line box up from its
+          // bottom; a touch above that puts the line at the dot's own ink
           sx = r.right - hostRect.left;
-          sy = r.bottom - hostRect.top - r.height * 0.3;
+          sy = r.bottom - hostRect.top - r.height * 0.34;
         }
 
-        const rx = w - 76; // leave room for the hook to swing past
-        if (rx <= sx + 40) return; // too narrow to be worth drawing
-        const amp = Math.min(11, (rx - sx) * 0.03);
-        const mid = sx + (rx - sx) * 0.5;
+        // Runs out to the edge and leaves. An earlier version curled back on
+        // itself here; a closed loop reads as a scribble, not as flow, and it
+        // collided with the CTA row. This mirrors the closing line instead,
+        // which is the shape that works.
+        const rx = w;
+        if (rx <= sx + 80) return; // too narrow to be worth drawing
+        const span = rx - sx;
+        const amp = Math.min(13, span * 0.035);
+        const mid = sx + span * 0.52;
 
         d = `M ${sx} ${sy}`;
-        // two shallow S bends — a line that flows rather than a squiggle
-        d += ` C ${sx + (mid - sx) * 0.4} ${sy - amp}, ${mid - (mid - sx) * 0.4} ${
-          sy + amp
-        }, ${mid} ${sy}`;
-        d += ` C ${mid + (rx - mid) * 0.4} ${sy - amp}, ${rx - (rx - mid) * 0.4} ${
-          sy + amp
-        }, ${rx} ${sy}`;
-        // and the hook at the edge, curving out and back
-        const cy = sy + 92;
-        d += ` C ${rx + 58} ${sy + 6}, ${rx + 58} ${cy - 26}, ${rx - 4} ${cy}`;
-        d += ` C ${rx - 54} ${cy + 18}, ${rx - 86} ${cy + 2}, ${rx - 96} ${cy - 30}`;
+        // dips away from the full stop…
+        d += ` C ${sx + (mid - sx) * 0.45} ${sy + amp * 0.9}, ${mid - (mid - sx) * 0.4} ${
+          sy + amp * 1.5
+        }, ${mid} ${sy + amp * 0.7}`;
+        // …then lifts on its way off the right edge
+        d += ` C ${mid + (rx - mid) * 0.45} ${sy - amp * 0.3}, ${rx - (rx - mid) * 0.3} ${
+          sy - amp * 1.5
+        }, ${rx} ${sy - amp * 2.1}`;
       } else {
         // closing echo: enters from the left edge and settles mid-section
         const sy = h * 0.5;
