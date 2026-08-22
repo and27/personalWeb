@@ -1,0 +1,21 @@
+.thread {
+  position: fixed;
+  inset: 0;
+  inline-size: 100vw;
+  block-size: 100vh;
+  /* Above the opaque section backgrounds — otherwise the sections that set
+     their own surface colour would bury it — and well below the navigation
+     (10) and any modal (100+). The path is kept in the page margins so
+     drawing over the content is not an issue in practice. */
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.threadPath {
+  stroke: var(--text-1);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: 0.32;
+  will-change: stroke-dashoffset;
+}

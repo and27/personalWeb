@@ -14,6 +14,8 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
   const mantra = isEn ? 'Create · Experiment · Repeat' : 'Crea · Experimenta · Repite';
   const secondaryCta = isEn ? "Let's talk" : 'Hablemos';
   const wordmark = 'Andrés Banda';
+  const endsWithPeriod = title.trim().endsWith('.');
+  const titleBody = title.trim().slice(0, -1);
 
   return (
     <main className={styles.masthead}>
@@ -23,7 +25,12 @@ const PersonalMasthead: React.FC<IMasthead> = ({ title, description, cta, lang }
             <p className={styles.masthead__eyebrow}>{mantra}</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className={styles.masthead__title}>{title}</h1>
+            {/* The trailing period is its own element so the page thread can
+                anchor itself to exactly where the sentence ends. */}
+            <h1 className={styles.masthead__title}>
+              {endsWithPeriod ? titleBody : title}
+              {endsWithPeriod && <span data-thread-start>.</span>}
+            </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className={styles.masthead__description}>{description}</p>
