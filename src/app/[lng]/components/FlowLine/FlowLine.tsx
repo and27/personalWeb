@@ -5,25 +5,37 @@ import { useReducedMotion } from 'framer-motion';
 import styles from './FlowLine.module.scss';
 
 interface FlowLineProps {
-  // 'hero' anchors to the headline's full stop and flows out to the right,
-  // curling at the edge. 'closing' is its echo in the last section: the same
-  // stroke re-entering from the left, so the page ends where the line does.
+  // 'hero' anchors to the headline's full stop and flows out to the right.
+  // 'closing' is its echo in the last section: the same stroke re-entering
+  // from the left, so the page ends where the line does.
   variant?: 'hero' | 'closing';
 }
 
-// Lives inside one section rather than spanning the page. Both variants are
-// drawn once when they come into view; there is no scroll-linked work.
+const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+
+// Section-local, not page-wide. The line unspools: a head travels the route
+// and the stroke is laid down behind it, rather than the finished line simply
+// fading in. Both are driven by one rAF pass over a fixed duration, so the
+// head and the drawn length stay in lockstep — a CSS transition on the stroke
+// could not keep a separate element in sync with it.
 const FlowLine: React.FC<FlowLineProps> = ({ variant = 'hero' }) => {
   const reduce = useReducedMotion();
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
+  const headRef = useRef<SVGCircleElement>(null);
 
   useEffect(() => {
     const svg = svgRef.current;
     const path = pathRef.current;
-    if (!svg || !path) return;
+    const head = headRef.current;
+    if (!svg || !path || !head) return;
     const host = svg.parentElement;
     if (!host) return;
+
+    const duration = variant === 'hero' ? 2200 : 1700;
+    let length = 0;
+    let played = false;
+    let raf = 0;
 
     const build = () => {
       const hostRect = host.getBoundingClientRect();
@@ -35,7 +47,6 @@ const FlowLine: React.FC<FlowLineProps> = ({ variant = 'hero' }) => {
       let d = '';
 
       if (variant === 'hero') {
-        // start exactly where the headline's sentence ends
         const dot = document.querySelector('[data-thread-start]');
         let sx = w * 0.55;
         let sy = h * 0.42;
@@ -47,27 +58,20 @@ const FlowLine: React.FC<FlowLineProps> = ({ variant = 'hero' }) => {
           sy = r.bottom - hostRect.top - r.height * 0.34;
         }
 
-        // Runs out to the edge and leaves. An earlier version curled back on
-        // itself here; a closed loop reads as a scribble, not as flow, and it
-        // collided with the CTA row. This mirrors the closing line instead,
-        // which is the shape that works.
         const rx = w;
-        if (rx <= sx + 80) return; // too narrow to be worth drawing
+        if (rx <= sx + 80) return;
         const span = rx - sx;
         const amp = Math.min(13, span * 0.035);
         const mid = sx + span * 0.52;
 
         d = `M ${sx} ${sy}`;
-        // dips away from the full stop…
         d += ` C ${sx + (mid - sx) * 0.45} ${sy + amp * 0.9}, ${mid - (mid - sx) * 0.4} ${
           sy + amp * 1.5
         }, ${mid} ${sy + amp * 0.7}`;
-        // …then lifts on its way off the right edge
         d += ` C ${mid + (rx - mid) * 0.45} ${sy - amp * 0.3}, ${rx - (rx - mid) * 0.3} ${
           sy - amp * 1.5
         }, ${rx} ${sy - amp * 2.1}`;
       } else {
-        // closing echo: enters from the left edge and settles mid-section
         const sy = h * 0.5;
         const ex = Math.min(w * 0.42, 340);
         const amp = 9;
@@ -80,37 +84,65 @@ const FlowLine: React.FC<FlowLineProps> = ({ variant = 'hero' }) => {
       }
 
       path.setAttribute('d', d);
-      const len = path.getTotalLength();
-      path.style.strokeDasharray = String(len);
-      path.style.strokeDashoffset = reduce ? '0' : String(len);
+      length = path.getTotalLength();
+      path.style.strokeDasharray = String(length);
+
+      if (reduce || played) {
+        // already told its story (or motion is off) — show it finished
+        path.style.strokeDashoffset = '0';
+        head.style.opacity = '0';
+      } else {
+        path.style.strokeDashoffset = String(length);
+      }
+    };
+
+    const unspool = () => {
+      const start = performance.now();
+      const step = (now: number) => {
+        const t = Math.min(1, (now - start) / duration);
+        const e = easeOut(t);
+        path.style.strokeDashoffset = String(length * (1 - e));
+
+        const p = path.getPointAtLength(length * e);
+        head.setAttribute('cx', String(p.x));
+        head.setAttribute('cy', String(p.y));
+        // the tip fades out as the thread finishes running out
+        head.style.opacity = String(t < 0.85 ? 1 : (1 - t) / 0.15);
+
+        if (t < 1) {
+          raf = requestAnimationFrame(step);
+        } else {
+          head.style.opacity = '0';
+          played = true;
+        }
+      };
+      raf = requestAnimationFrame(step);
     };
 
     build();
 
+    const ro = new ResizeObserver(build);
+    ro.observe(host);
+
     if (reduce) {
-      const ro = new ResizeObserver(build);
-      ro.observe(host);
       return () => ro.disconnect();
     }
 
-    // draw it once, when the section is actually on screen
     const io = new IntersectionObserver(
       entries => {
-        if (entries[0].isIntersecting) {
-          path.style.strokeDashoffset = '0';
+        if (entries[0].isIntersecting && !played) {
           io.disconnect();
+          unspool();
         }
       },
       { threshold: 0.15 }
     );
     io.observe(host);
 
-    const ro = new ResizeObserver(build);
-    ro.observe(host);
-
     return () => {
       io.disconnect();
       ro.disconnect();
+      cancelAnimationFrame(raf);
     };
   }, [reduce, variant]);
 
@@ -122,6 +154,7 @@ const FlowLine: React.FC<FlowLineProps> = ({ variant = 'hero' }) => {
       focusable="false"
     >
       <path ref={pathRef} className={styles.flowPath} fill="none" />
+      <circle ref={headRef} className={styles.flowHead} r="3" style={{ opacity: 0 }} />
     </svg>
   );
 };

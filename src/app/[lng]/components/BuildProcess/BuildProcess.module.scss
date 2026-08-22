@@ -79,6 +79,34 @@
   justify-self: center;
 }
 
+/* The stage is pinned to one viewport and clips what does not fit. On phones
+   the single column (title + four steps + frame) is far taller than that, so
+   the top was being cut off. Only the active step is shown there, and the
+   frame is sized from the available height rather than the width. */
+@media (max-width: 768px) {
+  .stage {
+    gap: 1.5rem;
+  }
+
+  .copy {
+    gap: 1rem;
+  }
+
+  .step {
+    display: none;
+  }
+
+  .step[data-active="true"] {
+    display: grid;
+  }
+
+  .viewport {
+    block-size: 38svh;
+    inline-size: auto;
+    width: auto;
+  }
+}
+
 .layer {
   position: absolute;
   inset: 0;

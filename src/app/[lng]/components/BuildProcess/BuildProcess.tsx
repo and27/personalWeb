@@ -364,7 +364,11 @@ const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
 
       const active = progress < 0.25 ? 0 : progress < 0.5 ? 1 : progress < 0.75 ? 2 : 3;
       stepRefs.current.forEach((el, i) => {
-        if (el) el.style.opacity = i === active ? '1' : '0.32';
+        if (!el) return;
+        el.style.opacity = i === active ? '1' : '0.32';
+        // narrow screens have no room for all four at once — CSS shows only
+        // the active one there, so the stage still fits in one viewport
+        el.dataset.active = i === active ? 'true' : 'false';
       });
 
       applyActs(progress);
@@ -446,6 +450,9 @@ const BuildProcess: React.FC<{ lang?: string }> = ({ lang = 'es' }) => {
                 <div
                   key={s.step}
                   className={styles.step}
+                  // marked from the first render too, so the rail is not empty
+                  // on phones before the scroll driver has run
+                  data-active={i === 0 ? 'true' : 'false'}
                   ref={el => {
                     stepRefs.current[i] = el;
                   }}
