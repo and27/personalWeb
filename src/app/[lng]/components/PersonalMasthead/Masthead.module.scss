@@ -81,8 +81,7 @@
 
 /* -- oversized name band (graphic layer, static) --
    Outline-only so it reads as a graphic element rather than a block of text,
-   and stops competing with the headline. Sized to sit inside its band on
-   small screens instead of being cropped hard. */
+   and stops competing with the headline. */
 .masthead__nameband {
   position: absolute;
   inset-inline: 0;
@@ -94,6 +93,13 @@
   pointer-events: none;
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+
+  /* On phones the name has to be cropped so hard that only a sliver of the
+     letterforms is left, which reads as a rendering fault rather than a
+     graphic device. Dropped entirely there. */
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .masthead__wordmark {
