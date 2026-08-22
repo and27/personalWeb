@@ -45,6 +45,7 @@ export default async function Home({ params }: { params: Promise<{ lng?: string 
     return {
       id: project.id,
       title: localizedProject.title || project.title,
+      category: localizedProject.category,
       image: HOME_REEL_IMAGES[project.id],
       link: project.extra?.link
     };

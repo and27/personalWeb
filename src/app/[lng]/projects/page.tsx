@@ -21,6 +21,7 @@ const ProjectsPage = async ({ params }: { params: Promise<{ lng?: string }> }) =
   const reelProjects = localizedProjects.map((project, index) => ({
     id: project.slug || String(index),
     title: project.title,
+    category: project.category,
     image: project.image,
     link: project.link
   }));

@@ -87,6 +87,7 @@
     "projects": [
       {
         "title": "Partners",
+        "category": "Mobile app",
         "description": "A mobile application that connects early-stage entrepreneurs with strategic partners who complement their skills.",
         "impact": [
           "Designed onboarding flows focused on clarity and adoption.",
@@ -96,6 +97,7 @@
       },
       {
         "title": "Launch",
+        "category": "AI platform",
         "description": "A platform designed to validate product ideas and collect early feedback through guided flows.",
         "impact": [
           "Integrated AI for roadmap generation and basic analysis.",
@@ -105,6 +107,7 @@
       },
       {
         "title": "Tracker",
+        "category": "Personal finance",
         "description": "A personal finance application for managing budgets and tracking expenses.",
         "impact": [
           "Designed a simple and clear experience for financial tracking.",

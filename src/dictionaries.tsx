@@ -47,6 +47,7 @@ export type languageDataImporter = () => Promise<{
     title: string;
     projects: {
       title: string;
+      category?: string;
       description: string;
       impact: string | string[];
     }[];

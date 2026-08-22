@@ -87,6 +87,7 @@
     "projects": [
       {
         "title": "Partners",
+        "category": "App móvil",
         "description": "Aplicación móvil que conecta emprendedores en etapas tempranas con socios estratégicos.",
         "impact": [
           "Diseño de flujos de onboarding claros y orientados a adopción.",
@@ -96,6 +97,7 @@
       },
       {
         "title": "Launch",
+        "category": "Plataforma con IA",
         "description": "Plataforma diseñada para validar ideas de producto y recolectar feedback temprano.",
         "impact": [
           "Integración de IA para generación de roadmaps y análisis básicos.",
@@ -105,6 +107,7 @@
       },
       {
         "title": "Tracker",
+        "category": "Finanzas personales",
         "description": "Aplicación para gestión de finanzas personales y seguimiento de gastos.",
         "impact": [
           "Diseño de una experiencia clara para registro financiero.",
