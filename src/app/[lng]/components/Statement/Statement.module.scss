@@ -2,7 +2,11 @@
 
 .statement {
   position: relative;
-  block-size: 220vh; /* scroll runway that drives the word-by-word reveal */
+  /* Scroll runway that drives the word-by-word reveal. Sized for the
+     current one-liner (16 words) — this was 220vh for a much longer early
+     draft of the copy, which meant scrolling ~2.2 screens to light up a
+     single short sentence and read as sluggish, especially on phones. */
+  block-size: 140vh;
   background: var(--paper);
 }
 

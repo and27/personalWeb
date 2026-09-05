@@ -13,6 +13,26 @@ interface FlowLineProps {
 
 const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
 
+// Locates the last character of an element's text via a Range, rather than
+// wrapping it in its own <span> in the markup — a real element there fought
+// text-wrap: balance's line-breaking on the headline and pushed the last
+// line off-screen on narrow viewports.
+const getLastCharRect = (el: Element): DOMRect | null => {
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  let lastText: Text | null = null;
+  let node: Node | null;
+  while ((node = walker.nextNode())) {
+    if (node.textContent) lastText = node as Text;
+  }
+  if (!lastText?.textContent) return null;
+  const len = lastText.textContent.length;
+  const range = document.createRange();
+  range.setStart(lastText, len - 1);
+  range.setEnd(lastText, len);
+  const rects = range.getClientRects();
+  return rects.length ? rects[rects.length - 1] : null;
+};
+
 // Section-local, not page-wide. The line unspools: a head travels the route
 // and the stroke is laid down behind it, rather than the finished line simply
 // fading in. Both are driven by one rAF pass over a fixed duration, so the
@@ -47,11 +67,11 @@ const FlowLine: React.FC<FlowLineProps> = ({ variant = 'hero' }) => {
       let d = '';
 
       if (variant === 'hero') {
-        const dot = document.querySelector('[data-thread-start]');
+        const title = document.querySelector('[data-hero-title]');
         let sx = w * 0.55;
         let sy = h * 0.42;
-        if (dot) {
-          const r = dot.getBoundingClientRect();
+        const r = title ? getLastCharRect(title) : null;
+        if (r) {
           // the glyph sits on the baseline, ~0.23 of the line box up from its
           // bottom; a touch above that puts the line at the dot's own ink
           sx = r.right - hostRect.left;

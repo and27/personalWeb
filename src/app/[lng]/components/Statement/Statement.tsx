@@ -37,7 +37,9 @@ const Statement: React.FC<StatementProps> = ({ eyebrow, text }) => {
       wordRefs.current.forEach((el, i) => {
         if (!el) return;
         const wordProgress = Math.min(1, Math.max(0, progress * n - i));
-        el.style.opacity = String(0.18 + 0.82 * wordProgress);
+        // baseline raised from 0.18: with the shorter final copy the dim/lit
+        // contrast read as "not painted yet" rather than emphasis
+        el.style.opacity = String(0.3 + 0.7 * wordProgress);
       });
     };
 
@@ -94,7 +96,7 @@ const Statement: React.FC<StatementProps> = ({ eyebrow, text }) => {
                     wordRefs.current[i] = el;
                   }}
                   className={styles.word}
-                  style={reduce ? undefined : { opacity: i === 0 ? 1 : 0.18 }}
+                  style={reduce ? undefined : { opacity: i === 0 ? 1 : 0.3 }}
                 >
                   {word}
                 </span>
