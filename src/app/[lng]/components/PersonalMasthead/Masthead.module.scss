@@ -47,15 +47,20 @@
   color: var(--text-1);
   text-wrap: balance;
   margin: 0;
-  /* Safety net for a WebKit-only overflow reported on a real iPhone but not
-     reproducible in desktop devtools' mobile emulation — emulation changes
-     the reported viewport size but still renders with the desktop engine
-     (Blink), so a bug specific to Safari's text-wrap: balance line-breaking,
-     or to negative letter-spacing bleeding past the box at a line's end
-     (both are known WebKit quirks), would never show up there. This forces
-     a break rather than overflow regardless of which one it is. */
   max-inline-size: 100%;
-  overflow-wrap: anywhere;
+  /* break-word, not anywhere: anywhere gives the balance algorithm license
+     to slice a word mid-letter whenever doing so makes line lengths more
+     even — which is exactly what happened ("Productos" → "Product"/"os")
+     even though every word fit fine on its own. break-word only splits a
+     word as a genuine last resort, when it does not fit the line at all. */
+  overflow-wrap: break-word;
+
+  /* balance is cosmetic (evens out line lengths) and it's the common thread
+     in two separate WebKit-only mobile bugs now, so it's dropped below
+     phone widths rather than chased further without device access. */
+  @media (max-width: 600px) {
+    text-wrap: wrap;
+  }
 }
 
 .masthead__description {
